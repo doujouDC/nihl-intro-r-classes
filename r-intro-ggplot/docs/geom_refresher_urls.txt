@@ -1,0 +1,5 @@
+URL for geoms refresher
+
+https://ggplot2-book.org/collective-geoms.html
+
+Also look at CUA email
