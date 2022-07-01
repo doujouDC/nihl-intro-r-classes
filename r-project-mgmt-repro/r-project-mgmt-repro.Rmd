@@ -1,0 +1,16 @@
+---
+title: "Project Management and Reproducibility in RStudio"
+author: "Doug Joubert"
+date: '2022-07-01'
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+
+
+
