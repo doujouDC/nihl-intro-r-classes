@@ -1,20 +1,23 @@
 URLs and resources for Project Mgmt Class
 
-Good Practices for Managing Projects in RStudio: https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/04-good-project/index.html
-
-Introduction to Reproducible Publications with RStudio: https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/
-
-Project Organization and Management for Metagenomics: https://carpentries-incubator.github.io/organization-metagenomics/
-
-Good Enough Practices for Scientific Computing: http://swcarpentry.github.io/good-enough-practices-in-scientific-computing/
 
 Project Management With RStudio: https://swcarpentry.github.io/r-novice-gapminder/02-project-intro/index.html
 
-Open Science: https://swcarpentry.github.io/git-novice/10-open/index.html
+Introduction to Reproducible Publications with RStudio: https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/
 
-Citing the work of Others: https://swcarpentry.github.io/git-novice/12-citation/index.html
+Good Practices for Managing Projects in RStudio: https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/04-good-project/index.html
+
+Project Organization and Management for Metagenomics: https://carpentries-incubator.github.io/organization-metagenomics/
 
 Using Git from RStudio: https://swcarpentry.github.io/git-novice/14-supplemental-rstudio/index.html
 
+Open Science: https://swcarpentry.github.io/git-novice/10-open/index.html
+
 Producing Reports With knitr: https://swcarpentry.github.io/r-novice-gapminder/15-knitr-markdown/index.html
+
+Citing the work of Others: https://swcarpentry.github.io/git-novice/12-citation/index.html
+
+Good Enough Practices for Scientific Computing: http://swcarpentry.github.io/good-enough-practices-in-scientific-computing/
+
+
 
