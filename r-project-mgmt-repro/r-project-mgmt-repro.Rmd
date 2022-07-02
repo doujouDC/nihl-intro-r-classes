@@ -55,37 +55,73 @@ If contributing to science and other researchers seems not to be compelling enou
 
 -   Helps to build your reputation
 
-# **Using RStudio for your project**
+# Using RStudio for your project
 
 RStudio is an integrated development environment (IDE) for R and Python. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging, collaboration, and workspace management. It is a powerful tool which supports research by weaving the principles of reproducibility throughout the entire research lifecycle, from data gathering to the statistical analysis, presentation and publication of results.
 
-Advantages of Using RStudio
+## Advantages of Using RStudio
 
-* It is free and open-source
-* It is designed to make it easy to write and reuse code
-* Makes it convenient to view and interact with the objects stored in your environment
-* Makes it easy to set your working directory and access files on your computer
-* Integrates with Collaboration and Publishing Tools
-* Creates documents using R Markdown
+-   It is free and open-source
+-   It is designed to make it easy to write and reuse code
+-   Makes it convenient to view and interact with the objects stored in your environment
+-   Makes it easy to set your working directory and access files on your computer
+-   Integrates with Collaboration and Publishing Tools
+-   Creates documents using R Markdown
 
-# Getting Your project set up with Version Control in RStudio
+# Creating a Project Using Version Control in RStudio
+
 Using version control is a powerful feature to make your research more reproducible and better organized. In order to use versioning while working in RStudio the first step is to make sure your work is set up as an R Project, because you may not use the versioning features in RStudio without one. There are three options for doing this depending on your given scenario:
 
-1.    New Directory - start a brand new R project (with the option of version control).
-2.    Existing Directory - add existing work to a R project (with the option of setting up version control).
-3.    Version Control Continue an existing R project that already uses version control (i.e. download from GitHub).
+1.  New Directory - start a brand new R project (with the option of version control).
+2.  Existing Directory - add existing work to a R project (with the option of setting up version control).
+3.  Version Control Continue an existing R project that already uses version control (i.e. download from GitHub).
 
 We will be using option 3, setting an R project on GitHub and then importing this into RStudio.
+
+## Setting up R for Projects
+
+There are a number of RStudio settings that are recommended. These settings will force RStudio to start "fresh" each time you open RStudio.
+
+This means that RStudio will not remember the code that you ran in your previous session. This forces you to document your work in your code and not in the RStudio workspace [which is temporary].
+
+Figure X list the preferred RStudio settings. To change these options go to **Tools\>Global Options\>General.**
+
+![Preferred RStudio options.](images/rstudio-preferences.png)
+
+You might want to also choose UTF-8 as the default text encoding. This setting is available from **Tools\>Global Options\>Code\>Saving**.
+
+## RStudio Projects
+
+An [RStudio Project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects) provides a set of tools that allow you to organize your scripts, files, and output: \* Allows you to navigate quickly to your working directory, and it is a great way to keep all your data organized. \* Can preserve custom settings and open files to make it easier to resume work after a break. \* An RStudio project is different from an R session. Meaning that an R session is all the objects and work done in R. Sessions are usually kept in working memory, until you restart R.
+
+## Creating a New Repository in GitHub
+
+[At this link](https://github.com/signup), you may sign into your GitHub account or create one if you have not already. I have already created a [repository](https://github.com/doujouDC/nihl-intro-r-series.git) for this class. I will need to copy the repository URL before I create the project in RStudio.
+
+![](images/Screen%20Shot%202022-07-02%20at%201.05.38%20PM.png){width="6.5in"}
+
+## Creating a New Project in RStudio
+
+1.  Choose New Project from the Tools Menu.
+2.  There are three options when creating a new project: Creating a project in a new directory, Creating a project in an existing directory, and Creating a project using version control.
+3.  Choose the Version Control option
+4.  Chose Git as the option, RStudio will automatically open the next screen
+5.  This is where you enter the repository URL that you copied from GitHub
+6.  Click **Create Project**. The screen will refresh as RStudio switches over to project view an downloads any data from GitHub
 
 # Good Practices for Managing Projects in RStudio
 
 # Working with R Markdown Files
-## Writing and Styling Rmd Documents
-## Adding Code-Generated Plots and Figures
-## Reproducible & Efficient Methods of Using Code Chunks
-## Bibliography, Citations & Cross-Referencing
-## Publishing your project
 
+## Writing and Styling Rmd Documents
+
+## Adding Code-Generated Plots and Figures
+
+## Reproducible & Efficient Methods of Using Code Chunks
+
+## Bibliography, Citations & Cross-Referencing
+
+## Publishing your project
 
 # Licenses
 
