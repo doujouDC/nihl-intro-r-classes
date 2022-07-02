@@ -2,7 +2,11 @@
 title: "Project Management and Reproducibility in RStudio"
 author: "Doug Joubert"
 date: '2022-07-01'
-output: word_document
+output:
+  word_document: 
+    toc: yes
+  html_document:
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
@@ -11,33 +15,78 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
-This one-hour class focuses on data and project management
-using R and RStudio. RStudio makes it possible to work on a complete research
-project in a more efficient, integrated, and organized manner. RStudio also
-connects with Git and Github and learners will have a chance to experiment with
-this integration and understand its advantages for collaboration and version
-control. Participants will learn how to create reproducible documents that
-combine code, analysis, and narrative. This intermediate-level course is
-designed to be relevant to students from different disciplines. Some
-familiarity or experience in R and RStudio is recommended but not required. Students
-are encouraged to install [R](https://mirrors.nics.utk.edu/cran/) and [RStudio](https://www.rstudio.com/products/rstudio/download/#download) before
-the webinar so that they can follow along with the instructor. Attendees will
-need to download the class data before the webinar.
+This one-hour class focuses on data and project management using R and RStudio. RStudio makes it possible to work on a complete research project in a more efficient, integrated, and organized manner. RStudio also connects with Git and Github and learners will have a chance to experiment with this integration and understand its advantages for collaboration and version control. Participants will learn how to create reproducible documents that combine code, analysis, and narrative. This intermediate-level course is designed to be relevant to students from different disciplines. Some familiarity or experience in R and RStudio is recommended but not required. Students are encouraged to install [R](https://mirrors.nics.utk.edu/cran/) and [RStudio](https://www.rstudio.com/products/rstudio/download/#download) before the webinar so that they can follow along with the instructor. Attendees will need to download the class data before the webinar.
 
 Upon completion of this class students should be able to:
 
-* Discuss best practices for organizing data in an RStudio project
-* Define the term tidy data and its role in reproducibility
-* List the recommendations for tidy data
-* Discuss the importance of using a data dictionary and read me files
-* Ensure that their data is machine readable
-* Create a new R project using a GitHub repository
-* Distinguish between pulling and pushing data from a repository
-* Create an R-markdown document
-* Create a bibliography and link it to a R-markdown document
+-   Discuss best practices for organizing data in an RStudio project
+-   Define the term tidy data and its role in reproducibility
+-   List the recommendations for tidy data
+-   Discuss the importance of using a data dictionary and read me files
+-   Ensure that their data is machine readable
+-   Create a new R project using a GitHub repository
+-   Distinguish between pulling and pushing data from a repository
+-   Create an R-markdown document
+-   Create a bibliography and link it to a R-markdown document
 
-# Open Science
+# Scientific Reproducibility
 
-Licenses
+According to the [U.S. National Science Foundation (NSF)](https://www.nsf.gov/sbe/AC_Materials/SBE_Robust_and_Reliable_Research_Report.pdf)subcommittee on replicability in science (2015):
+
+Science should routinely evaluate the reproducibility of findings that enjoy a prominent role in the published literature. To make reproduction possible, efficient, and informative, researchers should sufficiently document the details of the procedures used to collect data, to convert observations into analyzable data, and to perform data analysis.
+
+Reproducibility refers to the ability of a researcher to duplicate the results of a prior study using the same materials as were used by the original investigator. Reproducibility is a minimum necessary condition for a finding to be considered rigorous, believable and informative.
+
+A 2016 survey in Nature revealed that not being able to reproduce experiments is a problem across all domains of science:
+
+![Nature Report - 2016](https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/fig/01-fig2.png){alt="Nature Report - 2016"}
+
+> Source: Baker, M. 1,500 scientists lift the lid on reproducibility. Nature 533, 452--454 (2016). [doi.org/10.1038/533452a](https://doi.org/10.1038/533452a)
+
+If contributing to science and other researchers seems not to be compelling enough, here are 5 selfish reasons to work reproducibly according to Markowetz (2015):
+
+-   Helps to avoid data loss and disaster
+
+-   Makes it easier to write papers
+
+-   Helps reviewers see it your way
+
+-   Enables continuity of your work
+
+-   Helps to build your reputation
+
+# **Using RStudio for your project**
+
+RStudio is an integrated development environment (IDE) for R and Python. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging, collaboration, and workspace management. It is a powerful tool which supports research by weaving the principles of reproducibility throughout the entire research lifecycle, from data gathering to the statistical analysis, presentation and publication of results.
+
+Advantages of Using RStudio
+
+* It is free and open-source
+* It is designed to make it easy to write and reuse code
+* Makes it convenient to view and interact with the objects stored in your environment
+* Makes it easy to set your working directory and access files on your computer
+* Integrates with Collaboration and Publishing Tools
+* Creates documents using R Markdown
+
+# Getting Your project set up with Version Control in RStudio
+Using version control is a powerful feature to make your research more reproducible and better organized. In order to use versioning while working in RStudio the first step is to make sure your work is set up as an R Project, because you may not use the versioning features in RStudio without one. There are three options for doing this depending on your given scenario:
+
+1.    New Directory - start a brand new R project (with the option of version control).
+2.    Existing Directory - add existing work to a R project (with the option of setting up version control).
+3.    Version Control Continue an existing R project that already uses version control (i.e. download from GitHub).
+
+We will be using option 3, setting an R project on GitHub and then importing this into RStudio.
+
+# Good Practices for Managing Projects in RStudio
+
+# Working with R Markdown Files
+## Writing and Styling Rmd Documents
+## Adding Code-Generated Plots and Figures
+## Reproducible & Efficient Methods of Using Code Chunks
+## Bibliography, Citations & Cross-Referencing
+## Publishing your project
+
+
+# Licenses
 
 **Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) 2022 by [the authors](https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/CITATION).**
