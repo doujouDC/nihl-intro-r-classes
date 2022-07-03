@@ -7,6 +7,8 @@ output:
     toc: yes
   html_document:
     df_print: paged
+bibliography: nihl-r-classes.bib
+csl: apa.csl
 ---
 
 ```{r setup, include=FALSE}
@@ -31,17 +33,17 @@ Upon completion of this class students should be able to:
 
 # Scientific Reproducibility
 
-According to the [U.S. National Science Foundation (NSF)](https://www.nsf.gov/sbe/AC_Materials/SBE_Robust_and_Reliable_Research_Report.pdf)subcommittee on replicability in science (2015):
+According to the [U.S. National Science Foundation (NSF)](https://www.nsf.gov/sbe/AC_Materials/SBE_Robust_and_Reliable_Research_Report.pdf) subcommittee on replicability in science (2015):
 
 Science should routinely evaluate the reproducibility of findings that enjoy a prominent role in the published literature. To make reproduction possible, efficient, and informative, researchers should sufficiently document the details of the procedures used to collect data, to convert observations into analyzable data, and to perform data analysis.
 
 Reproducibility refers to the ability of a researcher to duplicate the results of a prior study using the same materials as were used by the original investigator. Reproducibility is a minimum necessary condition for a finding to be considered rigorous, believable and informative.
 
-A 2016 survey in Nature revealed that not being able to reproduce experiments is a problem across all domains of science:
+A 2016 survey in Nature revealed that not being able to reproduce experiments is a problem across all domains of science [Figure 1]:
 
-![Nature Report - 2016](https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/fig/01-fig2.png){alt="Nature Report - 2016"}
+![](images/Screen%20Shot%202022-07-03%20at%209.22.17%20AM.png){width="6.5in"}
 
-> Source: Baker, M. 1,500 scientists lift the lid on reproducibility. Nature 533, 452--454 (2016). [doi.org/10.1038/533452a](https://doi.org/10.1038/533452a)
+Figure 01: Reproducibility by discipline and problem identified .
 
 If contributing to science and other researchers seems not to be compelling enough, here are 5 selfish reasons to work reproducibly according to Markowetz (2015):
 
@@ -96,7 +98,7 @@ An [RStudio Project](https://support.rstudio.com/hc/en-us/articles/200526207-Usi
 
 ## Creating a New Repository in GitHub
 
-[At this link](https://github.com/signup), you may sign into your GitHub account or create one if you have not already. I have already created a [repository](https://github.com/doujouDC/nihl-intro-r-series.git) for this class. I will need to copy the repository URL before I create the project in RStudio.
+[At this link](https://github.com/signup), you may sign into your GitHub account or create one if you have not already. I have already created a [repository](https://github.com/doujouDC/nihl-intro-r-series.git) for this class. I will need to copy the repository URL before I create the project in RStudio [Figure 1].
 
 ![](images/Screen%20Shot%202022-07-02%20at%201.05.38%20PM.png){width="6.5in"}
 
