@@ -41,9 +41,13 @@ Reproducibility refers to the ability of a researcher to duplicate the results o
 
 A 2016 survey in Nature revealed that not being able to reproduce experiments is a problem across all domains of science [Figure 1]:
 
-![](images/Screen%20Shot%202022-07-03%20at%209.22.17%20AM.png){width="6.5in"}
+![](images/baker-01.png){width="6.5in"}
 
-Figure 01: Reproducibility by discipline and problem identified [@RN1683].
+Figure 1: Reproducibility by discipline and problem identified [@RN1683].
+
+![](images/baker-02.png){width="6.5in"}
+
+Figure 2:Attempts to publish reproducible research [@RN1683].
 
 If contributing to science and other researchers seems not to be compelling enough, here are 5 selfish reasons to work reproducibly according to Markowetz (2015):
 
@@ -86,9 +90,11 @@ There are a number of RStudio settings that are recommended. These settings will
 
 This means that RStudio will not remember the code that you ran in your previous session. This forces you to document your work in your code and not in the RStudio workspace [which is temporary].
 
-Figure X list the preferred RStudio settings. To change these options go to **Tools\>Global Options\>General.**
+Figure 3 list the preferred RStudio settings. To change these options go to **Tools\>Global Options\>General.**
 
-![Preferred RStudio options.](images/rstudio-preferences.png)
+![](images/rstudio-preferences.png){width="4.5in"}
+
+Figure 3: Preferred RStudio options.
 
 You might want to also choose UTF-8 as the default text encoding. This setting is available from **Tools\>Global Options\>Code\>Saving**.
 
@@ -98,11 +104,13 @@ An [RStudio Project](https://support.rstudio.com/hc/en-us/articles/200526207-Usi
 
 ## Creating a New Repository in GitHub
 
-[At this link](https://github.com/signup), you may sign into your GitHub account or create one if you have not already. I have already created a [repository](https://github.com/doujouDC/nihl-intro-r-series.git) for this class. I will need to copy the repository URL before I create the project in RStudio [Figure 1].
+[At this link](https://github.com/signup), you may sign into your GitHub account or create one if you have not already. ![](images/git-hub-01.png){width="6.5in"}
 
-![](images/Screen%20Shot%202022-07-02%20at%201.05.38%20PM.png){width="6.5in"}
+Figure 4: My repository homepage in GitHub
 
-## Creating a New Project in RStudio
+I have already created a [repository](https://github.com/doujouDC/nihl-intro-r-series.git) for this class. I will need to copy the repository URL before I create the project in RStudio [Figure 5].
+
+![](images/git-hub-02.png){width="6.5in"} Figure 5: Creating a new repository on GitHub. \## Creating a New Project in RStudio
 
 1.  Choose New Project from the Tools Menu.
 2.  There are three options when creating a new project: Creating a project in a new directory, Creating a project in an existing directory, and Creating a project using version control.
