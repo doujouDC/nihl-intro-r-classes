@@ -43,7 +43,7 @@ A 2016 survey in Nature revealed that not being able to reproduce experiments is
 
 ![](images/Screen%20Shot%202022-07-03%20at%209.22.17%20AM.png){width="6.5in"}
 
-Figure 01: Reproducibility by discipline and problem identified .
+Figure 01: Reproducibility by discipline and problem identified [@RN1683].
 
 If contributing to science and other researchers seems not to be compelling enough, here are 5 selfish reasons to work reproducibly according to Markowetz (2015):
 
