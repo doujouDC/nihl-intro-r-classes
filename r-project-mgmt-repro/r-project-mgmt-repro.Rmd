@@ -104,20 +104,60 @@ An [RStudio Project](https://support.rstudio.com/hc/en-us/articles/200526207-Usi
 
 ## Creating a New Repository in GitHub
 
-[At this link](https://github.com/signup), you may sign into your GitHub account or create one if you have not already. ![](images/git-hub-01.png){width="6.5in"}
+[At this link](https://github.com/signup), you may sign into your GitHub account or create one if you have not already.
+
+![](images/git-hub-01.png){width="6.5in"}
 
 Figure 4: My repository homepage in GitHub
 
-I have already created a [repository](https://github.com/doujouDC/nihl-intro-r-series.git) for this class. I will need to copy the repository URL before I create the project in RStudio [Figure 5].
+I have already created a [repository](https://github.com/doujouDC/nihl-intro-r-series.git) for this class. However Figure 5 is displaying the Create a New Repository screen. [Figure 5].
 
-![](images/git-hub-02.png){width="6.5in"} Figure 5: Creating a new repository on GitHub. \## Creating a New Project in RStudio
+![](images/git-hub-02.png){width="6.5in"}
 
-1.  Choose New Project from the Tools Menu.
-2.  There are three options when creating a new project: Creating a project in a new directory, Creating a project in an existing directory, and Creating a project using version control.
-3.  Choose the Version Control option
-4.  Chose Git as the option, RStudio will automatically open the next screen
-5.  This is where you enter the repository URL that you copied from GitHub
-6.  Click **Create Project**. The screen will refresh as RStudio switches over to project view an downloads any data from GitHub
+Figure 5: Creating a new repository on GitHub.
+
+Once your repository is created, you will need to copy the repository URL before you create the project in RStudio [Figure 6]. Figure 6 shows the 3 different methods for creating a URL: (1) https, (2) SSH, or (3) GitHub CLI.
+
+![](images/git-hub-03.png){width="6.5in"}
+
+Figure 6: Creating a link to a GitHub repository.
+
+The ability to create an SSH key is location under settings [Figure 7].
+
+![](images/git-hub-05.png){width="6.5in"}
+
+Figure 7: Creating SSH keys in GitHub.
+
+Depending on your OS you might also need to create a Personal Access Token that is used to connect RStudio to GitHub, the first time you sync [Figure 8].
+
+![](images/git-hub-04.png){width="6.5in"}
+
+Figure 8: Creating a Personal Access Code in GitHub.
+
+## Creating a New Project in RStudio
+
+1.  Open RStudio
+2.  Choose New Project from the Tools Menu.
+3.  There are three options when creating a new project: (1) Creating a project in a new directory, (2) Creating a project in an existing directory, and (3) Creating a project using version control.
+
+![](images/new-project-01.png){width="4.5in"}
+
+Figure 9: Creating a new project in RStudio.
+
+4.  Choose the Version Control option
+5.  Chose Git as the option, RStudio will automatically open the next screen
+
+![](images/new-project-02.png){width="4.5in"}
+
+Figure 10: Choosing the version control option in RStudio.
+
+6.  This screen is where you enter the repository URL that you copied from GitHub
+
+![](images/new-project-03.png){width="4.5in"}
+
+Figure 11: Using a GitHub repository URL to create a new project
+
+7.  Click **Create Project**. The screen will refresh as RStudio switches over to project view an downloads any data from GitHub
 
 # Good Practices for Managing Projects in RStudio
 
