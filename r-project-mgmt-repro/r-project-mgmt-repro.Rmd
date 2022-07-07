@@ -161,6 +161,84 @@ Figure 11: Using a GitHub repository URL to create a new project
 
 # Good Practices for Managing Projects in RStudio
 
+## Sources
+
+[**Good Practices for Managing Projects in RStudio**](Good%20Practices%20for%20Managing%20Projects%20in%20RStudio)
+
+## Project Organization Issues
+
+We often have stress points in our research that may become breaking points, especially when it comes to working with collaborators, returning to a project after a hiatus, or dealing with data and scripts. Let's discuss three of those common stress points:
+
+### File/folder disorganization
+
+-   You cannot find your files on your computer (or your cloud storage)
+-   Multiple versions of files with names such as "finaldraft_4.txt"
+-   Path issues when trying to run code
+-   Reviewers or colleagues cannot re-run your code/analyses
+
+### Storage and sharing issues
+
+-   Files are only saved to your computer and are vulnerable (or have already succumbed to computer/hard drive failure
+-   When working with collaborators, they (or you) don't share the files needed
+-   Files are shared via email attachments
+-   Difficult to know if you have the latest version of documents
+
+### Losing track of project status
+
+-   You cannot remember where you are in a project after being away for an extended period (or what you worked on the previous day...no judgement)
+-   You aren't sure what you should be working on next
+-   You have various to-do notes spread across your office or home (or never write them down in the first place)
+
+## Discusion Points
+
+To what extent do these stress points affect your research projects? Are there additional issues that you've encountered that slow down or derail your work due to issues with project management?
+
+## Project File/Folder Organization
+
+Although there is no "best" way to lay out a project, there are some general principles to adhere to that will make project management easier.
+
+## Practice good file-organization
+
+[Good Enough Practices for Scientific Computing](http://swcarpentry.github.io/good-enough-practices-in-scientific-computing/) gives the following recommendations for project organization:
+
+1.  Put each project in its own directory, which is named after the project.
+2.  Put text documents associated with the project in the doc directory.
+3.  Put raw data and metadata in the data directory, and files generated during cleanup and analysis in a results directory.
+4.  Put source for the project's scripts and programs in the src directory, and programs brought in from elsewhere or compiled locally in the bin directory.
+5.  Name all files to reflect their content or function.
+
+Additionally, we'd recommend to include README, LICENSE, and CITATION files! Additionaly recommendations for projects and creating folders is covered in the Introduction to R and Rstudio class. Class handouts are available upon request.
+
+## **Practices for Naming Files**
+
+### Machine-readable
+
+No spaces, unsupported punctuation, accented characters, or case-sensitive file names
+
+Deliberate use of delimiters (i.e. for splitting file names)
+
+Consistently use the same delimiters: `data-analyses-fig1.R` as an example
+
+### Human-readable
+
+Name contains brief description of content: i.e. `data-analyses-fig1.R`
+
+### Ordering Files
+
+Use chronological or logical order. With chronological, file name starts with date.
+
+-   i.e. `2022-01-01_data_analyses.R`
+
+-   Use [ISO 8601 date standard](https://en.wikipedia.org/wiki/ISO_8601)
+
+-   **logical**: filename starts with a number or keyword/number combo.
+
+    -   i.e. `01_data_preprocessing.R` *see code directory*
+
+    -   i.e. `CC-101_1_data.csv` *see data directory*
+
+Adapted from <https://datacarpentry.org/rr-organization1/01-file-naming/index.html>. For more tips on file naming, check: [The Dos and Don'ts of File Naming](https://www.library.ucsb.edu/sites/default/files/dls-n01-2021-filenaming.pdf).
+
 # Working with R Markdown Files
 
 ## Writing and Styling Rmd Documents
