@@ -3,10 +3,10 @@ title: "Project Management and Reproducibility in RStudio"
 author: "Doug Joubert"
 date: '2022-07-01'
 output:
-  word_document: 
-    toc: yes
   html_document:
     df_print: paged
+  word_document: 
+    toc: yes
 bibliography: nihl-r-classes.bib
 csl: apa.csl
 ---
@@ -209,7 +209,7 @@ Although there is no "best" way to lay out a project, there are some general pri
 
 Additionally, we'd recommend to include README, LICENSE, and CITATION files! Additionaly recommendations for projects and creating folders is covered in the Introduction to R and Rstudio class. Class handouts are available upon request.
 
-## **Practices for Naming Files**
+##Practices for Naming Files
 
 ### Machine-readable
 
@@ -241,7 +241,78 @@ Adapted from <https://datacarpentry.org/rr-organization1/01-file-naming/index.ht
 
 # Working with R Markdown Files
 
+R Markdown provides an authoring framework for data science. You can use a single R Markdown file to both
+
+-   save and execute code
+
+-   generate high quality reports that can be shared with an audience
+
+R Markdown documents are fully reproducible and support dozens of static and dynamic output formats.
+
+## Installation
+
+Like the rest of R, R Markdown is free and open source. You can install the R Markdown package from CRAN with:
+
+    install.packages("rmarkdown")
+
+You will also need to install the [knitr](http://yihui.name/knitr/) package. Knitr is a general-purpose tool for dynamic report generation in R using Literate Programming techniques.
+
+    install.packages("knitr")
+
+There are a number of packages that are required for `rmarkdown` and `knitr`, these should install automatically.
+
+### Get Started
+
+This [page](https://rmarkdown.rstudio.com/lesson-1.html) provides a nice overview of R markdown the top provide examples of R Markdown documents, as well as an in depth discussion of various R Markdown topics.
+
+You may also find the following resources helpful:
+
+-   [The R Markdown Cheatsheet](https://github.com/rstudio/cheatsheets/raw/main/rmarkdown-2.0.pdf)
+
+-   [The R Markdown Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
+
+-   [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)
+
 ## Writing and Styling Rmd Documents
+
+Within RStudio, click File → New File → R Markdown and you'll get a dialog box like this:
+
+![](images/02-name-new-rmd.png){width="4.5in"}
+
+Figure 12: Creating an RMD file in RStudio.
+
+Give it a title: **Introduction to R Markdown**
+
+## Basic components of R Markdown
+
+The initial chunk of text (header) contains instructions for R to specify what kind of document will be created, and the options chosen. You can use the header to give your document a title, author, date, and tell it what type of output you want to produce.
+
+    ---
+    title: "Introduction to R Markdown"
+    author: "Doug Joubert"
+    date: "`r Sys.Date()`"
+    output: html_document
+    ---
+
+You can delete any of those fields if you don't want them included. The double-quotes aren't strictly *necessary* in this case. They're mostly needed if you want to include a colon in the title.
+
+Note that you have the option to select *Use the current date when rendering the document*. If you choose so, this will generate the date dynamically each time you knit your document and replace the rmd creation date with the inline R expression:
+
+`r Sys.Date()`
+
+You may also consider exploring changing date formats [following these tips](https://bookdown.org/yihui/rmarkdown-cookbook/update-date.html).
+
+## **Visual Editor**
+
+RStudio released a new major update to their IDE in January 2020, which includes a new "visual editor" for R Markdown to supplement their original editor (which we will call the source editor) for authoring with R Markdown syntax.
+
+The new visual editor is friendlier with a graphical user interface similar to Word or Google docs that lets you choose styling options from the menu (before you had to either have the R Markdown code memorized or look it up for each of your styling choices). Another major benefit is that the new editor renders the R Markdown styling in real time so you can preview your paper before rendering to your output format.
+
+![](images/02-rmd-new-template.png){width="6.5in"}
+
+## **Source Editor**
+
+The image below displays the default R Markdown template in the "source editor" mode. Notice the symbols scattered throughout the text (#, \*, \<\>). Those are examples of R Markdown syntax, which is a flavor of Markdown syntax, an easy and quick, human-readable markup language for document styling.
 
 ## Adding Code-Generated Plots and Figures
 
