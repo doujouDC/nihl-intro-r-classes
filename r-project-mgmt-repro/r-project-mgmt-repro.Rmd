@@ -302,17 +302,25 @@ Note that you have the option to select *Use the current date when rendering the
 
 You may also consider exploring changing date formats [following these tips](https://bookdown.org/yihui/rmarkdown-cookbook/update-date.html).
 
+##Source Editor
+
+The image below displays the default R Markdown template in the "source editor" mode. Notice the symbols scattered throughout the text (#, \*, \<\>). Those are examples of R Markdown syntax, which is a flavor of Markdown syntax, an easy and quick, human-readable markup language for document styling.
+
+![](images/02-rmd-new-template.png){width="6.5in"}
+
+Figure 13: Creating an RMD file in RStudio.
+
 ## **Visual Editor**
 
 RStudio released a new major update to their IDE in January 2020, which includes a new "visual editor" for R Markdown to supplement their original editor (which we will call the source editor) for authoring with R Markdown syntax.
 
-The new visual editor is friendlier with a graphical user interface similar to Word or Google docs that lets you choose styling options from the menu (before you had to either have the R Markdown code memorized or look it up for each of your styling choices). Another major benefit is that the new editor renders the R Markdown styling in real time so you can preview your paper before rendering to your output format.
+The new visual editor is friendlier with a graphical user interface similar to Word or Google docs that lets you choose styling options from the menu (before you had to either have the R Markdown code memorized or look it up for each of your styling choices). Another major benefit is that the new editor renders the R Markdown styling in real time so you can preview your paper before rendering to your output format. The image below is displaying the same document using the visual editor.
 
 ![](images/02-rmd-new-template.png){width="6.5in"}
 
-## **Source Editor**
+On a PC the visual editor is accessible through a small button on the far right side of the script/document pane in RStudio. The icon is a protractor, but from further away it just looks like a squiggly "A".
 
-The image below displays the default R Markdown template in the "source editor" mode. Notice the symbols scattered throughout the text (#, \*, \<\>). Those are examples of R Markdown syntax, which is a flavor of Markdown syntax, an easy and quick, human-readable markup language for document styling.
+On a Mac there are Source/Visual tabs on the Menu panel
 
 ## Adding Code-Generated Plots and Figures
 
