@@ -322,13 +322,67 @@ On a PC the visual editor is accessible through a small button on the far right 
 
 On a Mac there are Source/Visual tabs on the Menu panel
 
-## Adding Code-Generated Plots and Figures
+# Adding Code-Generated Plots and Figures
 
-## Reproducible & Efficient Methods of Using Code Chunks
+## **Knitr?**
 
-## Bibliography, Citations & Cross-Referencing
+[Knitr](https://yihui.org/knitr/) is the engine in RStudio which creates the "dynamic" part of R Markdown reports. It's specifically a package that allows the integration of R code into the html, word, pdf, or LaTex document you have specified as your output for R Markdown. There are two main ways to process code with Knitr in R Markdown documents:
 
-## Publishing your project
+1.  Code Chunks
+
+2.  Inline Code
+
+## **Inserting Code Chunks**
+
+Code chunks are better when you need to do something more sophisticated with your code, such as building plots or tables. They also incorporate syntax which allows modifications to how that code is rendered and styled in your final output. We'll learn more about that as we walk through the "anatomy" of a code chunk.
+
+### **Start a new .Rmd File**
+
+First, though, let's open a new `.rmd` document to get a look at how code chunks work before integrating them into our paper.
+
+Again, open a new document by navigating to `File > New File > R Markdown`. Add the title `Code-Chunk-Test`.
+
+![](images/02-name-new-rmd.png){width="6.5in"}
+
+If you scroll down the doc that you just created you can see that the RMD file is already populated with text and code.
+
+Let's first delete the generic text because we don't need it at this point (all except the first code chunk that is - we'll get back to that in a second).
+
+### **Basic Anatomy of the Code Chunk**
+
+You can quickly insert chunks like these into your file with:
+
+-   the keyboard shortcut Ctrl + Alt + I (OS X: Cmd + Option + I)
+
+-   the Add Chunk command in the editor toolbar
+
+-   or by typing the chunk delimiters {r} and \`\`\`.
+
+The most basic (and empty) code chunk looks like this:
+
+![](images/blank-code-chunk.png){width="6.5in"}
+
+Although I am demostrating using R in this workshop, it's possible to use other programming or markup languages. For example, we have seen that we can use LaTeX code for equations. You can also use python and a handful of other languages.
+
+![](images/code-chunk-other.png){width="6.5in"}
+
+There's a button you can use in the RStudio menu to generate the code chunks automatically. Automatic code chunk generation is available for several other languages as well. Also, you can use the keyboard shortcut `ctrl`+`alt`+`i` for Windows and `command`+`option`+`i` for Mac.
+
+![](images/code-chunk-script.png){width="6.5in"}
+
+As you can see in Figure xx, the console is blank because we have not executed/run the code chunk.
+
+## **Run the code in a code chunk**
+
+We have options for running and debugging code that don't require us to wait for the file to render. **START HERE IN THE AM**
+
+1) Run from code chunk (green play button on the right top corner). This allows us to run one specific code chunk.
+
+# Reproducible & Efficient Methods of Using Code Chunks
+
+# Bibliography, Citations & Cross-Referencing
+
+# Publishing your project
 
 # Licenses
 
