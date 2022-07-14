@@ -416,6 +416,8 @@ We just saw how to run our code in our code chunks to see a preview of the code 
 1.  The code is run (all code chunks will run automatically).
 2.  Second, (if there are no code errors) the document of choice will render for our whole R Markdown document.
 
+![](images/knit-01.png){width="6.5in"}
+
 # Reproducible & Efficient Methods of Using Code Chunks
 
 # Bibliography, Citations & Cross-Referencing
