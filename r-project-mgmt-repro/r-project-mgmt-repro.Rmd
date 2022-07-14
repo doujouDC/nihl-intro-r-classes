@@ -15,6 +15,18 @@ csl: apa.csl
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Background Information
+
+## R Project Management URLs
+
+Introduction to Reproducible Publications with RStudio: <https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/>
+
+R for Reproducible Scientific Analysis: <https://swcarpentry.github.io/r-novice-gapminder/>
+
+Reproducible Research Data and Project Management in R: <https://annakrystalli.me/rrresearchACCE20/>
+
+Using Projects: <https://support.rstudio.com/hc/en-us/articles/200526207-Using-RStudio-Projects>
+
 # Introduction
 
 This one-hour class focuses on data and project management using R and RStudio. RStudio makes it possible to work on a complete research project in a more efficient, integrated, and organized manner. RStudio also connects with Git and Github and learners will have a chance to experiment with this integration and understand its advantages for collaboration and version control. Participants will learn how to create reproducible documents that combine code, analysis, and narrative. This intermediate-level course is designed to be relevant to students from different disciplines. Some familiarity or experience in R and RStudio is recommended but not required. Students are encouraged to install [R](https://mirrors.nics.utk.edu/cran/) and [RStudio](https://www.rstudio.com/products/rstudio/download/#download) before the webinar so that they can follow along with the instructor. Attendees will need to download the class data before the webinar.
@@ -374,9 +386,9 @@ As you can see in Figure xx, the console is blank because we have not executed/r
 
 ## **Run the code in a code chunk**
 
-We have options for running and debugging code that don't require us to wait for the file to render. **START HERE IN THE AM**
+We have options for running and debugging code that don't require us to wait for the file to render.
 
-1) Run from code chunk (green play button on the right top corner). This allows us to run one specific code chunk.
+1)  Run from code chunk (green play button on the right top corner). This allows us to run one specific code chunk.
 
 # Reproducible & Efficient Methods of Using Code Chunks
 
