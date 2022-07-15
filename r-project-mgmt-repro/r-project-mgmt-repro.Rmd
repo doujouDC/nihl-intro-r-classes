@@ -398,9 +398,7 @@ On a Mac there are Source/Visual tabs on the Menu panel
 
 # Adding Code-Generated Plots and Figures
 
-## Knitr
-
-[Knitr](https://yihui.org/knitr/) is the engine in RStudio which creates the "dynamic" part of R Markdown reports. It's specifically a package that allows the integration of R code into the html, word, pdf, or LaTex document you have specified as your output for R Markdown. There are two main ways to process code with Knitr in R Markdown documents:
+There are two main ways to process code with Knitr in R Markdown documents:
 
 1.  Code Chunks
 
@@ -465,14 +463,37 @@ Figure 14: Running a code chunk from the Code-Chunk menu.
 | Go to next chunk/title     | Ctrl+PgDown         | Command+PgDown      |
 | Go to previous chunk/title | Ctrl+PgUp           | Command+PgUp        |
 
-## Knitting with Code Chunks
+### **Labeling Code Chunk**
+
+While not necessary for running your code, it is good practice is to give a name to each code chunk because it gives the chunk a unique identifier which allows for more advanced options (such as cross-referencing) to work with your rmd files later on:
+
+`{r chunk-name}`
+
+Some things to keep in mind
+
+-   The chunk name is the only value other than r in the code chunk options that doesn\'t require a tag (i.e. `echo =` )
+
+-   The chunk label has to be unique (i.e.you can\'t use the the same name for multiple chunks)
+
+We\'ll see in a bit where this code chunk label comes in handy. But, for now let\'s go back and give our first code chunk a name:
+
+`{r Importing our Data}`
+
+## Producing Your Document
+
+## Knitr
+
+[Knitr](https://yihui.org/knitr/) is the engine in RStudio which creates the "dynamic" part of R Markdown reports. It's specifically a package that allows the integration of R code into the html, word, pdf, or LaTex document you have specified as your output for R Markdown.
 
 We just saw how to run our code in our code chunks to see a preview of the code output. However, if we want to produce a final report with code, we need to use the Knit button. Using the knit button with code chunks is a two step process:
 
 1.  The code is run (all code chunks will run automatically).
 2.  Second, (if there are no code errors) the document of choice will render for our whole R Markdown document.
+3.  Figure 15 is showing the Knitr options available
 
 ![](images/knit-01.png){width="6.5in"}
+
+Figure 15: Knitr options in R-markdown.
 
 # Reproducible & Efficient Methods of Using Code Chunks
 
