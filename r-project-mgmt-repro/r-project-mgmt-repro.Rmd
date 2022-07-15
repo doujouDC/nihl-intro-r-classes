@@ -86,16 +86,6 @@ RStudio is an integrated development environment (IDE) for R and Python. It incl
 -   Integrates with Collaboration and Publishing Tools
 -   Creates documents using R Markdown
 
-# Creating a Project Using Version Control in RStudio
-
-Using version control is a powerful feature to make your research more reproducible and better organized. In order to use versioning while working in RStudio the first step is to make sure your work is set up as an R Project, because you may not use the versioning features in RStudio without one. There are three options for doing this depending on your given scenario:
-
-1.  New Directory - start a brand new R project (with the option of version control).
-2.  Existing Directory - add existing work to a R project (with the option of setting up version control).
-3.  Version Control Continue an existing R project that already uses version control (i.e. download from GitHub).
-
-We will be using option 3, setting an R project on GitHub and then importing this into RStudio.
-
 ## Setting up R for Projects
 
 There are a number of RStudio settings that are recommended. These settings will force RStudio to start "fresh" each time you open RStudio.
@@ -113,6 +103,18 @@ You might want to also choose UTF-8 as the default text encoding. This setting i
 ## RStudio Projects
 
 An [RStudio Project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects) provides a set of tools that allow you to organize your scripts, files, and output: \* Allows you to navigate quickly to your working directory, and it is a great way to keep all your data organized. \* Can preserve custom settings and open files to make it easier to resume work after a break. \* An RStudio project is different from an R session. Meaning that an R session is all the objects and work done in R. Sessions are usually kept in working memory, until you restart R.
+
+## 
+
+# Creating a Project Using Version Control in RStudio
+
+Using version control is a powerful feature to make your research more reproducible and better organized. In order to use versioning while working in RStudio the first step is to make sure your work is set up as an R Project, because you may not use the versioning features in RStudio without one. There are three options for doing this depending on your given scenario:
+
+1.  New Directory - start a brand new R project (with the option of version control).
+2.  Existing Directory - add existing work to a R project (with the option of setting up version control).
+3.  Version Control Continue an existing R project that already uses version control (i.e. download from GitHub).
+
+We will be using option 3, setting an R project on GitHub and then importing this into RStudio.
 
 ## Creating a New Repository in GitHub
 
@@ -221,7 +223,7 @@ Although there is no "best" way to lay out a project, there are some general pri
 
 Additionally, we'd recommend to include README, LICENSE, and CITATION files! Additionaly recommendations for projects and creating folders is covered in the Introduction to R and Rstudio class. Class handouts are available upon request.
 
-##Practices for Naming Files
+## Practices for Naming Files
 
 ### Machine-readable
 
