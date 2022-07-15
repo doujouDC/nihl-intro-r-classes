@@ -390,6 +390,8 @@ The new visual editor is friendlier with a graphical user interface similar to W
 
 ![](images/02-rmd-new-template.png){width="6.5in"}
 
+Figure 10: Source/Visual options for markdown
+
 On a PC the visual editor is accessible through a small button on the far right side of the script/document pane in RStudio. The icon is a protractor, but from further away it just looks like a squiggly "A".
 
 On a Mac there are Source/Visual tabs on the Menu panel
@@ -426,23 +428,29 @@ Although I am demostrating using R in this workshop, it's possible to use other 
 
 ![](images/code-chunk-other.png){width="6.5in"}
 
-There's a button you can use in the RStudio menu to generate the code chunks automatically. Automatic code chunk generation is available for several other languages as well. Also, you can use the keyboard shortcut `ctrl`+`alt`+`i` for Windows and `command`+`option`+`i` for Mac.
+Figure 11: Code options available in R-markdown.
+
+There's a button you can use in the RStudio menu to generate the code chunks automatically. Automatic code chunk generation is available for several other languages as well. Also, you can use the keyboard shortcut `ctrl`+`alt`+`i` for Windows and `command`+`option`+`i` for Mac. As you can see in Figure 12, the console is blank because we have not executed/run the code chunk.
 
 ![](images/code-chunk-script.png){width="6.5in"}
 
-As you can see in Figure xx, the console is blank because we have not executed/run the code chunk.
+Figure 12: Code chunk in R-markdown.
 
 ## Run the code in a code chunk
 
 There are 3 main options for running and debugging code that don't require us to wait for the file to render.
 
-1)  Run from code chunk (green play button on the right top corner). This allows us to run one specific code chunk.
+1)  Run from code chunk (green play button on the right top corner). This allows us to run one specific code chunk [Figure13].
 
 ![](images/code-chunk-run-01.png){width="6.5in"}
 
-2.  Run menu - this gives more options for running code chunks including the current one, the next one, all chunks, etc.
+Figure 13: Running a code chunk from the code-box.
+
+2.  Run menu, which gives more options for running code chunks including the current one, the next one, all chunks, etc [Figure 14].
 
 ![](images/code-run-chunk-02.png){width="6.5in"}
+
+Figure 14: Running a code chunk from the Code-Chunk menu.
 
 3.  Using keyboard shortcuts
 
