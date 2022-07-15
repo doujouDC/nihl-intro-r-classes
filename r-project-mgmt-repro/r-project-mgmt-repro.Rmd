@@ -408,7 +408,7 @@ There are two main ways to process code with Knitr in R Markdown documents:
 
 Code chunks are better when you need to do something more sophisticated with your code, such as building plots or tables. They also incorporate syntax which allows modifications to how that code is rendered and styled in your final output. We'll learn more about that as we walk through the "anatomy" of a code chunk.
 
-### Basic Anatomy of the Code Chunk
+## Basic Anatomy of the Code Chunk
 
 You can quickly insert chunks like these into your file with:
 
@@ -428,7 +428,13 @@ Although I am demostrating using R in this workshop, it's possible to use other 
 
 Figure 11: Code options available in R-markdown.
 
-There's a button you can use in the RStudio menu to generate the code chunks automatically. Automatic code chunk generation is available for several other languages as well. Also, you can use the keyboard shortcut `ctrl`+`alt`+`i` for Windows and `command`+`option`+`i` for Mac. As you can see in Figure 12, the console is blank because we have not executed/run the code chunk.
+There's a button you can use in the RStudio menu to generate the code chunks automatically. Automatic code chunk generation is available for several other languages as well. Also, you can use the keyboard shortcut `ctrl`+`alt`+`i` for Windows and `command`+`option`+`i` for Mac. As you can see in Figure 12, the console is blank because we have not executed/run the code chunk. Let us enter the following read statement into our first code chunk:
+
+`# This is a example of a code chunk to read in some data`
+
+`library(tidyverse)`
+
+`read_data <- "../raw-data/combined.csv"`
 
 ![](images/code-chunk-script.png){width="6.5in"}
 
@@ -463,7 +469,7 @@ Figure 14: Running a code chunk from the Code-Chunk menu.
 | Go to next chunk/title     | Ctrl+PgDown         | Command+PgDown      |
 | Go to previous chunk/title | Ctrl+PgUp           | Command+PgUp        |
 
-### **Labeling Code Chunk**
+## **Labeling Code Chunk**
 
 While not necessary for running your code, it is good practice is to give a name to each code chunk because it gives the chunk a unique identifier which allows for more advanced options (such as cross-referencing) to work with your rmd files later on:
 
@@ -471,13 +477,49 @@ While not necessary for running your code, it is good practice is to give a name
 
 Some things to keep in mind
 
--   The chunk name is the only value other than r in the code chunk options that doesn\'t require a tag (i.e. `echo =` )
+-   The chunk name is the only value other than r in the code chunk options that doesn't require a tag (i.e. `echo =` )
 
--   The chunk label has to be unique (i.e.you can\'t use the the same name for multiple chunks)
+-   The chunk label has to be unique (i.e.you can't use the the same name for multiple chunks)
 
-We\'ll see in a bit where this code chunk label comes in handy. But, for now let\'s go back and give our first code chunk a name:
+We'll see in a bit where this code chunk label comes in handy. But, for now let's go back and give our first code chunk a name:
 
-`{r Importing our Data}`
+1.  `{r Importing our Data}`
+
+2.  Then, run the code-chunk
+
+Figure 15 is displaying the output of the code-chunk. Can you explain what is happening in the console?
+
+![](images/knit-02.png){width="6.5in"}
+
+Figure 15: Output from our first code chunk.
+
+## Code Chunk Options
+
+There are over 50 different code chunk options. Wow, that is a lot. Obviously we will not go over all of them, but they fall into several larger categories including: code evaluation, text output, code style, cache options, plot output and animation.
+
+You can find a complete list of code chunk options on Knitr developer, Yihui Xie's, [online guide to knitr](https://yihui.org/knitr/options/). Or, you can find a brief list of all options on the R Markdown Reference guide on page 3 accesible through the RStudio Interface by navigating to the main menu bar `Help > Cheat Sheets > R Markdown Reference Guide`.
+
+The chunk name is the only value other than `r` in the code chunk options that doesn't require a tag (i.e. the "= VALUE" part of `option = VALUE`). So chunk options will always require a tag, and the syntax will be in the form:
+
+`{r chunk-label, option = VALUE}`
+
+the option always follows the code chunk label (don't forget to add a `,` after the label either).
+
+## Code Evaluation Option
+
+-   **include** = (logical) whether to include the chunk output in the output document (defaults to TRUE).
+
+## **Text Output Options**
+
+-   **eval** = (logical or numeric) TRUE/FALSE to evaluate (or not) or a numeric value like c(1,3) (only evaluate expressions 1 and 3)
+
+-   **echo** = (logical or numeric - following the same rules as above) whether to display source code or not.
+
+-   **results** = (logical or character) text output of the code can be hidden (hide or FALSE), or delineated in a certain way (default 'markup').
+
+-   **warning** = (logical) whether to display the warnings in the output (default TRUE). FALSE will output warnings to the console only.
+
+-   **message** = (logical) whether or not to display messages that appear when running the code (default TRUE).
 
 ## Producing Your Document
 
