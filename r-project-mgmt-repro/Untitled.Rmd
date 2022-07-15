@@ -12,7 +12,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r}
+```{r Importing our Data}
 # This is a example of a code chunk to read in some data
 library(tidyverse)
 read_data <- "../raw-data/combined.csv"
