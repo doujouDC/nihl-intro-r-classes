@@ -170,13 +170,17 @@ The ability to create an SSH key is location under settings [Figure 7].
 
 Figure 7: Creating SSH keys in GitHub.
 
-Depending on your OS you might also need to create a Personal Access Token that is used to connect RStudio to GitHub, the first time you sync [Figure 8].
+## Before you "Sync" Your Repository
+
+Depending on the authentic methods that you have in GitHub, you might also need to create a Personal Access Token that is used to connect RStudio to GitHub, the first time you sync [Figure 8].
 
 ![](images/git-hub-04.png){width="6.5in"}
 
 Figure 8: Creating a Personal Access Code in GitHub.
 
-## Before you "Sync" Your Repository
+Depending on the OS that you use, you might need to authenticate via the RStudio Terminal.
+
+## 
 
 # Creating a New Project in RStudio
 
