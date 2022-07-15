@@ -116,7 +116,7 @@ Using version control is a powerful feature to make your research more reproduci
 
 We will be using option 3, setting an R project on GitHub and then importing this into RStudio.
 
-## **About Authentication to GitHub**
+##About Authentication to GitHub
 
 You can securely access your account's resources by authenticating to GitHub, using different credentials depending on where you authenticate.
 
@@ -130,11 +130,11 @@ You can access your resources in GitHub in a variety of ways: in the browser, vi
 
 -   SSH key
 
-## **Authenticating in your browser**
+##Authenticating in your browser\*\*
 
 You will authenticate using your GitHub.com username and password. You may also use two-factor authentication and SAML single sign-on, which can be required by organization and enterprise owners. The help [documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github) for this topic on GitHub is an excellent resource. I will talk about sync issues in a separate section.
 
-## **Choosing a URL for your remote repository**
+##Choosing a URL for your remote repository\*\*
 
 There are several ways to clone repositories available on GitHub.com.
 
@@ -325,7 +325,7 @@ You will also need to install the [knitr](http://yihui.name/knitr/) package. Kni
 
 There are a number of packages that are required for `rmarkdown` and `knitr`, these should install automatically.
 
-### Get Started
+### Getting Started
 
 This [page](https://rmarkdown.rstudio.com/lesson-1.html) provides a nice overview of R markdown the top provide examples of R Markdown documents, as well as an in depth discussion of various R Markdown topics.
 
@@ -339,13 +339,21 @@ You may also find the following resources helpful:
 
 ## Writing and Styling Rmd Documents
 
-Within RStudio, click File → New File → R Markdown and you'll get a dialog box like this:
+Let us create a new document by navigating to `File > New File > R Markdown`.
 
-![](images/02-name-new-rmd.png){width="4.5in"}
+-   Add the title `Code-Chunk-Test`.
 
-Figure 12: Creating an RMD file in RStudio.
+-   Add your name as author
 
-Give it a title: **Introduction to R Markdown**
+-   Select "Use current date when rendering documents"
+
+![](images/02-name-new-rmd.png){width="6.5in"}
+
+Figure 8: Creating a new markdown document
+
+If you scroll down the doc that you just created you can see that the RMD file is already populated with text and code.
+
+Let's first delete the generic text because we don't need it at this point (all except the first code chunk that is - we'll get back to that in a second).
 
 ## Basic components of R Markdown
 
@@ -366,15 +374,15 @@ Note that you have the option to select *Use the current date when rendering the
 
 You may also consider exploring changing date formats [following these tips](https://bookdown.org/yihui/rmarkdown-cookbook/update-date.html).
 
-##Source Editor
+## Source Editor
 
 The image below displays the default R Markdown template in the "source editor" mode. Notice the symbols scattered throughout the text (#, \*, \<\>). Those are examples of R Markdown syntax, which is a flavor of Markdown syntax, an easy and quick, human-readable markup language for document styling.
 
 ![](images/02-rmd-new-template.png){width="6.5in"}
 
-Figure 13: Creating an RMD file in RStudio.
+Figure 9: Creating an RMD file in RStudio.
 
-## **Visual Editor**
+## Visual Editor
 
 RStudio released a new major update to their IDE in January 2020, which includes a new "visual editor" for R Markdown to supplement their original editor (which we will call the source editor) for authoring with R Markdown syntax.
 
@@ -388,7 +396,7 @@ On a Mac there are Source/Visual tabs on the Menu panel
 
 # Adding Code-Generated Plots and Figures
 
-## **Knitr?**
+## Knitr
 
 [Knitr](https://yihui.org/knitr/) is the engine in RStudio which creates the "dynamic" part of R Markdown reports. It's specifically a package that allows the integration of R code into the html, word, pdf, or LaTex document you have specified as your output for R Markdown. There are two main ways to process code with Knitr in R Markdown documents:
 
@@ -396,23 +404,11 @@ On a Mac there are Source/Visual tabs on the Menu panel
 
 2.  Inline Code
 
-## **Inserting Code Chunks**
+## Inserting Code Chunks
 
 Code chunks are better when you need to do something more sophisticated with your code, such as building plots or tables. They also incorporate syntax which allows modifications to how that code is rendered and styled in your final output. We'll learn more about that as we walk through the "anatomy" of a code chunk.
 
-### **Start a new .Rmd File**
-
-First, though, let's open a new `.rmd` document to get a look at how code chunks work before integrating them into our paper.
-
-Again, open a new document by navigating to `File > New File > R Markdown`. Add the title `Code-Chunk-Test`.
-
-![](images/02-name-new-rmd.png){width="6.5in"}
-
-If you scroll down the doc that you just created you can see that the RMD file is already populated with text and code.
-
-Let's first delete the generic text because we don't need it at this point (all except the first code chunk that is - we'll get back to that in a second).
-
-### **Basic Anatomy of the Code Chunk**
+### Basic Anatomy of the Code Chunk
 
 You can quickly insert chunks like these into your file with:
 
@@ -436,7 +432,7 @@ There's a button you can use in the RStudio menu to generate the code chunks aut
 
 As you can see in Figure xx, the console is blank because we have not executed/run the code chunk.
 
-## **Run the code in a code chunk**
+## Run the code in a code chunk
 
 There are 3 main options for running and debugging code that don't require us to wait for the file to render.
 
@@ -461,7 +457,7 @@ There are 3 main options for running and debugging code that don't require us to
 | Go to next chunk/title     | Ctrl+PgDown         | Command+PgDown      |
 | Go to previous chunk/title | Ctrl+PgUp           | Command+PgUp        |
 
-## **Knitting with Code Chunks**
+## Knitting with Code Chunks
 
 We just saw how to run our code in our code chunks to see a preview of the code output. However, if we want to produce a final report with code, we need to use the Knit button. Using the knit button with code chunks is a two step process:
 

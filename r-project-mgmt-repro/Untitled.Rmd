@@ -2,7 +2,10 @@
 title: "Code-Chunk-Test"
 author: "Doug Joubert"
 date: "`r Sys.Date()`"
-output: html_document
+output: 
+  word_document: 
+    toc: yes
+    fig_height: 4
 ---
 
 ```{r setup, include=FALSE}
