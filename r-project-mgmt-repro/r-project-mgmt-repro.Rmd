@@ -178,9 +178,25 @@ Depending on the authentic methods that you have in GitHub, you might also need 
 
 Figure 8: Creating a Personal Access Code in GitHub.
 
-Depending on the OS that you use, you might need to authenticate via the RStudio Terminal.
+Depending on the OS that you use, you might need to authenticate via the RStudio Shell. The RStudio Terminal is accessed from the Tools menu.
 
-## 
+![](images/git-hub-06.png){width="6.5in"}
+
+Figure 9: Connecting to the Shell via RStudio.
+
+The first time to connect to your remote repository, you be prompted to enter your username and password via the Shell [Figure 10].
+
+![](images/git-01.png){width="6.5in"}
+
+Figure 10: Accessing a project via the Shell.
+
+As you can see I am in the project working directory: `ORS-02099312:nihl-intro-r-series joubertd$` If I type `ls`, I will see all of the files in my working directory [Figure 11]. There will be no folders when you first create a new project.
+
+![](images/git-02.png){width="6.5in"}
+
+Figure 11: Files structure in my working directly.
+
+If you need a refresher, the Carpentries have a great [lesson](https://swcarpentry.github.io/git-novice/) on using GIT.
 
 # Creating a New Project in RStudio
 
