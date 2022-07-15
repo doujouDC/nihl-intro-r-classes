@@ -116,7 +116,35 @@ Using version control is a powerful feature to make your research more reproduci
 
 We will be using option 3, setting an R project on GitHub and then importing this into RStudio.
 
+## **About Authentication to GitHub**
+
+You can securely access your account's resources by authenticating to GitHub, using different credentials depending on where you authenticate.
+
+To keep your account secure, you must authenticate before you can access certain resources on GitHub. When you authenticate to GitHub, you supply or confirm credentials that are unique to you to prove that you are exactly who you declare to be.
+
+You can access your resources in GitHub in a variety of ways: in the browser, via GitHub Desktop or another desktop application, with the API, or via the command line. Each way of accessing GitHub supports different modes of authentication.
+
+-   Username and password with two-factor authentication
+
+-   Personal access token
+
+-   SSH key
+
+## **Authenticating in your browser**
+
+You will authenticate using your GitHub.com username and password. You may also use two-factor authentication and SAML single sign-on, which can be required by organization and enterprise owners. The help [documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github) for this topic on GitHub is an excellent resource. I will talk about sync issues in a separate section.
+
+## **Choosing a URL for your remote repository**
+
+There are several ways to clone repositories available on GitHub.com.
+
+When you view a repository while signed in to your account, the URLs you can use to clone the project onto your computer are available below the repository details.
+
+For information on setting or changing your remote URL, see "[Managing remote repositories](https://docs.github.com/en/github/getting-started-with-github/managing-remote-repositories)."
+
 ## Creating a New Repository in GitHub
+
+GitHub's collaborative approach to development depends on publishing commits from your local repository to GitHub for other people to view, fetch, and update.
 
 [At this link](https://github.com/signup), you may sign into your GitHub account or create one if you have not already.
 
@@ -148,7 +176,9 @@ Depending on your OS you might also need to create a Personal Access Token that 
 
 Figure 8: Creating a Personal Access Code in GitHub.
 
-## Creating a New Project in RStudio
+## Before you "Sync" Your Repository
+
+# Creating a New Project in RStudio
 
 1.  Open RStudio
 2.  Choose New Project from the Tools Menu.
