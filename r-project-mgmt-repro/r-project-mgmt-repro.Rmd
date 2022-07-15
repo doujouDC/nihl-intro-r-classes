@@ -503,7 +503,7 @@ The chunk name is the only value other than `r` in the code chunk options that d
 
 `{r chunk-label, option = VALUE}`
 
-the option always follows the code chunk label (don't forget to add a `,` after the label either).
+The option always follows the code chunk label (don't forget to add a `,` after the label either).
 
 ## Code Evaluation Option
 
