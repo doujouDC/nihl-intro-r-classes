@@ -543,9 +543,23 @@ Let\'s direct our attention back to the first code chunk in this document that I
 
 The code looks like:
 
+![](images/code-chunk-03.png){width="624"}
+
+Figure 16: Example of a global code chunk.
+
+This is an option to globally set options for the entire R Markdown document. Can you imagine how much work it would be to add the chunk options each time? Also, what if we need different options for different figures. We can automate setting options by adding this special code chunk at the beginning of the document. Then, each code chunk we add will refer to those \"global\" options when it runs.
+
 # Reproducible & Efficient Methods of Using Code Chunks
 
+I think this should be an advanced class. I will need to identify "breakpoints" after I do the dry run and teach the class for the first time.
+
 # Bibliography, Citations & Cross-Referencing
+
+Older versions of RStudio require [Pandoc\'s](https://pandoc.org/MANUAL.html#citation-syntax) citation syntax to render bibliographies correctly. We won\'t be covering this approach extensively in this workshop, since the new visual editor has made this process much more simple. You can refer to our [previous workshop on R Markdown](https://ucsbcarpentry.github.io/R-markdown/06-citations-bib/index.html) pre-visual editor for more information.
+
+The new visual editor in RStudio 1.4 has made citations and cross-referencing much easier, by offering different options for referencing various types of sources. Before getting into these different features, let\'s first learn how you can call the citation window dialog on Rstudio and how to navigate these different options.
+
+## Creating Your Reference List
 
 # Publishing your project
 
