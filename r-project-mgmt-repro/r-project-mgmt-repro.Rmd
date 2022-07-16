@@ -561,6 +561,42 @@ The new visual editor in RStudio 1.4 has made citations and cross-referencing mu
 
 ## Creating Your Reference List
 
+You need to have a list of references saved to a bib file before you can insert citations into your R-markdown document. A file with the BIB file extension is a BibTeX Bibliographical Database file. It\'s a specially formatted text file that lists references pertaining to a particular source of information. Each item can be edited, in case there is any metadata incorrect or missing.
+
+There are a number of ways to create your bib file.
+
+1.  Manually
+2.  Use a citation tool like Endnote or Zotero
+3.  Use the lookup feature to search for publications by DOI (Digital Object Identifier), Crossref, DataCite, or PubMed ID
+
+Most citation and reference management tools such as Refworks, Endnote, Mendeley and Zotero, as well as some most scientific databases allow you to export citations as .bib [BibteX](https://en.wikipedia.org/wiki/BibTeX) files.. I am going to show you how to export references from Endnote to your bib file. Figure 17 is displaying all of the references in my Endnote Library. I have highlighted the Bioinformatics folder since I only want to explore these records.
+
+![](images/bib-01.png){width="640"}
+
+Figure 17: Example of an Endnote Library.
+
+The first thing I need to do is to get the records in the correct format (bibtex). The Output Style Manager is locating under the Tools Menu (I am on Mac OS) [Figure 18].
+
+![](images/bib-02.png){width="624"}
+
+Figure 18: Selecting the bibtext output format in Endnote.
+
+If *bibtext* format is not in the list of styles, you can use **Open Style Manager** to search for the *bibtex* format.
+
+The next step is to select all of the references that you want in your bib file and choose the **Copy Formatted Reference** option [Figure 19]. Please note that using **Copy** will not work.
+
+![](images/bib-03.png){width="642"}
+
+Figure 19: Copying references from an Endnote Library in *bibtext* format.
+
+Figure 20 i showing single reference that I pasted into a text editor. As you can see in Figure 20, the *bibtext* format is a tagged format that starts with an *article tag*.
+
+![](images/bib-04.png){width="640"}
+
+Figure 20: Example of a record in bibtext format.
+
+The BibTeX [website](http://www.bibtex.org/Format/) is a great resources for learning more about formatting options. Overleaf is another great [resource](Bibliography management with bibtex) with a focus on bibliographic management.
+
 # Publishing your project
 
 # Licenses
