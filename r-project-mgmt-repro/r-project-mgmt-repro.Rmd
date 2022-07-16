@@ -537,6 +537,12 @@ We just saw how to run our code in our code chunks to see a preview of the code 
 
 Figure 15: Knitr options in R-markdown.
 
+# **Global Code Chunk Options**
+
+Let\'s direct our attention back to the first code chunk in this document that I asked you not to delete.
+
+The code looks like:
+
 # Reproducible & Efficient Methods of Using Code Chunks
 
 # Bibliography, Citations & Cross-Referencing
