@@ -2,11 +2,14 @@
 title: "Code-Chunk-Test"
 author: "Doug Joubert"
 date: "`r Sys.Date()`"
-output: 
-  word_document: 
+output:
+  html_document:
+    toc: yes
+    df_print: paged
+  word_document:
     toc: yes
     fig_height: 4
-bibliography: nihl-r-classes.bib
+bibliography: "nihl-r-classes.bib"
 csl: apa.csl
 ---
 
@@ -21,3 +24,5 @@ read_data <- "../raw-data/combined.csv"
 ```
 
 We need to enter some text that we can cite [@RN1345].
+
+# References

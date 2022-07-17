@@ -652,7 +652,17 @@ By default, RStudio via Pandoc will use a Chicago author-date format for citatio
 
 You can find CSL formats on the [Zotero Style Repository](https://www.zotero.org/styles), which makes it easy to search for and download your desired style.
 
-Download the format you wish to use and call it out in the YAML. I have already saved the APA CSL file in the project folder. But if you would like to follow the process or try another style, go to the Zotero Style repo and select [American Psychological Association 7th edition](https://www.zotero.org/styles/apa) or any other style of your choice. You will notice that it will automatically download the file (e.g. `apa.csl`). Make sure to save it to your project directory in report/source folder. In the YAML we have to call the exact name of the file preceded by \"csl:\" The Header of your RMD file should now look like this:
+Download the format you wish to use and call it out in the YAML. I have already saved the APA CSL file in the project folder. But if you would like to follow the process or try another style, go to the Zotero Style repo and select [American Psychological Association 7th edition](https://www.zotero.org/styles/apa) or any other style of your choice. You will notice that it will automatically download the file (e.g. `apa.csl`). Make sure to save it to your project directory in report/source folder. In the YAML we have to call the exact name of the file preceded by \"csl:\" The Header of your RMD file should now look like this [Figure 26]:
+
+![](images/bib-10.png){width="640"}
+
+Figure 26: RMD Header with a linked bib file and output style.
+
+The bibliography will be formatted when you Knit your RMD file [Figure 27]. In Figure 27 I have knitted the RMD document in html format.
+
+![](images/bib-11.png){width="640"}
+
+Figure 27: Knitted document with formatted bibliography.
 
 # Publishing your project
 
