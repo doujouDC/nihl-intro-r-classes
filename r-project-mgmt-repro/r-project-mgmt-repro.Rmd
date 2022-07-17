@@ -622,6 +622,10 @@ Figure 21: Using the Export feature in Endnote.
 
 You must link the bib file and any associated output styles in the Header of your RMD file. You need to add the following lines of code in the Header [Figure 22].
 
+`bibliography: nihl-r-classes.bib`
+
+`csl: apa.csl`
+
 ![](images/bib-06.png){width="642"}
 
 Figure 22: Modifying the RMD header.
