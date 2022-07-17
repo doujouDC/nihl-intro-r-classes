@@ -7,8 +7,8 @@ output:
     df_print: paged
   word_document: 
     toc: yes
-bibliography: nihl-r-classes.bib
-csl: apa.csl
+bibliography:
+csl: 
 ---
 
 ```{r setup, include=FALSE}
@@ -539,7 +539,7 @@ Figure 15: Knitr options in R-markdown.
 
 # **Global Code Chunk Options**
 
-Let\'s direct our attention back to the first code chunk in this document that I asked you not to delete.
+Let's direct our attention back to the first code chunk in this document that I asked you not to delete.
 
 The code looks like:
 
@@ -547,7 +547,7 @@ The code looks like:
 
 Figure 16: Example of a global code chunk.
 
-This is an option to globally set options for the entire R Markdown document. Can you imagine how much work it would be to add the chunk options each time? Also, what if we need different options for different figures. We can automate setting options by adding this special code chunk at the beginning of the document. Then, each code chunk we add will refer to those \"global\" options when it runs.
+This is an option to globally set options for the entire R Markdown document. Can you imagine how much work it would be to add the chunk options each time? Also, what if we need different options for different figures. We can automate setting options by adding this special code chunk at the beginning of the document. Then, each code chunk we add will refer to those "global" options when it runs.
 
 # Reproducible & Efficient Methods of Using Code Chunks
 
@@ -555,13 +555,13 @@ I think this should be an advanced class. I will need to identify "breakpoints" 
 
 # Bibliography, Citations & Cross-Referencing
 
-Older versions of RStudio require [Pandoc\'s](https://pandoc.org/MANUAL.html#citation-syntax) citation syntax to render bibliographies correctly. We won\'t be covering this approach extensively in this workshop, since the new visual editor has made this process much more simple. You can refer to our [previous workshop on R Markdown](https://ucsbcarpentry.github.io/R-markdown/06-citations-bib/index.html) pre-visual editor for more information.
+Older versions of RStudio require [Pandoc's](https://pandoc.org/MANUAL.html#citation-syntax) citation syntax to render bibliographies correctly. We won't be covering this approach extensively in this workshop, since the new visual editor has made this process much more simple. You can refer to our [previous workshop on R Markdown](https://ucsbcarpentry.github.io/R-markdown/06-citations-bib/index.html) pre-visual editor for more information.
 
-The new visual editor in RStudio 1.4 has made citations and cross-referencing much easier, by offering different options for referencing various types of sources. Before getting into these different features, let\'s first learn how you can call the citation window dialog on Rstudio and how to navigate these different options.
+The new visual editor in RStudio 1.4 has made citations and cross-referencing much easier, by offering different options for referencing various types of sources. Before getting into these different features, let's first learn how you can call the citation window dialog on Rstudio and how to navigate these different options.
 
 ## Creating Your Reference List
 
-You need to have a list of references saved to a bib file before you can insert citations into your R-markdown document. A file with the BIB file extension is a BibTeX Bibliographical Database file. It\'s a specially formatted text file that lists references pertaining to a particular source of information. Each item can be edited, in case there is any metadata incorrect or missing.
+You need to have a list of references saved to a bib file before you can insert citations into your R-markdown document. A file with the BIB file extension is a BibTeX Bibliographical Database file. It's a specially formatted text file that lists references pertaining to a particular source of information. Each item can be edited, in case there is any metadata incorrect or missing.
 
 There are a number of ways to create your bib file.
 
@@ -595,7 +595,30 @@ Figure 20 i showing single reference that I pasted into a text editor. As you ca
 
 Figure 20: Example of a record in bibtext format.
 
-The BibTeX [website](http://www.bibtex.org/Format/) is a great resources for learning more about formatting options. Overleaf is another great [resource](Bibliography management with bibtex) with a focus on bibliographic management.
+The BibTeX [website](http://www.bibtex.org/Format/) is a great resources for learning more about formatting options. Overleaf is another great [resource](Bibliography%20management%20with%20bibtex) with a focus on bibliographic management.
+
+## Saving Your Reference List
+
+There are two ways to export the selected references from Endnote:
+
+1.  Copy and past into a text document
+2.  Using the Export feature in Endnote
+
+I will cover using the Export feature from Endnote. These steps are very similar in Zotero, Refworks or Mendeley [Figure 21]:
+
+1.  Make sure you have selected your records
+2.  Choose File-\>Export in Endnote
+3.  Make sure the Output Style says BibTeX
+4.  Make sure the file extension is bib
+5.  Make sure you are saving the file in the same folder as your RMD file.
+6.  Click Save
+7.  Make sure the file was saved to the correct directory. Note, that you might have to manually check the file extensions after you export it.
+
+![](images/bib-05.png){width="640"}
+
+Figure 21: Using the Export feature in Endnote.
+
+## Linking the Bib File to Your RMD file
 
 # Publishing your project
 
