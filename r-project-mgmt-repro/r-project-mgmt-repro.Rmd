@@ -3,12 +3,12 @@ title: "Project Management and Reproducibility in RStudio"
 author: "Doug Joubert"
 date: '2022-07-01'
 output:
-  html_document:
-    df_print: paged
   word_document: 
     toc: yes
-bibliography:
-csl: 
+  html_document:
+    df_print: paged
+bibliography: nihl-r-classes.bib
+csl: apa.csl
 ---
 
 ```{r setup, include=FALSE}
@@ -652,7 +652,7 @@ By default, RStudio via Pandoc will use a Chicago author-date format for citatio
 
 You can find CSL formats on the [Zotero Style Repository](https://www.zotero.org/styles), which makes it easy to search for and download your desired style.
 
-Download the format you wish to use and call it out in the YAML. I have already saved the APA CSL file in the project folder. But if you would like to follow the process or try another style, go to the Zotero Style repo and select [American Psychological Association 7th edition](https://www.zotero.org/styles/apa) or any other style of your choice. You will notice that it will automatically download the file (e.g. `apa.csl`). Make sure to save it to your project directory in report/source folder. In the YAML we have to call the exact name of the file preceded by \"csl:\" The Header of your RMD file should now look like this [Figure 26]:
+Download the format you wish to use and call it out in the YAML. I have already saved the APA CSL file in the project folder. But if you would like to follow the process or try another style, go to the Zotero Style repo and select [American Psychological Association 7th edition](https://www.zotero.org/styles/apa) or any other style of your choice. You will notice that it will automatically download the file (e.g. `apa.csl`). Make sure to save it to your project directory in report/source folder. In the YAML we have to call the exact name of the file preceded by "csl:" The Header of your RMD file should now look like this [Figure 26]:
 
 ![](images/bib-10.png){width="640"}
 
@@ -668,4 +668,6 @@ Figure 27: Knitted document with formatted bibliography.
 
 # Licenses
 
-**Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) 2022 by [the authors](https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/CITATION).**
+Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) 2022 by [the authors](https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/CITATION).
+
+# References
