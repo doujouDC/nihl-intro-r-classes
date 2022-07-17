@@ -630,6 +630,22 @@ You must link the bib file and any associated output styles in the Header of you
 
 Figure 22: Modifying the RMD header.
 
+Choose Insert\>Citation within RStudio. When you do this, you should see the records in the linked bib file [Figure 23].
+
+![](images/bib-07.png){width="640"}
+
+Figure 23: Inserting a citation in RStudio in Visual Mode.
+
+The search box in Figure 23 is a free text search. This means that it will search on the Author names and the title. Thus, if I search for the name **Cimino**, the reference list will filter to contain records that match my search string [Figure 24.
+
+![](images/bib-08.png){width="640"}
+
+Figure 24: Searching for a record in your bib file.
+
+The record number should appear at the insertion point in your RMD file [Figure 25].
+
+Figure 25: Reference inserted into a RMD document.
+
 # Publishing your project
 
 # Licenses

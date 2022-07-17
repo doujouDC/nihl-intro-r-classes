@@ -20,4 +20,4 @@ library(tidyverse)
 read_data <- "../raw-data/combined.csv"
 ```
 
-We need to enter some text that we can cite .
+We need to enter some text that we can cite [@RN1345].
