@@ -644,7 +644,17 @@ Figure 24: Searching for a record in your bib file.
 
 The record number should appear at the insertion point in your RMD file [Figure 25].
 
+![](images/bib-09.png){width="640"}
+
 Figure 25: Reference inserted into a RMD document.
+
+## **Changing Citation Styles**
+
+By default, RStudio via Pandoc will use a Chicago author-date format for citations and references. To use another style, you will need to specify a CSL (Citation Style Language) file in the csl metadata field in the YAML.
+
+But how can you identify which CSL you should use? You can find required formats on the [Zotero Style Repository](https://www.zotero.org/styles), which makes it easy to search for and download your desired style.
+
+Download the format you wish to use and call it out in the YAML. We have pre-saved the APA CSL file in the project folder for you. But if you would like to follow the process or try another style, go to the Zotero Style repo and select [American Psychological Association 7th edition](https://www.zotero.org/styles/apa) or any other style of your choice. You will notice that it will automatically download the file (e.g. `apa.csl`). Make sure to save it to your project directory in report/source folder. In the YAML we have to call the exact name of the file preceded by \"csl:\"
 
 # Publishing your project
 
