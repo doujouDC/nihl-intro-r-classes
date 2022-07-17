@@ -6,6 +6,8 @@ output:
   word_document: 
     toc: yes
     fig_height: 4
+bibliography: nihl-r-classes.bib
+csl: apa.csl
 ---
 
 ```{r setup, include=FALSE}

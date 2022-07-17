@@ -620,6 +620,12 @@ Figure 21: Using the Export feature in Endnote.
 
 ## Linking the Bib File to Your RMD file
 
+You must link the bib file and any associated output styles in the Header of your RMD file. You need to add the following lines of code in the Header [Figure 22].
+
+![](images/bib-06.png){width="642"}
+
+Figure 22: Modifying the RMD header.
+
 # Publishing your project
 
 # Licenses
