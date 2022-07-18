@@ -85,26 +85,23 @@ Why did no one notice these issues before it was too late? Because the data and 
 
 ### Makes it easier to write papers
 
-Transparency in your analysis makes writing papers much
-easier. For example, in a dynamic document (R-markdown) so that the results automatically update when the data are changed.
+Transparency in your analysis makes writing papers much easier. For example, in a dynamic document (R-markdown) so that the results automatically update when the data are changed.
 
 ### Helps reviewers see it your way
 
-What do you think is a major complaint of authors when going through peer review and addressing comments? "Reviewers didn’t even read the paper and had no idea what we were really doing. So, practice making the data and well-documented code easily accessible to the reviewers.
+What do you think is a major complaint of authors when going through peer review and addressing comments? "Reviewers didn't even read the paper and had no idea what we were really doing. So, practice making the data and well-documented code easily accessible to the reviewers.
 
 ### Enables continuity of your work
 
 Can you think of any examples where "not" employing this principle can lead to problems?
 
-- “I am so busy, I can’t remember all the details of all my projects”
-- “I did this analysis 6 months ago. Of course I can’t remember all the details after such a long time”
-- “My principle investigator (PI) said I should continue the project of a previous postdoc, but that postdoc is long gone and hasn’t saved any scripts or data”.
+-   "I am so busy, I can't remember all the details of all my projects"
+-   "I did this analysis 6 months ago. Of course I can't remember all the details after such a long time"
+-   "My principle investigator (PI) said I should continue the project of a previous postdoc, but that postdoc is long gone and hasn't saved any scripts or data".
 
 ### Helps to build your reputation
 
-For several papers, we have made our data, code and analyses available as an Experiment Package on Bioconductor. When I came up for tenure, I cited all of these packages as research output of my lab. Generally, making your
-analyses available in this way will help you to build a reputation
-for being an honest and careful researcher.
+For several papers, we have made our data, code and analyses available as an Experiment Package on Bioconductor. When I came up for tenure, I cited all of these packages as research output of my lab. Generally, making your analyses available in this way will help you to build a reputation for being an honest and careful researcher.
 
 # Using RStudio for your project
 
@@ -229,8 +226,7 @@ Figure 11: Files structure in my working directly.
 
 If you need to check to see what your username and email are you can use:
 
-`git config --global user.name`
-`git config --global user.email`
+`git config --global user.name` `git config --global user.email`
 
 If you need a refresher, the Carpentries have a great [lesson](https://swcarpentry.github.io/git-novice/) on using GIT.
 
@@ -291,7 +287,9 @@ We often have stress points in our research that may become breaking points, esp
 
 ## Discusion Points
 
-To what extent do these stress points affect your research projects? Are there additional issues that you've encountered that slow down or derail your work due to issues with project management?
+To what extent do these stress points affect your research projects?
+
+Are there additional issues that you've encountered that slow down or derail your work due to issues with project management?
 
 ## Project File/Folder Organization
 
@@ -307,7 +305,7 @@ Although there is no "best" way to lay out a project, there are some general pri
 4.  Put source for the project's scripts and programs in the src directory, and programs brought in from elsewhere or compiled locally in the bin directory.
 5.  Name all files to reflect their content or function.
 
-Additionally, we'd recommend to include README, LICENSE, and CITATION files! Additionaly recommendations for projects and creating folders is covered in the Introduction to R and Rstudio class. Class handouts are available upon request.
+Additionally, we'd recommend to include README, LICENSE, and CITATION files! Additional recommendations for projects and creating folders is covered in the Introduction to R and RStudio class. Class handouts are available upon request.
 
 ## Practices for Naming Files
 
@@ -338,6 +336,10 @@ Use chronological or logical order. With chronological, file name starts with da
     -   i.e. `CC-101_1_data.csv` *see data directory*
 
 Adapted from <https://datacarpentry.org/rr-organization1/01-file-naming/index.html>. For more tips on file naming, check: [The Dos and Don'ts of File Naming](https://www.library.ucsb.edu/sites/default/files/dls-n01-2021-filenaming.pdf).
+
+# Pushing and Pulling from GitHub
+
+Start on Tuesday
 
 # Working with R Markdown Files
 
