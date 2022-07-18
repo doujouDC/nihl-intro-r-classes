@@ -53,6 +53,8 @@ Science should routinely evaluate the reproducibility of findings that enjoy a p
 
 Reproducibility refers to the ability of a researcher to duplicate the results of a prior study using the same materials as were used by the original investigator. Reproducibility is a minimum necessary condition for a finding to be considered rigorous, believable and informative.
 
+## Nature Survey on Reproducibility
+
 A 2016 survey in Nature revealed that not being able to reproduce experiments is a problem across all domains of science [Figure 1]:
 
 ![](images/baker-01.png){width="6.5in"}
@@ -63,17 +65,46 @@ Figure 1: Reproducibility by discipline and problem identified [@RN1683].
 
 Figure 2:Attempts to publish reproducible research [@RN1683].
 
-If contributing to science and other researchers seems not to be compelling enough, here are 5 selfish reasons to work reproducibly according to Markowetz (2015):
+## Five Compelling Reasons to Practice These Principles
 
--   Helps to avoid data loss and disaster
+If contributing to science and other researchers seems not to be compelling enough, here are 5 selfish reasons to follow reproducibility best practices [@RN1682].
 
--   Makes it easier to write papers
+### Helps to avoid data loss and disaster
 
--   Helps reviewers see it your way
+![](images/ny-times-duke.png){width="640"}
 
--   Enables continuity of your work
+Two statisticians from MD Anderson found with research from Duke University.
 
--   Helps to build your reputation
+The issues discovered by Baggerly and Coombes could have easily been spotted by any co-author before submitting the paper:
+
+-   Data sets are not huge and can easily be spot-checked on a standard laptop
+
+-   You do not have to be a statistics wizard to realize that patient numbers differ, labels got swapped or samples appear multiple times with conflicting annotations in the same data set.
+
+Why did no one notice these issues before it was too late? Because the data and analysis were not transparent and required forensic bioinformatics to untangle.
+
+### Makes it easier to write papers
+
+Transparency in your analysis makes writing papers much
+easier. For example, in a dynamic document (R-markdown) so that the results automatically update when the data are changed.
+
+### Helps reviewers see it your way
+
+What do you think is a major complaint of authors when going through peer review and addressing comments? "Reviewers didn’t even read the paper and had no idea what we were really doing. So, practice making the data and well-documented code easily accessible to the reviewers.
+
+### Enables continuity of your work
+
+Can you think of any examples where "not" employing this principle can lead to problems?
+
+- “I am so busy, I can’t remember all the details of all my projects”
+- “I did this analysis 6 months ago. Of course I can’t remember all the details after such a long time”
+- “My principle investigator (PI) said I should continue the project of a previous postdoc, but that postdoc is long gone and hasn’t saved any scripts or data”.
+
+### Helps to build your reputation
+
+For several papers, we have made our data, code and analyses available as an Experiment Package on Bioconductor. When I came up for tenure, I cited all of these packages as research output of my lab. Generally, making your
+analyses available in this way will help you to build a reputation
+for being an honest and careful researcher.
 
 # Using RStudio for your project
 
@@ -106,8 +137,6 @@ You might want to also choose UTF-8 as the default text encoding. This setting i
 
 An [RStudio Project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects) provides a set of tools that allow you to organize your scripts, files, and output: \* Allows you to navigate quickly to your working directory, and it is a great way to keep all your data organized. \* Can preserve custom settings and open files to make it easier to resume work after a break. \* An RStudio project is different from an R session. Meaning that an R session is all the objects and work done in R. Sessions are usually kept in working memory, until you restart R.
 
-## 
-
 # Creating a Project Using Version Control in RStudio
 
 Using version control is a powerful feature to make your research more reproducible and better organized. In order to use versioning while working in RStudio the first step is to make sure your work is set up as an R Project, because you may not use the versioning features in RStudio without one. There are three options for doing this depending on your given scenario:
@@ -118,7 +147,7 @@ Using version control is a powerful feature to make your research more reproduci
 
 We will be using option 3, setting an R project on GitHub and then importing this into RStudio.
 
-##About Authentication to GitHub
+## About Authentication to GitHub
 
 You can securely access your account's resources by authenticating to GitHub, using different credentials depending on where you authenticate.
 
@@ -132,11 +161,11 @@ You can access your resources in GitHub in a variety of ways: in the browser, vi
 
 -   SSH key
 
-##Authenticating in your browser\*\*
+## Authenticating in your browser\*\*
 
 You will authenticate using your GitHub.com username and password. You may also use two-factor authentication and SAML single sign-on, which can be required by organization and enterprise owners. The help [documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github) for this topic on GitHub is an excellent resource. I will talk about sync issues in a separate section.
 
-##Choosing a URL for your remote repository\*\*
+## Choosing a URL for your remote repository
 
 There are several ways to clone repositories available on GitHub.com.
 
@@ -192,11 +221,16 @@ The first time to connect to your remote repository, you be prompted to enter yo
 
 Figure 10: Accessing a project via the Shell.
 
-As you can see I am in the project working directory: `ORS-02099312:nihl-intro-r-series joubertd$` If I type `ls`, I will see all of the files in my working directory [Figure 11]. There will be no folders when you first create a new project.
+As you can see I am in the project working directory: `ORS-02099312:nihl-intro-r-series joubertd$` If I type `ls`, I will see all of the files in my working directory [Figure 11]. There will be no folders when you first create a new project.
 
 ![](images/git-02.png){width="6.5in"}
 
 Figure 11: Files structure in my working directly.
+
+If you need to check to see what your username and email are you can use:
+
+`git config --global user.name`
+`git config --global user.email`
 
 If you need a refresher, the Carpentries have a great [lesson](https://swcarpentry.github.io/git-novice/) on using GIT.
 
