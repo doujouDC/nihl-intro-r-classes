@@ -3,10 +3,12 @@ title: "Project Management and Reproducibility in RStudio"
 author: "Doug Joubert"
 date: '2022-07-01'
 output:
-  word_document: 
+  word_document:
     toc: yes
   html_document:
     df_print: paged
+  pdf_document:
+    toc: yes
 bibliography: nihl-r-classes.bib
 csl: apa.csl
 ---
