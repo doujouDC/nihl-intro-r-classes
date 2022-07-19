@@ -226,17 +226,7 @@ Look over the scopes; I highly recommend selecting "repo", "user", and "workflow
 4.  Click "Generate token".
 5.  Copy the generated PAT to your clipboard. Or leave that browser window open and available for a little while, so you can come back to copy the PAT.
 6.  Provide this PAT next time a Git operation asks for your password.
-7.  You could even get out ahead of this and store the PAT explicitly right now. In R, call `gitcreds::gitcreds_set()` to get a prompt where you can paste your PAT:
-
-```{=html}
-<!-- -->
-```
-    > gitcreds::gitcreds_set()
-
-    ? Enter password or token: ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-    -> Adding new credentials...
-    -> Removing credentials from cache...
-    -> Done.
+7.  You could even get out ahead of this and store the PAT explicitly right now. In R, call `gitcreds::gitcreds_set()` to get a prompt where you can paste your PAT. I am going to do this in Console to make it a bit easier.
 
 You should be able to work with GitHub now, i.e. push and pull. If you're still doing your initial setup, now is a great time to move on to [Connect to GitHub](https://happygitwithr.com/push-pull-github.html#push-pull-github).
 
