@@ -227,8 +227,32 @@ Look over the scopes; I highly recommend selecting "repo", "user", and "workflow
 5.  Copy the generated PAT to your clipboard. Or leave that browser window open and available for a little while, so you can come back to copy the PAT.
 6.  Provide this PAT next time a Git operation asks for your password.
 7.  You could even get out ahead of this and store the PAT explicitly right now. In R, call `gitcreds::gitcreds_set()` to get a prompt where you can paste your PAT. I am going to do this in Console to make it a bit easier.
-8.  You should be able to work with GitHub now, i.e. push and pull.
-9.  Remember, if you are already syncing on another computer, you will have to enter this new PAT before you push or pull.
+8.  Figure 5 is displaying the `gitcreds::gitcreds_set()` in the Console. Hit Enter/Return to run this command.
+
+![](images/new-pat-01.png){width="640"}
+
+Figure 5: Initiating the gitcreds_set() command.
+
+9.  Select the most appropriate option. Since we are setting this up for the first time, we would select option 2 [Figure 6].
+
+![](images/new-pat-02.png){width="640"}
+
+Figure 6: Replacing the current PAT.
+
+10. Follow the prompts and enter the PAT that you just created.
+
+![](images/new-pat-05.png)
+
+Figure 7: Final output from storing the PAT.
+
+11. If you go back to GitHub you should see a list of all of the PATs that you have created and when they expire [Figure 8].
+
+![](images/new-pat-07.png)
+
+Figure 8: List of GitHub PATs.
+
+12. You should be able to work with GitHub now, i.e. push and pull.
+13. Remember, if you are already syncing on another computer, you will have to enter this new PAT before you push or pull.
 
 Read on to learn more about:
 
@@ -240,41 +264,29 @@ Read on to learn more about:
 
 -   [Troubleshooting](https://happygitwithr.com/https-pat.html#pat-troubleshooting)
 
-## Choosing a URL for your remote repository
-
-There are several ways to clone repositories available on GitHub.com.
-
-When you view a repository while signed in to your account, the URLs you can use to clone the project onto your computer are available below the repository details.
-
-For information on setting or changing your remote URL, see "[Managing remote repositories](https://docs.github.com/en/github/getting-started-with-github/managing-remote-repositories)."
-
 ## Creating a New Repository in GitHub
 
 GitHub's collaborative approach to development depends on publishing commits from your local repository to GitHub for other people to view, fetch, and update.
 
-[At this link](https://github.com/signup), you may sign into your GitHub account or create one if you have not already.
+[At this link](https://github.com/signup), you may sign into your GitHub account or create one if you have not already. Figure 5 is displaying the repositories in my GitHub account.
 
 ![](images/git-hub-01.png){width="6.5in"}
 
-Figure 4: My repository homepage in GitHub
+Figure 5: My repository homepage in GitHub.
 
-I have already created a [repository](https://github.com/doujouDC/nihl-intro-r-series.git) for this class. However Figure 5 is displaying the Create a New Repository screen. [Figure 5].
+I have already created a [repository](https://github.com/doujouDC/nihl-intro-r-series.git) for this class. However Figure 6 is displaying the Create a New Repository screen. [Figure 6].
 
 ![](images/git-hub-02.png){width="6.5in"}
 
-Figure 5: Creating a new repository on GitHub.
+Figure 6: Creating a new repository on GitHub.
 
-Once your repository is created, you will need to copy the repository URL before you create the project in RStudio [Figure 6]. Figure 6 shows the 3 different methods for creating a URL: (1) https, (2) SSH, or (3) GitHub CLI.
+Once your repository is created, you will need to copy the repository URL before you create the project in RStudio. Figure 7 shows the 3 different methods for creating a URL: (1) https, (2) SSH, or (3) GitHub CLI. We have already created our PAT to use with the https option.
 
 ![](images/git-hub-03.png){width="6.5in"}
 
-Figure 6: Creating a link to a GitHub repository.
+Figure 7: Creating a link to a GitHub repository.
 
 The ability to create an SSH key is location under settings [Figure 7].
-
-![](images/git-hub-05.png){width="6.5in"}
-
-Figure 7: Creating SSH keys in GitHub.
 
 ## Before you "Sync" Your Repository
 
