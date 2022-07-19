@@ -241,13 +241,13 @@ Figure 6: Replacing the current PAT.
 
 10. Follow the prompts and enter the PAT that you just created.
 
-![](images/new-pat-05.png)
+![](images/new-pat-05.png){width="640"}
 
 Figure 7: Final output from storing the PAT.
 
 11. If you go back to GitHub you should see a list of all of the PATs that you have created and when they expire [Figure 8].
 
-![](images/new-pat-07.png)
+![](images/new-pat-07.png){width="640"}
 
 Figure 8: List of GitHub PATs.
 
@@ -270,19 +270,19 @@ GitHub's collaborative approach to development depends on publishing commits fro
 
 [At this link](https://github.com/signup), you may sign into your GitHub account or create one if you have not already. Figure 9 is displaying the repositories in my GitHub account.
 
-![](images/git-hub-01.png){width="6.5in"}
+![](images/git-hub-01.png){width="640"}
 
 Figure 9: My repository homepage in GitHub.
 
 I have already created a [repository](https://github.com/doujouDC/nihl-intro-r-series.git) for this class. However Figure 10 is displaying the Create a New Repository screen. [Figure 10].
 
-![](images/git-hub-02.png){width="6.5in"}
+![](images/git-hub-02.png){width="640"}
 
 Figure 10: Creating a new repository on GitHub.
 
 Once your repository is created, you will need to copy the repository URL before you create the project in RStudio. Figure 11 shows the 3 different methods for creating a URL: (1) https, (2) SSH, or (3) GitHub CLI. We have already created our PAT to use with the https option.
 
-![](images/git-hub-03.png){width="6.5in"}
+![](images/git-hub-03.png){width="640"}
 
 Figure 11: Creating a link to a GitHub repository.
 
@@ -292,24 +292,32 @@ Figure 11: Creating a link to a GitHub repository.
 2.  Choose New Project from the Tools Menu.
 3.  There are three options when creating a new project: (1) Creating a project in a new directory, (2) Creating a project in an existing directory, and (3) Creating a project using version control.
 
-![](images/new-project-01.png){width="4.5in"}
+![](images/new-project-01.png){width="640"}
 
 Figure 9: Creating a new project in RStudio.
 
 4.  Choose the Version Control option
 5.  Chose Git as the option, RStudio will automatically open the next screen
 
-![](images/new-project-02.png){width="4.5in"}
+![](images/new-project-02.png){width="640"}
 
 Figure 10: Choosing the version control option in RStudio.
 
-6.  This screen is where you enter the repository URL that you copied from GitHub
+6.  This screen is where you enter the repository URL that you copied from GitHub [Figure 11].
 
-![](images/new-project-03.png){width="4.5in"}
+![](images/new-project-03.png){width="640"}
 
-Figure 11: Using a GitHub repository URL to create a new project
+Figure 11: New project wizard - entering the repository URL.
 
-7.  Click **Create Project**. The screen will refresh as RStudio switches over to project view an downloads any data from GitHub
+7.  Open up the repository that we created in GitHub and copy the `https` URL [Figure 12].
+
+![](images/new-project-04.png){width="640"}
+
+Figure 12: Copying a `https` repository URL from GitHub.
+
+8.  Paste the repository URL into into the URL box. Once you do this, you will be prompted to choose a subdiretory for the new project. I usually created mine within my Documents directory.
+
+9. Click **Create Project**. The screen will refresh as RStudio switches over to project view an downloads any data from GitHub
 
 # Good Practices for Managing Projects in RStudio
 
