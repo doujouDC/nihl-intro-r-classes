@@ -227,8 +227,8 @@ Look over the scopes; I highly recommend selecting "repo", "user", and "workflow
 5.  Copy the generated PAT to your clipboard. Or leave that browser window open and available for a little while, so you can come back to copy the PAT.
 6.  Provide this PAT next time a Git operation asks for your password.
 7.  You could even get out ahead of this and store the PAT explicitly right now. In R, call `gitcreds::gitcreds_set()` to get a prompt where you can paste your PAT. I am going to do this in Console to make it a bit easier.
-
-You should be able to work with GitHub now, i.e. push and pull. If you're still doing your initial setup, now is a great time to move on to [Connect to GitHub](https://happygitwithr.com/push-pull-github.html#push-pull-github).
+8.  You should be able to work with GitHub now, i.e. push and pull.
+9.  Remember, if you are already syncing on another computer, you will have to enter this new PAT before you push or pull.
 
 Read on to learn more about:
 
