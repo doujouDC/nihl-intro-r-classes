@@ -100,7 +100,7 @@ Can you think of any examples where "not" employing this principle can lead to p
 
 For several papers, we have made our data, code and analyses available as an Experiment Package on Bioconductor. When I came up for tenure, I cited all of these packages as research output of my lab. Generally, making your analyses available in this way will help you to build a reputation for being an honest and careful researcher.
 
-# Using RStudio for your project
+# RStudio
 
 RStudio is an integrated development environment (IDE) for R and Python. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging, collaboration, and workspace management. It is a powerful tool which supports research by weaving the principles of reproducibility throughout the entire research lifecycle, from data gathering to the statistical analysis, presentation and publication of results.
 
@@ -113,7 +113,7 @@ RStudio is an integrated development environment (IDE) for R and Python. It incl
 -   Integrates with Collaboration and Publishing Tools
 -   Creates documents using R Markdown
 
-## Setting up R for Projects
+## Setting up RStudio
 
 There are a number of RStudio settings that are recommended. These settings will force RStudio to start "fresh" each time you open RStudio.
 
@@ -129,23 +129,51 @@ You might want to also choose UTF-8 as the default text encoding. This setting i
 
 ## RStudio Projects
 
-An [RStudio Project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects) provides a set of tools that allow you to organize your scripts, files, and output: \* Allows you to navigate quickly to your working directory, and it is a great way to keep all your data organized. \* Can preserve custom settings and open files to make it easier to resume work after a break. \* An RStudio project is different from an R session. Meaning that an R session is all the objects and work done in R. Sessions are usually kept in working memory, until you restart R.
+An [RStudio Project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects) provides a set of tools that allow you to organize your scripts, files, and output:
 
-# Creating a Project Using Version Control in RStudio
+1.  Allows you to quickly navigate to your working directory
 
-Using version control is a powerful feature to make your research more reproducible and better organized. In order to use versioning while working in RStudio the first step is to make sure your work is set up as an R Project, because you may not use the versioning features in RStudio without one. There are three options for doing this depending on your given scenario:
+2.  Is a great way to keep all your data organized
+
+3.  Can preserve custom settings and open files to make it easier to resume work after a break.
+
+An RStudio project is different from an R session. Meaning that an R session is all the objects and work done in R. Sessions are usually kept in working memory, until you restart R.
+
+There are three options for creating a project in RStudio:
 
 1.  New Directory - start a brand new R project (with the option of version control).
 2.  Existing Directory - add existing work to a R project (with the option of setting up version control).
 3.  Version Control Continue an existing R project that already uses version control (i.e. download from GitHub).
 
-We will be using option 3, setting an R project on GitHub and then importing this into RStudio.
+We will be using option 3, creating a repository on GitHub, and then importing this into RStudio.
+
+# Using Version Control
+
+Using version control has the power to revolutionize how you work in R. Being able to have a record of all of the changes you've ever made to your code both locally and on a remote website is powerful. But getting everything set up can be a challenge. in this section I will walk through everything you need to do in order to use Git and GitHub alongside RStudio.
+
+## Git Versus GitHub
+
+1.  [Git is open source software for version control](https://en.wikipedia.org/wiki/Git "Opens in a new window"). Using Git, you can do things like see all previous versions of code you've ever created in a project.
+
+2.  [GitHub](https://github.com/ "Opens in a new window") is the most popular service (others include [GitLab](https://gitlab.com/ "Opens in a new window") and [BitBucket](https://bitbucket.org/product "Opens in a new window")) for collaborating on code using Git.
+
+It is possible to use Git without using GitHub, though most people combine the two.
+
+## Why Should I Use Version Control for My Project?
+
+There are many reasons you would want to adopt a Git/GitHub workflow:
+
+1.  **Using Git and GitHub serves as a backup**. Because GitHub has a copy of all of the code you have locally, if anything were to happen to your computer, you'd still have access to your code.
+
+2.  **Using Git and GitHub allows you to use version control.** Ever had documents called report-final.pdf, report-final-v2.pdf, and report-final-v3.pdf? Of course you have. Instead of making copies of files over fear of losing work, version control allows you to see what you did in the past, all while keeping single versions of documents.
+
+3.  **Using Git and GitHub makes it possible to work on the same project at the same time as collaborators.** For many using Git/GitHub is better than collaborating using Dropbox, Google Drive, or OneDrive. Git and GitHub have built-in tools that enable simultaneous asynchronous work, a major benefit for those working in teams.
+
+You might want to check out this 2016 [talk](https://youtu.be/eWxxfttcMts) by Alice Bartlett of the Financial Times, on Git and GitHub. Another great resources (one that I used for this section) can be found on [**Happy Git and GitHub for the useR**](https://happygitwithr.com/index.html)
 
 ## About Authentication to GitHub
 
-You can securely access your account's resources by authenticating to GitHub, using different credentials depending on where you authenticate.
-
-To keep your account secure, you must authenticate before you can access certain resources on GitHub. When you authenticate to GitHub, you supply or confirm credentials that are unique to you to prove that you are exactly who you declare to be.
+When we interact with a remote Git server, such as GitHub, we have to include credentials in the request. This proves we are a specific GitHub user, who's allowed to do whatever we're asking to do.
 
 You can access your resources in GitHub in a variety of ways: in the browser, via GitHub Desktop or another desktop application, with the API, or via the command line. Each way of accessing GitHub supports different modes of authentication.
 
@@ -153,11 +181,74 @@ You can access your resources in GitHub in a variety of ways: in the browser, vi
 
 -   Personal access token
 
+-   HTTPS
+
 -   SSH key
 
-## Authenticating in your browser\*\*
+### Authenticating in your browser
 
-You will authenticate using your GitHub.com username and password. You may also use two-factor authentication and SAML single sign-on, which can be required by organization and enterprise owners. The help [documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github) for this topic on GitHub is an excellent resource. I will talk about sync issues in a separate section.
+You will authenticate using your GitHub.com username and password. You may also use two-factor authentication and SAML single sign-on, which can be required by organization and enterprise owners. The help [documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github) for this topic on GitHub is an excellent resource.
+
+### **Personal access token for HTTPS**
+
+With HTTPS, we will use a **personal access token (PAT)**. Head over to chapter [10](https://happygitwithr.com/ssh-keys.html#ssh-keys) if you really want to set up SSH keys.
+
+Let it be known that the password that you use to login to GitHub's website is NOT an acceptable credential when talking to GitHub as a Git server. This was possible in the past, but those days are over at GitHub. You can learn more in their blog post [Token authentication requirements for Git operations](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/).
+
+Here's the error you'll see if you try to do that now:
+
+    remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+    remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+    fatal: Authentication failed for 'https://github.com/OWNER/REPO.git/'
+
+### Creating your PAT and Connecting it to Git
+
+This is a very minimal account of getting and storing a PAT. This might be all you need when you're first getting yourself set up. You can always come back later and read other parts of this chapter.
+
+1.  Go to <https://github.com/settings/tokens> and click "Generate token".
+
+2.  Or you can do this from the R Terminal by using the [usethis](https://usethis.r-lib.org/) package. `usethis` is a workflow package: it automates repetitive tasks that arise during project setup and development, both for R packages and non-package projects.
+
+```{r}
+# install.packages("usethis")
+library(usethis)
+create_github_token()
+```
+
+3.  When you run this section of code your default browser will open and you will be prompted to log into GitHub. After you log in you will automatically go to the create repository page [Figure 4].
+
+![](images/create-https-01.png){width="640"}
+
+Figure 4: Creating a new PAT on GitHub.
+
+Look over the scopes; I highly recommend selecting "repo", "user", and "workflow". Recommended scopes will be pre-selected if you used `create_github_token()`.
+
+4.  Click "Generate token".
+5.  Copy the generated PAT to your clipboard. Or leave that browser window open and available for a little while, so you can come back to copy the PAT.
+6.  Provide this PAT next time a Git operation asks for your password.
+7.  You could even get out ahead of this and store the PAT explicitly right now. In R, call `gitcreds::gitcreds_set()` to get a prompt where you can paste your PAT:
+
+```{=html}
+<!-- -->
+```
+    > gitcreds::gitcreds_set()
+
+    ? Enter password or token: ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    -> Adding new credentials...
+    -> Removing credentials from cache...
+    -> Done.
+
+You should be able to work with GitHub now, i.e. push and pull. If you're still doing your initial setup, now is a great time to move on to [Connect to GitHub](https://happygitwithr.com/push-pull-github.html#push-pull-github).
+
+Read on to learn more about:
+
+-   [How to decide between the HTTPS and SSH protocols](https://happygitwithr.com/https-pat.html#https-vs-ssh)
+
+-   [PAT scopes, names, and expiration](https://happygitwithr.com/https-pat.html#get-a-pat)
+
+-   [PAT storage](https://happygitwithr.com/https-pat.html#store-pat)
+
+-   [Troubleshooting](https://happygitwithr.com/https-pat.html#pat-troubleshooting)
 
 ## Choosing a URL for your remote repository
 
