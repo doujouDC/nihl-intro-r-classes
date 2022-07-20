@@ -445,7 +445,37 @@ So what is going on in Figure 16. There are two versions of our document. Versio
 
 Every time you make a commit you must also write a short **commit message**. Ideally, this conveys the motivation for the change. When you revisit a project after a break or need to digest recent changes made by a colleague, looking at the **history**, by reading commit messages and skimming through diffs, is an extremely efficient way to get up to speed. Figure 16 shows the messages associated with the last three commits.
 
-Every commit needs some sort of nickname, so you can identify it. Git does this automatically, assigning each commit with an SHA, a seemingly random string of 40 letters and numbers (it is not, in fact, random). Though you will be exposed to these, you don't have to handle them directly very often and, when you do, usually the first 7 characters suffice. Figure 17 is showing the history for the training manual that I created for this class. You will notice the SHA column at the end of the report.
+Every commit needs some sort of nickname, so you can identify it. Git does this automatically, assigning each commit with an SHA, a seemingly random string of 40 letters and numbers (it is not, in fact, random). Though you will be exposed to these, you don't have to handle them directly very often and, when you do, usually the first 7 characters suffice. Figure 17 is showing the history for the training manual that I created for this class. You will notice the SHA column in Figure 17.
+
+![](images/git-05.png){width="640"}
+
+Figure 17: History for training manual.
+
+The Git workflow can be summarized as:
+
+`Pull > add > commit > push`
+
+**Pull:** *download* the most recent version of the repository *from* GitHub *to* your local computer.
+
+**Push:** *upload* the most recent version of the repository *to* GitHub *from* your local computer.
+
+## **Tips for working with Git**
+
+-   You should pull each time you start working on your project after a hiatus, or before each edit if you know a team member is working at the same time.
+
+-   Commit frequently, each commit should be a distinct set of edits which you can summarize in 50 characters or less. Don't add a bunch of unrelated edits to the same commit, it makes it harder to look back through your "snapshots" and find the right one if you need to.
+
+-   At the end of your work session (or more frequently if you are working at the same time as team members), "push" your commits to the remote repository - this is the only way your local changes get added to your team's remote repository.
+
+This pull, add, commit, push routine will become second nature. Pulling at the beginning and pushing at the end of your work session becomes a sort of ritual that marks the beginning and end of your work session.
+
+## Making Some Edits
+
+Pick up on Thursday
+
+<https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/05-setup-versioning/index.html>
+
+<https://happygitwithr.com/git-commands.html>
 
 # Licenses
 
