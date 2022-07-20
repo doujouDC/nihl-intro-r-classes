@@ -403,6 +403,50 @@ There are two places we can interact with Git in the RStudio interface.
 
 1.  Menu bar
 
+![](images/git-03.png){width="640"}
+
+Figure 13: Menu bar options for working with GIT
+
+2.  Git Panel
+
+![](images/git-04.png){width="640"}
+
+Figure 14: Git panel
+
+It is not possible to cover everything you need to be succesfull using GIT. There are many excellent [external resources for Git](https://happygitwithr.com/resources.html#resources).
+
+## Workflows in Git
+
+Git workflows are probably not that different from what you do currently. For example, writing R scripts or authoring reports in LaTeX or R Markdown. But instead of only *saving* individual files, with Git you periodically **commit** your work. This means that you take a snapshot of all the files in the entire project. If you have ever versioned a file by adding your initials or the date, you have effectively made a commit, albeit only for a single file.
+
+![](images/phd-comic-jorge-cham.png){width="471"}
+
+Figure 15: A humorous look at version control.
+
+This is like sharing a document with colleagues on DropBox or sending it out as an email attachment. By pushing to GitHub, you make your work and all your accumulated progress accessible to others.
+
+## **Commits and diffs**
+
+We now connect the fundamental concepts of Git to the data science workflow:
+
+-   repository
+
+-   commit
+
+-   diff
+
+Recall that a repository or repo is just a directory of files that Git manages holistically. A commit functions like a snapshot of all the files in the repo, at a specific moment. Figure 16 a look at a fictional analysis of the iris data, focusing on the evolution of a script, `iris.R.`
+
+![](images/commit-diff-sha-tag.png){width="642"}
+
+Figure 16: Partial commit history that looks at diffs, commit messages, SHA, and tags.
+
+So what is going on in Figure 16. There are two versions of our document. Version A of this file and a modified version, version B. In this example, let us assume that version A was part of one Git commit and version B was part of the next commit. The set of differences between A and B is called a "diff."
+
+Every time you make a commit you must also write a short **commit message**. Ideally, this conveys the motivation for the change. When you revisit a project after a break or need to digest recent changes made by a colleague, looking at the **history**, by reading commit messages and skimming through diffs, is an extremely efficient way to get up to speed. Figure 16 shows the messages associated with the last three commits.
+
+Every commit needs some sort of nickname, so you can identify it. Git does this automatically, assigning each commit with an SHA, a seemingly random string of 40 letters and numbers (it is not, in fact, random). Though you will be exposed to these, you don't have to handle them directly very often and, when you do, usually the first 7 characters suffice.
+
 # Licenses
 
 Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) 2022 by [the authors](https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/CITATION).
