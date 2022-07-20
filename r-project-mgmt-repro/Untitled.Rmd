@@ -20,7 +20,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r Importing our Data}
 # This is a example of a code chunk to read in some data
 library(tidyverse)
-read_data <- "../raw-data/combined.csv"
+library(gapminder)
+read_data <- gapminder
 ```
 
 We need to enter some text that we can cite [@RN1345].

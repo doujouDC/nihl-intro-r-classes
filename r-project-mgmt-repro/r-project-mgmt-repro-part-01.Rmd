@@ -317,7 +317,7 @@ Figure 12: Copying a `https` repository URL from GitHub.
 
 8.  Paste the repository URL into into the URL box. Once you do this, you will be prompted to choose a subdiretory for the new project. I usually created mine within my Documents directory.
 
-9. Click **Create Project**. The screen will refresh as RStudio switches over to project view an downloads any data from GitHub
+9.  Click **Create Project**. The screen will refresh as RStudio switches over to project view an downloads any data from GitHub
 
 # Good Practices for Managing Projects in RStudio
 
@@ -397,9 +397,11 @@ Use chronological or logical order. With chronological, file name starts with da
 
 Adapted from <https://datacarpentry.org/rr-organization1/01-file-naming/index.html>. For more tips on file naming, check: [The Dos and Don'ts of File Naming](https://www.library.ucsb.edu/sites/default/files/dls-n01-2021-filenaming.pdf).
 
-# Pushing and Pulling from GitHub
+# **Using Version Control in RStudio**
 
-Start on Wednesday
+There are two places we can interact with Git in the RStudio interface.
+
+1.  Menu bar
 
 # Licenses
 
