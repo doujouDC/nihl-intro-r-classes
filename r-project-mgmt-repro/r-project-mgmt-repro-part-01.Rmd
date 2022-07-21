@@ -502,6 +502,30 @@ Create a new R-script named "code-chunk-test." Add the following lines of code
 
 `# Download the image and move it into the new images folder that you just created`
 
+We are now ready to send these changes to our remote repository
+
+1.  Select all of the files list in the Git panel except **.DS_store** and .**gitmore** [Figure 22]
+
+![](images/git-07.png){width="640"}
+
+Figure 22: Selecting the files to send to remote repository.
+
+2.  Select the Commit icon on the Git Panel
+3.  Add a short commit message, and select the commit button.
+
+![](images/git-08.png){width="640"}
+
+Figure 23: Adding a commit message and committing the changes.
+
+2.  Once you commit your screen will refresh showing the changes
+
+![](images/git-09.png){width="640"}
+
+Figure 24: Changes after the commit
+
+2.  Close the Git Commit screen
+3.  Select the Push button to send the changes to GitHub
+
 # Licenses
 
 Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) 2022 by [the authors](https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/CITATION).
