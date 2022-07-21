@@ -476,7 +476,31 @@ The Git workflow can be summarized as:
 
 This pull, add, commit, push routine will become second nature. Pulling at the beginning and pushing at the end of your work session becomes a sort of ritual that marks the beginning and end of your work session.
 
-## Making Some Edits
+## Pushing our Edits to Git
+
+Create a new R-script named "code-chunk-test." Add the following lines of code
+
+`# Importing our Data`
+
+`# This is a example of a code chunk to read in some data`
+
+`library(tidyverse)`
+
+`library(gapminder)`
+
+`read_data <- gapminder`
+
+`# Let us add some folders`
+
+`dir.create("images")`
+
+`dir.create("docs")`
+
+`dir.create("figures")`
+
+`# Do a quick image search for p53`
+
+`# Download the image and move it into the new images folder that you just created`
 
 # Licenses
 

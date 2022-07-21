@@ -26,4 +26,8 @@ read_data <- gapminder
 
 We need to enter some text that we can cite [@RN1345].
 
+# Basic Data Manipulation
+
+
+
 # References
