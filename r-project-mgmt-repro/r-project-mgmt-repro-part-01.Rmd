@@ -510,21 +510,23 @@ We are now ready to send these changes to our remote repository
 
 Figure 22: Selecting the files to send to remote repository.
 
-2.  Select the Commit icon on the Git Panel
+2.  Select the Commit icon on the Git Panel. Once you do this, the commit screen will refresh showing the changes
+
+![](images/git-09.png){width="640"}
+
+Figure 23: Changes being sent to GitHub.
+
 3.  Add a short commit message, and select the commit button.
 
 ![](images/git-08.png){width="640"}
 
-Figure 23: Adding a commit message and committing the changes.
+Figure 24: Adding a commit message and committing the changes.
 
-2.  Once you commit your screen will refresh showing the changes
+4.  Close the Git Commit screen
+5.  Select the Push button to send the changes to GitHub
+6.  If we check our repository on GitHub, the changes will be reflected [Figure 25]
 
-![](images/git-09.png){width="640"}
-
-Figure 24: Changes after the commit
-
-2.  Close the Git Commit screen
-3.  Select the Push button to send the changes to GitHub
+![](./images/git-10.png){width="640"}
 
 # Licenses
 
