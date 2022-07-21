@@ -251,8 +251,15 @@ Figure 7: Final output from storing the PAT.
 
 Figure 8: List of GitHub PATs.
 
-12. You should be able to work with GitHub now, i.e. push and pull.
-13. Remember, if you are already syncing on another computer, you will have to enter this new PAT before you push or pull.
+You will also receive a message from GitHub (default email address) letting you know that a PAT has been created [Figure 9].
+
+![](images/git-06.png){width="640"}
+
+Figure 9: PAT alert email from GitHub.
+
+You should be able to work with GitHub now, i.e. push and pull.
+
+Remember, if you are already syncing on another computer, you will have to enter this new PAT before you push or pull.
 
 Read on to learn more about:
 
@@ -268,52 +275,52 @@ Read on to learn more about:
 
 GitHub's collaborative approach to development depends on publishing commits from your local repository to GitHub for other people to view, fetch, and update.
 
-[At this link](https://github.com/signup), you may sign into your GitHub account or create one if you have not already. Figure 9 is displaying the repositories in my GitHub account.
+[At this link](https://github.com/signup), you may sign into your GitHub account or create one if you have not already. Figure 10 is displaying the repositories in my GitHub account.
 
 ![](images/git-hub-01.png){width="640"}
 
-Figure 9: My repository homepage in GitHub.
+Figure 10: My repository homepage in GitHub.
 
-I have already created a [repository](https://github.com/doujouDC/nihl-intro-r-series.git) for this class. However Figure 10 is displaying the Create a New Repository screen. [Figure 10].
+I have already created a [repository](https://github.com/doujouDC/nihl-intro-r-series.git) for this class. However Figure 11 is displaying the Create a New Repository screen. [Figure 11].
 
 ![](images/git-hub-02.png){width="640"}
 
-Figure 10: Creating a new repository on GitHub.
+Figure 11: Creating a new repository on GitHub.
 
-Once your repository is created, you will need to copy the repository URL before you create the project in RStudio. Figure 11 shows the 3 different methods for creating a URL: (1) https, (2) SSH, or (3) GitHub CLI. We have already created our PAT to use with the https option.
+Once your repository is created, you will need to copy the repository URL before you create the project in RStudio. Figure 11 shows the 3 different methods for creating a URL: (1) https, (2) SSH, or (3) GitHub CLI. We have already created our PAT to use with the https option [Figure 12].
 
 ![](images/git-hub-03.png){width="640"}
 
-Figure 11: Creating a link to a GitHub repository.
+Figure 12: Creating a link to a GitHub repository.
 
 # Creating a New Project in RStudio
 
 1.  Open RStudio
 2.  Choose New Project from the Tools Menu.
-3.  There are three options when creating a new project: (1) Creating a project in a new directory, (2) Creating a project in an existing directory, and (3) Creating a project using version control.
+3.  There are three options when creating a new project: (1) Creating a project in a new directory, (2) Creating a project in an existing directory, and (3) Creating a project using version control [Figure 13].
 
 ![](images/new-project-01.png){width="640"}
 
-Figure 9: Creating a new project in RStudio.
+Figure 13: Creating a new project in RStudio.
 
 4.  Choose the Version Control option
-5.  Chose Git as the option, RStudio will automatically open the next screen
+5.  Chose Git as the option, RStudio will automatically open the next screen [Figure 14]
 
 ![](images/new-project-02.png){width="640"}
 
-Figure 10: Choosing the version control option in RStudio.
+Figure 14: Choosing the version control option in RStudio.
 
-6.  This screen is where you enter the repository URL that you copied from GitHub [Figure 11].
+6.  This screen is where you enter the repository URL that you copied from GitHub [Figure 15].
 
 ![](images/new-project-03.png){width="640"}
 
-Figure 11: New project wizard - entering the repository URL.
+Figure 15: New project wizard - entering the repository URL.
 
-7.  Open up the repository that we created in GitHub and copy the `https` URL [Figure 12].
+7.  Open up the repository that we created in GitHub and copy the `https` URL [Figure 16].
 
 ![](images/new-project-04.png){width="640"}
 
-Figure 12: Copying a `https` repository URL from GitHub.
+Figure 16: Copying a `https` repository URL from GitHub.
 
 8.  Paste the repository URL into into the URL box. Once you do this, you will be prompted to choose a subdiretory for the new project. I usually created mine within my Documents directory.
 
@@ -401,17 +408,17 @@ Adapted from <https://datacarpentry.org/rr-organization1/01-file-naming/index.ht
 
 There are two places we can interact with Git in the RStudio interface.
 
-1.  Menu bar
+1.  Menu bar [Figure 17]
 
 ![](images/git-03.png){width="640"}
 
-Figure 13: Menu bar options for working with GIT
+Figure 17: Menu bar options for working with GIT
 
-2.  Git Panel
+2.  Git Panel [Figure 18]
 
 ![](images/git-04.png){width="640"}
 
-Figure 14: Git panel
+Figure 18: Git panel
 
 It is not possible to cover everything you need to be succesfull using GIT. There are many excellent [external resources for Git](https://happygitwithr.com/resources.html#resources).
 
@@ -421,7 +428,7 @@ Git workflows are probably not that different from what you do currently. For ex
 
 ![](images/phd-comic-jorge-cham.png){width="471"}
 
-Figure 15: A humorous look at version control.
+Figure 19: A humorous look at version control.
 
 This is like sharing a document with colleagues on DropBox or sending it out as an email attachment. By pushing to GitHub, you make your work and all your accumulated progress accessible to others.
 
@@ -435,21 +442,21 @@ We now connect the fundamental concepts of Git to the data science workflow:
 
 -   diff
 
-Recall that a repository or repo is just a directory of files that Git manages holistically. A commit functions like a snapshot of all the files in the repo, at a specific moment. Figure 16 a look at a fictional analysis of the iris data, focusing on the evolution of a script, `iris.R.`
+Recall that a repository or repo is just a directory of files that Git manages holistically. A commit functions like a snapshot of all the files in the repo, at a specific moment. Figure 20 is a fictional analysis of the [iris](https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/iris) data, focusing on the evolution of a script, `iris.R.`
 
 ![](images/commit-diff-sha-tag.png){width="642"}
 
-Figure 16: Partial commit history that looks at diffs, commit messages, SHA, and tags.
+Figure 20: Partial commit history that looks at diffs, commit messages, SHA, and tags.
 
 So what is going on in Figure 16. There are two versions of our document. Version A of this file and a modified version, version B. In this example, let us assume that version A was part of one Git commit and version B was part of the next commit. The set of differences between A and B is called a "diff."
 
-Every time you make a commit you must also write a short **commit message**. Ideally, this conveys the motivation for the change. When you revisit a project after a break or need to digest recent changes made by a colleague, looking at the **history**, by reading commit messages and skimming through diffs, is an extremely efficient way to get up to speed. Figure 16 shows the messages associated with the last three commits.
+Every time you make a commit you must also write a short **commit message**. Ideally, this conveys the motivation for the change. When you revisit a project after a break or need to digest recent changes made by a colleague, looking at the **history**, by reading commit messages and skimming through diffs, is an extremely efficient way to get up to speed. Figure 20 shows the messages associated with the last three commits.
 
-Every commit needs some sort of nickname, so you can identify it. Git does this automatically, assigning each commit with an SHA, a seemingly random string of 40 letters and numbers (it is not, in fact, random). Though you will be exposed to these, you don't have to handle them directly very often and, when you do, usually the first 7 characters suffice. Figure 17 is showing the history for the training manual that I created for this class. You will notice the SHA column in Figure 17.
+Every commit needs some sort of nickname, so you can identify it. Git does this automatically, assigning each commit with an SHA, a seemingly random string of 40 letters and numbers (it is not, in fact, random). Though you will be exposed to these, you don't have to handle them directly very often and, when you do, usually the first 7 characters suffice. Figure 17 is showing the history for the training manual that I created for this class. You will notice the SHA column in Figure 21.
 
 ![](images/git-05.png){width="640"}
 
-Figure 17: History for training manual.
+Figure 21: History for training manual.
 
 The Git workflow can be summarized as:
 
@@ -470,12 +477,6 @@ The Git workflow can be summarized as:
 This pull, add, commit, push routine will become second nature. Pulling at the beginning and pushing at the end of your work session becomes a sort of ritual that marks the beginning and end of your work session.
 
 ## Making Some Edits
-
-Pick up on Thursday
-
-<https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/05-setup-versioning/index.html>
-
-<https://happygitwithr.com/git-commands.html>
 
 # Licenses
 
