@@ -1,33 +1,10 @@
 ---
 title: "Code-Chunk-Test"
 author: "Doug Joubert"
-date: "`r Sys.Date()`"
-output:
-  html_document:
-    toc: yes
-    df_print: paged
-  word_document:
-    toc: yes
-    fig_height: 4
-bibliography: "nihl-r-classes.bib"
-csl: apa.csl
+date: '`r Sys.Date()`'
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-```{r Importing our Data}
-# This is a example of a code chunk to read in some data
-library(tidyverse)
-library(gapminder)
-read_data <- gapminder
-```
-
-We need to enter some text that we can cite [@RN1345].
-
-# Basic Data Manipulation
-
-
-
-# References
