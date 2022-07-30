@@ -35,7 +35,7 @@ This one-hour class focuses on data and project management using R and RStudio. 
 
 Upon completion of this class students should be able to:
 
--   Create an R-markdown document
+-   Create an R-markdown document using Quarto
 -   Distinguish between the source and the visual editor
 -   Add code chunks to R-markdown documents
 -   Understand how to use reproducible code chunks [maybe for advanced class]
@@ -50,6 +50,8 @@ Ideally, you want your reports to be reproducible documents. For example, if an 
 Many new users begin by first writing a single R script containing all of their work, and then share the analysis by emailing the script and various graphs as attachments. But this can be cumbersome, requiring a lengthy discussion to explain which attachment was which result.
 
 [LaTeX](http://www.latex-project.org/) can simplify this process by incorporating both the analysis report and output graphs into a single document. But tweaking formatting to make figures look correct and fixing obnoxious page breaks can be tedious.
+
+Another option is using a new RStudio platform called [Quarto](https://quarto.org/). 
 
 Another option is using a package called [`knitr`](http://yihui.name/knitr/). It allows you to create a document that is a mixture of text and chunks of code. `knitr` allows you to mix basically any type of text with code from different programming languages, but I recommend that you use `R-Markdown`, which mixes Markdown with R. [Markdown](https://www.markdownguide.org/) is a light-weight mark-up language for creating documents in multiple formats. When the document is processed by `knitr`, chunks of code will be executed, and graphs or other results will be inserted into the final document. This sort of idea has been called "literate programming".
 
