@@ -44,7 +44,7 @@ Upon completion of this class students should be able to:
 
 # Scientific Reproducibility
 
-According to the [U.S. National Science Foundation (NSF)](https://www.nsf.gov/sbe/AC_Materials/SBE_Robust_and_Reliable_Research_Report.pdf) subcommittee on replicability in science (2015):
+According to the [U.S. National Science Foundation (NSF)](https://www.nsf.gov/sbe/AC_Materials/SBE_Robust_and_Reliable_Research_Report.pdf) subcommittee on replicability in science :
 
 Science should routinely evaluate the reproducibility of findings that enjoy a prominent role in the published literature. To make reproduction possible, efficient, and informative, researchers should sufficiently document the details of the procedures used to collect data, to convert observations into analyzable data, and to perform data analysis.
 
@@ -362,7 +362,7 @@ Are there additional issues that you've encountered that slow down or derail you
 
 Although there is no "best" way to lay out a project, there are some general principles to adhere to that will make project management easier.
 
-[Good Enough Practices for Scientific Computing](http://swcarpentry.github.io/good-enough-practices-in-scientific-computing/) gives the following recommendations for project organization:
+[Good Enough Practices for Scientific Computing](http://swcarpentry.github.io/good-enough-practices-in-scientific-computing/) gives the following recommendations for project organization [@RN1371]:
 
 1.  Each project in its own directory, which is named after the project
 
@@ -388,15 +388,15 @@ Additional recommendations for projects and creating folders is covered in the I
 
 ### Machine-readable
 
-No spaces, unsupported punctuation, accented characters, or case-sensitive file names
+-   No spaces, unsupported punctuation, accented characters, or case-sensitive file names
 
-Deliberate use of delimiters (i.e. for splitting file names)
+-   Deliberate use of delimiters (i.e. for splitting file names)
 
-Consistently use the same delimiters: `data-analyses-fig1.R` as an example
+-   Consistently use the same delimiters: `data-analyses-fig1.R` as an example
 
 ### Human-readable
 
-Name contains brief description of content: i.e. `data-analyses-fig1.R`
+-   Name contains brief description of content: i.e. `data-analyses-fig1.R`
 
 ### Ordering Files
 
@@ -488,7 +488,7 @@ This pull, add, commit, push routine will become second nature. Pulling at the b
 
 ## Pushing our Edits to Git
 
-Create a new R-script named "code-chunk-test." Add the following lines of code
+Create a new R-script named "proj-mgmt-01" Add the following lines of code
 
 `# Importing our Data`
 
