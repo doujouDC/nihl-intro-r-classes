@@ -44,7 +44,7 @@ Upon completion of this class students should be able to:
 
 # Scientific Reproducibility
 
-According to the [U.S. National Science Foundation (NSF)](https://www.nsf.gov/sbe/AC_Materials/SBE_Robust_and_Reliable_Research_Report.pdf) subcommittee on replicability in science :
+According to the [U.S. National Science Foundation (NSF)](https://www.nsf.gov/sbe/AC_Materials/SBE_Robust_and_Reliable_Research_Report.pdf) subcommittee on replicability in science [@RN1719]:
 
 Science should routinely evaluate the reproducibility of findings that enjoy a prominent role in the published literature. To make reproduction possible, efficient, and informative, researchers should sufficiently document the details of the procedures used to collect data, to convert observations into analyzable data, and to perform data analysis.
 
@@ -54,11 +54,11 @@ Reproducibility refers to the ability of a researcher to duplicate the results o
 
 A 2016 survey in Nature revealed that not being able to reproduce experiments is a problem across all domains of science \[Figure 1\]:
 
-![](images/baker-01.png){width="6.5in"}
+![](images/nature-field-reason.png){width="640"}
 
 Figure 1: Reproducibility by discipline and problem identified [@RN1683].
 
-![](images/baker-02.png){width="6.5in"}
+![](images/nature-attempt-reason.png){width="640"}
 
 Figure 2:Attempts to publish reproducible research [@RN1683].
 
