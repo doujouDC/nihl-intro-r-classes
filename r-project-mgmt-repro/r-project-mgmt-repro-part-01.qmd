@@ -52,7 +52,7 @@ Reproducibility refers to the ability of a researcher to duplicate the results o
 
 ## Nature Survey on Reproducibility
 
-A 2016 survey in Nature revealed that not being able to reproduce experiments is a problem across all domains of science [Figure 1]:
+A 2016 survey in Nature revealed that not being able to reproduce experiments is a problem across all domains of science \[Figure 1\]:
 
 ![](images/baker-01.png){width="6.5in"}
 
@@ -117,7 +117,7 @@ RStudio is an integrated development environment (IDE) for R and Python. It incl
 
 There are a number of RStudio settings that are recommended. These settings will force RStudio to start "fresh" each time you open RStudio.
 
-This means that RStudio will not remember the code that you ran in your previous session. This forces you to document your work in your code and not in the RStudio workspace [which is temporary].
+This means that RStudio will not remember the code that you ran in your previous session. This forces you to document your work in your code and not in the RStudio workspace \[which is temporary\].
 
 Figure 3 list the preferred RStudio settings. To change these options go to **Tools\>Global Options\>General.**
 
@@ -215,7 +215,7 @@ library(usethis)
 create_github_token()
 ```
 
-3.  When you run this section of code your default browser will open and you will be prompted to log into GitHub. After you log in you will automatically go to the create repository page [Figure 4].
+3.  When you run this section of code your default browser will open and you will be prompted to log into GitHub. After you log in you will automatically go to the create repository page \[Figure 4\].
 
 ![](images/create-https-01.png){width="640"}
 
@@ -233,7 +233,7 @@ Look over the scopes; I highly recommend selecting "repo", "user", and "workflow
 
 Figure 5: Initiating the gitcreds_set() command.
 
-9.  Select the most appropriate option. Since we are setting this up for the first time, we would select option 2 [Figure 6].
+9.  Select the most appropriate option. Since we are setting this up for the first time, we would select option 2 \[Figure 6\].
 
 ![](images/new-pat-02.png){width="640"}
 
@@ -245,13 +245,13 @@ Figure 6: Replacing the current PAT.
 
 Figure 7: Final output from storing the PAT.
 
-11. If you go back to GitHub you should see a list of all of the PATs that you have created and when they expire [Figure 8].
+11. If you go back to GitHub you should see a list of all of the PATs that you have created and when they expire \[Figure 8\].
 
 ![](images/new-pat-07.png){width="640"}
 
 Figure 8: List of GitHub PATs.
 
-You will also receive a message from GitHub (default email address) letting you know that a PAT has been created [Figure 9].
+You will also receive a message from GitHub (default email address) letting you know that a PAT has been created \[Figure 9\].
 
 ![](images/git-06.png){width="640"}
 
@@ -281,13 +281,13 @@ GitHub's collaborative approach to development depends on publishing commits fro
 
 Figure 10: My repository homepage in GitHub.
 
-I have already created a [repository](https://github.com/doujouDC/nihl-intro-r-series.git) for this class. However Figure 11 is displaying the Create a New Repository screen. [Figure 11].
+I have already created a [repository](https://github.com/doujouDC/nihl-intro-r-series.git) for this class. However Figure 11 is displaying the Create a New Repository screen. \[Figure 11\].
 
 ![](images/git-hub-02.png){width="640"}
 
 Figure 11: Creating a new repository on GitHub.
 
-Once your repository is created, you will need to copy the repository URL before you create the project in RStudio. Figure 11 shows the 3 different methods for creating a URL: (1) https, (2) SSH, or (3) GitHub CLI. We have already created our PAT to use with the https option [Figure 12].
+Once your repository is created, you will need to copy the repository URL before you create the project in RStudio. Figure 11 shows the 3 different methods for creating a URL: (1) https, (2) SSH, or (3) GitHub CLI. We have already created our PAT to use with the https option \[Figure 12\].
 
 ![](images/git-hub-03.png){width="640"}
 
@@ -297,26 +297,26 @@ Figure 12: Creating a link to a GitHub repository.
 
 1.  Open RStudio
 2.  Choose New Project from the Tools Menu.
-3.  There are three options when creating a new project: (1) Creating a project in a new directory, (2) Creating a project in an existing directory, and (3) Creating a project using version control [Figure 13].
+3.  There are three options when creating a new project: (1) Creating a project in a new directory, (2) Creating a project in an existing directory, and (3) Creating a project using version control \[Figure 13\].
 
 ![](images/new-project-01.png){width="640"}
 
 Figure 13: Creating a new project in RStudio.
 
 4.  Choose the Version Control option
-5.  Chose Git as the option, RStudio will automatically open the next screen [Figure 14]
+5.  Chose Git as the option, RStudio will automatically open the next screen \[Figure 14\]
 
 ![](images/new-project-02.png){width="640"}
 
 Figure 14: Choosing the version control option in RStudio.
 
-6.  This screen is where you enter the repository URL that you copied from GitHub [Figure 15].
+6.  This screen is where you enter the repository URL that you copied from GitHub \[Figure 15\].
 
 ![](images/new-project-03.png){width="640"}
 
 Figure 15: New project wizard - entering the repository URL.
 
-7.  Open up the repository that we created in GitHub and copy the `https` URL [Figure 16].
+7.  Open up the repository that we created in GitHub and copy the `https` URL \[Figure 16\].
 
 ![](images/new-project-04.png){width="640"}
 
@@ -358,21 +358,35 @@ To what extent do these stress points affect your research projects?
 
 Are there additional issues that you've encountered that slow down or derail your work due to issues with project management?
 
-## Project File/Folder Organization
+## Practice Good File Organization
 
 Although there is no "best" way to lay out a project, there are some general principles to adhere to that will make project management easier.
 
-## Practice good file-organization
-
 [Good Enough Practices for Scientific Computing](http://swcarpentry.github.io/good-enough-practices-in-scientific-computing/) gives the following recommendations for project organization:
 
-1.  Put each project in its own directory, which is named after the project.
-2.  Put text documents associated with the project in the doc directory.
-3.  Put raw data and metadata in the data directory, and files generated during cleanup and analysis in a results directory.
-4.  Put source for the project's scripts and programs in the src directory, and programs brought in from elsewhere or compiled locally in the bin directory.
-5.  Name all files to reflect their content or function.
+1.  Each project in its own directory, which is named after the project
 
-Additionally, we'd recommend to include README, LICENSE, and CITATION files! Additional recommendations for projects and creating folders is covered in the Introduction to R and RStudio class. Class handouts are available upon request.
+2.  Text documents associated with the project in the doc directory
+
+3.  Raw data and metadata in the data directory (raw-data)
+
+4.  Files generated during cleanup and analysis in a results directory
+
+5.  Project's scripts and programs in the src directory
+
+6.  Programs brought in from elsewhere or compiled locally in the bin directory
+
+7.  Name all files to reflect their content or function
+
+
+Additional filles to include:
+
+[README file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes), to communicate important information about your project
+[LICENSE file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository), so that others are free to use, change, and distribute the software
+[CITATION.cff file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files), to let others know how you would like them to cite your work
+
+
+Additional recommendations for projects and creating folders is covered in the Introduction to R and RStudio class. Class handouts are available upon request.
 
 ## Practices for Naming Files
 
@@ -408,13 +422,13 @@ Adapted from <https://datacarpentry.org/rr-organization1/01-file-naming/index.ht
 
 There are two places we can interact with Git in the RStudio interface.
 
-1.  Menu bar [Figure 17]
+1.  Menu bar \[Figure 17\]
 
 ![](images/git-03.png){width="640"}
 
 Figure 17: Menu bar options for working with GIT
 
-2.  Git Panel [Figure 18]
+2.  Git Panel \[Figure 18\]
 
 ![](images/git-04.png){width="640"}
 
@@ -504,7 +518,7 @@ Create a new R-script named "code-chunk-test." Add the following lines of code
 
 We are now ready to send these changes to our remote repository
 
-1.  Select all of the files list in the Git panel except **.DS_store** and .**gitmore** [Figure 22]
+1.  Select all of the files list in the Git panel except **.DS_store** and .**gitmore** \[Figure 22\]
 
 ![](images/git-07.png){width="640"}
 
@@ -524,7 +538,7 @@ Figure 24: Adding a commit message and committing the changes.
 
 4.  Close the Git Commit screen
 5.  Select the Push button to send the changes to GitHub
-6.  If we check our repository on GitHub, the changes will be reflected [Figure 25]
+6.  If we check our repository on GitHub, the changes will be reflected \[Figure 25\]
 
 ![](./images/git-10.png){width="640"}
 
