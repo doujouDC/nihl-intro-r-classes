@@ -378,13 +378,9 @@ Although there is no "best" way to lay out a project, there are some general pri
 
 7.  Name all files to reflect their content or function
 
-
 Additional filles to include:
 
-[README file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes), to communicate important information about your project
-[LICENSE file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository), so that others are free to use, change, and distribute the software
-[CITATION.cff file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files), to let others know how you would like them to cite your work
-
+[README file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes), to communicate important information about your project [LICENSE file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository), so that others are free to use, change, and distribute the software [CITATION.cff file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files), to let others know how you would like them to cite your work
 
 Additional recommendations for projects and creating folders is covered in the Introduction to R and RStudio class. Class handouts are available upon request.
 
