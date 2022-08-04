@@ -70,7 +70,7 @@ If contributing to science and other researchers seems not to be compelling enou
 
 ![](images/ny-times-duke.png){width="640"}
 
-Two statisticians from MD Anderson found with research from Duke University.
+Figure 3: Two statisticians from MD Anderson found with research from Duke University.
 
 The issues discovered by Baggerly and Coombes could have easily been spotted by any co-author before submitting the paper:
 
@@ -100,62 +100,17 @@ Can you think of any examples where "not" employing this principle can lead to p
 
 For several papers, we have made our data, code and analyses available as an Experiment Package on Bioconductor. When I came up for tenure, I cited all of these packages as research output of my lab. Generally, making your analyses available in this way will help you to build a reputation for being an honest and careful researcher.
 
-# RStudio
-
-RStudio is an integrated development environment (IDE) for R and Python. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging, collaboration, and workspace management. It is a powerful tool which supports research by weaving the principles of reproducibility throughout the entire research lifecycle, from data gathering to the statistical analysis, presentation and publication of results.
-
-## Advantages of Using RStudio
-
--   It is free and open-source
--   It is designed to make it easy to write and reuse code
--   Makes it convenient to view and interact with the objects stored in your environment
--   Makes it easy to set your working directory and access files on your computer
--   Integrates with Collaboration and Publishing Tools
--   Creates documents using R Markdown
-
-## Setting up RStudio
-
-There are a number of RStudio settings that are recommended. These settings will force RStudio to start "fresh" each time you open RStudio.
-
-This means that RStudio will not remember the code that you ran in your previous session. This forces you to document your work in your code and not in the RStudio workspace \[which is temporary\].
-
-Figure 3 list the preferred RStudio settings. To change these options go to **Tools\>Global Options\>General.**
-
-![](images/rstudio-preferences.png){width="4.5in"}
-
-Figure 3: Preferred RStudio options.
-
-You might want to also choose UTF-8 as the default text encoding. This setting is available from **Tools\>Global Options\>Code\>Saving**.
-
-## RStudio Projects
-
-An [RStudio Project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects) provides a set of tools that allow you to organize your scripts, files, and output:
-
-1.  Allows you to quickly navigate to your working directory
-
-2.  Is a great way to keep all your data organized
-
-3.  Can preserve custom settings and open files to make it easier to resume work after a break.
-
-An RStudio project is different from an R session. Meaning that an R session is all the objects and work done in R. Sessions are usually kept in working memory, until you restart R.
-
-There are three options for creating a project in RStudio:
-
-1.  New Directory - start a brand new R project (with the option of version control).
-2.  Existing Directory - add existing work to a R project (with the option of setting up version control).
-3.  Version Control Continue an existing R project that already uses version control (i.e. download from GitHub).
-
-We will be using option 3, creating a repository on GitHub, and then importing this into RStudio.
-
 # Using Version Control
 
 Using version control has the power to revolutionize how you work in R. Being able to have a record of all of the changes you've ever made to your code both locally and on a remote website is powerful. But getting everything set up can be a challenge. in this section I will walk through everything you need to do in order to use Git and GitHub alongside RStudio.
 
 ## Git Versus GitHub
 
-1.  [Git is open source software for version control](https://en.wikipedia.org/wiki/Git "Opens in a new window"). Using Git, you can do things like see all previous versions of code you've ever created in a project.
+1.  \[Git\] (https://en.wikipedia.org/wiki/Git "Opens in a new window") is open source software for version control. Using Git, you can do things like see all previous versions of code you've ever created in a project.
 
-2.  [GitHub](https://github.com/ "Opens in a new window") is the most popular service (others include [GitLab](https://gitlab.com/ "Opens in a new window") and [BitBucket](https://bitbucket.org/product "Opens in a new window")) for collaborating on code using Git.
+2.  [GitHub](https://github.com/ "Opens in a new window") is the most popular service for collaborating on code using Git
+
+3.  [GitLab](https://gitlab.com/ "Opens in a new window") and [BitBucket](https://bitbucket.org/product "Opens in a new window") are two other options
 
 It is possible to use Git without using GitHub, though most people combine the two.
 
@@ -293,34 +248,81 @@ Once your repository is created, you will need to copy the repository URL before
 
 Figure 12: Creating a link to a GitHub repository.
 
-# Creating a New Project in RStudio
+# RStudio
+
+RStudio is an integrated development environment (IDE) for R and Python. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging, collaboration, and workspace management. It is a powerful tool which supports research by weaving the principles of reproducibility throughout the entire research lifecycle, from data gathering to the statistical analysis, presentation and publication of results.
+
+## Advantages of Using RStudio
+
+-   It is free and open-source
+-   It is designed to make it easy to write and reuse code
+-   Makes it convenient to view and interact with the objects stored in your environment
+-   Makes it easy to set your working directory and access files on your computer
+-   Integrates with Collaboration and Publishing Tools
+-   Creates documents using R Markdown
+
+## Setting up RStudio
+
+There are a number of RStudio settings that are recommended. These settings will force RStudio to start "fresh" each time you open RStudio.
+
+This means that RStudio will not remember the code that you ran in your previous session. This forces you to document your work in your code and not in the RStudio workspace \[which is temporary\].
+
+Figure 13 list the preferred RStudio settings. To change these options go to **Tools\>Global Options\>General.**
+
+![](images/rstudio-preferences.png){width="4.5in"}
+
+Figure 13: Preferred RStudio options.
+
+You might want to also choose UTF-8 as the default text encoding. This setting is available from **Tools\>Global Options\>Code\>Saving**.
+
+## RStudio Projects
+
+An [RStudio Project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects) provides a set of tools that allow you to organize your scripts, files, and output:
+
+1.  Allows you to quickly navigate to your working directory
+
+2.  Is a great way to keep all your data organized
+
+3.  Can preserve custom settings and open files to make it easier to resume work after a break.
+
+An RStudio project is different from an R session. Meaning that an R session is all the objects and work done in R. Sessions are usually kept in working memory, until you restart R.
+
+There are three options for creating a project in RStudio:
+
+1.  New Directory - start a brand new R project (with the option of version control).
+2.  Existing Directory - add existing work to a R project (with the option of setting up version control).
+3.  Version Control Continue an existing R project that already uses version control (i.e. download from GitHub).
+
+We will be using option 3, creating a repository on GitHub, and then importing this into RStudio.
+
+## Creating a New Project in RStudio
 
 1.  Open RStudio
 2.  Choose New Project from the Tools Menu.
-3.  There are three options when creating a new project: (1) Creating a project in a new directory, (2) Creating a project in an existing directory, and (3) Creating a project using version control \[Figure 13\].
+3.  There are three options when creating a new project: (1) Creating a project in a new directory, (2) Creating a project in an existing directory, and (3) Creating a project using version control \[Figure 14\].
 
 ![](images/new-project-01.png){width="640"}
 
-Figure 13: Creating a new project in RStudio.
+Figure 14: Creating a new project in RStudio.
 
 4.  Choose the Version Control option
-5.  Chose Git as the option, RStudio will automatically open the next screen \[Figure 14\]
+5.  Chose Git as the option, RStudio will automatically open the next screen \[Figure 15\]
 
 ![](images/new-project-02.png){width="640"}
 
-Figure 14: Choosing the version control option in RStudio.
+Figure 15: Choosing the version control option in RStudio.
 
-6.  This screen is where you enter the repository URL that you copied from GitHub \[Figure 15\].
+6.  This screen is where you enter the repository URL that you copied from GitHub \[Figure 16\].
 
 ![](images/new-project-03.png){width="640"}
 
-Figure 15: New project wizard - entering the repository URL.
+Figure 16: New project wizard - entering the repository URL.
 
-7.  Open up the repository that we created in GitHub and copy the `https` URL \[Figure 16\].
+7.  Open up the repository that we created in GitHub and copy the `https` URL \[Figure 17\].
 
 ![](images/new-project-04.png){width="640"}
 
-Figure 16: Copying a `https` repository URL from GitHub.
+Figure 17: Copying a `https` repository URL from GitHub.
 
 8.  Paste the repository URL into into the URL box. Once you do this, you will be prompted to choose a subdiretory for the new project. I usually created mine within my Documents directory.
 
@@ -418,17 +420,17 @@ Adapted from <https://datacarpentry.org/rr-organization1/01-file-naming/index.ht
 
 There are two places we can interact with Git in the RStudio interface.
 
-1.  Menu bar \[Figure 17\]
+1.  Menu bar \[Figure 18\]
 
 ![](images/git-03.png){width="640"}
 
-Figure 17: Menu bar options for working with GIT
+Figure 18: Menu bar options for working with GIT
 
-2.  Git Panel \[Figure 18\]
+2.  Git Panel \[Figure 19\]
 
 ![](images/git-04.png){width="640"}
 
-Figure 18: Git panel
+Figure 19: Git panel
 
 It is not possible to cover everything you need to be succesfull using GIT. There are many excellent [external resources for Git](https://happygitwithr.com/resources.html#resources).
 
@@ -438,7 +440,7 @@ Git workflows are probably not that different from what you do currently. For ex
 
 ![](images/phd-comic-jorge-cham.png){width="471"}
 
-Figure 19: A humorous look at version control.
+Figure 20: A humorous look at version control.
 
 This is like sharing a document with colleagues on DropBox or sending it out as an email attachment. By pushing to GitHub, you make your work and all your accumulated progress accessible to others.
 
@@ -452,21 +454,21 @@ We now connect the fundamental concepts of Git to the data science workflow:
 
 -   diff
 
-Recall that a repository or repo is just a directory of files that Git manages holistically. A commit functions like a snapshot of all the files in the repo, at a specific moment. Figure 20 is a fictional analysis of the [iris](https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/iris) data, focusing on the evolution of a script, `iris.R.`
+Recall that a repository or repo is just a directory of files that Git manages holistically. A commit functions like a snapshot of all the files in the repo, at a specific moment. Figure 21 is a fictional analysis of the [iris](https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/iris) data, focusing on the evolution of a script, `iris.R.`
 
 ![](images/commit-diff-sha-tag.png){width="642"}
 
-Figure 20: Partial commit history that looks at diffs, commit messages, SHA, and tags.
+Figure 21: Partial commit history that looks at diffs, commit messages, SHA, and tags.
 
-So what is going on in Figure 16. There are two versions of our document. Version A of this file and a modified version, version B. In this example, let us assume that version A was part of one Git commit and version B was part of the next commit. The set of differences between A and B is called a "diff."
+So what is going on in Figure 21. There are two versions of our document. Version A of this file and a modified version, version B. In this example, let us assume that version A was part of one Git commit and version B was part of the next commit. The set of differences between A and B is called a "diff."
 
-Every time you make a commit you must also write a short **commit message**. Ideally, this conveys the motivation for the change. When you revisit a project after a break or need to digest recent changes made by a colleague, looking at the **history**, by reading commit messages and skimming through diffs, is an extremely efficient way to get up to speed. Figure 20 shows the messages associated with the last three commits.
+Every time you make a commit you must also write a short **commit message**. Ideally, this conveys the motivation for the change. When you revisit a project after a break or need to digest recent changes made by a colleague, looking at the **history**, by reading commit messages and skimming through diffs, is an extremely efficient way to get up to speed. Figure 21 shows the messages associated with the last three commits.
 
-Every commit needs some sort of nickname, so you can identify it. Git does this automatically, assigning each commit with an SHA, a seemingly random string of 40 letters and numbers (it is not, in fact, random). Though you will be exposed to these, you don't have to handle them directly very often and, when you do, usually the first 7 characters suffice. Figure 17 is showing the history for the training manual that I created for this class. You will notice the SHA column in Figure 21.
+Every commit needs some sort of nickname, so you can identify it. Git does this automatically, assigning each commit with an SHA, a seemingly random string of 40 letters and numbers (it is not, in fact, random). Though you will be exposed to these, you don't have to handle them directly very often and, when you do, usually the first 7 characters suffice. Figure 17 is showing the history for the training manual that I created for this class. You will notice the SHA column in Figure 22.
 
 ![](images/git-05.png){width="640"}
 
-Figure 21: History for training manual.
+Figure 22: History for training manual.
 
 The Git workflow can be summarized as:
 
@@ -514,27 +516,27 @@ Create a new R-script named "proj-mgmt-01" Add the following lines of code
 
 We are now ready to send these changes to our remote repository
 
-1.  Select all of the files list in the Git panel except **.DS_store** and .**gitmore** \[Figure 22\]
+1.  Select all of the files list in the Git panel except **.DS_store** and .**gitmore** \[Figure 23\]
 
 ![](images/git-07.png){width="640"}
 
-Figure 22: Selecting the files to send to remote repository.
+Figure 23: Selecting the files to send to remote repository.
 
-2.  Select the Commit icon on the Git Panel. Once you do this, the commit screen will refresh showing the changes
+2.  Select the Commit icon on the Git Panel. Once you do this, the commit screen will refresh showing the changes \[Figure 24\].
 
 ![](images/git-09.png){width="640"}
 
-Figure 23: Changes being sent to GitHub.
+Figure 24: Changes being sent to GitHub.
 
-3.  Add a short commit message, and select the commit button.
+3.  Add a short commit message, and select the commit button \[Figure 25\].
 
 ![](images/git-08.png){width="640"}
 
-Figure 24: Adding a commit message and committing the changes.
+Figure 25: Adding a commit message and committing the changes.
 
 4.  Close the Git Commit screen
 5.  Select the Push button to send the changes to GitHub
-6.  If we check our repository on GitHub, the changes will be reflected \[Figure 25\]
+6.  If we check our repository on GitHub, the changes will be reflected \[Figure 26\]
 
 ![](./images/git-10.png){width="640"}
 
