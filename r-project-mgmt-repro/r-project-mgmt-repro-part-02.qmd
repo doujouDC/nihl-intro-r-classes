@@ -144,6 +144,12 @@ History adapted from [@RN1453]
 
 -   2022 Quarto
 
+Figure 1 is displaying the workflow for RMD.
+
+![](images/rmd-workflow-example.png){width="640"}
+
+Figure 1: RMD transformation workflow.
+
 ## Quarto
 
 In August 2022, RStudio adopted [Quarto](https://quarto.org/) as its supporting publishing platform. Quarto is an open-source scientific and technical publishing system built on [Pandoc](https://pandoc.org/). Quarto allows you to create dynamic content with [Python](https://quarto.org/docs/computations/python.html), [R](https://quarto.org/docs/computations/r.html), [Julia](https://quarto.org/docs/computations/julia.html), and [Observable](https://quarto.org/docs/computations/ojs.html).
@@ -154,7 +160,21 @@ In August 2022, RStudio adopted [Quarto](https://quarto.org/) as its supporting 
 
 -   Author with scientific markdown, including equations, citations, crossrefs, and figure panels.
 
+Figure 2 is displaying the workflow for Quarto.
+
+![](images/quarto-workflow-example.png){width="640"}
+
+Figure 2: Quarto transformation workflow.
+
+## How Quarto is Different From R Markdown
+
+-   Quarto is compute-agnostic. R Markdown requires R.
+
+-   The ecosystem of R packages is replaced by a single framework.
+
 # Writing and Styling Quarto Documents
+
+https://rstudio-conf-2022.github.io/rmd-to-quarto/materials/2-polishing-documents/
 
 Quarto is a multi-language, next generation version of R Markdown from RStudio, with many new new features and capabilities. Like R Markdown, Quarto uses [Knitr](https://yihui.org/knitr/) to execute R code, and is therefore able to render most existing Rmd files without modification.
 
@@ -277,6 +297,8 @@ It is good to be aware of how to use the source editor, since you might have to 
 Figure 6: Formatting Menu Bar.
 
 # Adding Code-Generated Plots and Figures
+
+https://rstudio-conf-2022.github.io/rmd-to-quarto/materials/3-computation/
 
 There are two main ways to process code with Knitr in R Markdown documents:
 
