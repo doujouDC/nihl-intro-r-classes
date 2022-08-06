@@ -17,17 +17,72 @@ csl: apa.csl
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Background Information
+# Configuration
 
-## R Project Management URLs
+# Packages
 
-Introduction to Reproducible Publications with RStudio: <https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/>
+This class features exercises that will help you learn by doing. To prepare, please install the following on your machine:
 
-R for Reproducible Scientific Analysis: <https://swcarpentry.github.io/r-novice-gapminder/>
+-   If you haven't already, please [sign-up](https://happygitwithr.com/github-acct.html) for a free GitHub account.
 
-Reproducible Research Data and Project Management in R: <https://annakrystalli.me/rrresearchACCE20/>
+-   Install latest version of [RStudio](https://www.rstudio.com/products/rstudio/download/#download), v2022.07.0-548 or later
 
-Using Projects: <https://support.rstudio.com/hc/en-us/articles/200526207-Using-RStudio-Projects>
+-   Install latest version of [Quarto](https://quarto.org/docs/get-started/) (v1.0.36 or greater)
+
+Quarto is also available as a package. The **quarto** package provides an R interface to frequently used operations in the Quarto Command Line Interface (CLI). The package is not a requirement for using Quarto with R. Rather, it provides an R interface to common Quarto operations for users who prefer to work in the R console rather than a terminal, and for package authors that want to programatically interface with Quarto.
+
+```{r}
+# install.packages("quarto")
+```
+
+You will also need to install the [knitr](http://yihui.name/knitr/) package. Knitr is a general-purpose tool for dynamic report generation in R using Literate Programming techniques.
+
+```{r}
+# install.packages("knitr")
+```
+
+Other useful packages to install include the tidyverse and rmarkdown packages.
+
+[rmarkdown](https://pkgs.rstudio.com/rmarkdown/), The rmarkdown package helps you create dynamic analysis documents that combine code, rendered output (such as figures).
+
+[tidyverse](https://www.tidyverse.org/packages/), includes the packages that you're likely to use in everyday data analyses.
+
+## Resources
+
+### R Project Management URLs
+
+-   Introduction to Reproducible Publications with RStudio: <https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/>
+
+-   R for Reproducible Scientific Analysis: <https://swcarpentry.github.io/r-novice-gapminder/>
+
+-   Reproducible Research Data and Project Management in R: <https://annakrystalli.me/rrresearchACCE20/>
+
+-   Using Projects: <https://support.rstudio.com/hc/en-us/articles/200526207-Using-RStudio-Projects>
+
+-   [Using the RStudio Terminal in the RStudio IDE](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE)
+
+### Quarto URLS
+
+#### **Official Documentation & Quickstarts**
+
+-   [Documentation: Quarto documentation](https://quarto.org/) - Official Quarto Documentation.
+
+-   [GitHub: Quarto GitHub repository](https://github.com/quarto-dev) - Official Quarto GitHub repository.
+
+-   [Tutorial: Hello, Quarto](https://quarto.org/docs/get-started/hello/) - Official "Hello, Quarto" tutorial.
+
+-   [Tutorial: Computations](https://quarto.org/docs/get-started/computations/) - Official "Computations" tutorial.
+
+-   [Tutorial: Authoring](https://quarto.org/docs/get-started/authoring/) - Official "Authoring" tutorial.
+
+### Tutorials and Workshops
+
+-   [Reproducible authoring with Quarto](https://www.youtube.com/watch?v=6p4vOKS6Xls) - 2022 Toronto Workshop on Reproducibility with Mine Çetinkaya-Rundel (slides: <https://mine-cetinkaya-rundel.github.io/2022-repro-toronto/>).
+-   [Tutorial: Making shareable docs with Quarto](https://openscapes.github.io/quarto-website-tutorial/) - A tutorial to make website with Quarto.
+-   [Workshop: From R Markdown to Quarto](https://rstudio-conf-2022.github.io/rmd-to-quarto/) - A workshop for those who want to take their R Markdown skills and expertise and apply them in Quarto, the next generation of R Markdown.
+-   [Workshop: Getting started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/) - "Get started with Quarto" workshop materials for rstudio::conf(2022).
+
+Note: [Mickaël Canouil](https://github.com/mcanouil) maintains a [page](https://github.com/mcanouil/awesome-quarto#official-documentation--quickstarts) of Quarto resources
 
 # Introduction
 
@@ -41,7 +96,7 @@ Upon completion of this class students should be able to:
 -   Understand how to use reproducible code chunks \[maybe for advanced class\]
 -   Create a bibliography and link it to a R-markdown document
 
-# Literate Programming and Markdown
+## Literate Programming and Markdown
 
 Researchers and analysts tend to write a lot of reports, describing their analyses and results, for their collaborators or to document their work for future reference.
 
@@ -67,7 +122,9 @@ You may also find the following resources helpful:
 
 -   [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)
 
-## Quarto and R Markdown, a history . . .
+## A History of Markdown
+
+History adapted from [@RN1453]
 
 -   1984 **Literate Programming** proposed to combine text with code
 
@@ -85,11 +142,9 @@ You may also find the following resources helpful:
 
 -   2020 *R Markdown Cookbook*
 
-. . . throughout, an ecosystem of R packages develops . . . (`bookdown`, `blogdown`, `distill`, etc.)
+-   2022 Quarto
 
-History from [@RN1453]
-
-# Quarto
+## Quarto
 
 In August 2022, RStudio adopted [Quarto](https://quarto.org/) as its supporting publishing platform. Quarto is an open-source scientific and technical publishing system built on [Pandoc](https://pandoc.org/). Quarto allows you to create dynamic content with [Python](https://quarto.org/docs/computations/python.html), [R](https://quarto.org/docs/computations/r.html), [Julia](https://quarto.org/docs/computations/julia.html), and [Observable](https://quarto.org/docs/computations/ojs.html).
 
@@ -99,57 +154,7 @@ In August 2022, RStudio adopted [Quarto](https://quarto.org/) as its supporting 
 
 -   Author with scientific markdown, including equations, citations, crossrefs, and figure panels.
 
-## Installing Quarto
-
-There are two ways to use Quarto. The first method involved installing the Quarto application. Quarto is available in a number of different operating systems \[Figure 1\].
-
-![](images/quarto-download.png){width="640"}
-
-Figure 1: Quarto download options.
-
-The next step is choosing your authoring tool \[Figure 2\].
-
-![](images/quarto-supported-tools.png){width="640"}
-
-Figure 2: Authoring tools supporting Quarto.
-
-The second option is using the Quarto by downloading the `quarto` package. The [latest release](https://rstudio.com/products/rstudio/download/) of RStudio (v2022.07) includes support for editing and preview of Quarto documents.
-
-If you are using Quarto within RStudio it is **strongly** recommended that you use this version (the documentation below assumes you are using this build).
-
-If you have already installed the Quarto CLI then RStudio will detect this and enable Quarto features automatically. Alternatively, there is a version of Quarto built-in to RStudio that you can activate from R Markdown Preferences \[Figure 3\]. You will be prompted to restart R after you select **Reply**. So, save your work.
-
-![](images/quarto-settings-rstudio.png){width="640"}
-
-Figure 3: Activating Quarto within RStudio.
-
-# Packages
-
-Like the rest of R, R Markdown, Knitr, and Quarto are free and open source. You can install the R Markdown package from CRAN with:
-
-    install.packages("rmarkdown")
-
-You will also need to install the [knitr](http://yihui.name/knitr/) package. Knitr is a general-purpose tool for dynamic report generation in R using Literate Programming techniques.
-
-    install.packages("knitr")
-
-There are a number of packages that are required for `rmarkdown` and `knitr`, these should install automatically.
-
-The **quarto** package provides an R interface to frequently used operations in the Quarto Command Line Interface (CLI). The package is not a requirement for using Quarto with R. Rather, it provides an R interface to common Quarto operations for users who prefer to work in the R console rather than a terminal, and for package authors that want to programatically interface with Quarto.
-
-Before using the Quarto R package, you should install the Quarto CLI from <https://quarto.org/docs/get-started/>.
-
-``` r
-install.packages("quarto")
-```
-
-THIS IS WHERE I STOPPED
-
-https://github.com/quarto-dev/quarto-r
-
-https://quarto.org/docs/tools/rstudio.html
-
-https://quarto.org/docs/get-started/
+**THIS IS WHERE I STOPPED**
 
 # Writing and Styling Quarto Documents
 
