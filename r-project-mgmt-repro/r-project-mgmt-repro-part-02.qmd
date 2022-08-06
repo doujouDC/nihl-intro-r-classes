@@ -154,8 +154,6 @@ In August 2022, RStudio adopted [Quarto](https://quarto.org/) as its supporting 
 
 -   Author with scientific markdown, including equations, citations, crossrefs, and figure panels.
 
-**THIS IS WHERE I STOPPED**
-
 # Writing and Styling Quarto Documents
 
 Quarto is a multi-language, next generation version of R Markdown from RStudio, with many new new features and capabilities. Like R Markdown, Quarto uses [Knitr](https://yihui.org/knitr/) to execute R code, and is therefore able to render most existing Rmd files without modification.
