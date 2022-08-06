@@ -41,7 +41,7 @@ Upon completion of this class students should be able to:
 -   Understand how to use reproducible code chunks \[maybe for advanced class\]
 -   Create a bibliography and link it to a R-markdown document
 
-# Literate Programming and R Markdown
+# Literate Programming and Markdown
 
 Researchers and analysts tend to write a lot of reports, describing their analyses and results, for their collaborators or to document their work for future reference.
 
@@ -66,6 +66,28 @@ You may also find the following resources helpful:
 -   [The R Markdown Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
 
 -   [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)
+
+## Quarto and R Markdown, a history . . .
+
+-   1984 **Literate Programming** proposed to combine text with code
+
+-   2002 `Sweave` weaves together S/R and TEXTEX
+
+-   2006 `pandoc` converts between different document formats
+
+-   2012 `knitr` a next gen Sweave for R and Markdown
+
+-   2014 `knitr::pandoc` added to leverage `pandoc` flexible outputs
+
+-   2015 `pandoc` functionality moved into new `rmarkdown`
+
+-   2018 *R Markdown: A definite guide*
+
+-   2020 *R Markdown Cookbook*
+
+. . . throughout, an ecosystem of R packages develops . . . (`bookdown`, `blogdown`, `distill`, etc.)
+
+History from [@RN1453]
 
 # Quarto
 
@@ -117,7 +139,7 @@ The **quarto** package provides an R interface to frequently used operations in 
 
 Before using the Quarto R package, you should install the Quarto CLI from <https://quarto.org/docs/get-started/>.
 
-``` R
+``` r
 install.packages("quarto")
 ```
 
