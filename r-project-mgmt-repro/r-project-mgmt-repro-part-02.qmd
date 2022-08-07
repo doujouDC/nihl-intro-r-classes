@@ -178,6 +178,8 @@ https://rstudio-conf-2022.github.io/rmd-to-quarto/materials/2-polishing-document
 
 Quarto is a multi-language, next generation version of R Markdown from RStudio, with many new new features and capabilities. Like R Markdown, Quarto uses [Knitr](https://yihui.org/knitr/) to execute R code, and is therefore able to render most existing Rmd files without modification.
 
+In this section we are going to learn how to create generic block and inline elements, set classes and attributes, and practice using Quarto-specific elements in RStudio\'s visual editor. Although we do not cover this topic in this class, I have include some resources on how to customize the appearance of your documents with elementary CSS.
+
 https://quarto.org/docs/computations/r.html
 
 Let us create a new document by navigating to `File > New File > R Markdown` \[Figure 2\].

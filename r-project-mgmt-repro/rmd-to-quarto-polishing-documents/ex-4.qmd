@@ -1,0 +1,35 @@
+---
+title: "Exercise 4"
+format:
+  html:
+    css: "ex-4.css"
+---
+
+### I. Typography for Elements
+
+Do your best to recreate the styles seen on the Exercise 4 slide for Inline, Block, and Metadata Elements by writing CSS rules for three classes. Think about:
+
+- In what ways does that text differ stylistically from normal text?
+- Can I track down the name of those attributes in the CSS property list?
+- What property values does each rule appear to be taking?
+
+Write these rules in `ex-4.css` and be sure this qmd file can read it by adding `css: "ex-4.css"` to the  YAML ablove as an option for the HTML format.
+
+
+### II. A Custom Callout
+
+Create a custom class for your own style of callout box. The quarto callout box has a good bit of formatting going on:
+
+:::{.callout-note}
+This is the Quarto callout note element.
+:::
+
+I see a colored banner across the top with and icon and a label plus a border on the left side and some curved corners.
+
+Focus on implementing just the basic of your own version of this by looking for CSS properties that address:
+
+- background colors
+- borders
+
+
+
