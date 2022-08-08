@@ -1,14 +1,5 @@
-# Importing our Data
-# This is a example of a code chunk to read in some data
-library(tidyverse)
-library(gapminder)
-read_data <- gapminder
 
-# Let us add some folders
-dir.create("images")
-dir.create("docs")
-dir.create("figures")
+# Download the documents and data for the "Polishing Documents" section
 
-# Do a quick image search for p53
-# Download the image and move it into the new images folder that you just created
+usethis::use_course("rmd-to-quarto/polishing-documents", destdir = "r-project-mgmt-repro/")
 
