@@ -269,11 +269,9 @@ Figure 8: Example of Quarto metadata elements.
 
 Figure 9 is displaying both the Quarto code (left) and the rendered Quarto code (right).
 
-+-----------------------------------+-----------------------------------+
-| Quarto Code                       | Output on Render                  |
-+===================================+===================================+
-| ![](images/demo-md.png)           | ![](images/demo-docx.png)         |
-+-----------------------------------+-----------------------------------+
+| Quarto Code             | Output on Render          |
+|-------------------------|---------------------------|
+| ![](images/demo-md.png) | ![](images/demo-docx.png) |
 
 Figure 9: Example of a rendered Quarto document.
 
@@ -378,7 +376,26 @@ You can make section headers of different sizes by initiating a line with some n
     ### Sub-section
     #### Sub-sub section
 
-**STOPPED ON MONDAY**
+## **Block Elements:** Math
+
+When using math as Block Elements, math use `$$` delimiters. The delimiters may be separated from the formula by whitespace. No blank lines between the opening and closing `$$` delimiters. For example:
+
+A larger equation:
+
+$$ 
+f(x)={\sqrt{\frac{\tau}{2\pi}}}
+      e^{-\tau (x-\mu )^{2}/2}
+$$
+
+## Block Elements: Images
+
+Block images use the same syntax as inline images. However, images on their own line become a block:
+
+Images on their own line become a block:
+
+![Elephant](images/elephant.png){width="220"}
+
+**STOPPED on Tuesday**
 
 # Adding Code-Generated Plots and Figures
 
