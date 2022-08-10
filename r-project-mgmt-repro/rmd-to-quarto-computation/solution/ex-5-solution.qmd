@@ -1,0 +1,76 @@
+---
+title: "Palmer Penguins"
+format:
+  html:
+    theme: litera
+    code-fold: true
+execute:
+  echo: true
+  warning: false
+  df-print: paged
+params:
+  n_penguins: 12
+  
+---
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Gravida cum sociis natoque penatibus et magnis dis parturient. Sit amet dictum sit amet justo donec. Sed nisi lacus sed viverra. Arcu ac tortor dignissim convallis aenean et. Ipsum a arcu cursus vitae congue mauris. Elit ut aliquam purus sit amet luctus. Nunc scelerisque viverra mauris in aliquam sem fringilla. Vitae justo eget magna fermentum iaculis. Tincidunt augue interdum velit euismod in pellentesque massa placerat. Amet porttitor eget dolor morbi non. Elementum tempus egestas sed sed risus. In dictum non consectetur a erat. Risus at ultrices mi tempus imperdiet nulla malesuada. Vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra.
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+penguins %>%
+  sample_n(params$n_penguins)
+```
+
+```{r}
+#| fig-height: 2
+#| fig-width: 3
+#| fig-align: center
+#| fig-caption: "Size of pengiuins on different islands"
+#| fig-alt: "A colored scoatterplot showing the size difference from island to island."
+#| fig-link: "https://en.wikipedia.org/wiki/Palmer_Archipelago"
+ggplot(penguins, aes(x = bill_length_mm,
+                     y = bill_depth_mm,
+                     color = island)) +
+  geom_point()
+```
+
+Elit ut aliquam purus sit amet luctus. Nunc scelerisque viverra mauris in aliquam sem fringilla. Vitae justo eget magna fermentum iaculis. Tincidunt augue interdum velit euismod in pellentesque massa placerat. Amet porttitor eget dolor morbi non. Elementum tempus egestas sed sed risus. In dictum non consectetur a erat. Risus at ultrices mi tempus imperdiet nulla malesuada. Vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra.
+
+:::{#fig-flipper layout-ncol=2}
+```{r}
+#| fig-cap: "Density plots"
+#| label: "fig-density"
+
+ggplot(penguins, aes(x = flipper_length_mm,
+                     fill = species)) +
+  geom_density()
+```
+
+```{r}
+#| fig-cap: "Box plots"
+#| label: "fig-boxplot"
+
+ggplot(penguins, aes(x = flipper_length_mm,
+                     fill = species)) +
+  geom_boxplot()
+```
+
+Distribution of flipper length.
+:::
+
+Elit ut aliquam purus sit amet luctus. Nunc scelerisque viverra mauris in aliquam sem fringilla. Vitae justo eget magna fermentum iaculis. Tincidunt augue (@fig-flipper) interdum velit euismod in pellentesque massa placerat. Amet porttitor eget dolor morbi non (@fig-density). Elementum tempus egestas sed sed risus. In dictum non consectetur (@fig-boxplot) a erat. Risus at ultrices mi tempus imperdiet nulla malesuada. Vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Gravida cum sociis natoque penatibus et magnis dis parturient. Sit amet dictum sit amet justo donec. Sed nisi lacus sed viverra. Arcu ac tortor dignissim convallis aenean et.
+
+```{r}
+#| column: margin
+
+ggplot(penguins, aes(x = flipper_length_mm,
+                     fill = species)) +
+  geom_histogram()
+```
+
+Ipsum a arcu cursus vitae congue mauris. Elit ut aliquam purus sit amet luctus. Nunc scelerisque viverra mauris in aliquam sem fringilla. Vitae justo eget magna fermentum iaculis. Tincidunt augue interdum velit euismod in pellentesque massa placerat. Amet porttitor eget dolor morbi non. Elementum tempus egestas sed sed risus. In dictum non consectetur a erat. Risus at ultrices mi tempus imperdiet nulla malesuada. Vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra.
+
+
