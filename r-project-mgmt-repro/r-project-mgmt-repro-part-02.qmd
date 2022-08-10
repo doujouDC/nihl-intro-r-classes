@@ -451,6 +451,8 @@ The [Polishing Documents](https://rstudio-conf-2022.github.io/rmd-to-quarto/mate
 
 https://rstudio-conf-2022.github.io/rmd-to-quarto/materials/3-computation/
 
+**\[with this content, I need to decide if I am going to stick the content below. Or, implement #\| to support multiple languages\]**
+
 There are two main ways to process code with Knitr in R Markdown documents:
 
 1.  Code Chunks
