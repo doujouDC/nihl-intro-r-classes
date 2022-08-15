@@ -447,7 +447,7 @@ These two resources have more information about YAML
 
 The [Polishing Documents](https://rstudio-conf-2022.github.io/rmd-to-quarto/materials/2-polishing-documents/) section of the RMD to Quarto workshop has some great information. However, I think it would work best as an advanced class.
 
-# Adding Code-Generated Plots and Figures
+# Adding Code Blocks
 
 https://rstudio-conf-2022.github.io/rmd-to-quarto/materials/3-computation/
 
@@ -459,11 +459,31 @@ There are two main ways to process code with Knitr in R Markdown documents:
 
 2.  Inline Code
 
-## Inserting Code Chunks
+Let us revisit the Quarto workflow that we saw in Figure 2, focusing on the code block \[Figure 14\].
+
+![](images/quarto-workflow-example-code.jpg){width="640"}
+
+Figure 14: Quarto workflow, with focus on code blocks and conversion of code.
+
+## Using Code Chunks
 
 Code chunks are better when you need to do something more sophisticated with your code, such as building plots or tables. They also incorporate syntax which allows modifications to how that code is rendered and styled in your final output. We'll learn more about that as we walk through the "anatomy" of a code chunk.
 
 ## Basic Anatomy of the Code Chunk
+
+### R Markdown Code Chunk
+
+R markdown adopts Pandoc\'s Fenced Code Block, which starts and stops the code chunk with three back-ticks.
+
+| \`\`\`{r}
+| rnorm(3)
+| \`\`\`
+
+So, the code code chunk below implements [rnorm](https://www.rdocumentation.org/packages/compositions/versions/2.0-4/topics/rnorm), which generates a vector of normally distributed random numbers.
+
+```{r}
+rnorm(3)
+```
 
 You can quickly insert chunks like these into your file with:
 
