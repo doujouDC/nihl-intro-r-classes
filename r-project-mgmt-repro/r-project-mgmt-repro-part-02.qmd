@@ -54,7 +54,7 @@ Other useful packages to install include the tidyverse and rmarkdown packages.
 
 ### Quarto URLS
 
-#### **Official Documentation & Quickstarts**
+#### Official Documentation & Quickstarts
 
 -   [Documentation: Quarto documentation](https://quarto.org/) - Official Quarto Documentation.
 
@@ -269,11 +269,9 @@ Figure 8: Example of Quarto metadata elements.
 
 Figure 9 is displaying both the Quarto code (left) and the rendered Quarto code (right).
 
-+-----------------------------------+-----------------------------------+
-| Quarto Code                       | Output on Render                  |
-+===================================+===================================+
-| ![](images/demo-md.png)           | ![](images/demo-docx.png)         |
-+-----------------------------------+-----------------------------------+
+| Quarto Code             | Output on Render          |
+|-------------------------|---------------------------|
+| ![](images/demo-md.png) | ![](images/demo-docx.png) |
 
 Figure 9: Example of a rendered Quarto document.
 
@@ -341,7 +339,7 @@ The area of a circle is $A = pi r^2$, where $r$ is the radius and $pi$ is the co
 
 TeX math occurs between two `$`. Opening `$` must have a non-space character immediately to its right, while the closing `$` must have a non-space character immediately to its left, and must not be followed immediately by a digit.
 
-## **Inline Elements:** Links and Images
+## Inline Elements: Links and Images
 
 Figure 13 is displaying the markdown that generates the text and links displayed below.
 
@@ -351,7 +349,7 @@ Figure 13: Inline elements: links and images.
 
 You can embed [links with names](https://quarto.org/), direct urls like <https://quarto.org/>, and links to [other places](#inline-elements-text-formatting) in the document. The syntax is similar for embedding an inline image: ![render icon](images/render-icon.png)
 
-## **Block Elements:** Lists
+## Block Elements: Lists
 
 You can make a numbered list by just using numbers.
 
@@ -369,7 +367,7 @@ This will appear as:
 
 Pandoc gives you a lot of control over lists, including *nesting*, *definition lists*, *blocks in lists*, and *example lists*. The Pandoc [manual](https://pandoc.org/MANUAL.html#lists) has detailed information about lists.
 
-## **Block Elements:** Headers
+## Block Elements: Headers
 
 You can make section headers of different sizes by initiating a line with some number of `#` symbols:
 
@@ -378,11 +376,82 @@ You can make section headers of different sizes by initiating a line with some n
     ### Sub-section
     #### Sub-sub section
 
-**STOPPED ON MONDAY**
+## Block Elements: Math
+
+When using math as Block Elements, math use `$$` delimiters. The delimiters may be separated from the formula by whitespace. No blank lines between the opening and closing `$$` delimiters. For example:
+
+A larger equation:
+
+$$ 
+f(x)={\sqrt{\frac{\tau}{2\pi}}}
+      e^{-\tau (x-\mu )^{2}/2}
+$$
+
+## Block Elements: Images
+
+Block images use the same syntax as inline images. However, images on their own line become a block:
+
+Images on their own line become a block:
+
+![Elephant](images/elephant.png){width="220"}
+
+## Metadata: YAML
+
+Metadata can be included via YAML, which is human-readable data-serialization language. It is commonly used for configuration files and in applications where data is being stored or transmitted. For example the Header of a Quarto document:
+
+``` yaml
+---
+title: "US Patent: A Spatial Toy"
+author: 
+  - Erno Rubrik
+  - Albert Einstein
+format: 
+  html:
+    toc: true
+    abstract: |
+      This is the abstract.
+    
+      It has two paragraphs.
+---
+```
+
+There are some syntax rules:
+
+-   Set a single option `key: value`
+
+-   Strings with `:` must be quoted
+
+-   Include multiple values in a list with `-`
+
+-   Nest key-value pairs using indentation
+
+-   Multi-line strings follow `|`
+
+-   Multiple YAML blocks in a document will be merged
+
+These two resources have more information about YAML
+
+1.  Pandoc's interpretation of [YAML metadata:](https://pandoc.org/MANUAL%202.html#extension-yaml_metadata_block)
+
+2.  An overview of [YAML syntax:](https://en.m.wikipedia.org/wiki/YAML#Syntax)
+
+## References and further reading
+
+-   [A Brief History of R Markdown](https://slides.yihui.org/2021-Brazilian-R-Day.html): a presentation by Yihui Xie in 2021.
+
+-   [Pandoc documentation on type references](https://pandoc.org/lua-filters.html#lua-type-reference): this section documents the tools needed to write Lua filters but included in this is a compendium of the different block and inline elements recognized by pandoc.
+
+-   [Block and Inline Elements](https://info340.github.io/html-fundamentals.html#block-vs.-inline-elements): from Client-side Web Development by Ross and Freeman. Provides clear description of elements in the setting of HTML.
+
+-   [Command Line Essentials](https://datacarpentry.org/shell-genomics/02-the-filesystem/index.html): a short primer on how to navigate through a file structure at the command line.sla
+
+The [Polishing Documents](https://rstudio-conf-2022.github.io/rmd-to-quarto/materials/2-polishing-documents/) section of the RMD to Quarto workshop has some great information. However, I think it would work best as an advanced class.
 
 # Adding Code-Generated Plots and Figures
 
 https://rstudio-conf-2022.github.io/rmd-to-quarto/materials/3-computation/
+
+**\[with this content, I need to decide if I am going to stick the content below. Or, implement #\| to support multiple languages\]**
 
 There are two main ways to process code with Knitr in R Markdown documents:
 
@@ -464,7 +533,7 @@ Figure 14: Running a code chunk from the Code-Chunk menu.
 | Go to previous chunk/title | Ctrl+PgUp           | Command+PgUp        |
 +----------------------------+---------------------+---------------------+
 
-## **Labeling Code Chunk**
+## Labeling Code Chunk
 
 While not necessary for running your code, it is good practice is to give a name to each code chunk because it gives the chunk a unique identifier which allows for more advanced options (such as cross-referencing) to work with your rmd files later on:
 
@@ -504,7 +573,7 @@ The option always follows the code chunk label (don't forget to add a `,` after 
 
 -   **include** = (logical) whether to include the chunk output in the output document (defaults to TRUE).
 
-## **Text Output Options**
+## \*\*Text Output Options
 
 -   **eval** = (logical or numeric) TRUE/FALSE to evaluate (or not) or a numeric value like c(1,3) (only evaluate expressions 1 and 3)
 
@@ -532,7 +601,7 @@ We just saw how to run our code in our code chunks to see a preview of the code 
 
 Figure 15: Knitr options in R-markdown.
 
-# **Global Code Chunk Options**
+# Global Code Chunk Options
 
 Let's direct our attention back to the first code chunk in this document that I asked you not to delete.
 
@@ -641,7 +710,7 @@ The record number should appear at the insertion point in your RMD file \[Figure
 
 Figure 25: Reference inserted into a RMD document.
 
-## **Changing Citation Styles**
+## Changing Citation Styles
 
 By default, RStudio via Pandoc will use a Chicago author-date format for citations and references. To use another style, you will need to specify a CSL (Citation Style Language) file in the csl metadata field in the YAML.
 
