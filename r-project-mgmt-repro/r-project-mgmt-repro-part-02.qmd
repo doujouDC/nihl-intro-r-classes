@@ -6,6 +6,7 @@ format: html
 editor: visual
 bibliography: nihl-r-classes.bib
 csl: apa.csl
+toc: true
 ---
 
 # Configuration
@@ -449,8 +450,6 @@ The [Polishing Documents](https://rstudio-conf-2022.github.io/rmd-to-quarto/mate
 
 # Adding Code Blocks Using R
 
-https://rstudio-conf-2022.github.io/rmd-to-quarto/materials/3-computation/
-
 Quarto is a multi-language, next generation version of R Markdown from RStudio, with many new new features and capabilities. Like R Markdown, Quarto uses [Knitr](https://yihui.org/knitr/) to execute R code, and is therefore able to render most existing Rmd files without modification.
 
 This section will only focus on code blocks [using R](https://quarto.org/docs/computations/r.html). Quarto [documentation](https://quarto.org/docs/guide/) includes options for other languages. We'll start by covering the basics of Quarto, then delve into the differences between Quarto and R Markdown in the sections on [Chunk Options](https://quarto.org/docs/computations/r.html#chunk-options) and [Output Formats](https://quarto.org/docs/computations/r.html#output-formats) below. Let us revisit the Quarto workflow that we saw in Figure 2, focusing on the code block \[Figure 14\].
@@ -459,126 +458,7 @@ This section will only focus on code blocks [using R](https://quarto.org/docs/co
 
 Figure 14: Quarto workflow, with focus on code blocks and conversion of code.
 
-## Using Code Chunks
-
-Code chunks are better when you need to do something more sophisticated with your code, such as building plots or tables. They also incorporate syntax which allows modifications to how that code is rendered and styled in your final output. We'll learn more about that as we walk through the "anatomy" of a code chunk.
-
-## Basic Anatomy of the Code Chunk
-
-Code blocks that use braces around the language name (e.g. `{r}`) are executable, and will be run by Quarto during render. Here is a simple example:
-
-@fig-airquality further explores the impact of temperature on ozone level.
-
-```{r}
-#| label: fig-airquality
-#| fig-cap: Temperature and ozone level.
-
-library(ggplot2)
-ggplot(airquality, aes(Temp, Ozone)) + 
-  geom_point() + 
-  geom_smooth(method = "loess"
-)
-```
-
-You might have noticed that there are some special comments at the top of the code block. These comments use `#| (the hash pipe!)`. `#|` provides the cell options. When the document is rendered, this code chunk will look like this \[Figure 15\]:
-
-![](images/quarto-code-chunk-rendered.png){width="640"}
-
-Figure 15: Rendered version of a code-chunk.
-
-## Labeling Code Chunk
-
-While not necessary for running your code, it is good practice is to give a name to each code chunk because it gives the chunk a unique identifier which allows for more advanced options (such as cross-referencing) to work with your rmd files later on:
-
-`{r chunk-name}`
-
-Some things to keep in mind
-
--   The chunk name is the only value other than r in the code chunk options that doesn't require a tag (i.e. `echo =` )
-
--   The chunk label has to be unique (i.e.you can't use the the same name for multiple chunks)
-
-We'll see in a bit where this code chunk label comes in handy. But, for now let's go back and give our first code chunk a name:
-
-1.  Creating Air Quality Figure
-
-2.  Then, run the code-chunk
-
-```{r Creating Air Quality Figure}
-#| label: fig-airquality
-#| fig-cap: Temperature and ozone level.
-
-library(ggplot2)
-ggplot(airquality, aes(Temp, Ozone)) + 
-  geom_point() + 
-  geom_smooth(method = "loess")
-```
-
-Figure 15 is displaying the output of the code-chunk. Can you explain what is happening in the console?
-
-![](images/knit-02.png){width="6.5in"}
-
-Figure 15: Output from our first code chunk.
-
-## Code Chunk Options
-
-There are over 50 different code chunk options. Wow, that is a lot. Obviously we will not go over all of them, but they fall into several larger categories including: code evaluation, text output, code style, cache options, plot output and animation.
-
-You can find a complete list of code chunk options on Knitr developer, Yihui Xie's, [online guide to knitr](https://yihui.org/knitr/options/). Or, you can find a brief list of all options on the R Markdown Reference guide on page 3 accesible through the RStudio Interface by navigating to the main menu bar `Help > Cheat Sheets > R Markdown Reference Guide`.
-
-The chunk name is the only value other than `r` in the code chunk options that doesn't require a tag (i.e. the "= VALUE" part of `option = VALUE`). So chunk options will always require a tag, and the syntax will be in the form:
-
-`{r chunk-label, option = VALUE}`
-
-The option always follows the code chunk label (don't forget to add a `,` after the label either).
-
-## Code Evaluation Option
-
-| **Option** | **Description**                                                                                                                              |
-|:-----------|:---------------------------------------------------------------------------------------------------------------------------------------------|
-| `include`  | Catch all for preventing any output (code or results) from being included (e.g. `include: false` suppresses all output from the code block). |
-
-## Text Output Options
-
-| **Option** | **Description**                                                                                                                                                                                    |
-|:-----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `eval`     | Evaluate the code chunk (if `false`, just echos the code into the output).                                                                                                                         |
-| `echo`     | Include the source code in output                                                                                                                                                                  |
-| `output`   | Include the results of executing the code in the output (`true`, `false`, or `asis` to indicate that the output is raw markdown and should not have any of Quarto\'s standard enclosing markdown). |
-| `warning`  | Include warnings in the output.                                                                                                                                                                    |
-| `error`    | Include errors in the output.                                                                                                                                                                      |
-The code chunk below is a modification of the previous code chunk and includes the text output option `warning: false`
-
-```{r}
-#| label: fig-airquality
-#| fig-cap: Temperature and ozone level.
-#| warning: false
-
-library(ggplot2)
-
-ggplot(airquality, aes(Temp, Ozone)) + 
-  geom_point() + 
-  geom_smooth(method = "loess"
-)
-```
-
-
-The `knitr` syntax for passing options still works since Quarto uses `knitr`.
-
-```{r Creating Air Quality Figure, warning=FALSE}
-#| label: fig-airquality
-#| fig-cap: Temperature and ozone level.
-
-library(ggplot2)
-ggplot(airquality, aes(Temp, Ozone)) + 
-  geom_point() + 
-  geom_smooth(method = "loess")
-```
-
-**STOPPED on 2022-08-15**
-https://rstudio-conf-2022.github.io/rmd-to-quarto/materials/3-computation/slides/computation.html#/setting-knitr-options
-
-This document results in the following rendered output:
+## Inserting Code Chunks
 
 You can quickly insert chunks like these into your file with:
 
@@ -592,39 +472,48 @@ The most basic (and empty) code chunk looks like this:
 
 ![](images/blank-code-chunk.png){width="6.5in"}
 
-Although I am demostrating using R in this workshop, it's possible to use other programming or markup languages. For example, we have seen that we can use LaTeX code for equations. You can also use python and a handful of other languages.
+Although I am demonstrating using R, it's possible to use other programming or markup languages. For example, we have seen that we can use LaTeX code for equations. You can also use python and a handful of other languages \[Figure 15\].
 
 ![](images/code-chunk-other.png){width="6.5in"}
 
-Figure 11: Code options available in R-markdown.
+Figure 15: Code options available in R-markdown.
 
-There's a button you can use in the RStudio menu to generate the code chunks automatically. Automatic code chunk generation is available for several other languages as well. Also, you can use the keyboard shortcut `ctrl`+`alt`+`i` for Windows and `command`+`option`+`i` for Mac. As you can see in Figure 12, the console is blank because we have not executed/run the code chunk. Let us enter the following read statement into our first code chunk:
+## Basic Anatomy of the Code Chunk
 
-`# This is a example of a code chunk to read in some data`
+Code blocks that use braces around the language name (e.g. `{r}`) are executable, and will be run by Quarto during render. Here is a simple example:
 
-`library(tidyverse)`
+```{r}
+#| label: fig-airquality
+#| fig-cap: Temperature and ozone level.
 
-`read_data <- "../raw-data/combined.csv"`
+library(ggplot2)
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess"
+)
+```
 
-![](images/code-chunk-script.png){width="6.5in"}
+You might have noticed that there are some special comments at the top of the code block. These comments use `#| (the hash pipe!)`. `#|` provides the cell options. When the document is rendered, this code chunk will look like this [Figure 16]:
 
-Figure 12: Code chunk in R-markdown.
+![](images/quarto-code-chunk-rendered.png){width="640"}
+
+Figure 16: Rendered version of a code-chunk.
 
 ## Run the code in a code chunk
 
 There are 3 main options for running and debugging code that don't require us to wait for the file to render.
 
-1)  Run from code chunk (green play button on the right top corner). This allows us to run one specific code chunk \[Figure13\].
+1)  Run from code chunk (green play button on the right top corner). This allows us to run one specific code chunk [Figure 17].
 
 ![](images/code-chunk-run-01.png){width="6.5in"}
 
-Figure 13: Running a code chunk from the code-box.
+Figure 17: Running a code chunk from the code-box.
 
-2.  Run menu, which gives more options for running code chunks including the current one, the next one, all chunks, etc \[Figure 14\].
+2.  Run menu, which gives more options for running code chunks including the current one, the next one, all chunks, etc [Figure 18].
 
 ![](images/code-run-chunk-02.png){width="6.5in"}
 
-Figure 14: Running a code chunk from the Code-Chunk menu.
+Figure 18: Running a code chunk from the Code-Chunk menu.
 
 3.  Using keyboard shortcuts
 
@@ -648,9 +537,145 @@ Figure 14: Running a code chunk from the Code-Chunk menu.
 | Go to previous chunk/title | Ctrl+PgUp           | Command+PgUp        |
 +----------------------------+---------------------+---------------------+
 
-## 
+## Labeling Code Chunk
+
+While not necessary for running your code, it is good practice is to give a name to each code chunk because it gives the chunk a unique identifier which allows for more advanced options (such as cross-referencing) to work with your rmd files later on:
+
+`{r chunk-name}`
+
+Some things to keep in mind
+
+-   The chunk name is the only value other than r in the code chunk options that doesn't require a tag (i.e. `echo =` )
+
+-   The chunk label has to be unique (i.e. you can't use the the same name for multiple chunks)
+
+We'll see in a bit where this code chunk label comes in handy. But, for now let's go back and give our first code chunk a name:
+
+1.  Creating Air Quality Figure
+
+2.  Then, run the code-chunk
+
+```{r Creating Air Quality Figure Version 1}
+#| label: fig-airquality
+#| fig-cap: Temperature and ozone level.
+
+library(ggplot2)
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+
+Figure 18 is displaying the output of the code-chunk. Can you explain what is happening in the console?
+
+![](images/knit-02.png){width="6.5in"}
+
+Figure 18: Output from our first code chunk.
+
+## Code Chunk Options
+
+There are over 50 different code chunk options. Wow, that is a lot. Obviously we will not go over all of them, but they fall into several larger categories including: code evaluation, text output, code style, cache options, plot output and animation.
+
+You can find a complete list of code chunk options on Knitr developer, Yihui Xie's, [online guide to knitr](https://yihui.org/knitr/options/). Or, you can find a brief list of all options on the R Markdown Reference guide on page 3 accesible through the RStudio Interface by navigating to the main menu bar `Help > Cheat Sheets > R Markdown Reference Guide`.
+
+The chunk name is the only value other than `r` in the code chunk options that doesn't require a tag (i.e. the "= VALUE" part of `option = VALUE`). So chunk options will always require a tag, and the syntax will be in the form:
+
+`{r chunk-label, option = VALUE}`
+
+The option always follows the code chunk label (don't forget to add a `,` after the label either).
+
+## Code Evaluation Option
+
++------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| **Option** | **Description**                                                                                                                              |
++:===========+:=============================================================================================================================================+
+| `include`  | Catch all for preventing any output (code or results) from being included (e.g. `include: false` suppresses all output from the code block). |
++------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+## Text Output Options
+
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Option** | **Description**                                                                                                                                                                                   |
++:===========+:==================================================================================================================================================================================================+
+| `eval`     | Evaluate the code chunk (if `false`, just echos the code into the output).                                                                                                                        |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `echo`     | Include the source code in output                                                                                                                                                                 |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `output`   | Include the results of executing the code in the output (`true`, `false`, or `asis` to indicate that the output is raw markdown and should not have any of Quarto's standard enclosing markdown). |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `warning`  | Include warnings in the output.                                                                                                                                                                   |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `error`    | Include errors in the output.                                                                                                                                                                     |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+The code chunk below is a modification of the previous code chunk and includes the text output option `warning: false`
+
+```{r Creating Air Quality Figure Version 2}
+#| label: fig-airquality
+#| fig-cap: Temperature and ozone level.
+#| warning: false
+
+library(ggplot2)
+
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess"
+)
+```
+
+The `knitr` syntax for passing options still works since Quarto uses `knitr`.
+
+```{r Creating Air Quality Figure Version 3, warning=FALSE}
+library(ggplot2)
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess") +
+  labs(caption = "Temperature and ozone level")
+  
+```
+
+While it is possible to use R chunks options, hash pipe options are more portable across computational engines. Also, don't forget the "tab-complete" option that is built into RStudio [Figure 19].
+
+![](images/code-yaml-auto-complete.png){width="640"}
+
+Figure 19: Example of tab-complete feature in RStudio.
+
+# Figure Output
+
+Figure output options are similar to those used in R markdown. However, Pandoc markdown syntax is used for figures. Let us compare the two options. The code chunk below is using R markdown.
+
+```{r Penguins Version 1}
+library(palmerpenguins)
+library(ggplot2)
+
+ggplot(penguins, aes(x = bill_length_mm,
+                     y = bill_depth_mm,
+                     col = island)) +
+  geom_point() +
+  labs(caption ="Penguin lenght and depth",
+       alt="Penguin data from palmerpenguins package")
+```
+
+The code chunk below is using R markdown.
+
+```{r Penguins Version 2}
+#| fig-width: 5
+#| fig-height: 3
+#| fig-cap: "Penguin lenght and depth"
+#| fig-alt: "Penguin data from palmerpenguins package"
+
+
+library(palmerpenguins)
+library(ggplot2)
+
+ggplot(penguins, aes(x = bill_length_mm,
+                     y = bill_depth_mm,
+                     col = island)) +
+  geom_point() 
+```
 
 ## Producing Your Document
+
+**STOPPED ON 2022-08-16**
 
 ## Knitr
 
@@ -665,22 +690,6 @@ We just saw how to run our code in our code chunks to see a preview of the code 
 ![](images/knit-01.png){width="6.5in"}
 
 Figure 15: Knitr options in R-markdown.
-
-# Global Code Chunk Options
-
-Let's direct our attention back to the first code chunk in this document that I asked you not to delete.
-
-The code looks like:
-
-![](images/code-chunk-03.png){width="624"}
-
-Figure 16: Example of a global code chunk.
-
-This is an option to globally set options for the entire R Markdown document. Can you imagine how much work it would be to add the chunk options each time? Also, what if we need different options for different figures. We can automate setting options by adding this special code chunk at the beginning of the document. Then, each code chunk we add will refer to those "global" options when it runs.
-
-# Reproducible & Efficient Methods of Using Code Chunks
-
-I think this should be an advanced class. I will need to identify "breakpoints" after I do the dry run and teach the class for the first time.
 
 # Bibliography, Citations & Cross-Referencing
 
