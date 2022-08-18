@@ -1,6 +1,10 @@
 ---
-title: "Proj-Mgmt-01"
+title: "Proj-Mgmt-02"
 author: "Doug Joubert"
 format: html
 editor: visual
+bibliography: nihl-r-classes.bib
+csl: apa.csl
 ---
+
+This book is an overview of data visualization from a sociological perspective [@RN1081].

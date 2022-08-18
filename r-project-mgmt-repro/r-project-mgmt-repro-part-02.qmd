@@ -2,11 +2,13 @@
 title: "Project Management and Reproducibility in RStudio: Part 2"
 author: "Doug Joubert"
 date: "`r Sys.Date()`"
-format: html
-editor: visual
+format: docx
+toc: true
+toc-location: body
+fig-width: 6
+fig-height: 4
 bibliography: nihl-r-classes.bib
 csl: apa.csl
-toc: true
 ---
 
 # Configuration
@@ -69,7 +71,7 @@ Other useful packages to install include the tidyverse and rmarkdown packages.
 
 -   [Quarto for Scientists](https://qmd4sci.njtierney.com/) - This is a book on rmarkdown, aimed for scientists. It was initially developed as a 3 hour workshop, but is now developed into a resource that will grow and change over time.
 -   [Reproducible authoring with Quarto](https://www.youtube.com/watch?v=6p4vOKS6Xls) - 2022 Toronto Workshop on Reproducibility with Mine Çetinkaya-Rundel (slides: <https://mine-cetinkaya-rundel.github.io/2022-repro-toronto/>).
--   [Tutorial: Making shareable docs with Quarto](https://openscapes.github.io/quarto-website-tutorial/) - A tutorial to make website with Quarto.
+-   [Tutorial: Making shareable docs with Quarto](https://openscapes.github.io/quarto-website-tutorial/) - A tutorial to make a website with Quarto.
 -   [Workshop: From R Markdown to Quarto](https://rstudio-conf-2022.github.io/rmd-to-quarto/) - A workshop for those who want to take their R Markdown skills and expertise and apply them in Quarto, the next generation of R Markdown.
 -   [Workshop: Getting started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/) - "Get started with Quarto" workshop materials for rstudio::conf(2022).
 
@@ -125,7 +127,7 @@ You may also find the following resources helpful:
 
 ## A History of Markdown
 
-History adapted from [@RN1453]
+History adapted from [@RN1727]
 
 -   1984 **Literate Programming** proposed to combine text with code
 
@@ -515,8 +517,8 @@ Figure 19: Code options available in R-markdown.
 
 Code blocks that use braces around the language name (e.g. `{r}`) are executable, and will be run by Quarto during render. Here is a simple example:
 
-```{r}
-#| label: fig-airquality
+```{r Creating Air Quality Figure Version 1}
+#| label: fig-airquality 01
 #| fig-cap: Temperature and ozone level.
 
 library(ggplot2)
@@ -588,8 +590,8 @@ We'll see in a bit where this code chunk label comes in handy. But, for now let'
 
 2.  Then, run the code-chunk
 
-```{r Creating Air Quality Figure Version 1}
-#| label: fig-airquality
+```{r Creating Air Quality Figure Version 2}
+#| label: fig-airquality 02
 #| fig-cap: Temperature and ozone level.
 
 library(ggplot2)
@@ -642,8 +644,8 @@ The option always follows the code chunk label (don't forget to add a `,` after 
 
 The code chunk below is a modification of the previous code chunk and includes the text output option `warning: false`
 
-```{r Creating Air Quality Figure Version 2}
-#| label: fig-airquality
+```{r Creating Air Quality Figure Version 3}
+#| label: fig-airquality 03
 #| fig-cap: Temperature and ozone level.
 #| warning: false
 
@@ -882,17 +884,15 @@ In some cases you might need to manually change the file extension from .txt to 
 
 Figure 31: Manually changing the file extension for a .bib file.
 
-STOPPED ON 2022-08-17
-
 ## Inserting Citations
 
-Choose Insert\>Citation within RStudio. When you do this, you should see the records in the linked bib file \[Figure 23\].
+Choose Insert\>Citation within RStudio \[Figure23\].
 
 ![](images/bib-07.png){width="640"}
 
 Figure 23: Inserting a citation in RStudio in Visual Mode.
 
-The search box in Figure 23 is a free text search. This means that it will search on the Author names and the title. Thus, if I search for the name **Cimino**, the reference list will filter to contain records that match my search string \[Figure 24\].
+When you do this, you should see the records in the linked bib file. The search box in Figure 23 is a free text search. This means that it will search on the Author names and the title. Thus, if I search for the name **Healy**, the reference list will filter to contain records that match my search string \[Figure 24\] .
 
 ![](images/bib-08.png){width="640"}
 
@@ -910,17 +910,13 @@ By default, RStudio via Pandoc will use a Chicago author-date format for citatio
 
 You can find CSL formats on the [Zotero Style Repository](https://www.zotero.org/styles), which makes it easy to search for and download your desired style.
 
-Download the format you wish to use and call it out in the YAML. I have already saved the APA CSL file in the project folder. But if you would like to follow the process or try another style, go to the Zotero Style repo and select [American Psychological Association 7th edition](https://www.zotero.org/styles/apa) or any other style of your choice. You will notice that it will automatically download the file (e.g. `apa.csl`). Make sure to save it to your project directory in report/source folder. In the YAML we have to call the exact name of the file preceded by "csl:" The Header of your RMD file should now look like this \[Figure 26\]:
+Download the format you wish to use and call it out in the YAML. I have already saved the APA CSL file in the project folder. But if you would like to follow the process or try another style, go to the Zotero Style repo and select [American Psychological Association 7th edition](https://www.zotero.org/styles/apa) or any other style of your choice. You will notice that it will automatically download the file (e.g. `apa.csl`).
+
+Make sure to save it to your project directory in report/source folder. In the YAML we have to call the exact name of the file preceded by "csl:" The Header of your RMD file should now look like this \[Figure 26\]:
 
 ![](images/bib-10.png){width="640"}
 
 Figure 26: RMD Header with a linked bib file and output style.
-
-The bibliography will be formatted when you Knit your RMD file \[Figure 27\]. In Figure 27. I have knitted the RMD document in html format.
-
-![](images/bib-11.png){width="640"}
-
-Figure 27: Knitted document with formatted bibliography.
 
 ## Bibliography Generation
 
@@ -932,6 +928,12 @@ Pandoc will automatically generate a list of works cited and place it in the doc
     :::
 
 If no such div is found, the works cited list will be placed at the end of the document.
+
+The bibliography will be formatted when you Render your file \[Figure 27\]. In Figure 27. I have knitted the RMD document in html format.
+
+![](images/bib-11.png){width="640"}
+
+Figure 27: Knitted document with formatted bibliography.
 
 **Tip**
 
