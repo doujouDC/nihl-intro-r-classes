@@ -2,15 +2,16 @@
 title: "Project Management and Reproducibility in RStudio: Part 2"
 author: "Doug Joubert"
 date: "`r Sys.Date()`"
-format: html
-editor: visual
+format: docx
+toc: true
+toc-location: body
+fig-width: 6
+fig-height: 4
 bibliography: nihl-r-classes.bib
 csl: apa.csl
 ---
 
 # Configuration
-
-# Packages
 
 This class features exercises that will help you learn by doing. To prepare, please install the following on your machine:
 
@@ -40,7 +41,7 @@ Other useful packages to install include the tidyverse and rmarkdown packages.
 
 ## Resources
 
-### R Project Management URLs
+### R Project Management
 
 -   Introduction to Reproducible Publications with RStudio: <https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/>
 
@@ -52,7 +53,7 @@ Other useful packages to install include the tidyverse and rmarkdown packages.
 
 -   [Using the RStudio Terminal in the RStudio IDE](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE)
 
-### Quarto URLS
+### Quarto
 
 #### Official Documentation & Quickstarts
 
@@ -68,8 +69,9 @@ Other useful packages to install include the tidyverse and rmarkdown packages.
 
 ### Tutorials and Workshops
 
+-   [Quarto for Scientists](https://qmd4sci.njtierney.com/) - This is a book on rmarkdown, aimed for scientists. It was initially developed as a 3 hour workshop, but is now developed into a resource that will grow and change over time.
 -   [Reproducible authoring with Quarto](https://www.youtube.com/watch?v=6p4vOKS6Xls) - 2022 Toronto Workshop on Reproducibility with Mine Çetinkaya-Rundel (slides: <https://mine-cetinkaya-rundel.github.io/2022-repro-toronto/>).
--   [Tutorial: Making shareable docs with Quarto](https://openscapes.github.io/quarto-website-tutorial/) - A tutorial to make website with Quarto.
+-   [Tutorial: Making shareable docs with Quarto](https://openscapes.github.io/quarto-website-tutorial/) - A tutorial to make a website with Quarto.
 -   [Workshop: From R Markdown to Quarto](https://rstudio-conf-2022.github.io/rmd-to-quarto/) - A workshop for those who want to take their R Markdown skills and expertise and apply them in Quarto, the next generation of R Markdown.
 -   [Workshop: Getting started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/) - "Get started with Quarto" workshop materials for rstudio::conf(2022).
 
@@ -86,6 +88,16 @@ Upon completion of this class students should be able to:
 -   Add code chunks to R-markdown documents
 -   Understand how to use reproducible code chunks \[maybe for advanced class\]
 -   Create a bibliography and link it to a R-markdown document
+
+## Assumptions for This Class
+
++-------------------------------------------------+:-----------------------------------------------------------------+
+| ![](images/Rlogo.png){width="25" height="20"}   | You know R                                                       |
++-------------------------------------------------+------------------------------------------------------------------+
+| ![](images/rmarkdown-icon.png){width="25"}      | You know a little bit of Markdown                                |
++-------------------------------------------------+------------------------------------------------------------------+
+| ![](images/quarto-icon-smaller.png){width="25"} | You want to learn about Quarto, the next-generation of RMarkdown |
++-------------------------------------------------+------------------------------------------------------------------+
 
 ## Literate Programming and Markdown
 
@@ -115,7 +127,7 @@ You may also find the following resources helpful:
 
 ## A History of Markdown
 
-History adapted from [@RN1453]
+History adapted from [@RN1727]
 
 -   1984 **Literate Programming** proposed to combine text with code
 
@@ -181,17 +193,37 @@ Figure 2: Quarto transformation workflow.
 
 -   Easier to customize websites and books with projects
 
+## Quarto Interfaces
+
+In this class we will be creating and interacting with Quarto docs using RStudio \[Figure 3\].
+
+![](images/rstudio-preview.png){width="640"}
+
+Figure 3: Quarto doc opened in RStudio.
+
+However, you can create Quarto docs using Jupyter notebooks \[Figure 4\].
+
+![](images/jupyterlab-preview.png){width="640"}
+
+Figure 4: Quarto doc opened in a Jupyter notebook.
+
+You can also create Quarto docs using a text editor. Figure 5 is a Quarto doc opened in Visual Studio Code editor. You might have also noticed that the code in Figure 5 is Python.
+
+![](images/python-vscode.png){width="640"}
+
+Figure 5: Quarto doc opened in Visual Studio Code editor.
+
 # Creating Quarto Documents
 
 https://rstudio-conf-2022.github.io/rmd-to-quarto/materials/2-polishing-documents/
 
-Quarto is a multi-language, next generation version of R Markdown from RStudio, with many new new features and capabilities. Like R Markdown, Quarto uses [Knitr](https://yihui.org/knitr/) to execute R code, and is therefore able to render most existing Rmd files without modification.
+Quarto is a multi-language, next generation version of R Markdown from RStudio, with many new new features and capabilities. A Quarto document (`.qmd)` is a plain text file, that can be rendered to many different formats. Like R Markdown, Quarto uses [Knitr](https://yihui.org/knitr/) to execute R code, and is therefore able to render most existing Rmd files without modification. Also, most `.ipynb` can be rendered as-is via Quarto.
 
 In this section we are going to learn how to create generic block and inline elements, set classes and attributes, and practice using Quarto-specific elements in RStudio's visual editor. Although we do not cover this topic in this class, I have include some resources on how to customize the appearance of your documents with elementary CSS.
 
 https://quarto.org/docs/computations/r.html
 
-Let us create a new document by navigating to `File > New File > Quarto Document` \[Figure 3\].
+Let us create a new document by navigating to `File > New File > Quarto Document` \[Figure 6\].
 
 -   Add the title Proj-Mgmt-02.
 
@@ -203,13 +235,13 @@ Let us create a new document by navigating to `File > New File > Quarto Document
 
 ![](images/quarto-create-html.png){width="640"}
 
-Figure 3: Creating a new Quarto document.
+Figure 6: Creating a new Quarto document.
 
-If you scroll down the doc that you just created you can see that the Quarto file is already populated with text and code \[Figure 4\].
+If you scroll down the doc that you just created you can see that the Quarto file is already populated with text and code \[Figure 7\].
 
 ![](images/quarto-doc-source-view.png){width="640"}
 
-Figure 4: Default RMD document.
+Figure 7: Default RMD document.
 
 Let's first delete the generic text because we don't need it at this point. The only thing we need to keep is the Header:
 
@@ -227,7 +259,7 @@ Let's first delete the generic text because we don't need it at this point. The 
 
 ## Quarto Content Structure
 
-A Quarto document consists of *content*, *structure*, *appearance*, *format*.
+A Quarto document consists of content, structure, appearance, format \[Figure 8\].
 
 +--------------------------------------+------------------------------------------------------+
 | ![](images/quarto-rubiks-patent.png) | -   **Content:** text, code, graphics                |
@@ -239,7 +271,7 @@ A Quarto document consists of *content*, *structure*, *appearance*, *format*.
 |                                      | -   **Format:** functionality                        |
 +--------------------------------------+------------------------------------------------------+
 
-Figure 5: Sample quarto document.
+Figure 8: Sample quarto document.
 
 ## What Define the Structure of a Document
 
@@ -247,33 +279,35 @@ A document is a list of **block elements** that contain **inline elements** or o
 
 ### Block Element
 
-A Block Element starts on a new line and followed by an empty line. An example of block elements is included in Figure 6.
+A Block Element starts on a new line and followed by an empty line. An example of block elements is included in Figure 9.
 
 ![](images/quarto-block-elements.png){width="640"}
 
-Figure 6: Example of Quarto block elements.
+Figure 9: Example of Quarto block elements.
 
 ### Inline Element
 
-Inline elements modify content inline and are not followed by a new line. An example of inline elements are included in Figure 7.
+Inline elements modify content inline and are not followed by a new line. An example of inline elements are included in Figure 10.
 
 ![](images/quarto-inline-element.png){width="640"}
 
+Figure 10: Inline element in a Quarto doc.
+
 ### Metadata Element
 
-Metadata elements contain ancillary info about the document's origin, format, look, etc. An example of a metadata elements are included in Figure 8.
+Metadata elements contain ancillary info about the document's origin, format, look, etc. An example of a metadata elements are included in Figure 11.
 
 ![](images/quarto-metadata.png){width="640"}
 
-Figure 8: Example of Quarto metadata elements.
+Figure 11: Example of Quarto metadata elements.
 
-Figure 9 is displaying both the Quarto code (left) and the rendered Quarto code (right).
+Figure 12 is displaying both the Quarto code (left) and the rendered Quarto code (right).
 
 | Quarto Code             | Output on Render          |
 |-------------------------|---------------------------|
 | ![](images/demo-md.png) | ![](images/demo-docx.png) |
 
-Figure 9: Example of a rendered Quarto document.
+Figure 12: Example of a rendered Quarto document.
 
 ## Editor Options
 
@@ -281,19 +315,19 @@ Figure 9: Example of a rendered Quarto document.
 
 The Quarto visual editor provides a [WYSIWYM](https://en.wikipedia.org/wiki/WYSIWYM) editing interface for all of Pandoc markdown, including tables, citations, cross-references, footnotes, divs/spans, definition lists, attributes, raw HTML/TeX, and more. The visual editor also includes support for executing code cells and viewing their output inline.
 
-Current version of RStudio has the Source/Visual tabs on the Menu panel. If you are using an older version of RStudio, the visual editor is accessible through a small button on the far right side of the script/document pane in RStudio. The icon is a protractor, but from further away it just looks like a squiggly "A". Figure 10 is displaying the Quarto document for this class, in visual mode.
+Current version of RStudio has the Source/Visual tabs on the Menu panel. If you are using an older version of RStudio, the visual editor is accessible through a small button on the far right side of the script/document pane in RStudio. The icon is a protractor, but from further away it just looks like a squiggly "A". Figure 13 is displaying the Quarto document for this class, in visual mode.
 
 ![](images/quarto-markdown-visual.png){width="640"}
 
-Figure 10: Markdown using the visual editor.
+Figure 13: Markdown using the visual editor.
 
 ### Source Editor
 
-Figure 11 is showng the same document using the "source editor" mode. Notice the symbols scattered throughout the text (#, \*, \<\>). Those are examples of R Markdown syntax, which is a flavor of Markdown syntax, an easy and quick, human-readable markup language for document styling.
+Figure 14 is showng the same document using the "source editor" mode. Notice the symbols scattered throughout the text (#, \*, \<\>). Those are examples of R Markdown syntax, which is a flavor of Markdown syntax, an easy and quick, human-readable markup language for document styling.
 
 ![](images/quarto-markdown-source.png){width="640"}
 
-Figure 11: RMD file using Source Editor.
+Figure 14: RMD file using Source Editor.
 
 It is good to be aware of how to use the source editor, since you might have to fix a piece of broken markdown created using the Visual Editor.
 
@@ -329,11 +363,11 @@ You can use whatever method you prefer, but *be consistent*. This maintains the 
 
 ## Inline Elements: Math
 
-Figure 12 is displaying the markdown that generates the math displayed below.
+Figure 15 is displaying the markdown that generates the math displayed below.
 
 ![](images/inline-element-math.png){width="640"}
 
-Figure 12: Inline element: math markdown.
+Figure 15: Inline element: math markdown.
 
 The area of a circle is $A = pi r^2$, where $r$ is the radius and $pi$ is the constant $3.141592\ldots$.
 
@@ -341,11 +375,11 @@ TeX math occurs between two `$`. Opening `$` must have a non-space character imm
 
 ## Inline Elements: Links and Images
 
-Figure 13 is displaying the markdown that generates the text and links displayed below.
+Figure 16 is displaying the markdown that generates the text and links displayed below.
 
 ![](images/inline-element-links.png){width="640"}
 
-Figure 13: Inline elements: links and images.
+Figure 16: Inline elements: links and images.
 
 You can embed [links with names](https://quarto.org/), direct urls like <https://quarto.org/>, and links to [other places](#inline-elements-text-formatting) in the document. The syntax is similar for embedding an inline image: ![render icon](images/render-icon.png)
 
@@ -449,136 +483,15 @@ The [Polishing Documents](https://rstudio-conf-2022.github.io/rmd-to-quarto/mate
 
 # Adding Code Blocks Using R
 
-https://rstudio-conf-2022.github.io/rmd-to-quarto/materials/3-computation/
-
 Quarto is a multi-language, next generation version of R Markdown from RStudio, with many new new features and capabilities. Like R Markdown, Quarto uses [Knitr](https://yihui.org/knitr/) to execute R code, and is therefore able to render most existing Rmd files without modification.
 
-This section will only focus on code blocks [using R](https://quarto.org/docs/computations/r.html). Quarto [documentation](https://quarto.org/docs/guide/) includes options for other languages. We'll start by covering the basics of Quarto, then delve into the differences between Quarto and R Markdown in the sections on [Chunk Options](https://quarto.org/docs/computations/r.html#chunk-options) and [Output Formats](https://quarto.org/docs/computations/r.html#output-formats) below. Let us revisit the Quarto workflow that we saw in Figure 2, focusing on the code block \[Figure 14\].
+This section will only focus on code blocks [using R](https://quarto.org/docs/computations/r.html). Quarto [documentation](https://quarto.org/docs/guide/) includes options for other languages. We'll start by covering the basics of Quarto, then delve into the differences between Quarto and R Markdown in the sections on [Chunk Options](https://quarto.org/docs/computations/r.html#chunk-options) and [Output Formats](https://quarto.org/docs/computations/r.html#output-formats) below. Let us revisit the Quarto workflow that we saw in Figure 2, focusing on the code block \[Figure 17\].
 
 ![](images/quarto-workflow-example-code.jpg){width="640"}
 
-Figure 14: Quarto workflow, with focus on code blocks and conversion of code.
+Figure 17: Quarto workflow, with focus on code blocks and conversion of code.
 
-## Using Code Chunks
-
-Code chunks are better when you need to do something more sophisticated with your code, such as building plots or tables. They also incorporate syntax which allows modifications to how that code is rendered and styled in your final output. We'll learn more about that as we walk through the "anatomy" of a code chunk.
-
-## Basic Anatomy of the Code Chunk
-
-Code blocks that use braces around the language name (e.g. `{r}`) are executable, and will be run by Quarto during render. Here is a simple example:
-
-@fig-airquality further explores the impact of temperature on ozone level.
-
-```{r}
-#| label: fig-airquality
-#| fig-cap: Temperature and ozone level.
-
-library(ggplot2)
-ggplot(airquality, aes(Temp, Ozone)) + 
-  geom_point() + 
-  geom_smooth(method = "loess"
-)
-```
-
-You might have noticed that there are some special comments at the top of the code block. These comments use `#| (the hash pipe!)`. `#|` provides the cell options. When the document is rendered, this code chunk will look like this \[Figure 15\]:
-
-![](images/quarto-code-chunk-rendered.png){width="640"}
-
-Figure 15: Rendered version of a code-chunk.
-
-## Labeling Code Chunk
-
-While not necessary for running your code, it is good practice is to give a name to each code chunk because it gives the chunk a unique identifier which allows for more advanced options (such as cross-referencing) to work with your rmd files later on:
-
-`{r chunk-name}`
-
-Some things to keep in mind
-
--   The chunk name is the only value other than r in the code chunk options that doesn't require a tag (i.e. `echo =` )
-
--   The chunk label has to be unique (i.e.you can't use the the same name for multiple chunks)
-
-We'll see in a bit where this code chunk label comes in handy. But, for now let's go back and give our first code chunk a name:
-
-1.  Creating Air Quality Figure
-
-2.  Then, run the code-chunk
-
-```{r Creating Air Quality Figure}
-#| label: fig-airquality
-#| fig-cap: Temperature and ozone level.
-
-library(ggplot2)
-ggplot(airquality, aes(Temp, Ozone)) + 
-  geom_point() + 
-  geom_smooth(method = "loess")
-```
-
-Figure 15 is displaying the output of the code-chunk. Can you explain what is happening in the console?
-
-![](images/knit-02.png){width="6.5in"}
-
-Figure 15: Output from our first code chunk.
-
-## Code Chunk Options
-
-There are over 50 different code chunk options. Wow, that is a lot. Obviously we will not go over all of them, but they fall into several larger categories including: code evaluation, text output, code style, cache options, plot output and animation.
-
-You can find a complete list of code chunk options on Knitr developer, Yihui Xie's, [online guide to knitr](https://yihui.org/knitr/options/). Or, you can find a brief list of all options on the R Markdown Reference guide on page 3 accesible through the RStudio Interface by navigating to the main menu bar `Help > Cheat Sheets > R Markdown Reference Guide`.
-
-The chunk name is the only value other than `r` in the code chunk options that doesn't require a tag (i.e. the "= VALUE" part of `option = VALUE`). So chunk options will always require a tag, and the syntax will be in the form:
-
-`{r chunk-label, option = VALUE}`
-
-The option always follows the code chunk label (don't forget to add a `,` after the label either).
-
-## Code Evaluation Option
-
-| **Option** | **Description**                                                                                                                              |
-|:-----------|:---------------------------------------------------------------------------------------------------------------------------------------------|
-| `include`  | Catch all for preventing any output (code or results) from being included (e.g. `include: false` suppresses all output from the code block). |
-
-## Text Output Options
-
-| **Option** | **Description**                                                                                                                                                                                    |
-|:-----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `eval`     | Evaluate the code chunk (if `false`, just echos the code into the output).                                                                                                                         |
-| `echo`     | Include the source code in output                                                                                                                                                                  |
-| `output`   | Include the results of executing the code in the output (`true`, `false`, or `asis` to indicate that the output is raw markdown and should not have any of Quarto\'s standard enclosing markdown). |
-| `warning`  | Include warnings in the output.                                                                                                                                                                    |
-| `error`    | Include errors in the output.                                                                                                                                                                      |
-The code chunk below is a modification of the previous code chunk and includes the text output option `warning: false`
-
-```{r}
-#| label: fig-airquality
-#| fig-cap: Temperature and ozone level.
-#| warning: false
-
-library(ggplot2)
-
-ggplot(airquality, aes(Temp, Ozone)) + 
-  geom_point() + 
-  geom_smooth(method = "loess"
-)
-```
-
-
-The `knitr` syntax for passing options still works since Quarto uses `knitr`.
-
-```{r Creating Air Quality Figure, warning=FALSE}
-#| label: fig-airquality
-#| fig-cap: Temperature and ozone level.
-
-library(ggplot2)
-ggplot(airquality, aes(Temp, Ozone)) + 
-  geom_point() + 
-  geom_smooth(method = "loess")
-```
-
-**STOPPED on 2022-08-15**
-https://rstudio-conf-2022.github.io/rmd-to-quarto/materials/3-computation/slides/computation.html#/setting-knitr-options
-
-This document results in the following rendered output:
+## Inserting Code Chunks
 
 You can quickly insert chunks like these into your file with:
 
@@ -588,43 +501,54 @@ You can quickly insert chunks like these into your file with:
 
 -   or by typing the chunk delimiters {r} and \`\`\`.
 
-The most basic (and empty) code chunk looks like this:
+The most basic (and empty) code chunk looks like this \[Figure 18\]
 
 ![](images/blank-code-chunk.png){width="6.5in"}
 
-Although I am demostrating using R in this workshop, it's possible to use other programming or markup languages. For example, we have seen that we can use LaTeX code for equations. You can also use python and a handful of other languages.
+Figure 18: Code chunk in Source-mode and in Visual-mode.
+
+Although I am demonstrating using R, it's possible to use other programming or markup languages. For example, we have seen that we can use LaTeX code for equations. You can also use python and a handful of other languages \[Figure 19\].
 
 ![](images/code-chunk-other.png){width="6.5in"}
 
-Figure 11: Code options available in R-markdown.
+Figure 19: Code options available in R-markdown.
 
-There's a button you can use in the RStudio menu to generate the code chunks automatically. Automatic code chunk generation is available for several other languages as well. Also, you can use the keyboard shortcut `ctrl`+`alt`+`i` for Windows and `command`+`option`+`i` for Mac. As you can see in Figure 12, the console is blank because we have not executed/run the code chunk. Let us enter the following read statement into our first code chunk:
+## Basic Anatomy of the Code Chunk
 
-`# This is a example of a code chunk to read in some data`
+Code blocks that use braces around the language name (e.g. `{r}`) are executable, and will be run by Quarto during render. Here is a simple example:
 
-`library(tidyverse)`
+```{r Creating Air Quality Figure Version 1}
+#| label: fig-airquality 01
+#| fig-cap: Temperature and ozone level.
 
-`read_data <- "../raw-data/combined.csv"`
+library(ggplot2)
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess"
+)
+```
 
-![](images/code-chunk-script.png){width="6.5in"}
+You might have noticed that there are some special comments at the top of the code block. These comments use `#| (the hash pipe!)`. `#|` provides the cell options. When the document is rendered, this code chunk will look like this \[Figure 20\]:
 
-Figure 12: Code chunk in R-markdown.
+![](images/quarto-code-chunk-rendered.png){width="640"}
+
+Figure 20: Rendered version of a code-chunk.
 
 ## Run the code in a code chunk
 
 There are 3 main options for running and debugging code that don't require us to wait for the file to render.
 
-1)  Run from code chunk (green play button on the right top corner). This allows us to run one specific code chunk \[Figure13\].
+1)  Run from code chunk (green play button on the right top corner). This allows us to run one specific code chunk \[Figure 21\].
 
 ![](images/code-chunk-run-01.png){width="6.5in"}
 
-Figure 13: Running a code chunk from the code-box.
+Figure 21: Running a code chunk from the code-box.
 
-2.  Run menu, which gives more options for running code chunks including the current one, the next one, all chunks, etc \[Figure 14\].
+2.  Run menu, which gives more options for running code chunks including the current one, the next one, all chunks, etc \[Figure 22\].
 
 ![](images/code-run-chunk-02.png){width="6.5in"}
 
-Figure 14: Running a code chunk from the Code-Chunk menu.
+Figure 22: Running a code chunk from the Code-Chunk menu.
 
 3.  Using keyboard shortcuts
 
@@ -648,45 +572,240 @@ Figure 14: Running a code chunk from the Code-Chunk menu.
 | Go to previous chunk/title | Ctrl+PgUp           | Command+PgUp        |
 +----------------------------+---------------------+---------------------+
 
-## 
+## Labeling Code Chunk
 
-## Producing Your Document
+While not necessary for running your code, it is good practice is to give a name to each code chunk because it gives the chunk a unique identifier which allows for more advanced options (such as cross-referencing) to work with your rmd files later on:
 
-## Knitr
+`{r chunk-name}`
 
-[Knitr](https://yihui.org/knitr/) is the engine in RStudio which creates the "dynamic" part of R Markdown reports. It's specifically a package that allows the integration of R code into the html, word, pdf, or LaTex document you have specified as your output for R Markdown.
+Some things to keep in mind
 
-We just saw how to run our code in our code chunks to see a preview of the code output. However, if we want to produce a final report with code, we need to use the Knit button. Using the knit button with code chunks is a two step process:
+-   The chunk name is the only value other than r in the code chunk options that doesn't require a tag (i.e. `echo =` )
 
-1.  The code is run (all code chunks will run automatically).
-2.  Second, (if there are no code errors) the document of choice will render for our whole R Markdown document.
-3.  Figure 15 is showing the Knitr options available
+-   The chunk label has to be unique (i.e. you can't use the the same name for multiple chunks)
 
-![](images/knit-01.png){width="6.5in"}
+We'll see in a bit where this code chunk label comes in handy. But, for now let's go back and give our first code chunk a name:
 
-Figure 15: Knitr options in R-markdown.
+1.  Creating Air Quality Figure
 
-# Global Code Chunk Options
+2.  Then, run the code-chunk
 
-Let's direct our attention back to the first code chunk in this document that I asked you not to delete.
+```{r Creating Air Quality Figure Version 2}
+#| label: fig-airquality 02
+#| fig-cap: Temperature and ozone level.
 
-The code looks like:
+library(ggplot2)
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
 
-![](images/code-chunk-03.png){width="624"}
+Figure 23 is displaying the output of the code-chunk. Can you explain what is happening in the console?
 
-Figure 16: Example of a global code chunk.
+![](images/knit-02.png){width="6.5in"}
 
-This is an option to globally set options for the entire R Markdown document. Can you imagine how much work it would be to add the chunk options each time? Also, what if we need different options for different figures. We can automate setting options by adding this special code chunk at the beginning of the document. Then, each code chunk we add will refer to those "global" options when it runs.
+Figure 23: Output from our first code chunk.
 
-# Reproducible & Efficient Methods of Using Code Chunks
+## Code Chunk Options
 
-I think this should be an advanced class. I will need to identify "breakpoints" after I do the dry run and teach the class for the first time.
+There are over 50 different code chunk options. Wow, that is a lot. Obviously we will not go over all of them, but they fall into several larger categories including: code evaluation, text output, code style, cache options, plot output and animation.
+
+You can find a complete list of code chunk options on Knitr developer, Yihui Xie's, [online guide to knitr](https://yihui.org/knitr/options/). Or, you can find a brief list of all options on the R Markdown Reference guide on page 3 accesible through the RStudio Interface by navigating to the main menu bar `Help > Cheat Sheets > R Markdown Reference Guide`.
+
+The chunk name is the only value other than `r` in the code chunk options that doesn't require a tag (i.e. the "= VALUE" part of `option = VALUE`). So chunk options will always require a tag, and the syntax will be in the form:
+
+`{r chunk-label, option = VALUE}`
+
+The option always follows the code chunk label (don't forget to add a `,` after the label either).
+
+## Code Evaluation Option
+
++------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| **Option** | **Description**                                                                                                                              |
++:===========+:=============================================================================================================================================+
+| `include`  | Catch all for preventing any output (code or results) from being included (e.g. `include: false` suppresses all output from the code block). |
++------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+## Text Output Options
+
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Option** | **Description**                                                                                                                                                                                   |
++:===========+:==================================================================================================================================================================================================+
+| `eval`     | Evaluate the code chunk (if `false`, just echos the code into the output).                                                                                                                        |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `echo`     | Include the source code in output                                                                                                                                                                 |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `output`   | Include the results of executing the code in the output (`true`, `false`, or `asis` to indicate that the output is raw markdown and should not have any of Quarto's standard enclosing markdown). |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `warning`  | Include warnings in the output.                                                                                                                                                                   |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `error`    | Include errors in the output.                                                                                                                                                                     |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+The code chunk below is a modification of the previous code chunk and includes the text output option `warning: false`
+
+```{r Creating Air Quality Figure Version 3}
+#| label: fig-airquality 03
+#| fig-cap: Temperature and ozone level.
+#| warning: false
+
+library(ggplot2)
+
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess"
+)
+```
+
+The `knitr` syntax for passing options still works since Quarto uses `knitr`.
+
+```{r Creating Air Quality Figure Version 3, warning=FALSE}
+library(ggplot2)
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess") +
+  labs(caption = "Temperature and ozone level")
+  
+```
+
+While it is possible to use R chunks options, hash pipe options are more portable across computational engines. Also, don't forget the "tab-complete" option that is built into RStudio \[Figure 24\].
+
+![](images/code-yaml-auto-complete.png){width="640"}
+
+Figure 24: Example of tab-complete feature in RStudio.
+
+# Figure Output
+
+Figure output options are similar to those used in R markdown. However, Pandoc markdown syntax is used for figures. Let us compare the two options. The code chunk below is using R markdown.
+
+```{r Penguins Version 1}
+library(palmerpenguins)
+library(ggplot2)
+
+ggplot(penguins, aes(x = bill_length_mm,
+                     y = bill_depth_mm,
+                     col = island)) +
+  geom_point() +
+  labs(caption ="Penguin lenght and depth",
+       alt="Penguin data from palmerpenguins package")
+```
+
+The code chunk below is using Pandoc/Quarto
+
+```{r Penguins Version 2}
+#| fig-width: 5
+#| fig-height: 3
+#| fig-cap: "Penguin lenght and depth"
+#| fig-alt: "Penguin data from palmerpenguins package"
+
+
+library(palmerpenguins)
+library(ggplot2)
+
+ggplot(penguins, aes(x = bill_length_mm,
+                     y = bill_depth_mm,
+                     col = island)) +
+  geom_point() 
+```
+
+# Rendering
+
+There are three methods for rendering a Quarto document.
+
+1.  Render in RStudio
+
+2.  System shell via `quarto render`
+
+3.  R console via `quarto` R package
+
+## Rendering in RStudio Via Knitr
+
+RStudio has deep integration with R, `knitr` and Quarto
+
+-   Render button
+
+-   Visual Editor
+
+-   Preview of output
+
+You should always use the most recent release of the RStudio IDE - especially for the Quarto features. RStudio `2022.07` and beyond comes bundled with a production-stable release of Quarto, no additional installs are needed.
+
+When you Render in RStudio, starts a background job and previews the output. Quarto uses the [Knitr](https://yihui.org/knitr/) engine just like RMarkdown to execute R code natively. Quarto can *also* use the Jupyter engine to natively execute Julia, Python, or other languages that Jupyter supports.
+
+Figure 25 is highlighting the **Render** button to preview documents as you edit them.
+
+![](images/quarto-rstudio-render.png){width="640"}
+
+Figure 25: Rendering Quarto documents in RStudio.
+
+## System shell via `quarto render`
+
+### Navigating in the terminal
+
+Because Quarto is also a command line interface (CLI), there are times you'll need to use it via the terminal. The table below provides some common commands.
+
++------------------------------------+-------------------------------------------------------+
+| **Command**                        | **Action**                                            |
++:===================================+:======================================================+
+| `pwd`                              | Print name of current working directory               |
++------------------------------------+-------------------------------------------------------+
+| `cd`                               | Change current working directory                      |
++------------------------------------+-------------------------------------------------------+
+| `ls`                               | List directory contents                               |
++------------------------------------+-------------------------------------------------------+
+| `quarto --help`                    | Return `quarto` help docs                             |
++------------------------------------+-------------------------------------------------------+
+| `mkdir howdy`                      | Make a new folder/directory called "howdy"            |
++------------------------------------+-------------------------------------------------------+
+| `rm howdy/some-file.qmd` \| Remove | a file called `some-file.qmd` from the "howdy" folder |
++------------------------------------+-------------------------------------------------------+
+
+A great overview of using the command line and navigating files/directories is available via the [Data Carpentries](https://datacarpentry.org/shell-genomics/02-the-filesystem/index.html) or a great interactive tool for understanding commands: [https://tldr.ostera.io](https://tldr.ostera.io/).
+
+## R console via `quarto` R package
+
+If you are not using RStudio and/or you prefer to render from the R console, you can do so using the **quarto** R package. To install the R package
+
+```{r install Quarto package}
+# install.packages("quarto")
+```
+
+I have commented out the code since I already have the package installed. You can learn more about the package from the Quarto resources [page](https://quarto.org/docs/reference/), or from the GitHub page.
 
 # Bibliography, Citations & Cross-Referencing
 
-Older versions of RStudio require [Pandoc's](https://pandoc.org/MANUAL.html#citation-syntax) citation syntax to render bibliographies correctly. We won't be covering this approach extensively in this workshop, since the new visual editor has made this process much more simple. You can refer to our [previous workshop on R Markdown](https://ucsbcarpentry.github.io/R-markdown/06-citations-bib/index.html) pre-visual editor for more information.
+Quarto will use Pandoc to automatically generate citations and a bibliography in a number of styles. To use this capability, you will need:
 
-The new visual editor in RStudio 1.4 has made citations and cross-referencing much easier, by offering different options for referencing various types of sources. Before getting into these different features, let's first learn how you can call the citation window dialog on Rstudio and how to navigate these different options.
+-   A quarto document formatted with citations (see [Citation Markdown](https://quarto.org/docs/authoring/footnotes-and-citations.html#sec-citations)).
+
+-   A bibliographic data source, for example a BibTeX (`.bib`) file.
+
+-   Optionally, a `CSL` file which specifies the formatting to use when generating the citations and bibliography.
+
+## Bibliography Files
+
+Quarto supports bibliography files in a wide variety of formats including BibTeX and CSL. Add a bibliography to your document using the `bibliography` YAML metadata field. You must link the bib file and any associated output styles in the Header of your RMD file. For example
+
+    ---
+    title: "Introduction to Project Management (Part 2)"
+    bibliography: nihl-r-classes.bib
+    ---
+
+## Citation Syntax
+
+Quarto uses the standard Pandoc markdown representation for citations (e.g. `[@citation]`) --- citations go inside square brackets and are separated by semicolons. Since I will copying my references from Endnote, I will not go over the citation metadata. You can provide citation data for Quarto documents in the document front matter. The citation options are based upon the [Citation Style Language (CSL) specification for items](https://docs.citationstyles.org/en/stable/specification.html), but as YAML (rather than XML). Consult this [page](https://quarto.org/docs/reference/metadata/citation.html) for more information.
+
+## Citation Style
+
+Quarto uses Pandoc to format citations and bibliographies. By default, Pandoc will use the [Chicago Manual of Style](https://chicagomanualofstyle.org/) author-date format, but you can specify a custom formatting using CSL ([Citation Style Language](https://citationstyles.org/)). To provide a custom citation stylesheet, provide a path to a CSL file using the `csl` metadata field in your document, for example:
+
+    ---
+    title: "My Document"
+    bibliography: references.bib
+    csl: nature.csl
+    ---
+
+You can find CSL files or learn more about using styles at the [CSL Project](https://github.com/citation-style-language/styles). You can browse the list of more than 8,500 Creative Commons CSL definitions in the CSL Project's [central repository](https://github.com/citation-style-language/styles) or Zotero's [style repository](https://www.zotero.org/styles).
 
 ## Creating Your Reference List
 
@@ -698,42 +817,54 @@ There are a number of ways to create your bib file.
 2.  Use a citation tool like Endnote or Zotero
 3.  Use the lookup feature to search for publications by DOI (Digital Object Identifier), Crossref, DataCite, or PubMed ID
 
-Most citation and reference management tools such as Refworks, Endnote, Mendeley and Zotero, as well as some most scientific databases allow you to export citations as .bib [BibteX](https://en.wikipedia.org/wiki/BibTeX) files.. I am going to show you how to export references from Endnote to your bib file. Figure 17 is displaying all of the references in my Endnote Library. I have highlighted the Bioinformatics folder since I only want to explore these records.
+Most citation and reference management tools such as Refworks, Endnote, Mendeley and Zotero, as well as some most scientific databases allow you to export citations as .bib [BibteX](https://en.wikipedia.org/wiki/BibTeX) files.
+
+I am going to show you how to export references from Endnote to your bib file. Figure 26 is displaying all of the references in my Endnote Library. I have highlighted the DataServices folder since I only want to explore these 742 records.
 
 ![](images/bib-01.png){width="640"}
 
-Figure 17: Example of an Endnote Library.
+Figure 26: Example of an Endnote Library.
 
-The first thing I need to do is to get the records in the correct format (bibtex). The Output Style Manager is locating under the Tools Menu (I am on Mac OS) \[Figure 18\].
+The first thing I need to do is to get the records in the correct format (bibtex). The Output Style Manager is locating under the Tools Menu (I am on Mac OS) \[Figure 27\].
 
 ![](images/bib-02.png){width="624"}
 
-Figure 18: Selecting the bibtext output format in Endnote.
+Figure 27: Selecting the bibtext output format in Endnote.
 
 If *bibtext* format is not in the list of styles, you can use **Open Style Manager** to search for the *bibtex* format.
 
-The next step is to select all of the references that you want in your bib file and choose the **Copy Formatted Reference** option \[Figure 19\]. Please note that using **Copy** will not work.
+The next step is to select all of the references that you want in your bib file and choose the **Copy Formatted Reference** option \[Figure 28\]. Please note that using **Copy** will not work.
 
 ![](images/bib-03.png){width="642"}
 
-Figure 19: Copying references from an Endnote Library in *bibtext* format.
+Figure 28: Copying references from an Endnote Library in *bibtext* format.
 
-Figure 20 i showing single reference that I pasted into a text editor. As you can see in Figure 20, the *bibtext* format is a tagged format that starts with an *article tag*.
+Figure 29 is showing single reference in *bibtext* format. As you can see in Figure 29, the *bibtext* format is a tagged format that starts with the reference type, preceded by the \@ symbol. In this particular example, the reference type is [inbook](https://www.bibtex.com/t/template-inbook/).
 
 ![](images/bib-04.png){width="640"}
 
-Figure 20: Example of a record in bibtext format.
+Figure 29: Example of a record in bibtext format.
+
+The minimal template for a chapter or section in a book with authors is included below.
+
+    @inbook{citekey,
+      author    = "",
+      title     = "",
+      chapter   = "",
+      publisher = "",
+      year      = ""
+    }
 
 The BibTeX [website](http://www.bibtex.org/Format/) is a great resources for learning more about formatting options. Overleaf is another great [resource](Bibliography%20management%20with%20bibtex) with a focus on bibliographic management.
 
-## Saving Your Reference List
+## Exporting Your Reference List from Endnote
 
 There are two ways to export the selected references from Endnote:
 
 1.  Copy and past into a text document
 2.  Using the Export feature in Endnote
 
-I will cover using the Export feature from Endnote. These steps are very similar in Zotero, Refworks or Mendeley \[Figure 21\]:
+I will cover using the Export feature from Endnote. These steps are very similar in Zotero, Refworks or Mendeley \[Figure 30\]:
 
 1.  Make sure you have selected your records
 2.  Choose File-\>Export in Endnote
@@ -745,25 +876,23 @@ I will cover using the Export feature from Endnote. These steps are very similar
 
 ![](images/bib-05.png){width="640"}
 
-Figure 21: Using the Export feature in Endnote.
+Figure 30: Using the Export feature in Endnote.
 
-## Linking the Bib File to Your RMD file
+In some cases you might need to manually change the file extension from .txt to .bib \[Figure 31\].
 
-You must link the bib file and any associated output styles in the Header of your RMD file. You need to add the following lines of code in the Header \[Figure 22\].
+![](images/bibtext-file-name.png){width="640"}
 
-`bibliography: nihl-r-classes.bib`
+Figure 31: Manually changing the file extension for a .bib file.
 
-![](images/bib-06.png){width="642"}
+## Inserting Citations
 
-Figure 22: Modifying the RMD header.
-
-Choose Insert\>Citation within RStudio. When you do this, you should see the records in the linked bib file \[Figure 23\].
+Choose Insert\>Citation within RStudio \[Figure23\].
 
 ![](images/bib-07.png){width="640"}
 
 Figure 23: Inserting a citation in RStudio in Visual Mode.
 
-The search box in Figure 23 is a free text search. This means that it will search on the Author names and the title. Thus, if I search for the name **Cimino**, the reference list will filter to contain records that match my search string \[Figure 24.
+When you do this, you should see the records in the linked bib file. The search box in Figure 23 is a free text search. This means that it will search on the Author names and the title. Thus, if I search for the name **Healy**, the reference list will filter to contain records that match my search string \[Figure 24\] .
 
 ![](images/bib-08.png){width="640"}
 
@@ -781,19 +910,34 @@ By default, RStudio via Pandoc will use a Chicago author-date format for citatio
 
 You can find CSL formats on the [Zotero Style Repository](https://www.zotero.org/styles), which makes it easy to search for and download your desired style.
 
-Download the format you wish to use and call it out in the YAML. I have already saved the APA CSL file in the project folder. But if you would like to follow the process or try another style, go to the Zotero Style repo and select [American Psychological Association 7th edition](https://www.zotero.org/styles/apa) or any other style of your choice. You will notice that it will automatically download the file (e.g. `apa.csl`). Make sure to save it to your project directory in report/source folder. In the YAML we have to call the exact name of the file preceded by "csl:" The Header of your RMD file should now look like this \[Figure 26\]:
+Download the format you wish to use and call it out in the YAML. I have already saved the APA CSL file in the project folder. But if you would like to follow the process or try another style, go to the Zotero Style repo and select [American Psychological Association 7th edition](https://www.zotero.org/styles/apa) or any other style of your choice. You will notice that it will automatically download the file (e.g. `apa.csl`).
+
+Make sure to save it to your project directory in report/source folder. In the YAML we have to call the exact name of the file preceded by "csl:" The Header of your RMD file should now look like this \[Figure 26\]:
 
 ![](images/bib-10.png){width="640"}
 
 Figure 26: RMD Header with a linked bib file and output style.
 
-The bibliography will be formatted when you Knit your RMD file \[Figure 27\]. In Figure 27 I have knitted the RMD document in html format.
+## Bibliography Generation
+
+Pandoc will automatically generate a list of works cited and place it in the document if the style calls for it. It will be placed in a div with the id `refs` if one exists:
+
+    ### References
+
+    ::: {#refs}
+    :::
+
+If no such div is found, the works cited list will be placed at the end of the document.
+
+The bibliography will be formatted when you Render your file \[Figure 27\]. In Figure 27. I have knitted the RMD document in html format.
 
 ![](images/bib-11.png){width="640"}
 
 Figure 27: Knitted document with formatted bibliography.
 
-# Publishing your project
+**Tip**
+
+You can suppress generation of a bibliography by including `suppress-bibliography: true` option in your document metadata.
 
 # Licenses
 
