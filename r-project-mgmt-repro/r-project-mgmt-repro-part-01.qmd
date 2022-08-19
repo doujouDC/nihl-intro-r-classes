@@ -2,13 +2,11 @@
 title: "Project Management and Reproducibility in RStudio (Part 1)"
 author: "Doug Joubert"
 date: "`r Sys.Date()`"
-output:
-  word_document:
-    toc: yes
-  html_document:
-    df_print: paged
-  pdf_document:
-    toc: yes
+format: docx
+toc: true
+toc-location: body
+fig-width: 6
+fig-height: 4
 bibliography: nihl-r-classes.bib
 csl: apa.csl
 ---
@@ -17,9 +15,17 @@ csl: apa.csl
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Background Information
+# Configuration
 
-## R Project Management URLs
+This class features exercises that will help you learn by doing. To prepare, please install the following on your machine:
+
+-   If you haven't already, please [sign-up](https://happygitwithr.com/github-acct.html) for a free GitHub account.
+
+-   Install the latest version of [R](https://mirrors.nics.utk.edu/cran/), the current version is 4.2.0
+
+-   Install latest version of [RStudio](https://www.rstudio.com/products/rstudio/download/#download), v2022.07.0-548 or later
+
+## Resources
 
 Introduction to Reproducible Publications with RStudio: <https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/>
 

@@ -17,7 +17,7 @@ This class features exercises that will help you learn by doing. To prepare, ple
 
 -   If you haven't already, please [sign-up](https://happygitwithr.com/github-acct.html) for a free GitHub account.
 
--   Install latest version of [RStudio](https://www.rstudio.com/products/rstudio/download/#download), v2022.07.0-548 or later
+    Install latest version of [RStudio](https://www.rstudio.com/products/rstudio/download/#download), v2022.07.0-548 or later
 
 -   Install latest version of [Quarto](https://quarto.org/docs/get-started/) (v1.0.36 or greater)
 
@@ -149,7 +149,7 @@ History adapted from [@RN1727]
 
 Figure 1 is displaying the workflow for RMD.
 
-![](images/rmd-workflow-example.png){width="640"}
+![](images/rmd-workflow-example.png)
 
 Figure 1: RMD transformation workflow.
 
@@ -165,7 +165,7 @@ In August 2022, RStudio adopted [Quarto](https://quarto.org/) as its supporting 
 
 Figure 2 is displaying the workflow for Quarto.
 
-![](images/quarto-workflow-example.png){width="640"}
+![](images/quarto-workflow-example.png)
 
 Figure 2: Quarto transformation workflow.
 
@@ -197,19 +197,19 @@ Figure 2: Quarto transformation workflow.
 
 In this class we will be creating and interacting with Quarto docs using RStudio \[Figure 3\].
 
-![](images/rstudio-preview.png){width="640"}
+![](images/rstudio-preview.png)
 
 Figure 3: Quarto doc opened in RStudio.
 
 However, you can create Quarto docs using Jupyter notebooks \[Figure 4\].
 
-![](images/jupyterlab-preview.png){width="640"}
+![](images/jupyterlab-preview.png)
 
 Figure 4: Quarto doc opened in a Jupyter notebook.
 
 You can also create Quarto docs using a text editor. Figure 5 is a Quarto doc opened in Visual Studio Code editor. You might have also noticed that the code in Figure 5 is Python.
 
-![](images/python-vscode.png){width="640"}
+![](images/python-vscode.png)
 
 Figure 5: Quarto doc opened in Visual Studio Code editor.
 
@@ -233,13 +233,13 @@ Let us create a new document by navigating to `File > New File > Quarto Document
 
 -   Enable the Visual Markdown Editor (more about this feature below)
 
-![](images/quarto-create-html.png){width="640"}
+![](images/quarto-create-html.png)
 
 Figure 6: Creating a new Quarto document.
 
 If you scroll down the doc that you just created you can see that the Quarto file is already populated with text and code \[Figure 7\].
 
-![](images/quarto-doc-source-view.png){width="640"}
+![](images/quarto-doc-source-view.png)
 
 Figure 7: Default RMD document.
 
@@ -281,7 +281,7 @@ A document is a list of **block elements** that contain **inline elements** or o
 
 A Block Element starts on a new line and followed by an empty line. An example of block elements is included in Figure 9.
 
-![](images/quarto-block-elements.png){width="640"}
+![](images/quarto-block-elements.png)
 
 Figure 9: Example of Quarto block elements.
 
@@ -289,7 +289,7 @@ Figure 9: Example of Quarto block elements.
 
 Inline elements modify content inline and are not followed by a new line. An example of inline elements are included in Figure 10.
 
-![](images/quarto-inline-element.png){width="640"}
+![](images/quarto-inline-element.png)
 
 Figure 10: Inline element in a Quarto doc.
 
@@ -297,7 +297,7 @@ Figure 10: Inline element in a Quarto doc.
 
 Metadata elements contain ancillary info about the document's origin, format, look, etc. An example of a metadata elements are included in Figure 11.
 
-![](images/quarto-metadata.png){width="640"}
+![](images/quarto-metadata.png)
 
 Figure 11: Example of Quarto metadata elements.
 
@@ -317,7 +317,7 @@ The Quarto visual editor provides a [WYSIWYM](https://en.wikipedia.org/wiki/WYSI
 
 Current version of RStudio has the Source/Visual tabs on the Menu panel. If you are using an older version of RStudio, the visual editor is accessible through a small button on the far right side of the script/document pane in RStudio. The icon is a protractor, but from further away it just looks like a squiggly "A". Figure 13 is displaying the Quarto document for this class, in visual mode.
 
-![](images/quarto-markdown-visual.png){width="640"}
+![](images/quarto-markdown-visual.png)
 
 Figure 13: Markdown using the visual editor.
 
@@ -325,7 +325,7 @@ Figure 13: Markdown using the visual editor.
 
 Figure 14 is showng the same document using the "source editor" mode. Notice the symbols scattered throughout the text (#, \*, \<\>). Those are examples of R Markdown syntax, which is a flavor of Markdown syntax, an easy and quick, human-readable markup language for document styling.
 
-![](images/quarto-markdown-source.png){width="640"}
+![](images/quarto-markdown-source.png)
 
 Figure 14: RMD file using Source Editor.
 
@@ -365,7 +365,7 @@ You can use whatever method you prefer, but *be consistent*. This maintains the 
 
 Figure 15 is displaying the markdown that generates the math displayed below.
 
-![](images/inline-element-math.png){width="640"}
+![](images/inline-element-math.png)
 
 Figure 15: Inline element: math markdown.
 
@@ -377,7 +377,7 @@ TeX math occurs between two `$`. Opening `$` must have a non-space character imm
 
 Figure 16 is displaying the markdown that generates the text and links displayed below.
 
-![](images/inline-element-links.png){width="640"}
+![](images/inline-element-links.png)
 
 Figure 16: Inline elements: links and images.
 
@@ -487,7 +487,7 @@ Quarto is a multi-language, next generation version of R Markdown from RStudio, 
 
 This section will only focus on code blocks [using R](https://quarto.org/docs/computations/r.html). Quarto [documentation](https://quarto.org/docs/guide/) includes options for other languages. We'll start by covering the basics of Quarto, then delve into the differences between Quarto and R Markdown in the sections on [Chunk Options](https://quarto.org/docs/computations/r.html#chunk-options) and [Output Formats](https://quarto.org/docs/computations/r.html#output-formats) below. Let us revisit the Quarto workflow that we saw in Figure 2, focusing on the code block \[Figure 17\].
 
-![](images/quarto-workflow-example-code.jpg){width="640"}
+![](images/quarto-workflow-example-code.jpg)
 
 Figure 17: Quarto workflow, with focus on code blocks and conversion of code.
 
@@ -530,7 +530,7 @@ ggplot(airquality, aes(Temp, Ozone)) +
 
 You might have noticed that there are some special comments at the top of the code block. These comments use `#| (the hash pipe!)`. `#|` provides the cell options. When the document is rendered, this code chunk will look like this \[Figure 20\]:
 
-![](images/quarto-code-chunk-rendered.png){width="640"}
+![](images/quarto-code-chunk-rendered.png)
 
 Figure 20: Rendered version of a code-chunk.
 
@@ -670,7 +670,7 @@ ggplot(airquality, aes(Temp, Ozone)) +
 
 While it is possible to use R chunks options, hash pipe options are more portable across computational engines. Also, don't forget the "tab-complete" option that is built into RStudio \[Figure 24\].
 
-![](images/code-yaml-auto-complete.png){width="640"}
+![](images/code-yaml-auto-complete.png)
 
 Figure 24: Example of tab-complete feature in RStudio.
 
@@ -734,7 +734,7 @@ When you Render in RStudio, starts a background job and previews the output. Qua
 
 Figure 25 is highlighting the **Render** button to preview documents as you edit them.
 
-![](images/quarto-rstudio-render.png){width="640"}
+![](images/quarto-rstudio-render.png)
 
 Figure 25: Rendering Quarto documents in RStudio.
 
@@ -821,7 +821,7 @@ Most citation and reference management tools such as Refworks, Endnote, Mendeley
 
 I am going to show you how to export references from Endnote to your bib file. Figure 26 is displaying all of the references in my Endnote Library. I have highlighted the DataServices folder since I only want to explore these 742 records.
 
-![](images/bib-01.png){width="640"}
+![](images/bib-01.png)
 
 Figure 26: Example of an Endnote Library.
 
@@ -841,7 +841,7 @@ Figure 28: Copying references from an Endnote Library in *bibtext* format.
 
 Figure 29 is showing single reference in *bibtext* format. As you can see in Figure 29, the *bibtext* format is a tagged format that starts with the reference type, preceded by the \@ symbol. In this particular example, the reference type is [inbook](https://www.bibtex.com/t/template-inbook/).
 
-![](images/bib-04.png){width="640"}
+![](images/bib-04.png)
 
 Figure 29: Example of a record in bibtext format.
 
@@ -874,13 +874,13 @@ I will cover using the Export feature from Endnote. These steps are very similar
 6.  Click Save
 7.  Make sure the file was saved to the correct directory. Note, that you might have to manually check the file extensions after you export it.
 
-![](images/bib-05.png){width="640"}
+![](images/bib-05.png)
 
 Figure 30: Using the Export feature in Endnote.
 
 In some cases you might need to manually change the file extension from .txt to .bib \[Figure 31\].
 
-![](images/bibtext-file-name.png){width="640"}
+![](images/bibtext-file-name.png)
 
 Figure 31: Manually changing the file extension for a .bib file.
 
@@ -888,19 +888,19 @@ Figure 31: Manually changing the file extension for a .bib file.
 
 Choose Insert\>Citation within RStudio \[Figure23\].
 
-![](images/bib-07.png){width="640"}
+![](images/bib-07.png)
 
 Figure 23: Inserting a citation in RStudio in Visual Mode.
 
 When you do this, you should see the records in the linked bib file. The search box in Figure 23 is a free text search. This means that it will search on the Author names and the title. Thus, if I search for the name **Healy**, the reference list will filter to contain records that match my search string \[Figure 24\] .
 
-![](images/bib-08.png){width="640"}
+![](images/bib-08.png)
 
 Figure 24: Searching for a record in your bib file.
 
 The record number should appear at the insertion point in your RMD file \[Figure 25\].
 
-![](images/bib-09.png){width="640"}
+![](images/bib-09.png)
 
 Figure 25: Reference inserted into a RMD document.
 
@@ -914,7 +914,7 @@ Download the format you wish to use and call it out in the YAML. I have already 
 
 Make sure to save it to your project directory in report/source folder. In the YAML we have to call the exact name of the file preceded by "csl:" The Header of your RMD file should now look like this \[Figure 26\]:
 
-![](images/bib-10.png){width="640"}
+![](images/bib-10.png)
 
 Figure 26: RMD Header with a linked bib file and output style.
 
@@ -931,7 +931,7 @@ If no such div is found, the works cited list will be placed at the end of the d
 
 The bibliography will be formatted when you Render your file \[Figure 27\]. In Figure 27. I have knitted the RMD document in html format.
 
-![](images/bib-11.png){width="640"}
+![](images/bib-11.png)
 
 Figure 27: Knitted document with formatted bibliography.
 
