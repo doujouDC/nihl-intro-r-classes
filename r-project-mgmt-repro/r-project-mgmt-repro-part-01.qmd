@@ -96,7 +96,7 @@ Can you think of any examples where "not" employing this principle can lead to p
 
 -   "I am so busy, I can't remember all the details of all my projects"
 -   "I did this analysis 6 months ago. Of course I can't remember all the details after such a long time"
--   "My principal investigator (PI) said I should continue the project of a previous postdoc, but that postdoc is long gone and hasn’t saved any scripts or data”.
+-   "My principal investigator (PI) said I should continue the project of a previous postdoc, but that postdoc is long gone and hasn't saved any scripts or data".
 
 ### Helps to build your reputation
 
