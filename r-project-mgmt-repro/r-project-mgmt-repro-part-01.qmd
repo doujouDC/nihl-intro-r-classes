@@ -2,24 +2,26 @@
 title: "Project Management and Reproducibility in RStudio (Part 1)"
 author: "Doug Joubert"
 date: "`r Sys.Date()`"
-output:
-  word_document:
-    toc: yes
-  html_document:
-    df_print: paged
-  pdf_document:
-    toc: yes
+format: docx
+toc: true
+toc-location: body
+fig-width: 6
+fig-height: 4
 bibliography: nihl-r-classes.bib
 csl: apa.csl
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+# Configuration
 
-# Background Information
+This class features exercises that will help you learn by doing. To prepare, please install the following on your machine:
 
-## R Project Management URLs
+-   If you haven't already, please [sign-up](https://happygitwithr.com/github-acct.html) for a free GitHub account.
+
+-   Install the latest version of [R](https://mirrors.nics.utk.edu/cran/), the current version is 4.2.0
+
+-   Install latest version of [RStudio](https://www.rstudio.com/products/rstudio/download/#download), v2022.07.0-548 or later
+
+## Resources
 
 Introduction to Reproducible Publications with RStudio: <https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/>
 
@@ -48,19 +50,19 @@ According to the [U.S. National Science Foundation (NSF)](https://www.nsf.gov/sb
 
 Science should routinely evaluate the reproducibility of findings that enjoy a prominent role in the published literature. To make reproduction possible, efficient, and informative, researchers should sufficiently document the details of the procedures used to collect data, to convert observations into analyzable data, and to perform data analysis.
 
-Reproducibility refers to the ability of a researcher to duplicate the results of a prior study using the same materials as were used by the original investigator. Reproducibility is a minimum necessary condition for a finding to be considered rigorous, believable and informative.
+Reproducibility refers to the ability of a researcher to duplicate the results of a prior study using the same materials as were used by the original investigator. Reproducibility is a minimum necessary condition for a finding to be considered rigorous, believable, and informative.
 
 ## Nature Survey on Reproducibility
 
 A 2016 survey in Nature revealed that not being able to reproduce experiments is a problem across all domains of science \[Figure 1\]:
 
-![](images/nature-field-reason.png){width="640"}
+![](images/nature-field-reason.png)
 
 Figure 1: Reproducibility by discipline and problem identified [@RN1683].
 
-![](images/nature-attempt-reason.png){width="640"}
+![](images/nature-attempt-reason.png)
 
-Figure 2:Attempts to publish reproducible research [@RN1683].
+Figure 2: Attempts to publish reproducible research [@RN1683].
 
 ## Five Compelling Reasons to Practice These Principles
 
@@ -68,7 +70,7 @@ If contributing to science and other researchers seems not to be compelling enou
 
 ### Helps to avoid data loss and disaster
 
-![](images/ny-times-duke.png){width="640"}
+![](images/ny-times-duke.png)
 
 Figure 3: Two statisticians from MD Anderson found with research from Duke University.
 
@@ -94,15 +96,15 @@ Can you think of any examples where "not" employing this principle can lead to p
 
 -   "I am so busy, I can't remember all the details of all my projects"
 -   "I did this analysis 6 months ago. Of course I can't remember all the details after such a long time"
--   "My principle investigator (PI) said I should continue the project of a previous postdoc, but that postdoc is long gone and hasn't saved any scripts or data".
+-   "My principal investigator (PI) said I should continue the project of a previous postdoc, but that postdoc is long gone and hasn't saved any scripts or data".
 
 ### Helps to build your reputation
 
-For several papers, we have made our data, code and analyses available as an Experiment Package on Bioconductor. When I came up for tenure, I cited all of these packages as research output of my lab. Generally, making your analyses available in this way will help you to build a reputation for being an honest and careful researcher.
+For several papers, we have made our data, code, and analyses available as an Experiment Package on Bioconductor. When I came up for tenure, I cited all these packages as research output of my lab. Generally, making your analyses available in this way will help you to build a reputation for being an honest and careful researcher.
 
 # Using Version Control
 
-Using version control has the power to revolutionize how you work in R. Being able to have a record of all of the changes you've ever made to your code both locally and on a remote website is powerful. But getting everything set up can be a challenge. in this section I will walk through everything you need to do in order to use Git and GitHub alongside RStudio.
+Using version control has the power to revolutionize how you work in R. Being able to have a record of all the changes you've ever made to your code both locally and on a remote website is powerful. But getting everything set up can be a challenge. in this section I will walk through everything you need to do to use Git and GitHub alongside RStudio.
 
 ## Git Versus GitHub
 
@@ -118,9 +120,9 @@ It is possible to use Git without using GitHub, though most people combine the t
 
 There are many reasons you would want to adopt a Git/GitHub workflow:
 
-1.  **Using Git and GitHub serves as a backup**. Because GitHub has a copy of all of the code you have locally, if anything were to happen to your computer, you'd still have access to your code.
+1.  **Using Git and GitHub serves as a backup**. Because GitHub has a copy of all the code you have locally, if anything were to happen to your computer, you'd still have access to your code.
 
-2.  **Using Git and GitHub allows you to use version control.** Ever had documents called report-final.pdf, report-final-v2.pdf, and report-final-v3.pdf? Of course you have. Instead of making copies of files over fear of losing work, version control allows you to see what you did in the past, all while keeping single versions of documents.
+2.  **Using Git and GitHub allows you to use version control.** Ever had documents called report-final.pdf, report-final-v2.pdf, and report-final-v3.pdf? Of course, you have. Instead of making copies of files over fear of losing work, version control allows you to see what you did in the past, all while keeping single versions of documents.
 
 3.  **Using Git and GitHub makes it possible to work on the same project at the same time as collaborators.** For many using Git/GitHub is better than collaborating using Dropbox, Google Drive, or OneDrive. Git and GitHub have built-in tools that enable simultaneous asynchronous work, a major benefit for those working in teams.
 
@@ -128,7 +130,7 @@ You might want to check out this 2016 [talk](https://youtu.be/eWxxfttcMts) by Al
 
 ## About Authentication to GitHub
 
-When we interact with a remote Git server, such as GitHub, we have to include credentials in the request. This proves we are a specific GitHub user, who's allowed to do whatever we're asking to do.
+When we interact with a remote Git server, such as GitHub, we must include credentials in the request. This proves we are a specific GitHub user, who's allowed to do whatever we're asking to do.
 
 You can access your resources in GitHub in a variety of ways: in the browser, via GitHub Desktop or another desktop application, with the API, or via the command line. Each way of accessing GitHub supports different modes of authentication.
 
@@ -172,7 +174,7 @@ create_github_token()
 
 3.  When you run this section of code your default browser will open and you will be prompted to log into GitHub. After you log in you will automatically go to the create repository page \[Figure 4\].
 
-![](images/create-https-01.png){width="640"}
+![](images/create-https-01.png)
 
 Figure 4: Creating a new PAT on GitHub.
 
@@ -184,31 +186,31 @@ Look over the scopes; I highly recommend selecting "repo", "user", and "workflow
 7.  You could even get out ahead of this and store the PAT explicitly right now. In R, call `gitcreds::gitcreds_set()` to get a prompt where you can paste your PAT. I am going to do this in Console to make it a bit easier.
 8.  Figure 5 is displaying the `gitcreds::gitcreds_set()` in the Console. Hit Enter/Return to run this command.
 
-![](images/new-pat-01.png){width="640"}
+![](images/new-pat-01.png)
 
 Figure 5: Initiating the gitcreds_set() command.
 
 9.  Select the most appropriate option. Since we are setting this up for the first time, we would select option 2 \[Figure 6\].
 
-![](images/new-pat-02.png){width="640"}
+![](images/new-pat-02.png)
 
 Figure 6: Replacing the current PAT.
 
 10. Follow the prompts and enter the PAT that you just created.
 
-![](images/new-pat-05.png){width="640"}
+![](images/new-pat-05.png)
 
 Figure 7: Final output from storing the PAT.
 
 11. If you go back to GitHub you should see a list of all of the PATs that you have created and when they expire \[Figure 8\].
 
-![](images/new-pat-07.png){width="640"}
+![](images/new-pat-07.png)
 
 Figure 8: List of GitHub PATs.
 
 You will also receive a message from GitHub (default email address) letting you know that a PAT has been created \[Figure 9\].
 
-![](images/git-06.png){width="640"}
+![](images/git-06.png)
 
 Figure 9: PAT alert email from GitHub.
 
@@ -232,25 +234,25 @@ GitHub's collaborative approach to development depends on publishing commits fro
 
 [At this link](https://github.com/signup), you may sign into your GitHub account or create one if you have not already. Figure 10 is displaying the repositories in my GitHub account.
 
-![](images/git-hub-01.png){width="640"}
+![](images/git-hub-01.png)
 
 Figure 10: My repository homepage in GitHub.
 
-I have already created a [repository](https://github.com/doujouDC/nihl-intro-r-series.git) for this class. However Figure 11 is displaying the Create a New Repository screen. \[Figure 11\].
+I have already created a [repository](https://github.com/doujouDC/nihl-intro-r-series.git) for this class. However, Figure 11 is displaying the Create a New Repository screen. \[Figure 11\].
 
-![](images/git-hub-02.png){width="640"}
+![](images/git-hub-02.png)
 
 Figure 11: Creating a new repository on GitHub.
 
 Once your repository is created, you will need to copy the repository URL before you create the project in RStudio. Figure 11 shows the 3 different methods for creating a URL: (1) https, (2) SSH, or (3) GitHub CLI. We have already created our PAT to use with the https option \[Figure 12\].
 
-![](images/git-hub-03.png){width="640"}
+![](images/git-hub-03.png)
 
 Figure 12: Creating a link to a GitHub repository.
 
 # RStudio
 
-RStudio is an integrated development environment (IDE) for R and Python. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging, collaboration, and workspace management. It is a powerful tool which supports research by weaving the principles of reproducibility throughout the entire research lifecycle, from data gathering to the statistical analysis, presentation and publication of results.
+RStudio is an integrated development environment (IDE) for R and Python. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging, collaboration, and workspace management. It is a powerful tool which supports research by weaving the principles of reproducibility throughout the entire research lifecycle, from data gathering to the statistical analysis, presentation, and publication of results.
 
 ## Advantages of Using RStudio
 
@@ -267,9 +269,9 @@ There are a number of RStudio settings that are recommended. These settings will
 
 This means that RStudio will not remember the code that you ran in your previous session. This forces you to document your work in your code and not in the RStudio workspace \[which is temporary\].
 
-Figure 13 list the preferred RStudio settings. To change these options go to **Tools\>Global Options\>General.**
+Figure 13 list the preferred RStudio settings. To change these options, go to **Tools\>Global Options\>General.**
 
-![](images/rstudio-preferences.png){width="4.5in"}
+![](images/rstudio-preferences.png)
 
 Figure 13: Preferred RStudio options.
 
@@ -301,32 +303,32 @@ We will be using option 3, creating a repository on GitHub, and then importing t
 2.  Choose New Project from the Tools Menu.
 3.  There are three options when creating a new project: (1) Creating a project in a new directory, (2) Creating a project in an existing directory, and (3) Creating a project using version control \[Figure 14\].
 
-![](images/new-project-01.png){width="640"}
+![](images/new-project-01.png)
 
 Figure 14: Creating a new project in RStudio.
 
 4.  Choose the Version Control option
 5.  Chose Git as the option, RStudio will automatically open the next screen \[Figure 15\]
 
-![](images/new-project-02.png){width="640"}
+![](images/new-project-02.png)
 
 Figure 15: Choosing the version control option in RStudio.
 
 6.  This screen is where you enter the repository URL that you copied from GitHub \[Figure 16\].
 
-![](images/new-project-03.png){width="640"}
+![](images/new-project-03.png)
 
 Figure 16: New project wizard - entering the repository URL.
 
 7.  Open up the repository that we created in GitHub and copy the `https` URL \[Figure 17\].
 
-![](images/new-project-04.png){width="640"}
+![](images/new-project-04.png)
 
 Figure 17: Copying a `https` repository URL from GitHub.
 
-8.  Paste the repository URL into into the URL box. Once you do this, you will be prompted to choose a subdiretory for the new project. I usually created mine within my Documents directory.
+8.  Paste the repository URL into the URL box. Once you do this, you will be prompted to choose a subdirectory for the new project. I usually created mine within my Documents directory.
 
-9.  Click **Create Project**. The screen will refresh as RStudio switches over to project view an downloads any data from GitHub
+9.  Click **Create Project**. The screen will refresh as RStudio switches over to project view and downloads data from GitHub
 
 # Good Practices for Managing Projects in RStudio
 
@@ -354,7 +356,7 @@ We often have stress points in our research that may become breaking points, esp
 -   You aren't sure what you should be working on next
 -   You have various to-do notes spread across your office or home (or never write them down in the first place)
 
-## Discusion Points
+## Discussion Points
 
 To what extent do these stress points affect your research projects?
 
@@ -422,17 +424,17 @@ There are two places we can interact with Git in the RStudio interface.
 
 1.  Menu bar \[Figure 18\]
 
-![](images/git-03.png){width="640"}
+![](images/git-03.png)
 
 Figure 18: Menu bar options for working with GIT
 
 2.  Git Panel \[Figure 19\]
 
-![](images/git-04.png){width="640"}
+![](images/git-04.png)
 
 Figure 19: Git panel
 
-It is not possible to cover everything you need to be succesfull using GIT. There are many excellent [external resources for Git](https://happygitwithr.com/resources.html#resources).
+It is not possible to cover everything you need to successfully use GIT. There are many excellent [resources for Git](https://happygitwithr.com/resources.html#resources).
 
 ## Workflows in Git
 
@@ -466,7 +468,7 @@ Every time you make a commit you must also write a short **commit message**. Ide
 
 Every commit needs some sort of nickname, so you can identify it. Git does this automatically, assigning each commit with an SHA, a seemingly random string of 40 letters and numbers (it is not, in fact, random). Though you will be exposed to these, you don't have to handle them directly very often and, when you do, usually the first 7 characters suffice. Figure 17 is showing the history for the training manual that I created for this class. You will notice the SHA column in Figure 22.
 
-![](images/git-05.png){width="640"}
+![](images/git-05.png)
 
 Figure 22: History for training manual.
 
@@ -494,7 +496,7 @@ Create a new R-script named "proj-mgmt-01" Add the following lines of code
 
 `# Importing our Data`
 
-`# This is a example of a code chunk to read in some data`
+`# This is an example of a code chunk to read in some data`
 
 `library(tidyverse)`
 
@@ -516,21 +518,21 @@ Create a new R-script named "proj-mgmt-01" Add the following lines of code
 
 We are now ready to send these changes to our remote repository
 
-1.  Select all of the files list in the Git panel except **.DS_store** and .**gitmore** \[Figure 23\]
+1.  Select each file that has been modified from the list in the Git panel except. \[Figure 23\]
 
-![](images/git-07.png){width="640"}
+![](images/git-07.png)
 
 Figure 23: Selecting the files to send to remote repository.
 
 2.  Select the Commit icon on the Git Panel. Once you do this, the commit screen will refresh showing the changes \[Figure 24\].
 
-![](images/git-09.png){width="640"}
+![](images/git-09.png)
 
 Figure 24: Changes being sent to GitHub.
 
 3.  Add a short commit message, and select the commit button \[Figure 25\].
 
-![](images/git-08.png){width="640"}
+![](images/git-08.png)
 
 Figure 25: Adding a commit message and committing the changes.
 
@@ -538,7 +540,7 @@ Figure 25: Adding a commit message and committing the changes.
 5.  Select the Push button to send the changes to GitHub
 6.  If we check our repository on GitHub, the changes will be reflected \[Figure 26\]
 
-![](./images/git-10.png){width="640"}
+![](./images/git-10.png)
 
 # Licenses
 
