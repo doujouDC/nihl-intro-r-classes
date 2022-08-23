@@ -1,5 +1,5 @@
 ---
-title: "Project Management and Reproducibility in RStudio (Part 1)"
+title: "Project Management and Reproducibility in RStudio: Part 1"
 author: "Doug Joubert"
 date: "`r Sys.Date()`"
 format: docx
