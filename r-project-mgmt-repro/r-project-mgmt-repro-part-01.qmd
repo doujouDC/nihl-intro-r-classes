@@ -33,7 +33,7 @@ Using Projects: <https://support.rstudio.com/hc/en-us/articles/200526207-Using-R
 
 # Introduction
 
-This one-hour class focuses on data and project management using R and RStudio. RStudio makes it possible to work on a complete research project in a more efficient, integrated, and organized manner. RStudio also connects with Git and Github and learners will have a chance to experiment with this integration and understand its advantages for collaboration and version control. This intermediate-level course is designed to be relevant to students from different disciplines. Some familiarity or experience in R and RStudio is recommended but not required. Students are encouraged to install [R](https://mirrors.nics.utk.edu/cran/) and [RStudio](https://www.rstudio.com/products/rstudio/download/#download) before the webinar so that they can follow along with the instructor. Attendees will need to download the class data before the webinar.
+This one-hour class focuses on data and project management using R and RStudio. RStudio makes it possible to work on a complete research project in a more efficient, integrated, and organized manner. RStudio also connects with Git and GitHub and learners will have a chance to experiment with this integration and understand its advantages for collaboration and version control. This intermediate-level course is designed to be relevant to students from different disciplines. Some familiarity or experience in R and RStudio is recommended but not required. Students are encouraged to install [R](https://mirrors.nics.utk.edu/cran/) and [RStudio](https://www.rstudio.com/products/rstudio/download/#download) before the webinar so that they can follow along with the instructor. Attendees will need to download the class data before the webinar.
 
 Upon completion of this class students should be able to:
 
@@ -390,7 +390,16 @@ Additional recommendations for projects and creating folders is covered in the I
 
 ## Practices for Naming Files
 
-### Machine-readable
+Three principles for file names 1. Machine readable 2. Human readable 3. Plays well with default ordering
+
+### Why This is important
+
+-   Globbing: using wildcard characters to request or evaluate sets of files with the same partial names or sets of character
+-   Regular expression friendly
+-   "Findability"
+-   Global name changes
+
+### Machine-readable Files
 
 -   No spaces, unsupported punctuation, accented characters, or case-sensitive file names
 
@@ -400,21 +409,61 @@ Additional recommendations for projects and creating folders is covered in the I
 
 ### Human-readable
 
--   Name contains brief description of content: i.e. `data-analyses-fig1.R`
+-   Name contains brief description of content `anova-analyses-control.R` `marshall-data-raw-data` `marshall-data-filtered` `marshall-data-load-counts.r`
 
 ### Ordering Files
 
-Use chronological or logical order. With chronological, file name starts with date.
+With **chronological ordering**, file name starts with date:
 
--   i.e. `2022-01-01_data_analyses.R`
+2022-06-26-BRAFWTNEGASSAY-Plasmid-Cellline-100-MutantFraction_HO1.csv
 
--   Use [ISO 8601 date standard](https://en.wikipedia.org/wiki/ISO_8601)
+2022-06-26-BRAFWTNEGASSAY-Plasmid-Cellline-100-MutantFraction_HO2.csv
 
--   **logical**: filename starts with a number or keyword/number combo.
+2022-06-26-BRAFWTNEGASSAY-Plasmid-Cellline-100-MutantFraction_HO3.csv
 
-    -   i.e. `01_data_preprocessing.R` *see code directory*
+2022-06-26-BRAFWTNEGASSAY-Plasmid-CeIIIine-100-MutantFraction-platefile.csv
 
-    -   i.e. `CC-101_1_data.csv` *see data directory*
+2022-02-26-BRAFWTNEGASSAY-FFPEDNA-CRC-1-41_AO1.csv
+
+2022-02-26-BRAFWTNEGASSAY-FFPEDNA-CRC-1-41_AO2.csv
+
+2022-02-26-BRAFWTNEGASSAY-FFPEDNA-CRC-1-41_AO3.csv
+
+2022-02-26-BRAFWTNEGASSAY-FFPEDNA-CRC-1-41_AO4.csv
+
+Consider using [ISO 8601 date standard](https://en.wikipedia.org/wiki/ISO_8601)
+
+With **logical ordering**, the filename starts with a number or keyword/number combo.
+
+01-marshall-data.r *see code directory*
+
+02-pre-dea-filtering.r *see code directory*
+
+03-explore-dea-limma-voom.r
+
+04-exploe-dea-results.r helper
+
+01-load-counts.rmd
+
+helper02-load-exp-des.r
+
+helper03-extract-and-tidy.r
+
+As illustrated above, left-pad your numbers to facilite sorting. If you do not do this, your data sorts like this...which is really sad
+
+01-marshall-data.r *see code directory*
+
+04-exploe-dea-results.r
+
+2-explore-dea-limma-voom.r
+
+3-helper-extract-and-tidy.r
+
+helper01-load-counts.rmd
+
+helper2-load-exp-des.r
+
+pre-dea-filtering-1.r *see code directory*
 
 Adapted from <https://datacarpentry.org/rr-organization1/01-file-naming/index.html>. For more tips on file naming, check: [The Dos and Don'ts of File Naming](https://www.library.ucsb.edu/sites/default/files/dls-n01-2021-filenaming.pdf).
 
