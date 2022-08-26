@@ -15,9 +15,7 @@ csl: apa.csl
 
 This class features exercises that will help you learn by doing. To prepare, please install the following on your machine:
 
--   If you haven't already, please [sign-up](https://happygitwithr.com/github-acct.html) for a free GitHub account.
-
-    Install latest version of [RStudio](https://www.rstudio.com/products/rstudio/download/#download), v2022.07.0-548 or later
+-   Install latest version of [RStudio](https://www.rstudio.com/products/rstudio/download/#download), v2022.07.0-548 or later
 
 -   Install latest version of [Quarto](https://quarto.org/docs/get-started/) (v1.0.36 or greater)
 
@@ -39,67 +37,28 @@ Other useful packages to install include the tidyverse and rmarkdown packages.
 
 [tidyverse](https://www.tidyverse.org/packages/), includes the packages that you're likely to use in everyday data analyses.
 
-## Resources
-
-### R Project Management
-
--   Introduction to Reproducible Publications with RStudio: <https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/>
-
--   R for Reproducible Scientific Analysis: <https://swcarpentry.github.io/r-novice-gapminder/>
-
--   Reproducible Research Data and Project Management in R: <https://annakrystalli.me/rrresearchACCE20/>
-
--   Using Projects: <https://support.rstudio.com/hc/en-us/articles/200526207-Using-RStudio-Projects>
-
--   [Using the RStudio Terminal in the RStudio IDE](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE)
-
-### Quarto
-
-#### Official Documentation & Quickstarts
-
--   [Documentation: Quarto documentation](https://quarto.org/) - Official Quarto Documentation.
-
--   [GitHub: Quarto GitHub repository](https://github.com/quarto-dev) - Official Quarto GitHub repository.
-
--   [Tutorial: Hello, Quarto](https://quarto.org/docs/get-started/hello/) - Official "Hello, Quarto" tutorial.
-
--   [Tutorial: Computations](https://quarto.org/docs/get-started/computations/) - Official "Computations" tutorial.
-
--   [Tutorial: Authoring](https://quarto.org/docs/get-started/authoring/) - Official "Authoring" tutorial.
-
-### Tutorials and Workshops
-
--   [Quarto for Scientists](https://qmd4sci.njtierney.com/) - This is a book on rmarkdown, aimed for scientists. It was initially developed as a 3 hour workshop, but is now developed into a resource that will grow and change over time.
--   [Reproducible authoring with Quarto](https://www.youtube.com/watch?v=6p4vOKS6Xls) - 2022 Toronto Workshop on Reproducibility with Mine Çetinkaya-Rundel (slides: <https://mine-cetinkaya-rundel.github.io/2022-repro-toronto/>).
--   [Tutorial: Making shareable docs with Quarto](https://openscapes.github.io/quarto-website-tutorial/) - A tutorial to make a website with Quarto.
--   [Workshop: From R Markdown to Quarto](https://rstudio-conf-2022.github.io/rmd-to-quarto/) - A workshop for those who want to take their R Markdown skills and expertise and apply them in Quarto, the next generation of R Markdown.
--   [Workshop: Getting started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/) - "Get started with Quarto" workshop materials for rstudio::conf(2022).
-
-Note: [Mickaël Canouil](https://github.com/mcanouil) maintains a [page](https://github.com/mcanouil/awesome-quarto#official-documentation--quickstarts) of Quarto resources
-
 # Introduction
 
 This one-hour class focuses on data and project management using R and RStudio. RStudio makes it possible to work on a complete research project in a more efficient, integrated, and organized manner. Participants will learn how to create reproducible documents that combine code, analysis, and narrative. This intermediate-level course is designed to be relevant to students from different disciplines. Some familiarity or experience in R and RStudio is recommended but not required. Students are encouraged to install [R](https://mirrors.nics.utk.edu/cran/) and [RStudio](https://www.rstudio.com/products/rstudio/download/#download) before the webinar so that they can follow along with the instructor.
 
 Upon completion of this class students should be able to:
 
--   Create an R-markdown document using Quarto
--   Distinguish between the source and the visual editor
--   Add code chunks to R-markdown documents
--   Understand how to use reproducible code chunks \[maybe for advanced class\]
--   Create a bibliography and link it to a R-markdown document
+-   Create a markdown document using Quarto
+-   Distinguish between source and visual editors
+-   Add code chunks to markdown documents
+-   Create a bibliography and link it to a markdown document
 
 ## Assumptions for This Class
 
 +-------------------------------------------------+:-----------------------------------------------------------------+
 | ![](images/Rlogo.png){width="25" height="20"}   | You know R                                                       |
 +-------------------------------------------------+------------------------------------------------------------------+
-| ![](images/rmarkdown-icon.png){width="25"}      | You know a little bit of Markdown                                |
+| ![](images/rmarkdown-icon.png){width="25"}      | You know a little bit of markdown                                |
 +-------------------------------------------------+------------------------------------------------------------------+
-| ![](images/quarto-icon-smaller.png){width="25"} | You want to learn about Quarto, the next-generation of RMarkdown |
+| ![](images/quarto-icon-smaller.png){width="25"} | You want to learn about Quarto, the next-generation of markdown |
 +-------------------------------------------------+------------------------------------------------------------------+
 
-## Literate Programming and Markdown
+#  Markdown and Literate Programming
 
 Researchers and analysts tend to write a lot of reports, describing their analyses and results, for their collaborators or to document their work for future reference.
 
@@ -109,7 +68,7 @@ Many new users begin by first writing a single R script containing all of their 
 
 One option is using [R Markdown](https://www.markdownguide.org/), a light-weight markup language for creating documents in multiple formats. When the document is processed by `knitr`, chunks of code will be executed, and graphs or other results will be inserted into the final document. This sort of idea has been called "literate programming".
 
-Additionally, the formatting of and R Markdown document is simple and easy to modify, allowing you to spend more time on your analyses instead of writing reports. You can use a single R Markdown file to both
+Additionally, the formatting of and markdown document is simple and easy to modify, allowing you to spend more time on your analyses instead of writing reports. You can use a single markdown file to both
 
 -   Save and execute code
 
@@ -141,9 +100,9 @@ History adapted from [@RN1727]
 
 -   2015 `pandoc` functionality moved into new `rmarkdown`
 
--   2018 *R Markdown: A definite guide*
+-   2018 R Markdown: A definite guide
 
--   2020 *R Markdown Cookbook*
+-   2020 R Markdown Cookbook
 
 -   2022 Quarto
 
@@ -153,7 +112,7 @@ Figure 1 is displaying the workflow for RMD.
 
 Figure 1: RMD transformation workflow.
 
-## Quarto
+# Quarto
 
 In August 2022, RStudio adopted [Quarto](https://quarto.org/) as its supporting publishing platform. Quarto is an open-source scientific and technical publishing system built on [Pandoc](https://pandoc.org/). Quarto allows you to create dynamic content with [Python](https://quarto.org/docs/computations/python.html), [R](https://quarto.org/docs/computations/r.html), [Julia](https://quarto.org/docs/computations/julia.html), and [Observable](https://quarto.org/docs/computations/ojs.html).
 
@@ -185,7 +144,7 @@ Figure 2: Quarto transformation workflow.
 
 -   Easier to organize appearance across documents
 
--   Features (e.g. figures, tables) have better cross-format support
+-   Features (e.g. figures, tables) have better cross-format support
 
 -   Better cross referencing
 
@@ -511,7 +470,7 @@ Although I am demonstrating using R, it's possible to use other programming or m
 
 ![](images/code-chunk-other.png){width="6.5in"}
 
-Figure 19: Code options available in R-markdown.
+Figure 19: Code options available in markdown.
 
 ## Basic Anatomy of the Code Chunk
 
@@ -809,7 +768,7 @@ You can find CSL files or learn more about using styles at the [CSL Project](htt
 
 ## Creating Your Reference List
 
-You need to have a list of references saved to a bib file before you can insert citations into your R-markdown document. A file with the BIB file extension is a BibTeX Bibliographical Database file. It's a specially formatted text file that lists references pertaining to a particular source of information. Each item can be edited, in case there is any metadata incorrect or missing.
+You need to have a list of references saved to a bib file before you can insert citations into your markdown document. A file with the BIB file extension is a BibTeX Bibliographical Database file. It's a specially formatted text file that lists references pertaining to a particular source of information. Each item can be edited, in case there is any metadata incorrect or missing.
 
 There are a number of ways to create your bib file.
 
@@ -938,6 +897,44 @@ Figure 27: Knitted document with formatted bibliography.
 **Tip**
 
 You can suppress generation of a bibliography by including `suppress-bibliography: true` option in your document metadata.
+
+# Resources
+
+## R Project Management
+
+-   Introduction to Reproducible Publications with RStudio: <https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/>
+
+-   R for Reproducible Scientific Analysis: <https://swcarpentry.github.io/r-novice-gapminder/>
+
+-   Reproducible Research Data and Project Management in R: <https://annakrystalli.me/rrresearchACCE20/>
+
+-   Using Projects: <https://support.rstudio.com/hc/en-us/articles/200526207-Using-RStudio-Projects>
+
+-   [Using the RStudio Terminal in the RStudio IDE](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE)
+
+## Quarto
+
+### Official Documentation & Quickstarts
+
+-   [Documentation: Quarto documentation](https://quarto.org/) - Official Quarto Documentation.
+
+-   [GitHub: Quarto GitHub repository](https://github.com/quarto-dev) - Official Quarto GitHub repository.
+
+-   [Tutorial: Hello, Quarto](https://quarto.org/docs/get-started/hello/) - Official "Hello, Quarto" tutorial.
+
+-   [Tutorial: Computations](https://quarto.org/docs/get-started/computations/) - Official "Computations" tutorial.
+
+-   [Tutorial: Authoring](https://quarto.org/docs/get-started/authoring/) - Official "Authoring" tutorial.
+
+### Tutorials and Workshops
+
+-   [Quarto for Scientists](https://qmd4sci.njtierney.com/) - This is a book on rmarkdown, aimed for scientists. It was initially developed as a 3 hour workshop, but is now developed into a resource that will grow and change over time.
+-   [Reproducible authoring with Quarto](https://www.youtube.com/watch?v=6p4vOKS6Xls) - 2022 Toronto Workshop on Reproducibility with Mine Çetinkaya-Rundel (slides: <https://mine-cetinkaya-rundel.github.io/2022-repro-toronto/>).
+-   [Tutorial: Making shareable docs with Quarto](https://openscapes.github.io/quarto-website-tutorial/) - A tutorial to make a website with Quarto.
+-   [Workshop: From R Markdown to Quarto](https://rstudio-conf-2022.github.io/rmd-to-quarto/) - A workshop for those who want to take their R Markdown skills and expertise and apply them in Quarto, the next generation of R Markdown.
+-   [Workshop: Getting started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/) - "Get started with Quarto" workshop materials for rstudio::conf(2022).
+
+Note: [Mickaël Canouil](https://github.com/mcanouil) maintains a [page](https://github.com/mcanouil/awesome-quarto#official-documentation--quickstarts) of Quarto resources
 
 # Licenses
 
