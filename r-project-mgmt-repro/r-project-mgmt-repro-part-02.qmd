@@ -50,15 +50,15 @@ Upon completion of this class students should be able to:
 
 ## Assumptions for This Class
 
-+-------------------------------------------------+:-----------------------------------------------------------------+
-| ![](images/Rlogo.png){width="25" height="20"}   | You know R                                                       |
-+-------------------------------------------------+------------------------------------------------------------------+
-| ![](images/rmarkdown-icon.png){width="25"}      | You know a little bit of markdown                                |
-+-------------------------------------------------+------------------------------------------------------------------+
++-------------------------------------------------+:----------------------------------------------------------------+
+| ![](images/Rlogo.png){width="25" height="20"}   | You know R                                                      |
++-------------------------------------------------+-----------------------------------------------------------------+
+| ![](images/rmarkdown-icon.png){width="25"}      | You know a little bit of markdown                               |
++-------------------------------------------------+-----------------------------------------------------------------+
 | ![](images/quarto-icon-smaller.png){width="25"} | You want to learn about Quarto, the next-generation of markdown |
-+-------------------------------------------------+------------------------------------------------------------------+
++-------------------------------------------------+-----------------------------------------------------------------+
 
-#  Markdown and Literate Programming
+# Markdown and Literate Programming
 
 Researchers and analysts tend to write a lot of reports, describing their analyses and results, for their collaborators or to document their work for future reference.
 
@@ -178,7 +178,7 @@ https://rstudio-conf-2022.github.io/rmd-to-quarto/materials/2-polishing-document
 
 Quarto is a multi-language, next generation version of R Markdown from RStudio, with many new new features and capabilities. A Quarto document (`.qmd)` is a plain text file, that can be rendered to many different formats. Like R Markdown, Quarto uses [Knitr](https://yihui.org/knitr/) to execute R code, and is therefore able to render most existing Rmd files without modification. Also, most `.ipynb` can be rendered as-is via Quarto.
 
-In this section we are going to learn how to create generic block and inline elements, set classes and attributes, and practice using Quarto-specific elements in RStudio's visual editor. Although we do not cover this topic in this class, I have include some resources on how to customize the appearance of your documents with elementary CSS.
+In this section we are going to learn how to create generic block and inline elements, set classes and attributes, and practice using Quarto-specific elements in RStudio's visual editor. Although we do not cover this topic in this class, I have included some resources on how to customize the appearance of your documents with elementary CSS.
 
 https://quarto.org/docs/computations/r.html
 
@@ -225,9 +225,9 @@ A Quarto document consists of content, structure, appearance, format \[Figure 8\
 |                                      |                                                      |
 |                                      | -   **Structure:** paragraphs, lists, emphasis, etc. |
 |                                      |                                                      |
-|                                      | -   **Appearance:** fonts, colors, layout            |
+|                                      | -   **Appearance**: fonts, colors, layout            |
 |                                      |                                                      |
-|                                      | -   **Format:** functionality                        |
+|                                      | -   **Format**: based on function                    |
 +--------------------------------------+------------------------------------------------------+
 
 Figure 8: Sample quarto document.
