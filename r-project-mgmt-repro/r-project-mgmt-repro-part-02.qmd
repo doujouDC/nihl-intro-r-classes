@@ -276,15 +276,15 @@ The Quarto visual editor provides a [WYSIWYM](https://en.wikipedia.org/wiki/WYSI
 
 Current version of RStudio has the Source/Visual tabs on the Menu panel. If you are using an older version of RStudio, the visual editor is accessible through a small button on the far right side of the script/document pane in RStudio. The icon is a protractor, but from further away it just looks like a squiggly "A". Figure 13 is displaying the Quarto document for this class, in visual mode.
 
-![](images/quarto-markdown-visual.png)
+![](images/quarto-visual-editor-display.png)
 
 Figure 13: Markdown using the visual editor.
 
 ### Source Editor
 
-Figure 14 is showng the same document using the "source editor" mode. Notice the symbols scattered throughout the text (#, \*, \<\>). Those are examples of R Markdown syntax, which is a flavor of Markdown syntax, an easy and quick, human-readable markup language for document styling.
+Figure 14 is showng the same document using the "source editor" mode. Notice the symbols scattered throughout the text are examples of R Markdown syntax.
 
-![](images/quarto-markdown-source.png)
+![](images/quarto-source-editor-display.png)
 
 Figure 14: RMD file using Source Editor.
 
@@ -294,7 +294,57 @@ It is good to be aware of how to use the source editor, since you might have to 
 
 Markdown is designed to be easy to write, and, even more importantly, easy to read. As previously mentioned, Quarto uses extended version of [**Pandoc markdown**](https://pandoc.org/MANUAL.html#pandocs-markdown) designed with multiple output formats in mind.
 
-## Inline Elements: Text Formatting {#inline-elements-text-formatting}
+## Black Elements
+
+### Block Elements: Lists
+
+You can make a numbered list by just using numbers.
+
+    1. bold with double-asterisks
+    2. italics with underscores
+    3. code-type font with backticks
+
+This will appear as:
+
+1.  bold with double-asterisks
+
+2.  italics with underscores
+
+3.  code-type font with backticks
+
+Pandoc gives you a lot of control over lists, including *nesting*, *definition lists*, *blocks in lists*, and *example lists*. The Pandoc [manual](https://pandoc.org/MANUAL.html#lists) has detailed information about lists.
+
+### Block Elements: Headers
+
+You can make section headers of different sizes by initiating a line with some number of `#` symbols:
+
+    # Title
+    ## Main section
+    ### Sub-section
+    #### Sub-sub section
+
+### Block Elements: Math
+
+When using math as Block Elements, math use `$$` delimiters. The delimiters may be separated from the formula by whitespace. No blank lines between the opening and closing `$$` delimiters. For example:
+
+A larger equation:
+
+$$ 
+f(x)={\sqrt{\frac{\tau}{2\pi}}}
+      e^{-\tau (x-\mu )^{2}/2}
+$$
+
+### Block Elements: Images
+
+Block images use the same syntax as inline images. However, images on their own line become a block:
+
+Images on their own line become a block:
+
+![Elephant](images/elephant.png){width="220"}
+
+## Inline Elements
+
+### Inline Elements: Text Formatting {#inline-elements-text-formatting}
 
 You make things **bold** using two asterisks, like this: `**bold**`, and you make things *italics* by using underscores, like this: `_italics_`.
 
@@ -320,7 +370,7 @@ Each will appear as:
 
 You can use whatever method you prefer, but *be consistent*. This maintains the readability of your code.
 
-## Inline Elements: Math
+### Inline Elements: Math
 
 Figure 15 is displaying the markdown that generates the math displayed below.
 
@@ -332,61 +382,15 @@ The area of a circle is $A = pi r^2$, where $r$ is the radius and $pi$ is the co
 
 TeX math occurs between two `$`. Opening `$` must have a non-space character immediately to its right, while the closing `$` must have a non-space character immediately to its left, and must not be followed immediately by a digit.
 
-## Inline Elements: Links and Images
+### Inline Elements: Links and Images
 
-Figure 16 is displaying the markdown that generates the text and links displayed below.
+You can embed links with names [Links in Quarto](https://quarto.org/docs/reference/formats/html.html#links)
 
-![](images/inline-element-links.png)
+You can also used direct links <https://quarto.org/docs/reference/formats/html.html#links>
 
-Figure 16: Inline elements: links and images.
+Linking to images is very similar, except that you start with a bang `!` This is an example of and inline link to an image of an Elephant ![This is a white elephant](images/elephant.png)
 
-You can embed [links with names](https://quarto.org/), direct urls like <https://quarto.org/>, and links to [other places](#inline-elements-text-formatting) in the document. The syntax is similar for embedding an inline image: ![render icon](images/render-icon.png)
-
-## Block Elements: Lists
-
-You can make a numbered list by just using numbers.
-
-    1. bold with double-asterisks
-    2. italics with underscores
-    3. code-type font with backticks
-
-This will appear as:
-
-1.  bold with double-asterisks
-
-2.  italics with underscores
-
-3.  code-type font with backticks
-
-Pandoc gives you a lot of control over lists, including *nesting*, *definition lists*, *blocks in lists*, and *example lists*. The Pandoc [manual](https://pandoc.org/MANUAL.html#lists) has detailed information about lists.
-
-## Block Elements: Headers
-
-You can make section headers of different sizes by initiating a line with some number of `#` symbols:
-
-    # Title
-    ## Main section
-    ### Sub-section
-    #### Sub-sub section
-
-## Block Elements: Math
-
-When using math as Block Elements, math use `$$` delimiters. The delimiters may be separated from the formula by whitespace. No blank lines between the opening and closing `$$` delimiters. For example:
-
-A larger equation:
-
-$$ 
-f(x)={\sqrt{\frac{\tau}{2\pi}}}
-      e^{-\tau (x-\mu )^{2}/2}
-$$
-
-## Block Elements: Images
-
-Block images use the same syntax as inline images. However, images on their own line become a block:
-
-Images on their own line become a block:
-
-![Elephant](images/elephant.png){width="220"}
+The text withing the `[]` provides a caption for the embedded image.
 
 ## Metadata: YAML
 
