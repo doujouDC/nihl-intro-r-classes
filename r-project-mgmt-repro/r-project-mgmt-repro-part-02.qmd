@@ -2,7 +2,7 @@
 title: "Project Management and Reproducibility in RStudio: Part 2"
 author: "Doug Joubert"
 date: "`r Sys.Date()`"
-format: docx
+format: html
 toc: true
 toc-location: body
 fig-width: 6
@@ -294,7 +294,7 @@ It is good to be aware of how to use the source editor, since you might have to 
 
 Markdown is designed to be easy to write, and, even more importantly, easy to read. As previously mentioned, Quarto uses extended version of [**Pandoc markdown**](https://pandoc.org/MANUAL.html#pandocs-markdown) designed with multiple output formats in mind.
 
-## Black Elements
+## Block Elements
 
 ### Block Elements: Lists
 
