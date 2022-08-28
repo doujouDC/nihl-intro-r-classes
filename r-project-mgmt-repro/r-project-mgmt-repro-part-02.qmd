@@ -344,9 +344,21 @@ Images on their own line become a block:
 
 ## Inline Elements
 
-### Inline Elements: Text Formatting {#inline-elements-text-formatting}
+### Inline Elements: Text Formatting
 
-You make things **bold** using two asterisks, like this: `**bold**`, and you make things *italics* by using underscores, like this: `_italics_`.
++-----------------------------------+-------------------------------+
+| Markdown Syntax                   | Output                        |
++:==================================+===============================+
+|     *italics* and **bold**        | *italics* and **bold**        |
++-----------------------------------+-------------------------------+
+|     superscript^2^ / subscript~2~ | superscript^2^ / subscript~2~ |
++-----------------------------------+-------------------------------+
+|     ~~strikethrough~~             | ~~strikethrough~~             |
++-----------------------------------+-------------------------------+
+|     `verbatim code`               | `verbatim code`               |
++-----------------------------------+-------------------------------+
+
+### Inline Elements: Lists
 
 You can make a bullet list by writing a list with hyphens or asterisks, like this:
 
