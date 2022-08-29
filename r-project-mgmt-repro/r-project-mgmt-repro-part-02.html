@@ -1,253 +1,225 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="quarto-0.9.80">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="Doug Joubert">
+  <meta name="dcterms.date" content="2022-08-29">
+  <title>Project Management and Reproducibility in RStudio: Part 2</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.38">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-<meta name="author" content="Doug Joubert">
-<meta name="dcterms.date" content="2022-08-28">
-
-<title>Project Management and Reproducibility in RStudio: Part 2</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
-
-
-<script src="r-project-mgmt-repro-part-02_files/libs/clipboard/clipboard.min.js"></script>
-<script src="r-project-mgmt-repro-part-02_files/libs/quarto-html/quarto.js"></script>
-<script src="r-project-mgmt-repro-part-02_files/libs/quarto-html/popper.min.js"></script>
-<script src="r-project-mgmt-repro-part-02_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="r-project-mgmt-repro-part-02_files/libs/quarto-html/anchor.min.js"></script>
-<link href="r-project-mgmt-repro-part-02_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="r-project-mgmt-repro-part-02_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="r-project-mgmt-repro-part-02_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="r-project-mgmt-repro-part-02_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="r-project-mgmt-repro-part-02_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-
+  <script src="r-project-mgmt-repro-part-02_files/libs/clipboard/clipboard.min.js"></script>
+  <script src="r-project-mgmt-repro-part-02_files/libs/quarto-html/quarto.js"></script>
+  <script src="r-project-mgmt-repro-part-02_files/libs/quarto-html/popper.min.js"></script>
+  <script src="r-project-mgmt-repro-part-02_files/libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="r-project-mgmt-repro-part-02_files/libs/quarto-html/anchor.min.js"></script>
+  <link href="r-project-mgmt-repro-part-02_files/libs/quarto-html/tippy.css" rel="stylesheet">
+  <link href="r-project-mgmt-repro-part-02_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+  <script src="r-project-mgmt-repro-part-02_files/libs/bootstrap/bootstrap.min.js"></script>
+  <link href="r-project-mgmt-repro-part-02_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link href="r-project-mgmt-repro-part-02_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
-
 <body>
-
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#configuration" class="nav-link active" data-scroll-target="#configuration">Configuration</a></li>
+<li><a href="#introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
+<ul class="collapse">
+<li><a href="#assumptions-for-this-class" class="nav-link" data-scroll-target="#assumptions-for-this-class">Assumptions for This Class</a></li>
+</ul></li>
+<li><a href="#markdown-and-literate-programming" class="nav-link" data-scroll-target="#markdown-and-literate-programming">Markdown and Literate Programming</a>
+<ul class="collapse">
+<li><a href="#a-history-of-markdown" class="nav-link" data-scroll-target="#a-history-of-markdown">A History of Markdown</a></li>
+</ul></li>
+<li><a href="#quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a>
+<ul class="collapse">
+<li><a href="#how-quarto-is-different-from-r-markdown" class="nav-link" data-scroll-target="#how-quarto-is-different-from-r-markdown">How Quarto is Different From R Markdown</a></li>
+<li><a href="#r-markdown-only-options" class="nav-link" data-scroll-target="#r-markdown-only-options">R Markdown Only Options</a></li>
+<li><a href="#quarto-only-options" class="nav-link" data-scroll-target="#quarto-only-options">Quarto Only Options</a></li>
+<li><a href="#quarto-interfaces" class="nav-link" data-scroll-target="#quarto-interfaces">Quarto Interfaces</a></li>
+</ul></li>
+<li><a href="#creating-quarto-documents" class="nav-link" data-scroll-target="#creating-quarto-documents">Creating Quarto Documents</a>
+<ul class="collapse">
+<li><a href="#quarto-content-structure" class="nav-link" data-scroll-target="#quarto-content-structure">Quarto Content Structure</a></li>
+<li><a href="#what-define-the-structure-of-a-document" class="nav-link" data-scroll-target="#what-define-the-structure-of-a-document">What Define the Structure of a Document</a>
+<ul class="collapse">
+<li><a href="#block-element" class="nav-link" data-scroll-target="#block-element">Block Element</a></li>
+<li><a href="#inline-element" class="nav-link" data-scroll-target="#inline-element">Inline Element</a></li>
+<li><a href="#metadata-element" class="nav-link" data-scroll-target="#metadata-element">Metadata Element</a></li>
+</ul></li>
+<li><a href="#editor-options" class="nav-link" data-scroll-target="#editor-options">Editor Options</a>
+<ul class="collapse">
+<li><a href="#visual-editor" class="nav-link" data-scroll-target="#visual-editor">Visual Editor</a></li>
+<li><a href="#source-editor" class="nav-link" data-scroll-target="#source-editor">Source Editor</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#basic-markdown" class="nav-link" data-scroll-target="#basic-markdown">Basic Markdown</a>
+<ul class="collapse">
+<li><a href="#block-elements" class="nav-link" data-scroll-target="#block-elements">Block Elements</a>
+<ul class="collapse">
+<li><a href="#block-elements-lists" class="nav-link" data-scroll-target="#block-elements-lists">Block Elements: Lists</a></li>
+<li><a href="#block-elements-headers" class="nav-link" data-scroll-target="#block-elements-headers">Block Elements: Headers</a></li>
+<li><a href="#block-elements-math" class="nav-link" data-scroll-target="#block-elements-math">Block Elements: Math</a></li>
+<li><a href="#block-elements-images" class="nav-link" data-scroll-target="#block-elements-images">Block Elements: Images</a></li>
+</ul></li>
+<li><a href="#inline-elements" class="nav-link" data-scroll-target="#inline-elements">Inline Elements</a>
+<ul class="collapse">
+<li><a href="#inline-elements-text-formatting" class="nav-link" data-scroll-target="#inline-elements-text-formatting">Inline Elements: Text Formatting</a></li>
+<li><a href="#inline-elements-lists" class="nav-link" data-scroll-target="#inline-elements-lists">Inline Elements: Lists</a></li>
+<li><a href="#inline-elements-math" class="nav-link" data-scroll-target="#inline-elements-math">Inline Elements: Math</a></li>
+<li><a href="#inline-elements-links-and-images" class="nav-link" data-scroll-target="#inline-elements-links-and-images">Inline Elements: Links and Images</a></li>
+</ul></li>
+<li><a href="#metadata-yaml" class="nav-link" data-scroll-target="#metadata-yaml">Metadata: YAML</a></li>
+<li><a href="#references-and-further-reading" class="nav-link" data-scroll-target="#references-and-further-reading">References and further reading</a></li>
+</ul></li>
+<li><a href="#adding-code-blocks-using-r" class="nav-link" data-scroll-target="#adding-code-blocks-using-r">Adding Code Blocks Using R</a>
+<ul class="collapse">
+<li><a href="#inserting-code-chunks" class="nav-link" data-scroll-target="#inserting-code-chunks">Inserting Code Chunks</a></li>
+<li><a href="#basic-anatomy-of-the-code-chunk" class="nav-link" data-scroll-target="#basic-anatomy-of-the-code-chunk">Basic Anatomy of the Code Chunk</a></li>
+<li><a href="#run-the-code-in-a-code-chunk" class="nav-link" data-scroll-target="#run-the-code-in-a-code-chunk">Run the code in a code chunk</a></li>
+<li><a href="#labeling-code-chunk" class="nav-link" data-scroll-target="#labeling-code-chunk">Labeling Code Chunk</a></li>
+<li><a href="#code-chunk-options" class="nav-link" data-scroll-target="#code-chunk-options">Code Chunk Options</a></li>
+<li><a href="#code-evaluation-option" class="nav-link" data-scroll-target="#code-evaluation-option">Code Evaluation Option</a></li>
+<li><a href="#text-output-options" class="nav-link" data-scroll-target="#text-output-options">Text Output Options</a></li>
+</ul></li>
+<li><a href="#figure-output" class="nav-link" data-scroll-target="#figure-output">Figure Output</a></li>
+<li><a href="#rendering" class="nav-link" data-scroll-target="#rendering">Rendering</a>
+<ul class="collapse">
+<li><a href="#rendering-in-rstudio-via-knitr" class="nav-link" data-scroll-target="#rendering-in-rstudio-via-knitr">Rendering in RStudio Via Knitr</a></li>
+<li><a href="#system-shell-via-quarto-render" class="nav-link" data-scroll-target="#system-shell-via-quarto-render">System shell via <code>quarto render</code></a>
+<ul class="collapse">
+<li><a href="#navigating-in-the-terminal" class="nav-link" data-scroll-target="#navigating-in-the-terminal">Navigating in the terminal</a></li>
+</ul></li>
+<li><a href="#r-console-via-quarto-r-package" class="nav-link" data-scroll-target="#r-console-via-quarto-r-package">R console via <code>quarto</code> R package</a></li>
+</ul></li>
+<li><a href="#bibliography-citations-cross-referencing" class="nav-link" data-scroll-target="#bibliography-citations-cross-referencing">Bibliography, Citations &amp; Cross-Referencing</a>
+<ul class="collapse">
+<li><a href="#bibliography-files" class="nav-link" data-scroll-target="#bibliography-files">Bibliography Files</a></li>
+<li><a href="#citation-syntax" class="nav-link" data-scroll-target="#citation-syntax">Citation Syntax</a></li>
+<li><a href="#citation-style" class="nav-link" data-scroll-target="#citation-style">Citation Style</a></li>
+<li><a href="#creating-your-reference-list" class="nav-link" data-scroll-target="#creating-your-reference-list">Creating Your Reference List</a></li>
+<li><a href="#exporting-your-reference-list-from-endnote" class="nav-link" data-scroll-target="#exporting-your-reference-list-from-endnote">Exporting Your Reference List from Endnote</a></li>
+<li><a href="#inserting-citations" class="nav-link" data-scroll-target="#inserting-citations">Inserting Citations</a></li>
+<li><a href="#changing-citation-styles" class="nav-link" data-scroll-target="#changing-citation-styles">Changing Citation Styles</a></li>
+<li><a href="#bibliography-generation" class="nav-link" data-scroll-target="#bibliography-generation">Bibliography Generation</a></li>
+</ul></li>
+<li><a href="#resources" class="nav-link" data-scroll-target="#resources">Resources</a>
+<ul class="collapse">
+<li><a href="#r-project-management" class="nav-link" data-scroll-target="#r-project-management">R Project Management</a></li>
+<li><a href="#quarto-1" class="nav-link" data-scroll-target="#quarto-1">Quarto</a>
+<ul class="collapse">
+<li><a href="#official-documentation-quickstarts" class="nav-link" data-scroll-target="#official-documentation-quickstarts">Official Documentation &amp; Quickstarts</a></li>
+<li><a href="#tutorials-and-workshops" class="nav-link" data-scroll-target="#tutorials-and-workshops">Tutorials and Workshops</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#licenses" class="nav-link" data-scroll-target="#licenses">Licenses</a></li>
+<li><a href="#references" class="nav-link" data-scroll-target="#references">References</a></li>
+</ul>
+</nav>
 </div>
 <main class="content" id="quarto-document-content">
-
 <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Project Management and Reproducibility in RStudio: Part 2</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title"><h1 class="title display-7">Project Management and Reproducibility in RStudio: Part 2</h1></div><div class="quarto-title-meta"><div><div class="quarto-title-meta-heading">Author</div><div class="quarto-title-meta-contents"><div class="quarto-title-authors"><p>Doug Joubert</p></div></div></div><div><div class="quarto-title-meta-heading">Published</div><div class="quarto-title-meta-contents"><p class="date">Invalid Date</p></div></div></div></header>
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Doug Joubert </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 28, 2022</p>
-    </div>
-  </div>
-    
-  </div>
-  
-
-</header>
-<nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#configuration" id="toc-configuration">Configuration</a></li>
-  <li><a href="#introduction" id="toc-introduction">Introduction</a>
-  <ul>
-  <li><a href="#assumptions-for-this-class" id="toc-assumptions-for-this-class">Assumptions for This Class</a></li>
-  </ul></li>
-  <li><a href="#markdown-and-literate-programming" id="toc-markdown-and-literate-programming">Markdown and Literate Programming</a>
-  <ul>
-  <li><a href="#a-history-of-markdown" id="toc-a-history-of-markdown">A History of Markdown</a></li>
-  </ul></li>
-  <li><a href="#quarto" id="toc-quarto">Quarto</a>
-  <ul>
-  <li><a href="#how-quarto-is-different-from-r-markdown" id="toc-how-quarto-is-different-from-r-markdown">How Quarto is Different From R Markdown</a></li>
-  <li><a href="#r-markdown-only-options" id="toc-r-markdown-only-options">R Markdown Only Options</a></li>
-  <li><a href="#quarto-only-options" id="toc-quarto-only-options">Quarto Only Options</a></li>
-  <li><a href="#quarto-interfaces" id="toc-quarto-interfaces">Quarto Interfaces</a></li>
-  </ul></li>
-  <li><a href="#creating-quarto-documents" id="toc-creating-quarto-documents">Creating Quarto Documents</a>
-  <ul>
-  <li><a href="#quarto-content-structure" id="toc-quarto-content-structure">Quarto Content Structure</a></li>
-  <li><a href="#what-define-the-structure-of-a-document" id="toc-what-define-the-structure-of-a-document">What Define the Structure of a Document</a>
-  <ul>
-  <li><a href="#block-element" id="toc-block-element">Block Element</a></li>
-  <li><a href="#inline-element" id="toc-inline-element">Inline Element</a></li>
-  <li><a href="#metadata-element" id="toc-metadata-element">Metadata Element</a></li>
-  </ul></li>
-  <li><a href="#editor-options" id="toc-editor-options">Editor Options</a>
-  <ul>
-  <li><a href="#visual-editor" id="toc-visual-editor">Visual Editor</a></li>
-  <li><a href="#source-editor" id="toc-source-editor">Source Editor</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#basic-markdown" id="toc-basic-markdown">Basic Markdown</a>
-  <ul>
-  <li><a href="#block-elements" id="toc-block-elements">Block Elements</a>
-  <ul>
-  <li><a href="#block-elements-lists" id="toc-block-elements-lists">Block Elements: Lists</a></li>
-  <li><a href="#block-elements-headers" id="toc-block-elements-headers">Block Elements: Headers</a></li>
-  <li><a href="#block-elements-math" id="toc-block-elements-math">Block Elements: Math</a></li>
-  <li><a href="#block-elements-images" id="toc-block-elements-images">Block Elements: Images</a></li>
-  </ul></li>
-  <li><a href="#inline-elements" id="toc-inline-elements">Inline Elements</a>
-  <ul>
-  <li><a href="#inline-elements-text-formatting" id="toc-inline-elements-text-formatting">Inline Elements: Text Formatting</a></li>
-  <li><a href="#inline-elements-math" id="toc-inline-elements-math">Inline Elements: Math</a></li>
-  <li><a href="#inline-elements-links-and-images" id="toc-inline-elements-links-and-images">Inline Elements: Links and Images</a></li>
-  </ul></li>
-  <li><a href="#metadata-yaml" id="toc-metadata-yaml">Metadata: YAML</a></li>
-  <li><a href="#references-and-further-reading" id="toc-references-and-further-reading">References and further reading</a></li>
-  </ul></li>
-  <li><a href="#adding-code-blocks-using-r" id="toc-adding-code-blocks-using-r">Adding Code Blocks Using R</a>
-  <ul>
-  <li><a href="#inserting-code-chunks" id="toc-inserting-code-chunks">Inserting Code Chunks</a></li>
-  <li><a href="#basic-anatomy-of-the-code-chunk" id="toc-basic-anatomy-of-the-code-chunk">Basic Anatomy of the Code Chunk</a></li>
-  <li><a href="#run-the-code-in-a-code-chunk" id="toc-run-the-code-in-a-code-chunk">Run the code in a code chunk</a></li>
-  <li><a href="#labeling-code-chunk" id="toc-labeling-code-chunk">Labeling Code Chunk</a></li>
-  <li><a href="#code-chunk-options" id="toc-code-chunk-options">Code Chunk Options</a></li>
-  <li><a href="#code-evaluation-option" id="toc-code-evaluation-option">Code Evaluation Option</a></li>
-  <li><a href="#text-output-options" id="toc-text-output-options">Text Output Options</a></li>
-  </ul></li>
-  <li><a href="#figure-output" id="toc-figure-output">Figure Output</a></li>
-  <li><a href="#rendering" id="toc-rendering">Rendering</a>
-  <ul>
-  <li><a href="#rendering-in-rstudio-via-knitr" id="toc-rendering-in-rstudio-via-knitr">Rendering in RStudio Via Knitr</a></li>
-  <li><a href="#system-shell-via-quarto-render" id="toc-system-shell-via-quarto-render">System shell via <code>quarto render</code></a>
-  <ul>
-  <li><a href="#navigating-in-the-terminal" id="toc-navigating-in-the-terminal">Navigating in the terminal</a></li>
-  </ul></li>
-  <li><a href="#r-console-via-quarto-r-package" id="toc-r-console-via-quarto-r-package">R console via <code>quarto</code> R package</a></li>
-  </ul></li>
-  <li><a href="#bibliography-citations-cross-referencing" id="toc-bibliography-citations-cross-referencing">Bibliography, Citations &amp; Cross-Referencing</a>
-  <ul>
-  <li><a href="#bibliography-files" id="toc-bibliography-files">Bibliography Files</a></li>
-  <li><a href="#citation-syntax" id="toc-citation-syntax">Citation Syntax</a></li>
-  <li><a href="#citation-style" id="toc-citation-style">Citation Style</a></li>
-  <li><a href="#creating-your-reference-list" id="toc-creating-your-reference-list">Creating Your Reference List</a></li>
-  <li><a href="#exporting-your-reference-list-from-endnote" id="toc-exporting-your-reference-list-from-endnote">Exporting Your Reference List from Endnote</a></li>
-  <li><a href="#inserting-citations" id="toc-inserting-citations">Inserting Citations</a></li>
-  <li><a href="#changing-citation-styles" id="toc-changing-citation-styles">Changing Citation Styles</a></li>
-  <li><a href="#bibliography-generation" id="toc-bibliography-generation">Bibliography Generation</a></li>
-  </ul></li>
-  <li><a href="#resources" id="toc-resources">Resources</a>
-  <ul>
-  <li><a href="#r-project-management" id="toc-r-project-management">R Project Management</a></li>
-  <li><a href="#quarto-1" id="toc-quarto-1">Quarto</a>
-  <ul>
-  <li><a href="#official-documentation-quickstarts" id="toc-official-documentation-quickstarts">Official Documentation &amp; Quickstarts</a></li>
-  <li><a href="#tutorials-and-workshops" id="toc-tutorials-and-workshops">Tutorials and Workshops</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#licenses" id="toc-licenses">Licenses</a></li>
-  <li><a href="#references" id="toc-references">References</a></li>
-  </ul>
-</nav>
 <section id="configuration" class="level1">
 <h1>Configuration</h1>
 <p>This class features exercises that will help you learn by doing. To prepare, please install the following on your machine:</p>
@@ -257,11 +229,11 @@ div.csl-indent {
 </ul>
 <p>Quarto is also available as a package. The <strong>quarto</strong> package provides an R interface to frequently used operations in the Quarto Command Line Interface (CLI). The package is not a requirement for using Quarto with R. Rather, it provides an R interface to common Quarto operations for users who prefer to work in the R console rather than a terminal, and for package authors that want to programatically interface with Quarto.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("quarto")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("quarto")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You will also need to install the <a href="http://yihui.name/knitr/">knitr</a> package. Knitr is a general-purpose tool for dynamic report generation in R using Literate Programming techniques.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("knitr")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("knitr")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Other useful packages to install include the tidyverse and rmarkdown packages.</p>
 <p><a href="https://pkgs.rstudio.com/rmarkdown/">rmarkdown</a>, The rmarkdown package helps you create dynamic analysis documents that combine code, rendered output (such as figures).</p>
@@ -532,7 +504,7 @@ f(x)={\sqrt{\frac{\tau}{2\pi}}}
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/elephant.png" class="img-fluid figure-img" width="220"></p>
-<p></p><figcaption class="figure-caption">Elephant</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Elephant</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -541,7 +513,39 @@ f(x)={\sqrt{\frac{\tau}{2\pi}}}
 <h2 class="anchored" data-anchor-id="inline-elements">Inline Elements</h2>
 <section id="inline-elements-text-formatting" class="level3">
 <h3 class="anchored" data-anchor-id="inline-elements-text-formatting">Inline Elements: Text Formatting</h3>
-<p>You make things <strong>bold</strong> using two asterisks, like this: <code>**bold**</code>, and you make things <em>italics</em> by using underscores, like this: <code>_italics_</code>.</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Markdown Syntax</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><pre><code>*italics* and **bold**</code></pre></td>
+<td><em>italics</em> and <strong>bold</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><pre><code>superscript^2^ / subscript~2~</code></pre></td>
+<td>superscript<sup>2</sup> / subscript<sub>2</sub></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><pre><code>~~strikethrough~~</code></pre></td>
+<td><del>strikethrough</del></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><pre><code>`verbatim code`</code></pre></td>
+<td><code>verbatim code</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="inline-elements-lists" class="level3">
+<h3 class="anchored" data-anchor-id="inline-elements-lists">Inline Elements: Lists</h3>
 <p>You can make a bullet list by writing a list with hyphens or asterisks, like this:</p>
 <pre><code>* bold with double-asterisks
 * italics with underscores
@@ -577,19 +581,19 @@ f(x)={\sqrt{\frac{\tau}{2\pi}}}
 <section id="metadata-yaml" class="level2">
 <h2 class="anchored" data-anchor-id="metadata-yaml">Metadata: YAML</h2>
 <p>Metadata can be included via YAML, which is human-readable data-serialization language. It is commonly used for configuration files and in applications where data is being stored or transmitted. For example the Header of a Quarto document:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"US Patent: A Spatial Toy"</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Erno Rubrik</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Albert Einstein</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">    abstract</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>      This is the abstract.</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>      It has two paragraphs.</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"US Patent: A Spatial Toy"</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Erno Rubrik</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Albert Einstein</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="fu">    abstract</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>      This is the abstract.</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>      It has two paragraphs.</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>There are some syntax rules:</p>
 <ul>
 <li><p>Set a single option <code>key: value</code></p></li>
@@ -641,18 +645,18 @@ f(x)={\sqrt{\frac{\tau}{2\pi}}}
 <h2 class="anchored" data-anchor-id="basic-anatomy-of-the-code-chunk">Basic Anatomy of the Code Chunk</h2>
 <p>Code blocks that use braces around the language name (e.g.&nbsp;<code>{r}</code>) are executable, and will be run by Quarto during render. Here is a simple example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
+<div class="sourceCode" id="cb12"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stderr">
 <pre><code>`geom_smooth()` using formula 'y ~ x'</code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
+<div class="cell-output-stderr">
 <pre><code>Warning: Removed 37 rows containing non-finite values (stat_smooth).</code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
+<div class="cell-output-stderr">
 <pre><code>Warning: Removed 37 rows containing missing values (geom_point).</code></pre>
 </div>
 <div class="cell-output-display">
@@ -662,20 +666,23 @@ f(x)={\sqrt{\frac{\tau}{2\pi}}}
 <p>You might have noticed that there are some special comments at the top of the code block. These comments use <code>#| (the hash pipe!)</code>. <code>#|</code> provides the cell options. When the document is rendered, this code chunk will look like this [Figure 20]:</p>
 <p><img src="images/quarto-code-chunk-rendered.png" class="img-fluid"></p>
 <p>Figure 20: Rendered version of a code-chunk.</p>
+<p>While it is possible to use R chunks options, hash pipe options are more portable across computational engines. Also, don’t forget the “tab-complete” option that is built into RStudio [Figure 21].</p>
+<p><img src="images/code-yaml-auto-complete.png" class="img-fluid"></p>
+<p>Figure 21: Example of tab-complete feature in RStudio.</p>
 </section>
 <section id="run-the-code-in-a-code-chunk" class="level2">
 <h2 class="anchored" data-anchor-id="run-the-code-in-a-code-chunk">Run the code in a code chunk</h2>
 <p>There are 3 main options for running and debugging code that don’t require us to wait for the file to render.</p>
 <ol type="1">
-<li>Run from code chunk (green play button on the right top corner). This allows us to run one specific code chunk [Figure 21].</li>
+<li>Run from code chunk (green play button on the right top corner). This allows us to run one specific code chunk [Figure 22].</li>
 </ol>
 <p><img src="images/code-chunk-run-01.png" class="img-fluid" style="width:6.5in"></p>
-<p>Figure 21: Running a code chunk from the code-box.</p>
+<p>Figure 22: Running a code chunk from the code-box.</p>
 <ol start="2" type="1">
-<li>Run menu, which gives more options for running code chunks including the current one, the next one, all chunks, etc [Figure 22].</li>
+<li>Run menu, which gives more options for running code chunks including the current one, the next one, all chunks, etc [Figure 23].</li>
 </ol>
 <p><img src="images/code-run-chunk-02.png" class="img-fluid" style="width:6.5in"></p>
-<p>Figure 22: Running a code chunk from the Code-Chunk menu.</p>
+<p>Figure 23: Running a code chunk from the Code-Chunk menu.</p>
 <ol start="3" type="1">
 <li>Using keyboard shortcuts</li>
 </ol>
@@ -751,26 +758,26 @@ f(x)={\sqrt{\frac{\tau}{2\pi}}}
 <li><p>Then, run the code-chunk</p></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
+<div class="sourceCode" id="cb16"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stderr">
 <pre><code>`geom_smooth()` using formula 'y ~ x'</code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
+<div class="cell-output-stderr">
 <pre><code>Warning: Removed 37 rows containing non-finite values (stat_smooth).</code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
+<div class="cell-output-stderr">
 <pre><code>Warning: Removed 37 rows containing missing values (geom_point).</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="r-project-mgmt-repro-part-02_files/figure-html/fig-airquality%2002-1.png" class="img-fluid" alt="Temperature and ozone level.">{#fig-airquality 02 width=576}</p>
 </div>
 </div>
-<p>Figure 23 is displaying the output of the code-chunk. Can you explain what is happening in the console?</p>
+<p>Figure 24 is displaying the output of the code-chunk. Can you explain what is happening in the console?</p>
 <p><img src="images/knit-02.png" class="img-fluid" style="width:6.5in"></p>
-<p>Figure 23: Output from our first code chunk.</p>
+<p>Figure 24: Output from our first code chunk.</p>
 </section>
 <section id="code-chunk-options" class="level2">
 <h2 class="anchored" data-anchor-id="code-chunk-options">Code Chunk Options</h2>
@@ -839,49 +846,46 @@ f(x)={\sqrt{\frac{\tau}{2\pi}}}
 </table>
 <p>The code chunk below is a modification of the previous code chunk and includes the text output option <code>warning: false</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="r-project-mgmt-repro-part-02_files/figure-html/fig-airquality%2003-1.png" class="img-fluid" alt="Temperature and ozone level.">{#fig-airquality 03 width=576}</p>
 </div>
 </div>
 <p>The <code>knitr</code> syntax for passing options still works since Quarto uses <code>knitr</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>) <span class="sc">+</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">caption =</span> <span class="st">"Temperature and ozone level"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
+<div class="sourceCode" id="cb21"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>) <span class="sc">+</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">caption =</span> <span class="st">"Temperature and ozone level"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stderr">
 <pre><code>`geom_smooth()` using formula 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="r-project-mgmt-repro-part-02_files/figure-html/Creating%20Air%20Quality%20Figure%20Version%203-1.png" class="img-fluid" width="576"></p>
 </div>
 </div>
-<p>While it is possible to use R chunks options, hash pipe options are more portable across computational engines. Also, don’t forget the “tab-complete” option that is built into RStudio [Figure 24].</p>
-<p><img src="images/code-yaml-auto-complete.png" class="img-fluid"></p>
-<p>Figure 24: Example of tab-complete feature in RStudio.</p>
 </section>
 </section>
 <section id="figure-output" class="level1">
 <h1>Figure Output</h1>
 <p>Figure output options are similar to those used in R markdown. However, Pandoc markdown syntax is used for figures. Let us compare the two options. The code chunk below is using R markdown.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm,</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> bill_depth_mm,</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> island)) <span class="sc">+</span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">caption =</span><span class="st">"Penguin lenght and depth"</span>,</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">alt=</span><span class="st">"Penguin data from palmerpenguins package"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
+<div class="sourceCode" id="cb23"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm,</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> bill_depth_mm,</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> island)) <span class="sc">+</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">caption =</span><span class="st">"Penguin lenght and depth"</span>,</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">alt=</span><span class="st">"Penguin data from palmerpenguins package"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stderr">
 <pre><code>Warning: Removed 2 rows containing missing values (geom_point).</code></pre>
 </div>
 <div class="cell-output-display">
@@ -890,21 +894,21 @@ f(x)={\sqrt{\frac{\tau}{2\pi}}}
 </div>
 <p>The code chunk below is using Pandoc/Quarto</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm,</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> bill_depth_mm,</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> island)) <span class="sc">+</span></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
+<div class="sourceCode" id="cb25"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm,</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> bill_depth_mm,</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> island)) <span class="sc">+</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stderr">
 <pre><code>Warning: Removed 2 rows containing missing values (geom_point).</code></pre>
 </div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="r-project-mgmt-repro-part-02_files/figure-html/Penguins%20Version%202-1.png" class="img-fluid figure-img" alt="Penguin data from palmerpenguins package" width="480"></p>
-<p></p><figcaption class="figure-caption">Penguin lenght and depth</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Penguin lenght and depth</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -982,7 +986,7 @@ f(x)={\sqrt{\frac{\tau}{2\pi}}}
 <h2 class="anchored" data-anchor-id="r-console-via-quarto-r-package">R console via <code>quarto</code> R package</h2>
 <p>If you are not using RStudio and/or you prefer to render from the R console, you can do so using the <strong>quarto</strong> R package. To install the R package</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("quarto")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("quarto")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>I have commented out the code since I already have the package installed. You can learn more about the package from the Quarto resources <a href="https://quarto.org/docs/reference/">page</a>, or from the GitHub page.</p>
 </section>
@@ -1151,36 +1155,17 @@ csl: nature.csl
 <p>Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> 2022 by <a href="https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/CITATION">the authors</a>.</p>
 </section>
 <section id="references" class="level1 unnumbered">
-
+<h1 class="unnumbered">References</h1>
 
 </section>
-
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="doc-bibliography">
 <div id="ref-RN1727" class="csl-entry" role="doc-biblioentry">
 Bray, A., Barter, R., Canelón, S., Dervieux, C., &amp; Shigeta, T. (n.d.). From r markdown to quarto. <em>Rstudio::conf 2022</em>. <a href="https://rstudio-conf-2022.github.io/rmd-to-quarto/">https://rstudio-conf-2022.github.io/rmd-to-quarto/</a>
 </div>
 </div></section></div></main>
 <!-- /main column -->
-<script id="quarto-html-after-body" type="application/javascript">
+<script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -1200,10 +1185,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.blur();
     // flash "checked"
     button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
     setTimeout(function() {
-      button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
     // clear code selection
@@ -1259,7 +1241,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-
 
 
 </body></html>

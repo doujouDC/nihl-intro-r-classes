@@ -509,21 +509,27 @@ You might have noticed that there are some special comments at the top of the co
 
 Figure 20: Rendered version of a code-chunk.
 
-## Run the code in a code chunk
+While it is possible to use R chunks options, hash pipe options are more portable across computational engines. Also, don't forget the "tab-complete" option that is built into RStudio \[Figure 21\].
+
+![](images/code-yaml-auto-complete.png)
+
+Figure 21: Example of tab-complete feature in RStudio.
+
+## Running Code Chunks
 
 There are 3 main options for running and debugging code that don't require us to wait for the file to render.
 
-1)  Run from code chunk (green play button on the right top corner). This allows us to run one specific code chunk \[Figure 21\].
+1)  Run from code chunk (green play button on the right top corner). This allows us to run one specific code chunk \[Figure 22\].
 
 ![](images/code-chunk-run-01.png){width="6.5in"}
 
-Figure 21: Running a code chunk from the code-box.
+Figure 22: Running a code chunk from the code-box.
 
-2.  Run menu, which gives more options for running code chunks including the current one, the next one, all chunks, etc \[Figure 22\].
+2.  Run menu, which gives more options for running code chunks including the current one, the next one, all chunks, etc \[Figure 23\].
 
 ![](images/code-run-chunk-02.png){width="6.5in"}
 
-Figure 22: Running a code chunk from the Code-Chunk menu.
+Figure 23: Running a code chunk from the Code-Chunk menu.
 
 3.  Using keyboard shortcuts
 
@@ -575,11 +581,11 @@ ggplot(airquality, aes(Temp, Ozone)) +
   geom_smooth(method = "loess")
 ```
 
-Figure 23 is displaying the output of the code-chunk. Can you explain what is happening in the console?
+Figure 24 is displaying the output of the code-chunk. Can you explain what is happening in the console?
 
 ![](images/knit-02.png){width="6.5in"}
 
-Figure 23: Output from our first code chunk.
+Figure 24: Output from our first code chunk.
 
 ## Code Chunk Options
 
@@ -643,11 +649,6 @@ ggplot(airquality, aes(Temp, Ozone)) +
   
 ```
 
-While it is possible to use R chunks options, hash pipe options are more portable across computational engines. Also, don't forget the "tab-complete" option that is built into RStudio \[Figure 24\].
-
-![](images/code-yaml-auto-complete.png)
-
-Figure 24: Example of tab-complete feature in RStudio.
 
 # Figure Output
 
