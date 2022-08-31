@@ -7,4 +7,24 @@ bibliography: nihl-r-classes.bib
 csl: apa.csl
 ---
 
-This book is an overview of data visualization from a sociological perspective [@RN1081].
+# Blocks
+
+## Example of lists
+
+-   **bold** with double-asterisks
+
+-   *italics* with underscore^2^
+
+-   ~~code-type with back-ticks~~
+
+## Math
+
+$$
+3+4 * (sqrt(5))
+$$
+
+![Image of an elephant](images/elephant.png){width="640"}
+
+## Inline Math
+
+$ A=pir^2$
