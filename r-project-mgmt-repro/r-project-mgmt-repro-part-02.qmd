@@ -2,7 +2,7 @@
 title: "Project Management and Reproducibility in RStudio: Part 2"
 author: "Doug Joubert"
 date: "`r Sys.Date()`"
-format: html
+format: docx
 toc: true
 toc-location: body
 fig-width: 6
@@ -587,7 +587,41 @@ Figure 24 is displaying the output of the code-chunk. Can you explain what is ha
 
 Figure 24: Output from our first code chunk.
 
-## Code Chunk Options
+
+## Execution Options
+
+There are a wide variety of options available for customizing output from executed code. All of these options can be specified globally. We have already seen an example of this in the YAML header:
+
+``` r
+---
+title: "Project Management and Reproducibility in RStudio: Part 2"
+author: "Doug Joubert"
+date: "`r Sys.Date()`"
+format: docx
+toc: true
+toc-location: body
+fig-width: 6
+fig-height: 4
+bibliography: nihl-r-classes.bib
+csl: apa.csl
+---
+```
+
+Options can also be specified in specific code-blocks.
+
+```{r}
+#| echo: true
+#| echo: false
+
+library(ggplot2)
+ggplot(airquality, aes(Temp, Ozone)) + 
+        geom_point() + 
+        geom_smooth(method = "loess", se = FALSE)
+summary(airquality)
+```
+
+
+### Code Chunk Options
 
 There are over 50 different code chunk options. Wow, that is a lot. Obviously we will not go over all of them, but they fall into several larger categories including: code evaluation, text output, code style, cache options, plot output and animation.
 
@@ -599,7 +633,7 @@ The chunk name is the only value other than `r` in the code chunk options that d
 
 The option always follows the code chunk label (don't forget to add a `,` after the label either).
 
-## Code Evaluation Option
+### Code Evaluation Option
 
 +------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | **Option** | **Description**                                                                                                                              |
@@ -607,7 +641,7 @@ The option always follows the code chunk label (don't forget to add a `,` after 
 | `include`  | Catch all for preventing any output (code or results) from being included (e.g. `include: false` suppresses all output from the code block). |
 +------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
-## Text Output Options
+### Text Output Options
 
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Option** | **Description**                                                                                                                                                                                   |
@@ -623,46 +657,23 @@ The option always follows the code chunk label (don't forget to add a `,` after 
 | `error`    | Include errors in the output.                                                                                                                                                                     |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-The code chunk below is a modification of the previous code chunk and includes the text output option `warning: false`
 
-```{r Creating Air Quality Figure Version 3}
-#| label: fig-airquality 03
-#| fig-cap: Temperature and ozone level.
-#| warning: false
+## Figure Options
 
-library(ggplot2)
-
-ggplot(airquality, aes(Temp, Ozone)) + 
-  geom_point() + 
-  geom_smooth(method = "loess"
-)
-```
-
-The `knitr` syntax for passing options still works since Quarto uses `knitr`.
-
-```{r Creating Air Quality Figure Version 3, warning=FALSE}
-library(ggplot2)
-ggplot(airquality, aes(Temp, Ozone)) + 
-  geom_point() + 
-  geom_smooth(method = "loess") +
-  labs(caption = "Temperature and ozone level")
-  
-```
-
-
-# Figure Output
-
-Figure output options are similar to those used in R markdown. However, Pandoc markdown syntax is used for figures. Let us compare the two options. The code chunk below is using R markdown.
+Let us explore two different scenarios. The code chunk below is using R markdown.
 
 ```{r Penguins Version 1}
 library(palmerpenguins)
 library(ggplot2)
+
 
 ggplot(penguins, aes(x = bill_length_mm,
                      y = bill_depth_mm,
                      col = island)) +
   geom_point() +
   labs(caption ="Penguin lenght and depth",
+       x = "Bill Length",
+       y = "Bill Depth",
        alt="Penguin data from palmerpenguins package")
 ```
 
@@ -674,14 +685,15 @@ The code chunk below is using Pandoc/Quarto
 #| fig-cap: "Penguin lenght and depth"
 #| fig-alt: "Penguin data from palmerpenguins package"
 
-
 library(palmerpenguins)
 library(ggplot2)
 
 ggplot(penguins, aes(x = bill_length_mm,
                      y = bill_depth_mm,
                      col = island)) +
-  geom_point() 
+  geom_point() +
+  labs(x = "Bill Length",
+       y = "Bill Depth")
 ```
 
 # Rendering
