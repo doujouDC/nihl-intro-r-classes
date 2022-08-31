@@ -27,4 +27,4 @@ $$
 
 ## Inline Math
 
-$ A=pir^2$
+\$ A=pir\^2\$
