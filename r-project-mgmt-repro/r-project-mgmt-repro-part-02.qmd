@@ -740,7 +740,7 @@ Figure 25: Rendering Quarto documents in RStudio.
 
 ### Navigating in the terminal
 
-Because Quarto is also a command line interface (CLI), there are times you'll need to use it via the terminal. The table below provides some common commands.
+Because Quarto is also a command line interface (CLI), you can also render via the terminal. The table below provides some common commands.
 
 +------------------------------------+-------------------------------------------------------+
 | **Command**                        | **Action**                                            |
@@ -762,7 +762,7 @@ A great overview of using the command line and navigating files/directories is a
 
 ## R console via `quarto` R package
 
-If you are not using RStudio and/or you prefer to render from the R console, you can do so using the **quarto** R package. To install the R package
+You can render from the R Console by installing the [Quarto R package](https://cran.r-project.org/web/packages/quarto/index.html). To install the R package:
 
 ```{r install Quarto package}
 # install.packages("quarto")
@@ -770,9 +770,9 @@ If you are not using RStudio and/or you prefer to render from the R console, you
 
 I have commented out the code since I already have the package installed. You can learn more about the package from the Quarto resources [page](https://quarto.org/docs/reference/), or from the GitHub page.
 
-# Bibliography, Citations & Cross-Referencing
+# Citations & Bibliographies
 
-Quarto will use Pandoc to automatically generate citations and a bibliography in a number of styles. To use this capability, you will need:
+Quarto uses Pandoc to automatically generate citations and a bibliography. To use this capability, you will need:
 
 -   A quarto document formatted with citations (see [Citation Markdown](https://quarto.org/docs/authoring/footnotes-and-citations.html#sec-citations)).
 
@@ -782,20 +782,25 @@ Quarto will use Pandoc to automatically generate citations and a bibliography in
 
 ## Bibliography Files
 
-Quarto supports bibliography files in a wide variety of formats including BibTeX and CSL. Add a bibliography to your document using the `bibliography` YAML metadata field. You must link the bib file and any associated output styles in the Header of your RMD file. For example
+Quarto supports multiple bibliography formats including `BibTeX` and `CSL`. Bibliographies are linked from the `Header YAML` metadata field. You must also link any associated output styles. For example
 
     ---
-    title: "Introduction to Project Management (Part 2)"
+    title: "Introduction to Project Management: Part 2"
     bibliography: nihl-r-classes.bib
     ---
 
 ## Citation Syntax
 
-Quarto uses the standard Pandoc markdown representation for citations (e.g. `[@citation]`) --- citations go inside square brackets and are separated by semicolons. Since I will copying my references from Endnote, I will not go over the citation metadata. You can provide citation data for Quarto documents in the document front matter. The citation options are based upon the [Citation Style Language (CSL) specification for items](https://docs.citationstyles.org/en/stable/specification.html), but as YAML (rather than XML). Consult this [page](https://quarto.org/docs/reference/metadata/citation.html) for more information.
+Quarto uses the standard Pandoc for citations. Citations go inside square brackets and are separated by semicolons. For example:
+
+`[@citation]`
+
+Since I will be exporting my references from Endnote, I will not go over the citation metadata. You can provide citation data for Quarto documents in the document front matter. The citation options are based upon the [Citation Style Language (CSL) specification for items](https://docs.citationstyles.org/en/stable/specification.html), but as YAML (rather than XML). Consult this [page](https://quarto.org/docs/reference/metadata/citation.html) for more information.
 
 ## Citation Style
 
-Quarto uses Pandoc to format citations and bibliographies. By default, Pandoc will use the [Chicago Manual of Style](https://chicagomanualofstyle.org/) author-date format, but you can specify a custom formatting using CSL ([Citation Style Language](https://citationstyles.org/)). To provide a custom citation stylesheet, provide a path to a CSL file using the `csl` metadata field in your document, for example:
+By default, Pandoc will use the [Chicago Manual of Style](https://chicagomanualofstyle.org/) author-date format. However, you can specify a custom formatting using CSL [Citation Style Language](https://citationstyles.org/). You must provide a path to a `CSL` file using the csl metadata field in your document, for example:
+
 
     ---
     title: "My Document"
@@ -803,7 +808,7 @@ Quarto uses Pandoc to format citations and bibliographies. By default, Pandoc wi
     csl: nature.csl
     ---
 
-You can find CSL files or learn more about using styles at the [CSL Project](https://github.com/citation-style-language/styles). You can browse the list of more than 8,500 Creative Commons CSL definitions in the CSL Project's [central repository](https://github.com/citation-style-language/styles) or Zotero's [style repository](https://www.zotero.org/styles).
+You can find CSL files at the [CSL Project](https://github.com/citation-style-language/styles). You can browse the list of more than 8,500 Creative Commons CSL definitions in the CSL Project's [central repository](https://github.com/citation-style-language/styles) or Zotero's [style repository](https://www.zotero.org/styles).
 
 ## Creating Your Reference List
 
