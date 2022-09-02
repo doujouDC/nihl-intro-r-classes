@@ -3,28 +3,7 @@ title: "Proj-Mgmt-02"
 author: "Doug Joubert"
 format: html
 editor: visual
-bibliography: nihl-r-classes.bib
-csl: apa.csl
+# bibliography: nihl-r-classes.bib
+# csl: apa.csl
 ---
 
-# Blocks
-
-## Example of lists
-
--   **bold** with double-asterisks
-
--   *italics* with underscore^2^
-
--   ~~code-type with back-ticks~~
-
-## Math
-
-$$
-3+4 * (sqrt(5))
-$$
-
-![Image of an elephant](images/elephant.png){width="640"}
-
-## Inline Math
-
-\$ A=pir\^2\$
