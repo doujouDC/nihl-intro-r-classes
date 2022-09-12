@@ -3,12 +3,12 @@ title: "Project Management and Reproducibility in RStudio: Part 2"
 author: "Doug Joubert"
 date: "`r Sys.Date()`"
 format: docx
-toc: true
-toc-location: body
-fig-width: 6
-fig-height: 4
-bibliography: nihl-r-classes.bib
-csl: apa.csl
+# toc: true
+# toc-location: body
+# fig-width: 6
+# fig-height: 4
+# bibliography: nihl-r-classes.bib
+# csl: apa.csl
 ---
 
 # Configuration
