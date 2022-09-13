@@ -2,7 +2,7 @@
 title: "Project Management and Reproducibility in RStudio: Part 2"
 author: "Doug Joubert"
 date: "`r Sys.Date()`"
-format: docx
+format: html
 # toc: true
 # toc-location: body
 # fig-width: 6
@@ -800,7 +800,6 @@ Since I will be exporting my references from Endnote, I will not go over the cit
 ## Citation Style
 
 By default, Pandoc will use the [Chicago Manual of Style](https://chicagomanualofstyle.org/) author-date format. However, you can specify a custom formatting using CSL [Citation Style Language](https://citationstyles.org/). You must provide a path to a `CSL` file using the csl metadata field in your document, for example:
-
 
     ---
     title: "My Document"
