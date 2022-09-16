@@ -11,23 +11,15 @@ bibliography: nihl-r-classes.bib
 csl: apa.csl
 ---
 
-#Configuration
-
-[@Liu2019]
+# Configuration
 
 This class features exercises that will help you learn by doing. To prepare, please install the following on your machine:
-
-[@RN1357]
 
 -   Install latest version of [RStudio](https://www.rstudio.com/products/rstudio/download/#download), v2022.07.0-548 or later
 
 -   Install latest version of [Quarto](https://quarto.org/docs/get-started/) (v1.0.36 or greater)
 
 Quarto is also available as a package. The **quarto** package provides an R interface to frequently used operations in the Quarto Command Line Interface (CLI). The package is not a requirement for using Quarto with R. Rather, it provides an R interface to common Quarto operations for users who prefer to work in the R console rather than a terminal, and for package authors that want to programatically interface with Quarto.
-
-```{r}
-
-```
 
 ```{r}
 # install.packages("quarto")
@@ -47,7 +39,7 @@ Other useful packages to install include the tidyverse and rmarkdown packages.
 
 # Introduction
 
-This one-hour class focuses on data and project management using R and RStudio. RStudio makes it possible to work on a complete research project in a more efficient, integrated, and organized manner. Participants will learn how to create reproducible documents that combine code, analysis, and narrative. This intermediate-level course is designed to be relevant to students from different disciplines. Some familiarity or experience in R and RStudio is recommended but not required. Students are encouraged to install [R](https://mirrors.nics.utk.edu/cran/) and [RStudio](https://www.rstudio.com/products/rstudio/download/#download) before the webinar so that they can follow along with the instructor.
+This 75 minute class focuses on data and project management using R and RStudio. RStudio makes it possible to work on a complete research project in a more efficient, integrated, and organized manner. Participants will learn how to create reproducible documents that combine code, analysis, and narrative. This intermediate-level course is designed to be relevant to students from different disciplines. Some familiarity or experience in R and RStudio is recommended but not required. Students are encouraged to install [R](https://mirrors.nics.utk.edu/cran/) and [RStudio](https://www.rstudio.com/products/rstudio/download/#download) before the webinar so that they can follow along with the instructor.
 
 Upon completion of this class students should be able to:
 
@@ -228,21 +220,27 @@ Let's first delete the generic text because we don't need it at this point. The 
 
 A Quarto document consists of content, structure, appearance, format \[Figure 8\].
 
-+--------------------------------------+------------------------------------------------------+
-| ![](images/quarto-rubiks-patent.png) | -   **Content:** text, code, graphics                |
-|                                      |                                                      |
-|                                      | -   **Structure:** paragraphs, lists, emphasis, etc. |
-|                                      |                                                      |
-|                                      | -   **Appearance**: fonts, colors, layout            |
-|                                      |                                                      |
-|                                      | -   **Format**: based on function                    |
-+--------------------------------------+------------------------------------------------------+
++--------------------------------------+--------------------------------------------------------------------------------+
+| ![](images/quarto-rubiks-patent.png) | -   **Content:** text, code, graphics                                          |
+|                                      |                                                                                |
+|                                      | -   **Structure:** paragraphs, lists, emphasis, etc.                           |
+|                                      |                                                                                |
+|                                      | -   **Appearance**: fonts, colors, layout                                      |
+|                                      |                                                                                |
+|                                      | -   **Format**: based on function                                              |
+|                                      |                                                                                |
+|                                      | -   Layout ([Advanced)](https://quarto.org/docs/authoring/article-layout.html) |
+|                                      |                                                                                |
+|                                      |     -   Block                                                                  |
+|                                      |                                                                                |
+|                                      |     -   Inline                                                                 |
++--------------------------------------+--------------------------------------------------------------------------------+
 
 Figure 8: Sample quarto document.
 
-## What Define the Structure of a Document
+## Layout Elements
 
-A document is a list of **block elements** that contain **inline elements** or other blocks, along with associated **metadata**.
+For [technical writing](https://quarto.org/docs/visual-editor/technical.html#embedded-code) or for authoring more [complex documents](https://quarto.org/docs/authoring/title-blocks.html), you have the ability to control the layout of documents. is a list of **block elements** that contain **inline elements** or other blocks, along with associated **metadata**.
 
 ### Block Element
 
@@ -267,14 +265,6 @@ Metadata elements contain ancillary info about the document's origin, format, lo
 ![](images/quarto-metadata.png)
 
 Figure 11: Example of Quarto metadata elements.
-
-Figure 12 is displaying both the Quarto code (left) and the rendered Quarto code (right).
-
-| Quarto Code             | Output on Render          |
-|-------------------------|---------------------------|
-| ![](images/demo-md.png) | ![](images/demo-docx.png) |
-
-Figure 12: Example of a rendered Quarto document.
 
 ## Editor Options
 
@@ -915,6 +905,14 @@ The record number should appear at the insertion point in your RMD file \[Figure
 ![](images/bib-09.png)
 
 Figure 25: Reference inserted into a RMD document.
+
+Figure 26 is displaying all the citation options that are currently supported by RStudio.
+
+![](images/insert-reference-options-visual.png){width="6.5in"}
+
+Figure 26: Citation options in RStudio.
+
+[Zotero](https://zotero.org/) is a popular free and open source reference manager. If you use Zotero, you can also insert citations directly from your Zotero libraries. If you have Zotero installed locally it's location will be detected automatically and citations from your main library (**My Library**) will be available.
 
 ## Changing Citation Styles
 
