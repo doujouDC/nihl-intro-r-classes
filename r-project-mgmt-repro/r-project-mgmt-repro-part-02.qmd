@@ -2,24 +2,32 @@
 title: "Project Management and Reproducibility in RStudio: Part 2"
 author: "Doug Joubert"
 date: "`r Sys.Date()`"
-format: html
-# toc: true
-# toc-location: body
-# fig-width: 6
-# fig-height: 4
-# bibliography: nihl-r-classes.bib
-# csl: apa.csl
+format: docx
+toc: true
+toc-location: body
+fig-width: 6
+fig-height: 4
+bibliography: nihl-r-classes.bib
+csl: apa.csl
 ---
 
-# Configuration
+#Configuration
+
+[@Liu2019]
 
 This class features exercises that will help you learn by doing. To prepare, please install the following on your machine:
+
+[@RN1357]
 
 -   Install latest version of [RStudio](https://www.rstudio.com/products/rstudio/download/#download), v2022.07.0-548 or later
 
 -   Install latest version of [Quarto](https://quarto.org/docs/get-started/) (v1.0.36 or greater)
 
 Quarto is also available as a package. The **quarto** package provides an R interface to frequently used operations in the Quarto Command Line Interface (CLI). The package is not a requirement for using Quarto with R. Rather, it provides an R interface to common Quarto operations for users who prefer to work in the R console rather than a terminal, and for package authors that want to programatically interface with Quarto.
+
+```{r}
+
+```
 
 ```{r}
 # install.packages("quarto")
@@ -759,6 +767,8 @@ Because Quarto is also a command line interface (CLI), you can also render via t
 +------------------------------------+-------------------------------------------------------+
 
 A great overview of using the command line and navigating files/directories is available via the [Data Carpentries](https://datacarpentry.org/shell-genomics/02-the-filesystem/index.html) or a great interactive tool for understanding commands: [https://tldr.ostera.io](https://tldr.ostera.io/).
+
+![](images/baker-01.png)
 
 ## R console via `quarto` R package
 
