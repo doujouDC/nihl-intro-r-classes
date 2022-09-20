@@ -332,27 +332,7 @@ These two resources have more information about YAML
 
 2.  An overview of [YAML syntax:](https://en.m.wikipedia.org/wiki/YAML#Syntax)
 
-## Block Elements
-
-### Block Elements: Lists
-
-You can make a numbered list by just using numbers.
-
-    1. bold with double-asterisks
-    2. italics with underscores
-    3. code-type font with backticks
-
-This will appear as:
-
-1.  bold with double-asterisks
-
-2.  italics with underscores
-
-3.  code-type font with back ticks
-
-Pandoc gives you a lot of control over lists, including *nesting*, *definition lists*, *blocks in lists*, and *example lists*. The Pandoc [manual](https://pandoc.org/MANUAL.html#lists) has detailed information about lists.
-
-### Block Elements: Headers
+## Headers
 
 You can make section headers of different sizes by initiating a line with some number of `#` symbols:
 
@@ -361,42 +341,7 @@ You can make section headers of different sizes by initiating a line with some n
     ### Sub-section
     #### Sub-sub section
 
-### Block Elements: Math
-
-When using math as Block Elements, math use `$$` delimiters. The delimiters may be separated from the formula by white space. No blank lines between the opening and closing `$$` delimiters. For example:
-
-A larger equation:
-
-$$ 
-f(x)={\sqrt{\frac{\tau}{2\pi}}}
-      e^{-\tau (x-\mu )^{2}/2}
-$$
-
-### Block Elements: Images
-
-Block images use the same syntax as inline images. However, images on their own line become a block:
-
-Images on their own line become a block:
-
-![Elephant](images/elephant.png){width="220"}
-
-## Inline Elements
-
-### Inline Elements: Text Formatting
-
-+-----------------------------------+-------------------------------+
-| Markdown Syntax                   | Output                        |
-+:==================================+===============================+
-|     *italics* and **bold**        | *italics* and **bold**        |
-+-----------------------------------+-------------------------------+
-|     superscript^2^ / subscript~2~ | superscript^2^ / subscript~2~ |
-+-----------------------------------+-------------------------------+
-|     ~~strikethrough~~             | ~~strike through~~            |
-+-----------------------------------+-------------------------------+
-|     `verbatim code`               | `verbatim code`               |
-+-----------------------------------+-------------------------------+
-
-### Inline Elements: Lists
+## Unumbered Lists
 
 You can make a bullet list by writing a list with hyphens or asterisks, like this:
 
@@ -420,7 +365,36 @@ Each will appear as:
 
 You can use whatever method you prefer, but *be consistent*. This maintains the readability of your code.
 
-### Inline Elements: Math
+## Numbered Lists
+
+You can make a numbered list by just using numbers.
+
+    1. bold with double-asterisks
+    2. italics with underscores
+    3. code-type font with backticks
+
+This will appear as:
+
+1.  bold with double-asterisks
+
+2.  italics with underscores
+
+3.  code-type font with back ticks
+
+Pandoc gives you a lot of control over lists, including *nesting*, *definition lists*, *blocks in lists*, and *example lists*. The Pandoc [manual](https://pandoc.org/MANUAL.html#lists) has detailed information about lists.
+
+## Math (Block Element)
+
+When using math as Block Elements, math use `$$` delimiters. The delimiters may be separated from the formula by white space. No blank lines between the opening and closing `$$` delimiters. For example:
+
+A larger equation:
+
+$$ 
+f(x)={\sqrt{\frac{\tau}{2\pi}}}
+      e^{-\tau (x-\mu )^{2}/2}
+$$
+
+## Math: (Inline)
 
 Figure 15 is displaying the markdown that generates the math displayed below.
 
@@ -432,15 +406,33 @@ The area of a circle is $A = pi r^2$, where $r$ is the radius and $pi$ is the co
 
 TeX math occurs between two `$`. Opening `$` must have a non-space character immediately to its right, while the closing `$` must have a non-space character immediately to its left, and must not be followed immediately by a digit.
 
-### Inline Elements: Links and Images
+## Links
 
 You can embed links with names [Links in Quarto](https://quarto.org/docs/reference/formats/html.html#links)
 
 You can also used direct links <https://quarto.org/docs/reference/formats/html.html#links>
 
+## Images
+
 Linking to images is very similar, except that you start with a bang `!` This is an example of and inline link to an image of an Elephant ![This is a white elephant](images/elephant.png)
 
-The text withing the `[]` provides a caption for the embedded image.
+Images on their own line become a block:
+
+![Elephant](images/elephant.png){width="220"}
+
+## Text Formatting
+
++-----------------------------------+-------------------------------+
+| Markdown Syntax                   | Output                        |
++:==================================+===============================+
+|     *italics* and **bold**        | *italics* and **bold**        |
++-----------------------------------+-------------------------------+
+|     superscript^2^ / subscript~2~ | superscript^2^ / subscript~2~ |
++-----------------------------------+-------------------------------+
+|     ~~strikethrough~~             | ~~strike through~~            |
++-----------------------------------+-------------------------------+
+|     `verbatim code`               | `verbatim code`               |
++-----------------------------------+-------------------------------+
 
 ## References and further reading
 
@@ -789,6 +781,22 @@ Quarto supports multiple bibliography formats including `BibTeX` and `CSL`. Bibl
     bibliography: nihl-r-classes.bib
     ---
 
+## Supported Citation Sources
+
+Citations can be inserted from a variety of sources:
+
+-   Bibliography [DOI](https://rstudio.github.io/visual-markdown-editing/citations.html) (Document Object Identifier) references
+
+-   Searches of [Crossref](https://www.crossref.org/), [DataCite](https://datacite.org/), or [PubMed](https://pubmed.ncbi.nlm.nih.gov/), or [Zotero](https://rstudio.github.io/visual-markdown-editing/citations.html)
+
+### Linking to Citation Manager
+
+[[Zotero]{.underline}](https://zotero.org/) is a free and open-source reference manager. Zotero must be installed locally to use it. RStudio will automatically link to Zotero.
+
+Zotero settings are accessed from **Options\>R Markdown\>Citations**
+
+![](images/rstudio-zotero-location.png){width="6.5in"} Figure XX: Accessing citation options in RStudio.
+
 ## Citation Syntax
 
 Quarto uses the standard Pandoc for citations. Citations go inside square brackets and are separated by semicolons. For example:
@@ -811,15 +819,19 @@ You can find CSL files at the [CSL Project](https://github.com/citation-style-la
 
 ## Creating Your Reference List
 
-You need to have a list of references saved to a bib file before you can insert citations into your markdown document. A file with the BIB file extension is a BibTeX Bibliographical Database file. It's a specially formatted text file that lists references pertaining to a particular source of information. Each item can be edited, in case there is any metadata incorrect or missing.
+You need to have a list of references saved to a [.bib file](http://www.bibtex.org/) before you can insert citations into your markdown document. A file with the .bib extension is a BibTeX Bibliographical Database file. It's a specially formatted text file that lists references pertaining to a particular source of information. Each item can be edited, in case there is any metadata incorrect or missing.
 
 There are a number of ways to create your bib file.
 
 1.  Manually
-2.  Use a citation tool like Endnote or Zotero
+2.  Export citations using Endnote or Zotero
 3.  Use the lookup feature to search for publications by DOI (Digital Object Identifier), Crossref, DataCite, or PubMed ID
 
-Most citation and reference management tools such as Refworks, Endnote, Mendeley and Zotero, as well as some most scientific databases allow you to export citations as .bib [BibteX](https://en.wikipedia.org/wiki/BibTeX) files.
+Most citation and reference management tools such as Refworks, Endnote, Mendeley and Zotero, as well as some most scientific databases allow you to export citations as .bib files.
+
+![](images/bib-article-export.png){width="6.5in"}
+
+Figure xx: Exporting a citation in .bib format.
 
 I am going to show you how to export references from Endnote to your bib file. Figure 26 is displaying all of the references in my Endnote Library. I have highlighted the DataServices folder since I only want to explore these 742 records.
 
