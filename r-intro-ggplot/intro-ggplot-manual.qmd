@@ -1,0 +1,145 @@
+---
+title: "Introduction to ggplot"
+author: "Doug Joubert"
+format: docx
+toc: true
+editor: visual
+---
+
+# Learning Objectives
+
+By the end of this section, students should be able to:
+
+1.  Discuss the connection between data, aesthetics, & the grammar of graphics 2.Outline the grammatical layers in ggplot
+2.  Label the basic elements of a graph
+3.  Distinguish between "viewing" and graph in R and saving a graph in R.
+
+# Semiotics of Graphics
+
+Semiotics is the study of symbols and how they convey meaning. In his great masterwork, Semiology of Graphics, Bertin (1983) attempted to classify all graphic marks in terms of how they could express data.
+
+For the most part, this work is based on his own judgment, although it is a highly trained and sensitive judgment. There are few references to theories of perception or scientific studies.
+
+Figure 6.1 shows examples of languages that have some claim to being visual.
+
+The first example of visual language is based on a cave painting. We can readily interpret that these are animal.
+
+The second example is a schematic diagram showing the interaction between lab equipment and some sort of medium.
+
+The third example is the expression of a mathematical equation that is utterly obscure to all but the initiated.
+
+![](file:////Users/joubertd/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image001.png) 
+
+Figure 1: Examples of different "languages" (Ware, 2019a).
+
+These examples clearly show that some visual languages are easier to "read" than others. But why?
+
+-   Perhaps it is simply that we have more experience with the kind of pictorial image shown in the cave painting and less with the mathematical notation.
+
+-   Perhaps the concepts expressed in the cave painting are more familiar than those in the equation.
+
+# Coordinate systems and axes
+
+To make any sort of data visualization, we need to define position scales, which determine where in a graphic different data values are located (Wilke, 2019). We cannot visualize data without placing different data points at different locations, even if we just arrange them next to each other along a line.
+
+In 2D visualizations, two numbers are required to uniquely specify a point, and therefore we need two position scales (Wilke, 2019). These two scales are usually the x and y axes of the plot (Wilke, 2019). We also have to specify the relative geometric arrangement of these scales (Wilke, 2019).
+
+## Cartesian Coordinates
+
+The most widely used coordinate system for data visualization is the 2D Cartesian coordinate system, where each location is uniquely specified by an x and a y value (Wilke, 2019). As illustrated in Figure 6.2, the data values are placed in an even spacing along both axes, the two axes are continuous position scales, and they can represent both positive and negative real numbers (Wilke, 2019).
+
+![](ggplot-images/cartesian-coord-1.png){width="4.5in"}
+
+Figure 2: Standard Cartesian coordinate system \[Wilke (2019).
+
+In Figure 2, both the x and the y grid lines are separated by units of one, and the x axis runs from -2.2 to 3.2 and the y axis runs from -2.2 to 2.2 (Wilke 2019). Any data values between these axis limits are placed at the respective location in the plot. Any data values outside the axis limits are discarded (Wilke, 2019).
+
+It is important to remember that data values usually aren't just numbers (Wilke 2019). They come with units (Wilke, 2019). For example, if we're measuring temperature, the values may be measured in degrees Celsius or Fahrenheit (Wilke 2019). Similarly, if we're measuring distance, the values may be measured in kilometers or miles (Wilke 2019).
+
+You may wonder what happens if you change the units of your data. A change in units is a linear transformation, where we add or subtract a number to or from all data values and/or multiply all data values with another number.
+
+Therefore, you can change the units of your data and the resulting figure will not change if you change the axes accordingly. As an example, compare how the data is displayed in Figures 3 (a) and 3 (b).
+
+![](images/temperature-normals-Houston-San-Diego-1.png)
+
+Figure 3: Daily (normal) temperature for Houston, TX, plotted versus the (normal) temperature of San Diego, CA (Wilke, 2019). Data source: NOAA.
+
+## Nonlinear Axes and Log Transformations
+
+In a Cartesian coordinate system, the grid lines along an axis are spaced evenly both in data units and in the resulting visualization. We refer to the position scales in these coordinate systems as linear (Wilke, 2019).
+
+There are scenarios where nonlinear scales are preferred. The most used nonlinear scale is the logarithmic scale, or log scale for short (Wilke, 2019). Log scales are linear in multiplication, such that a unit step on the scale corresponds to multiplication with a fixed value (Wilke, 2019).
+
+To create a log scale, we need to log-transform the data values while exponentiating the numbers that are shown along the axis grid lines (Wilke, 2019).
+
+Importantly, the correct axis title for a logarithmic scale is the name of the variable shown, not the logarithm of that variable.
+
+In most cases, the labeling for a logarithmic scale is preferable, because it places less mental burden on the reader to interpret the numbers shown as the axis tick labels (Wilke, 2019).
+
+It is always recommended that you verify the base when working with log-transformed data (Wilke, 2019). When plotting log-transformed data, always specify the base in the labeling of the axis, to avoid confusion.
+
+Log scales are the natural choice for any data that has been obtained by multiplication or division. For example, ratios should generally be shown on a log scale (Wilke, 2019). As an example, I have taken the number of inhabitants in each county in Texas and divided it by the median number of inhabitants across all Texas counties \[Figure 4\].
+
+![](images/texas-counties-pop-ratio-log-1.png)
+
+Figure 4: Texas counties, from most to least populous using a log scale 10 transformation (Wilke, 2019).
+
+Look how different the same data appears when graph using a linear scale. Using a linear scale obscures the differences between a county with median population number and a county with a much smaller population number than median (Figure 6.5) (Wilke, 2019).
+
+![](images/texas-counties-pop-ratio-lin-1.png)
+
+Figure 6.5: Texas counties, from most to least populous, using a linear transformation (Wilke, 2019).
+
+Log scales are frequently used when the dataset contains numbers of very different magnitudes (Wilke, 2019). For the Texas counties shown in Figures L4.4 and L4.5, the most populous one (Harris) had 4,092,459 inhabitants in the 2010 US Census while the least populous one (Loving) had 82 (Wilke, 2019). So, a log scale would be appropriate even if we hadn't divided the population numbers by their median to turn them into ratios (Wilke, 2019).
+
+## Coordinate Systems
+
+with Curved Axes
+
+All the coordinate systems we have encountered so far have used two straight axes positioned at a right angle to each other (Wilke, 2019). There are other coordinate systems, where the axes themselves are curved (Wilke, 2019). In particular, in the polar coordinate system, we specify positions via an angle and a radial distance from the origin (Figure 6.6) (Wilke, 2019).
+
+![](file:////Users/joubertd/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image006.png)
+
+Figure 6.6: Relationship between Cartesian and polar coordinates (Wilke, 2019).
+
+In Figure 6.6, the three data points shown in Cartesian coordinate system (a) are compared to the same three data points shown in a polar coordinate system (b) (Wilke, 2019). A radial layout is used to display the data. A common example is pie charts. Radial layouts will be covered the parts-to-wholes lecture.
+
+A second setting in which we encounter curved axes is in the context of geospatial data (Wilke, 2019). We will be talking about geospatial data in a later lecture.
+
+# Introduction to Graphs
+
+A graph is a visual display of quantitative information. Graphs exhibit the following characteristics (Few, 2012a):
+
+•   Values are displayed within an area delineated by one or more axes
+
+•   Values are encoded as visual objects positioned in relation to the axes
+
+•   Axes provide scales (quantitative and categorical) that are used to label and assign values to the visual objects. For clarification, axes delineate the space that is used to display data in a graph.
+
+## Elements of a Graph
+
+Figure 6.7 is an example of a simple graph, which displays the sum of sales and shipping costs.
+
+![](file:////Users/joubertd/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image007.png)
+
+Figure 6.7: Sum of Sales and Shipping Costs by Category.
+
+This graph in Figure 6.7 has two axes: one that runs horizontally, called the X axis, and one that runs vertically, called the Y axis. In this graph, the quantitative scale, which labels the costs associated with shipping a product, resides along the X axis, and the quantitative scale, which represents the sum of sales resides along the Y axis. Shape is used to divide these values by the category of the product. Shape in this instance is a channel, one of the two major visual components of graphs. More about that below.
+
+## Contextual
+
+Graph Components
+
+There are other visual components that are important to consider. However, we will be discussing them later in the semester. These are:
+
+Annotations
+
+Axis
+
+Grids
+
+Labels
+
+Legends
+
+Reference Lines
