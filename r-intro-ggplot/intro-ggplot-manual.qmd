@@ -84,60 +84,610 @@ Log scales are the natural choice for any data that has been obtained by multipl
 
 Figure 4: Texas counties, from most to least populous using a log scale 10 transformation (Wilke, 2019).
 
-Look how different the same data appears when graph using a linear scale. Using a linear scale obscures the differences between a county with median population number and a county with a much smaller population number than median (Figure 6.5) (Wilke, 2019).
+Look how different the same data appears when graph using a linear scale. Using a linear scale obscures the differences between a county with median population number and a county with a much smaller population number than median \[Figure 5\] (Wilke, 2019).
 
 ![](images/texas-counties-pop-ratio-lin-1.png)
 
-Figure 6.5: Texas counties, from most to least populous, using a linear transformation (Wilke, 2019).
+Figure 5: Texas counties, from most to least populous, using a linear transformation (Wilke, 2019).
 
-Log scales are frequently used when the dataset contains numbers of very different magnitudes (Wilke, 2019). For the Texas counties shown in Figures L4.4 and L4.5, the most populous one (Harris) had 4,092,459 inhabitants in the 2010 US Census while the least populous one (Loving) had 82 (Wilke, 2019). So, a log scale would be appropriate even if we hadn't divided the population numbers by their median to turn them into ratios (Wilke, 2019).
+Log scales are frequently used when the dataset contains numbers of very different magnitudes (Wilke, 2019). For the Texas counties shown in Figures 4 and 5, the most populous one (Harris) had 4,092,459 inhabitants in the 2010 US Census while the least populous one (Loving) had 82 (Wilke, 2019). So, a log scale would be appropriate even if we hadn't divided the population numbers by their median to turn them into ratios (Wilke, 2019).
 
 ## Coordinate Systems with Curved Axes
 
-All the coordinate systems we have encountered so far have used two straight axes positioned at a right angle to each other (Wilke, 2019). There are other coordinate systems, where the axes themselves are curved (Wilke, 2019). In particular, in the polar coordinate system, we specify positions via an angle and a radial distance from the origin (Figure 6.6) (Wilke, 2019).
+All the coordinate systems we have encountered so far have used two straight axes positioned at a right angle to each other (Wilke, 2019). There are other coordinate systems, where the axes themselves are curved (Wilke, 2019). In particular, in the polar coordinate system, we specify positions via an angle and a radial distance from the origin \[Figure 6\] (Wilke, 2019).
 
-![](file:////Users/joubertd/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image006.png)
+![](images/wilke-polar-coord-1.png){width="6.5in"}
 
-Figure 6.6: Relationship between Cartesian and polar coordinates (Wilke, 2019).
+Figure 6: Relationship between Cartesian and polar coordinates (Wilke, 2019).
 
-In Figure 6.6, the three data points shown in Cartesian coordinate system (a) are compared to the same three data points shown in a polar coordinate system (b) (Wilke, 2019). A radial layout is used to display the data. A common example is pie charts. Radial layouts will be covered the parts-to-wholes lecture.
+In Figure 6, the three data points shown in Cartesian coordinate system (a) are compared to the same three data points shown in a polar coordinate system (b) (Wilke, 2019). A radial layout is used to display the data. A common example is pie charts. Radial layouts will be covered the parts-to-wholes lecture.
 
-A second setting in which we encounter curved axes is in the context of geospatial data (Wilke, 2019). We will be talking about geospatial data in a later lecture.
+A second setting in which we encounter curved axes is in the context of geospatial data (Wilke, 2019). We don't cover geospatial data in this class. Please consult Wilke Chapter 15 and resources list.
 
-# Introduction to Graphs
+# Plotting in ggplot
 
-A graph is a visual display of quantitative information. Graphs exhibit the following characteristics (Few, 2012a):
+## How ggplot Works
 
-•   Values are displayed within an area delineated by one or more axes
+Figure 6.21 displays the main elements of
+ggplot\'s grammar of graphics. We will go through these steps in detail.
 
-•   Values are encoded as visual objects positioned in relation to the axes
+STOP BEFORE LUNCH\
+ADD LABELS TO IMAGES SO I CAN FIND THEM
 
-•   Axes provide scales (quantitative and categorical) that are used to label and assign values to the visual objects. For clarification, axes delineate the space that is used to display data in a graph.
+![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image001.png)
 
-## Elements of a Graph
+Figure 6.21: Schematic of how ggplot
+works.
 
-Figure 6.7 is an example of a simple graph, which displays the sum of sales and shipping costs.
+The most important thing to get used is
+mapping out the logical structure of your plot (Healy, 2018). The code you
+write specifies the connections between the variables in your data, and the
+colors, points, and shapes you see on the screen (Healy, 2018).
 
-![](file:////Users/joubertd/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image007.png)
+In ggplot, these logical connections
+between your data and the plot elements are called aesthetic mappings or just
+aesthetics (Healy, 2018). You begin every plot by telling the ggplot() function
+what your data is and how the variables in this data logically map onto the
+plot\'s aesthetics (Healy, 2018).
 
-Figure 6.7: Sum of Sales and Shipping Costs by Category.
+To build a ggplot, we will use the
+following basic template that can be used for different types of plots:
 
-This graph in Figure 6.7 has two axes: one that runs horizontally, called the X axis, and one that runs vertically, called the Y axis. In this graph, the quantitative scale, which labels the costs associated with shipping a product, resides along the X axis, and the quantitative scale, which represents the sum of sales resides along the Y axis. Shape is used to divide these values by the category of the product. Shape in this instance is a channel, one of the two major visual components of graphs. More about that below.
+ggplot(data
+= , mapping = aes()) + geom_xx()
 
-## Contextual
+In this class, we will save the basic
+plot parameters to an object called p, which will contain the core
+information for our plot. (The name p is just a convenience.) Then we choose a
+plot type, or geom, and add it to p. From there we add more features to
+the plot as needed, such as additional elements, adjusted scales, a title, or
+other labels.
 
-Graph Components
+For this lesson we will use the gapminder
+data to make our first plots. Make sure the library containing the data is
+loaded, along with the tidyverse.
 
-There are other visual components that are important to consider. However, we will be discussing them later in the semester. These are:
+*#Load the tidyverse and the gapminder data*\
 
-Annotations
+library(tidyverse)
 
-Axis
+\## \-- Attaching packages
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-- tidyverse 1.3.1 \--
 
-Grids
+\## v ggplot2 3.3.5    
+v purrr   0.3.4\
 
-Labels
+## v tibble  3.1.2    
+v dplyr   1.0.6\
 
-Legends
+## v
+tidyr   1.1.3     v stringr 1.4.0\
 
-Reference Lines
+## v
+readr   1.4.0     v forcats 0.5.1
+
+\## \-- Conflicts \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
+tidyverse_conflicts() \--\
+
+## x
+dplyr::filter() masks stats::filter()\
+
+## x
+dplyr::lag()    masks stats::lag()
+
+library(gapminder)
+
+Let us type in the name of the object
+into R:
+
+gapminder
+
+\## \# A tibble: 1,704 x 6\
+
+##    country    
+continent  year lifeExp      pop gdpPercap\
+
+##    \<fct\>       \<fct\>     \<int\>   \<dbl\>    \<int\>     \<dbl\>\
+
+##  1 Afghanistan Asia       1952   
+28.8  8425333      779.\
+
+##  2 Afghanistan Asia       1957   
+30.3  9240934      821.\
+
+##  3 Afghanistan Asia       1962   
+32.0 10267083      853.\
+
+##  4 Afghanistan Asia       1967   
+34.0 11537966      836.\
+
+##  5 Afghanistan Asia       1972   
+36.1 13079460      740.\
+
+##  6 Afghanistan Asia       1977   
+38.4 14880372      786.\
+
+##  7 Afghanistan Asia       1982   
+39.9 12881816      978.\
+
+##  8 Afghanistan Asia       1987   
+40.8 13867957      852.\
+
+##  9 Afghanistan Asia       1992   
+41.7 16317921      649.\
+
+## 10
+Afghanistan Asia       1997    41.8 22227415      635.\
+
+## \# \...
+with 1,694 more rows
+
+At this point ggplot knows our data but
+not the mapping. That is, we need to tell it which variables in the data should
+be represented by which visual elements in the plot. It also doesn\'t know what
+sort of plot we want.
+
+## Mappings Link Data to
+Things You See
+
+Many of these
+concepts are from a book by Leland Wilkinson, which have been summarized in a
+book by Hadley Wickham Figure 6.22. The [*book*](https://ebookcentral.proquest.com/lib/cua/detail.action?docID=4546676)
+is available from the CUA library, and it is also available [*online*](https://ggplot2-book.org/).
+
+![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image002.jpg)
+
+Figure 6.22: Wickham
+ggplot2 book.
+
+You can think of this
+mapping process as:
+
+1.       
+Taking data, which is simply a column in you
+dataset
+
+2.       
+Using the aesthetic attributes of ggplot to
+display the visual property of your graph. For example the position, shape, or
+color elements on the graph.
+
+Each geom function in
+ggplot2 takes a mapping argument, mapping = .
+
+This defines how
+variables in your dataset are mapped to visual properties. The mapping argument
+is always paired with aes():
+
+**mapping = aes()**
+
+aes() allows us to select the
+variables to be plotted and specify how to present them in the graph,
+e.g. as x/y positions or characteristics such as size, shape, or color.
+
+What does this look
+like in ggplot? These are some possible options:
+
++----+----------------+----+------------------+----+------------------+----+
+|    |                |    |                  |    |                  |    |
++====+================+====+==================+====+==================+====+
+|    | Data           |    | Aesthetic        |    | Graphic/Geometry |    |
++----+----------------+----+------------------+----+------------------+----+
+|    |                |    |                  |    |                  |    |
++----+----------------+----+------------------+----+------------------+----+
+|    | Longitude      |    | Position(x-axis) |    | Point            |    |
++----+----------------+----+------------------+----+------------------+----+
+|    |                |    |                  |    |                  |    |
++----+----------------+----+------------------+----+------------------+----+
+|    | Latitude       |    | Position(y-axis) |    | Point            |    |
++----+----------------+----+------------------+----+------------------+----+
+|    |                |    |                  |    |                  |    |
++----+----------------+----+------------------+----+------------------+----+
+|    | Army size      |    | Size             |    | Path             |    |
++----+----------------+----+------------------+----+------------------+----+
+|    |                |    |                  |    |                  |    |
++----+----------------+----+------------------+----+------------------+----+
+|    | Army direction |    | Color            |    | Path             |    |
++----+----------------+----+------------------+----+------------------+----+
+|    |                |    |                  |    |                  |    |
++----+----------------+----+------------------+----+------------------+----+
+|    | Date           |    | Position(x-axis) |    | Line + text      |    |
++----+----------------+----+------------------+----+------------------+----+
+|    |                |    |                  |    |                  |    |
++----+----------------+----+------------------+----+------------------+----+
+|    | Temperature    |    | Position(y-axis) |    | Line + text      |    |
++----+----------------+----+------------------+----+------------------+----+
+|    |                |    |                  |    |                  |    |
++----+----------------+----+------------------+----+------------------+----+
+
+Table 01: Mapping
+data to aesthetics in ggplot, adapted from: [*Heiss*](https://datavizs21.classes.andrewheiss.com/slides/03-slides.html#14)
+
+When you extend this
+to particular geoms in ggplot, in might look like this:
+
++----+----------------+----+-------+----+------------------+----+
+|    |                |    |       |    |                  |    |
++====+================+====+=======+====+==================+====+
+|    | Data           |    | aes   |    | Graphic/Geometry |    |
++----+----------------+----+-------+----+------------------+----+
+|    |                |    |       |    |                  |    |
++----+----------------+----+-------+----+------------------+----+
+|    | Longitude      |    | x     |    | geom_point()     |    |
++----+----------------+----+-------+----+------------------+----+
+|    |                |    |       |    |                  |    |
++----+----------------+----+-------+----+------------------+----+
+|    | Latitude       |    | y     |    | geom_point()     |    |
++----+----------------+----+-------+----+------------------+----+
+|    |                |    |       |    |                  |    |
++----+----------------+----+-------+----+------------------+----+
+|    | Army size      |    | Size  |    | geom_path()      |    |
++----+----------------+----+-------+----+------------------+----+
+|    |                |    |       |    |                  |    |
++----+----------------+----+-------+----+------------------+----+
+|    | Army direction |    | Color |    | geom_path()      |    |
++----+----------------+----+-------+----+------------------+----+
+|    |                |    |       |    |                  |    |
++----+----------------+----+-------+----+------------------+----+
+|    | Date           |    | x     |    | geom_line() +    |    |
+|    |                |    |       |    | geom_text()      |    |
++----+----------------+----+-------+----+------------------+----+
+|    |                |    |       |    |                  |    |
++----+----------------+----+-------+----+------------------+----+
+|    | Temperature    |    | y     |    | geom_line() +    |    |
+|    |                |    |       |    | geom_text()      |    |
++----+----------------+----+-------+----+------------------+----+
+|    |                |    |       |    |                  |    |
++----+----------------+----+-------+----+------------------+----+
+
+Table 02: Mapping
+data to aesthetics in ggplot, adapted from: [*Heiss*](https://datavizs21.classes.andrewheiss.com/slides/03-slides.html#15)
+
+The code that we
+would give R to make this happen, might look something like this:
+
+![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image003.png) Figure 6.23: ggplot template for mapping troop
+data to ggplot aesthetics. Image [*source*](https://datavizs21.classes.andrewheiss.com/slides/03-slides.html#16).
+
+Using the Gap Minder
+data, let us plot life expectancy against per capita GDP for all country-years
+in the data.
+
+Let us add aes() to
+our plot. We are going to plot the following variables, which we will place
+inside the (x = gdpPercap, y = lifeExp), and
+save this to the p object.
+
+p \<- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp))
+
+So what have we done
+so far? We have provided the ggplot() function two arguments: dataand mapping. The dataargument tells ggplotwhere to find the variables
+it is about to use. This saves us from having to tediously dig out the name of
+each variable in full.
+
+Next, the mapping.
+The mapping argument is a function (Healy, 2018). The arguments we give to the aesfunction are a sequence of
+definitions that ggplot will use later \[Healy (2018).
+
+For the code that we
+wrote above this portion mapping = aes(x = gdpPercap, y = lifeExp)
+says that the variable on the x-axis is going to be gdpPercap, and the variable on
+the y-axis is going to be lifeExp. The aes() function does not say where
+variables with those names are to be found. That\'s because ggplot() assumes
+that this comes from object given to the data argument
+(Healy, 2018).
+
+The mapping=aes() argument links
+variables to things you will see on the plot (Healy, 2018). The x and y values
+are the most obvious ones. However, other aesthetic mappings can include,
+color, shape, size, and line type ( whether a line is solid, dashed) (Healy,
+2018).
+
+A mapping does not
+say what particular colors or shapes will be on the plot. Rather it says which
+variables in the data will be represented by visual elements like a color, a
+shape, or a point on the plot area (Healy, 2018).
+
+What happens if we
+just type p at the console at this point and hit return? The result is shown in
+Figure 6.24:.
+
+p
+
+![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image004.png)
+
+Figure 6.24: Loading
+ggplot and adding data and mapping the aesthetics.
+
+As we can see from Figure
+6.24, the p object has been created by the
+ggplot() function and already has information in it about the mappings we want,
+together with a lot of other information added by default (Healy, 2018).
+
+If you want to see
+just how much information is in the p object already, str(p).
+
+Next, we need to add
+a layer to the plot. This means picking a geom\_ function. We will use geom_point().
+
+p +\
+
+  geom_point()
+
+![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image005.png)
+
+Figure 6.25: Plot
+with the geom added.
+
+## Build Your Plots Layer by
+Layer
+
+We just went through the
+basics of building up plots, layer by layer. We began with creating a mapping
+between a variable and an aesthetic element. The good news is that, from now
+on, not much will change conceptually about what we are doing (Healy, 2018).
+
+We will start with a table
+of data that has been tidied, and then we will do the following:
+
+1.       
+Using data = (), tell the ggplot() function define our
+dataset.
+
+2.       
+Using mapping = aes(), tell ggplot() *what*
+relationships we want to see on the plot. For convenience we will put the
+results of the first two steps in an object called p.
+
+3.       
+Tell ggplot *how* we want to see the
+relationships in our data by defining the xand yaxes.
+
+4.       
+Using + layer on geomsas needed, by adding them to
+the pobject
+one at a time.
+
+5.       
+Use some additional functions to adjust the
+scales, labels, tick marks, and titles.
+
+It is important to note
+that you usually cannot add functions to objects, in R (Healy, 2018). Outside
+of ggplot, functions take objects as inputs and produce objects as outputs
+(Healy, 2018). This functionality of ggplot() makes it easier to
+assemble plots one piece at a time, and to inspect how they look at every step
+(Healy, 2018). For example, let\'s try a different geom\_ function with our plot \[Figure
+6.26\].
+
+p +\
+
+  geom_smooth()
+
+\## \`geom_smooth()\` using method = 'gam' and formula 'y \~
+s(x, bs = "cs")'
+
+![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image006.png)
+
+Figure 6.26: Life
+expectancy vs GDP, using a smoother.
+
+As we can see, some geoms
+do a lot more than simply put points on a grid. Here the geom_smooth() has calculated a
+smoothed line for us and shaded in a ribbon showing the standard error for the
+line (Healy, 2018). If we want to see the data points and the line together, we
+simply add the geom_point()
+back in Figure 6.27:
+
+p +\
+
+  geom_point() +\
+
+  geom_smooth()
+
+\## \`geom_smooth()\` using method = 'gam' and formula 'y \~
+s(x, bs = "cs")'
+
+![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image007.png)
+
+Figure Figure 6.28: Life
+expectancy vs GDP, showing both points and a GAM smoother.
+
+For figures L4.27 and
+L4.28 we did not have to tell geom_point()
+or geom_smooth()where
+their data was coming from, or what mappings they should use. They inherit this
+information from the original p
+object (Healy, 2018). As we\'ll see later, it\'s possible to give geoms separate
+instructions that they will follow. However, in the absence of any other
+information, the geoms will look for the instructions they need in the ggplot() function, or the object
+created by it (Healy, 2018).
+
+## Mapping Aesthetics vs
+Setting Them
+
+An *aesthetic mapping*
+specifies that a variable will be expressed by one of the available visual
+elements, such as size, or color, or shape. For example:
+
+p \<- ggplot(data = gapminder , mapping = aes(x = gdpPercap, y = lifeExp, color = continent))
+
+What happens when we
+graph this?
+
+p +\
+
+  geom_point()
+
+![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image008.png)
+
+Figure 6.29: Mapping
+the continent variable to the color aesthetic.
+
+In Figure 6.29, the
+individual data points have been colored by continent, and a legend with a key
+to the colors has automatically been added to the plot. There is one for each
+unique value of the continent variable.
+
+How do you think this
+code will be interpreted, when graphed?
+
+p \<- ggplot(data = gapminder , mapping = aes(x = gdpPercap, y = lifeExp, color = "purple"))
+
+p +\
+
+  geom_point()
+
+![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image009.png)
+
+Figure 6.30: What has
+gone wrong here?
+
+Why is there a legend
+saying \"purple,\" and why have the points all turned pinkish-red instead of
+purple (Healy, 2018)? The aes () function is where that
+mapping is specified, and the function is trying to do its job (Healy, 2018).
+It wants to map a variable to the color aesthetic, so it assumes you are giving
+it a variable (Healy, 2018). aes() will do its best to treat
+\"purple\" as though it were a variable (Healy, 2018).
+
+If we want to set a
+property, like color, we do it in the geom\_ we are using, and outside
+the mapping =aes (\...) step. For
+example:
+
+p \<- ggplot(data = gapminder , mapping = aes(x = gdpPercap, y = lifeExp))\
+
+\
+
+p +\
+
+  geom_point(color = "purple")
+
+![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image010.png)
+
+Figure 6.31: Setting
+the color attribute of the points directly.
+
+## Aesthetics Can Be Mapped
+per Geom
+
+By default, geoms
+inherit their mappings from the ggplot() function. We can change
+this by specifying different aesthetics for each geom. To do this, we use the
+same mapping = aes(\...) expression.
+However, this time we use it in the geom\_ functions.
+
+p \<- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp))
+
+Mappings specified in
+the initial ggplot( ) function (x and y) will carry through to all subsequent
+geoms.
+
+p +\
+
+  geom_point(mapping = aes(color = continent)) +\
+
+  geom_smooth(method = "loess") +\
+
+  scale_x\_log10()
+
+\## \`geom_smooth()\` using
+formula 'y \~ x'
+
+![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image011.png)
+
+Figure 6.32: Mapping
+aesthetics on a per geom basis.
+
+As you can see in Figure
+6.32, color is mapped to the continent variable for the points but not the
+smoother.
+
+Finally, it is worth paying
+a little more attention to the way that ggplot draws its scales (Healy, 2018).
+Because every mapped variable has a scale, we can learn a lot about how a plot
+has been constructed, by seeing what the legends look like (Healy, 2018). For
+example:
+
+p \<- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp, color = continent, fill = continent))\
+
+\
+
+p +\
+
+  geom_point() +\
+
+  geom_smooth(method = "loess") + scale_x\_log10()
+
+\## \`geom_smooth()\` using
+formula 'y \~ x'
+
+![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image012.png)
+
+Figure 6.33: Mapping the
+continent variable to the color aesthetic, and correcting the error bars using
+the fill aesthetic.
+
+In Figure 6.33, we
+mapped the continent variable to both color and fill. We then drew the figure
+with geom_point()and fitted a line for
+each continent with geom_smooth (). Points have color
+but the smoother understands both color (for the line itself) and fill (for the
+shaded standard error ribbon) (Healy, 2018). Each of these elements is
+representedi n the legend: the point color, the line color, and the ribbon fill
+\[Figure 6.34\].
+
+![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image013.png)
+
+Figure 6.34: Legend that
+faithfully reflects the mappings for the chart: color, dots, lines, and fill.
+
+In the legend for Figure
+6.34, we see several visual elements. The key for each continent shows a dot, a
+line, and a filled background for the eror bars.
+
+Let us try this with
+another graph.
+
+p \<- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp))\
+
+\
+
+p +\
+
+  geom_point(mapping = aes(color = continent)) +\
+
+  geom_smooth(method = "loess") +\
+
+  scale_x\_log10()
+
+\## \`geom_smooth()\` using
+formula 'y \~ x'
+
+![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image011.png)
+
+Figure 6.35: Mapping
+aesthetics on a per-geom basis. Here color is mapped to continent for the
+points but not the smoother
+
+![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image014.png)
+
+Figure 6.36: Legend that
+faithfully reflects the mappings for the chart: dots, lines, and color.
+
+The key for Figure 6.36,
+has only a dot for each continent, with no shaded background or line.
+
+If you look again at the
+code for Figures L4.35 and L4.36, you will see that in the L4.35 we mapped the continent variable to both color and fill. We then drew the graph with
+geom_point()
+and fitted a line for each continent with geom_smooth(). In L4.35 points
+have color but the smoother understands both color (for the line itself) and
+fill (for the shaded standard error ribbon).
+
+In contrast, in L4.35 we
+decided to simplify things by having only the points be colored by continent.
+Then we drew just a single smoother for the whole graph. Thus, in the legend
+for that figure, the colored line and the shaded box are both absent. We only
+see a legend for the mapping of color to continent in geom_point().
