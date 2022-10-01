@@ -92,9 +92,7 @@ Figure 6.5: Texas counties, from most to least populous, using a linear transfor
 
 Log scales are frequently used when the dataset contains numbers of very different magnitudes (Wilke, 2019). For the Texas counties shown in Figures L4.4 and L4.5, the most populous one (Harris) had 4,092,459 inhabitants in the 2010 US Census while the least populous one (Loving) had 82 (Wilke, 2019). So, a log scale would be appropriate even if we hadn't divided the population numbers by their median to turn them into ratios (Wilke, 2019).
 
-## Coordinate Systems
-
-with Curved Axes
+## Coordinate Systems with Curved Axes
 
 All the coordinate systems we have encountered so far have used two straight axes positioned at a right angle to each other (Wilke, 2019). There are other coordinate systems, where the axes themselves are curved (Wilke, 2019). In particular, in the polar coordinate system, we specify positions via an angle and a radial distance from the origin (Figure 6.6) (Wilke, 2019).
 
