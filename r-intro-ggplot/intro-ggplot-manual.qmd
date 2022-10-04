@@ -27,17 +27,13 @@ Semiotics is the study of symbols and how they convey meaning. In his great mast
 
 For the most part, this work is based on his own judgment, although it is a highly trained and sensitive judgment. There are few references to theories of perception or scientific studies.
 
-Figure 6.1 shows examples of languages that have some claim to being visual.
+![](images/three-symbols-visual.png) Figure 1: Examples of different visual "languages" [@RN1346].
 
 The first example of visual language is based on a cave painting. We can readily interpret that these are animal.
 
 The second example is a schematic diagram showing the interaction between lab equipment and some sort of medium.
 
 The third example is the expression of a mathematical equation that is utterly obscure to all but the initiated.
-
-![](file:////Users/joubertd/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image001.png) 
-
-Figure 1: Examples of different "languages" (Ware, 2019a).
 
 These examples clearly show that some visual languages are easier to "read" than others. But why?
 
@@ -47,23 +43,23 @@ These examples clearly show that some visual languages are easier to "read" than
 
 # Coordinate systems and axes
 
-To make any sort of data visualization, we need to define position scales, which determine where in a graphic different data values are located (Wilke, 2019). We cannot visualize data without placing different data points at different locations, even if we just arrange them next to each other along a line.
+To make any sort of data visualization, we need to define position scales, which determine where in a graphic different data values are located [@RN1397]. We cannot visualize data without placing different data points at different locations, even if we just arrange them next to each other along a line.
 
-In 2D visualizations, two numbers are required to uniquely specify a point, and therefore we need two position scales (Wilke, 2019). These two scales are usually the x and y axes of the plot (Wilke, 2019). We also have to specify the relative geometric arrangement of these scales (Wilke, 2019).
+In 2D visualizations, two numbers are required to uniquely specify a point, and therefore we need two position scales [@RN1397]. These two scales are usually the x and y axes of the plot [@RN1397]. We also have to specify the relative geometric arrangement of these scales [@RN1397].
 
 ## Cartesian Coordinates
 
-The most widely used coordinate system for data visualization is the 2D Cartesian coordinate system, where each location is uniquely specified by an x and a y value (Wilke, 2019). As illustrated in Figure 6.2, the data values are placed in an even spacing along both axes, the two axes are continuous position scales, and they can represent both positive and negative real numbers (Wilke, 2019).
+The most widely used coordinate system for data visualization is the 2D Cartesian coordinate system, where each location is uniquely specified by an x and a y value [@RN1397]. As illustrated in Figure 2, the data values are placed in an even spacing along both axes, the two axes are continuous position scales, and they can represent both positive and negative real numbers [@RN1397].
 
 ![](ggplot-images/cartesian-coord-1.png){width="4.5in"}
 
-Figure 2: Standard Cartesian coordinate system [Wilke (2019).
+Figure 2: Standard Cartesian coordinate system [@RN1397].
 
-In Figure 2, both the x and the y grid lines are separated by units of one, and the x axis runs from -2.2 to 3.2 and the y axis runs from -2.2 to 2.2 (Wilke 2019). Any data values between these axis limits are placed at the respective location in the plot. Any data values outside the axis limits are discarded (Wilke, 2019).
+In Figure 2, both the x and the y grid lines are separated by units of one, and the x axis runs from -2.2 to 3.2 and the y axis runs from -2.2 to 2.2 [@RN1397]. Any data values between these axis limits are placed at the respective location in the plot. Any data values outside the axis limits are discarded [@RN1397].
 
-It is important to remember that data values usually aren't just numbers (Wilke 2019). They come with units (Wilke, 2019). For example, if we're measuring temperature, the values may be measured in degrees Celsius or Fahrenheit (Wilke 2019). Similarly, if we're measuring distance, the values may be measured in kilometers or miles (Wilke 2019).
+It is important to remember that data values usually aren't just numbers, they come with units [@RN1397]. For example, if we're measuring temperature, the values may be measured in degrees Celsius or Fahrenheit [@RN1397]. Similarly, if we're measuring distance, the values may be measured in kilometers or miles [@RN1397].
 
-You may wonder what happens if you change the units of your data. A change in units is a linear transformation, where we add or subtract a number to or from all data values and/or multiply all data values with another number.
+You may wonder what happens if you change the units of your data. A change in units is a linear transformation, where we add or subtract a number to or from all data values and/or multiply all data values with another number [@RN1397].
 
 Therefore, you can change the units of your data and the resulting figure will not change if you change the axes accordingly. As an example, compare how the data is displayed in Figures 3 (a) and 3 (b).
 
@@ -73,56 +69,49 @@ Figure 3: Daily (normal) temperature for Houston, TX, plotted versus the (normal
 
 ## Nonlinear Axes and Log Transformations
 
-In a Cartesian coordinate system, the grid lines along an axis are spaced evenly both in data units and in the resulting visualization. We refer to the position scales in these coordinate systems as linear (Wilke, 2019).
+In a Cartesian coordinate system, the grid lines along an axis are spaced evenly both in data units and in the resulting visualization. We refer to the position scales in these coordinate systems as linear [@RN1397].
 
-There are scenarios where nonlinear scales are preferred. The most used nonlinear scale is the logarithmic scale, or log scale for short (Wilke, 2019). Log scales are linear in multiplication, such that a unit step on the scale corresponds to multiplication with a fixed value (Wilke, 2019).
-
-To create a log scale, we need to log-transform the data values while exponentiating the numbers that are shown along the axis grid lines (Wilke, 2019).
+There are scenarios where nonlinear scales are preferred. The most used nonlinear scale is the logarithmic scale, or log scale for short [@RN1397]. Log scales are linear in multiplication, such that a unit step on the scale corresponds to multiplication with a fixed value [@RN1397].
 
 Importantly, the correct axis title for a logarithmic scale is the name of the variable shown, not the logarithm of that variable.
 
-In most cases, the labeling for a logarithmic scale is preferable, because it places less mental burden on the reader to interpret the numbers shown as the axis tick labels (Wilke, 2019).
+It is always recommended that you verify the base when working with log-transformed data [@RN1397]. When plotting log-transformed data, always specify the base in the labeling of the axis, to avoid confusion.
 
-It is always recommended that you verify the base when working with log-transformed data (Wilke, 2019). When plotting log-transformed data, always specify the base in the labeling of the axis, to avoid confusion.
+Log scales are the natural choice for any data that has been obtained by multiplication or division. For example, ratios should generally be shown on a log scale [@RN1397]. As an example, in Figure 4, the number of inhabitants in each county in Texas was divided by the median number of inhabitants across all Texas counties \[Figure 4\].
 
-Log scales are the natural choice for any data that has been obtained by multiplication or division. For example, ratios should generally be shown on a log scale (Wilke, 2019). As an example, I have taken the number of inhabitants in each county in Texas and divided it by the median number of inhabitants across all Texas counties [Figure 4].
+![](images/texas-counties-pop-ratio-log-1.png) [@RN1397]
 
-![](images/texas-counties-pop-ratio-log-1.png)
+Figure 4: Texas counties, from most to least populous using a log scale 10 transformation [@RN1397].
 
-Figure 4: Texas counties, from most to least populous using a log scale 10 transformation (Wilke, 2019).
-
-Look how different the same data appears when graph using a linear scale. Using a linear scale obscures the differences between a county with median population number and a county with a much smaller population number than median [Figure 5] (Wilke, 2019).
+Look how different the same data appears when graph using a linear scale. Using a linear scale obscures the differences between a county with median population number and a county with a much smaller population number than median \[Figure 5\] [@RN1397].
 
 ![](images/texas-counties-pop-ratio-lin-1.png)
 
 Figure 5: Texas counties, from most to least populous, using a linear transformation (Wilke, 2019).
 
-Log scales are frequently used when the dataset contains numbers of very different magnitudes (Wilke, 2019). For the Texas counties shown in Figures 4 and 5, the most populous one (Harris) had 4,092,459 inhabitants in the 2010 US Census while the least populous one (Loving) had 82 (Wilke, 2019). So, a log scale would be appropriate even if we hadn't divided the population numbers by their median to turn them into ratios (Wilke, 2019).
-
-## Coordinate Systems with Curved Axes
-
-All the coordinate systems we have encountered so far have used two straight axes positioned at a right angle to each other (Wilke, 2019). There are other coordinate systems, where the axes themselves are curved (Wilke, 2019). In particular, in the polar coordinate system, we specify positions via an angle and a radial distance from the origin [Figure 6] (Wilke, 2019).
-
-![](images/wilke-polar-coord-1.png){width="6.5in"}
-
-Figure 6: Relationship between Cartesian and polar coordinates (Wilke, 2019).
-
-In Figure 6, the three data points shown in Cartesian coordinate system (a) are compared to the same three data points shown in a polar coordinate system (b) (Wilke, 2019). A radial layout is used to display the data. A common example is pie charts. Radial layouts will be covered the parts-to-wholes lecture.
-
-A second setting in which we encounter curved axes is in the context of geospatial data (Wilke, 2019). We don't cover geospatial data in this class. Please consult Wilke Chapter 15 and resources list.
-
+Log scales are frequently used when the dataset contains numbers of very different magnitudes [@RN1397]. For the Texas counties shown in Figures 4 and 5, the most populous one (Harris) had 4,092,459 inhabitants in the 2010 US Census while the least populous one (Loving) had 82 [@RN1397]. So, a log scale would be appropriate even if we hadn't divided the population numbers by their median to turn them into ratios [@RN1397].
 
 # Loading our Packages
 
-## Tidyverse
+## Tidyverse Package
 
-For this lesson we will use the gapminder data to make our first plots. Make sure the library containing the data is loaded, along with the tidyverse package.
+The tidyverse is an opinionated [**collection of R packages**](https://www.tidyverse.org/packages) designed for data science. All packages share an underlying design philosophy, grammar, and data structures.
 
-TAKE INFORMATION FROM PREVIOUS LECTURE/LAB ON TIDYVERSE
+Install the complete tidyverse with:
 
-LECTURE 3/LAB 1
-LAB 2
-LAB 3
+    install.packages("tidyverse")
+
+## Gapminder Package
+
+Excerpt from the [**Gapminder**](http://www.gapminder.org/data/) data. The main object in this package is the **`gapminder`** data frame or "tibble". There are other goodies, such as the data in tab delimited form, a larger unfiltered dataset, premade color schemes for the countries and continents, and ISO 3166-1 country codes.
+
+The **`gapminder`** data frames include six variables, ([**Gapminder.org documentation page**](http://www.gapminder.org/data/documentation/)).
+
+Install the gapminder package with:
+
+    install.packages("gapminder")
+
+Now, we can load the packages
 
 ```{r}
 library(tidyverse)
@@ -131,24 +120,33 @@ library(gapminder)
 
 # How ggplot Works
 
-Figure 6.21 displays the main elements of ggplot's grammar of graphics. We will go through these steps in detail.
+Figure 6 displays the first and second elements of ggplot's grammar of graphics. We will go through these steps in detail.
 
-STOP BEFORE LUNCH
-ADD LABELS TO IMAGES SO I CAN FIND THEM
+![](images/healy-ggplot-vertical-flow-01.png){width="3.55in"}
 
-![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image001.png)
+Figure 6: Schematic of how ggplot works: Data to mapping.
 
-Figure 6.21: Schematic of how ggplot works.
+Figure 7 displays the third and fourth elements of ggplot's grammar of graphics
 
-The most important thing to get used is mapping out the logical structure of your plot (Healy, 2018). The code you write specifies the connections between the variables in your data, and the colors, points, and shapes you see on the screen (Healy, 2018).
+![](images/healy-ggplot-vertical-flow-02.png){width="3.52in"}
 
-In ggplot, these logical connections between your data and the plot elements are called aesthetic mappings or just aesthetics (Healy, 2018). You begin every plot by telling the ggplot() function what your data is and how the variables in this data logically map onto the plot's aesthetics (Healy, 2018).
+Figure 7: Schematic of how ggplot works: geom to scales.
+
+And last, Figure 8 is displaying the final set elements of ggplot's grammar of graphics.
+
+![](images/healy-ggplot-vertical-flow-03.png){width="3.95in"}
+
+Figure 8: Schematic of how ggplot works: adding labels and guides.
+
+The most important thing to get used is mapping out the logical structure of your plot [@RN1461]. The code you write specifies the connections between the variables in your data, and the colors, points, and shapes you see on the screen [@RN1461].
+
+In ggplot, these logical connections between your data and the plot elements are called aesthetic mappings or just aesthetics [@RN1461]. You begin every plot by telling the `ggplot()` function what your data is and how the variables in this data logically map onto the plot's aesthetics [@RN1461].
 
 To build a ggplot, we will use the following basic template that can be used for different types of plots:
 
-ggplot(data = , mapping = aes()) + geom_xx()
+`ggplot(data = , mapping = aes()) + geom_xx()`
 
-In this class, we will save the basic plot parameters to an object called p, which will contain the core information for our plot. (The name p is just a convenience.) Then we choose a plot type, or geom, and add it to p. From there we add more features to the plot as needed, such as additional elements, adjusted scales, a title, or other labels.
+In this class, we will save the basic plot parameters to an object called `p`, which will contain the core information for our plot. (The name p is just a convenience.) Then we choose a plot type, or geom, and add it to p. From there we add more features to the plot as needed, such as additional elements, adjusted scales, a title, or other labels.
 
 At this point ggplot knows our data but not the mapping. That is, we need to tell it which variables in the data should be represented by which visual elements in the plot. It also doesn't know what sort of plot we want.
 
@@ -234,9 +232,9 @@ Figure 6.22: Wickham ggplot2 book.
 
 You can think of this mapping process as:
 
-1. Taking data, which is simply a column in you dataset
+1.  Taking data, which is simply a column in you dataset
 
-2. Using the aesthetic attributes of ggplot to display the visual property of your graph. For example the position, shape, or color elements on the graph.
+2.  Using the aesthetic attributes of ggplot to display the visual property of your graph. For example the position, shape, or color elements on the graph.
 
 Each geom function in ggplot2 takes a mapping argument, mapping = .
 
@@ -296,11 +294,11 @@ Using the Gap Minder data, let us plot life expectancy against per capita GDP fo
 
 Let us add aes() to our plot. We are going to plot the following variables, which we will place inside the (x = gdpPercap, y = lifeExp), and save this to the p object.
 
-p <- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp))
+p \<- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp))
 
 So what have we done so far? We have provided the ggplot() function two arguments: dataand mapping. The dataargument tells ggplotwhere to find the variables it is about to use. This saves us from having to tediously dig out the name of each variable in full.
 
-Next, the mapping. The mapping argument is a function (Healy, 2018). The arguments we give to the aesfunction are a sequence of definitions that ggplot will use later [Healy (2018).
+Next, the mapping. The mapping argument is a function (Healy, 2018). The arguments we give to the aesfunction are a sequence of definitions that ggplot will use later \[Healy (2018).
 
 For the code that we wrote above this portion mapping = aes(x = gdpPercap, y = lifeExp) says that the variable on the x-axis is going to be gdpPercap, and the variable on the y-axis is going to be lifeExp. The aes() function does not say where variables with those names are to be found. That's because ggplot() assumes that this comes from object given to the data argument (Healy, 2018).
 
@@ -320,7 +318,7 @@ As we can see from Figure 6.24, the p object has been created by the ggplot() fu
 
 If you want to see just how much information is in the p object already, str(p).
 
-Next, we need to add a layer to the plot. This means picking a geom_ function. We will use geom_point().
+Next, we need to add a layer to the plot. This means picking a geom\_ function. We will use geom_point().
 
 p +
 
@@ -349,23 +347,21 @@ What to consider, when working with these layers:
 
 -   In order for features of a data frame to be used in a plot, they need to be specified inside the `aes()` function.
 
-
-
 We just went through the basics of building up plots, layer by layer. We began with creating a mapping between a variable and an aesthetic element. The good news is that, from now on, not much will change conceptually about what we are doing (Healy, 2018).
 
 We will start with a table of data that has been tidied, and then we will do the following:
 
-1. Using data = (), tell the ggplot() function define our dataset.
+1.  Using data = (), tell the ggplot() function define our dataset.
 
-2. Using mapping = aes(), tell ggplot() *what* relationships we want to see on the plot. For convenience we will put the results of the first two steps in an object called p.
+2.  Using mapping = aes(), tell ggplot() *what* relationships we want to see on the plot. For convenience we will put the results of the first two steps in an object called p.
 
-3. Tell ggplot *how* we want to see the relationships in our data by defining the xand yaxes.
+3.  Tell ggplot *how* we want to see the relationships in our data by defining the xand yaxes.
 
-4. Using + layer on geomsas needed, by adding them to the pobject one at a time.
+4.  Using + layer on geomsas needed, by adding them to the pobject one at a time.
 
-5. Use some additional functions to adjust the scales, labels, tick marks, and titles.
+5.  Use some additional functions to adjust the scales, labels, tick marks, and titles.
 
-It is important to note that you usually cannot add functions to objects, in R (Healy, 2018). Outside of ggplot, functions take objects as inputs and produce objects as outputs (Healy, 2018). This functionality of ggplot() makes it easier to assemble plots one piece at a time, and to inspect how they look at every step (Healy, 2018). For example, let's try a different geom_ function with our plot [Figure 6.26].
+It is important to note that you usually cannot add functions to objects, in R (Healy, 2018). Outside of ggplot, functions take objects as inputs and produce objects as outputs (Healy, 2018). This functionality of ggplot() makes it easier to assemble plots one piece at a time, and to inspect how they look at every step (Healy, 2018). For example, let's try a different geom\_ function with our plot \[Figure 6.26\].
 
 p +
 
@@ -393,12 +389,11 @@ For figures L4.27 and L4.28 we did not have to tell geom_point() or geom_smooth(
 
 An *aesthetic mapping* specifies that a variable will be expressed by one of the available visual elements, such as size, or color, or shape. For example:
 
-p <- ggplot(data = gapminder , mapping = aes(x = gdpPercap, y = lifeExp, color = continent))
+p \<- ggplot(data = gapminder , mapping = aes(x = gdpPercap, y = lifeExp, color = continent))
 
 What happens when we graph this?
 
-p +
-geom_point()
+p + geom_point()
 
 ![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image008.png)
 
@@ -408,10 +403,9 @@ In Figure 6.29, the individual data points have been colored by continent, and a
 
 How do you think this code will be interpreted, when graphed?
 
-p <- ggplot(data = gapminder , mapping = aes(x = gdpPercap, y = lifeExp, color = "purple"))
+p \<- ggplot(data = gapminder , mapping = aes(x = gdpPercap, y = lifeExp, color = "purple"))
 
-p +
-geom_point()
+p + geom_point()
 
 ![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image009.png)
 
@@ -419,10 +413,9 @@ Figure 6.30: What has gone wrong here?
 
 Why is there a legend saying "purple," and why have the points all turned pinkish-red instead of purple (Healy, 2018)? The aes () function is where that mapping is specified, and the function is trying to do its job (Healy, 2018). It wants to map a variable to the color aesthetic, so it assumes you are giving it a variable (Healy, 2018). aes() will do its best to treat "purple" as though it were a variable (Healy, 2018).
 
-If we want to set a property, like color, we do it in the geom_ we are using, and outside the mapping =aes (...) step. For example:
+If we want to set a property, like color, we do it in the geom\_ we are using, and outside the mapping =aes (...) step. For example:
 
-p <- ggplot(data = gapminder , mapping = aes(x = gdpPercap, y = lifeExp))
-p + geom_point(color = "purple")
+p \<- ggplot(data = gapminder , mapping = aes(x = gdpPercap, y = lifeExp)) p + geom_point(color = "purple")
 
 ![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image010.png)
 
@@ -430,16 +423,13 @@ Figure 6.31: Setting the color attribute of the points directly.
 
 # Aesthetics Can Be Mapped per Geom
 
-By default, geoms inherit their mappings from the ggplot() function. We can change this by specifying different aesthetics for each geom. To do this, we use the same mapping = aes(...) expression. However, this time we use it in the geom_ functions.
+By default, geoms inherit their mappings from the ggplot() function. We can change this by specifying different aesthetics for each geom. To do this, we use the same mapping = aes(...) expression. However, this time we use it in the geom\_ functions.
 
-p <- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp))
+p \<- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp))
 
 Mappings specified in the initial ggplot( ) function (x and y) will carry through to all subsequent geoms.
 
-p +
-geom_point(mapping = aes(color = continent)) +
-geom_smooth(method = "loess") +
-scale_x_log10()
+p + geom_point(mapping = aes(color = continent)) + geom_smooth(method = "loess") + scale_x\_log10()
 
 ![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image011.png)
 
@@ -449,18 +439,17 @@ As you can see in Figure 6.32, color is mapped to the continent variable for the
 
 Finally, it is worth paying a little more attention to the way that ggplot draws its scales (Healy, 2018). Because every mapped variable has a scale, we can learn a lot about how a plot has been constructed, by seeing what the legends look like (Healy, 2018). For example:
 
-p <- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp, color = continent, fill = continent))
+p \<- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp, color = continent, fill = continent))
 
-p +
-geom_point() +
+p + geom_point() +
 
-geom_smooth(method = "loess") + scale_x_log10()
+geom_smooth(method = "loess") + scale_x\_log10()
 
 ![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image012.png)
 
 Figure 6.33: Mapping the continent variable to the color aesthetic, and correcting the error bars using the fill aesthetic.
 
-In Figure 6.33, we mapped the continent variable to both color and fill. We then drew the figure with geom_point()and fitted a line for each continent with geom_smooth (). Points have color but the smoother understands both color (for the line itself) and fill (for the shaded standard error ribbon) (Healy, 2018). Each of these elements is representedi n the legend: the point color, the line color, and the ribbon fill [Figure 6.34].
+In Figure 6.33, we mapped the continent variable to both color and fill. We then drew the figure with geom_point()and fitted a line for each continent with geom_smooth (). Points have color but the smoother understands both color (for the line itself) and fill (for the shaded standard error ribbon) (Healy, 2018). Each of these elements is representedi n the legend: the point color, the line color, and the ribbon fill \[Figure 6.34\].
 
 ![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image013.png)
 
@@ -470,11 +459,7 @@ In the legend for Figure 6.34, we see several visual elements. The key for each 
 
 Let us try this with another graph.
 
-p <- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp))
-p +
-geom_point(mapping = aes(color = continent)) +
-geom_smooth(method = "loess") +
-scale_x_log10()
+p \<- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) p + geom_point(mapping = aes(color = continent)) + geom_smooth(method = "loess") + scale_x\_log10()
 
 ![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image011.png)
 
