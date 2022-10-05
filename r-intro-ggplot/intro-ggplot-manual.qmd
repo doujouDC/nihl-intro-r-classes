@@ -96,6 +96,8 @@ Log scales are frequently used when the dataset contains numbers of very differe
 
 ## Tidyverse Package
 
+For this lesson we will use the gapminder data to make our first plots. So we need to make sure the library containing the data is loaded, along with the tidyverse. A brief definition of each package is provided below:
+
 The tidyverse is an opinionated [**collection of R packages**](https://www.tidyverse.org/packages) designed for data science. All packages share an underlying design philosophy, grammar, and data structures.
 
 Install the complete tidyverse with:
@@ -122,6 +124,13 @@ library(gapminder)
 
 # How ggplot Works
 
+ggplot is built on the grammar of graphics, the idea that any plot can be expressed from the same set of components:
+
+1.  Data set, which is simply a column or columns in you dataset
+2.  Coordinate system
+3.  Aesthetic attributes of ggplot to display the visual property of your graph. For example the position, shape, or color elements on the graph
+4.  Set of geoms, the visual representation of data points.
+
 Figure 6 is displaying the first and second elements of ggplot's grammar of graphics. We will go through these steps in detail.
 
 ![](images/healy-ggplot-vertical-flow-01.png){width="3.55in"}
@@ -146,29 +155,18 @@ In ggplot, these logical connections between your data and the plot elements are
 
 To build a ggplot, we will use a basic template that can be used for different types of plots.
 
-# Mappings Data to Things You See
-
-ggplot2 is built on the grammar of graphics, the idea that any plot can be expressed from the same set of components:
-
-1.  Data set, which is simply a column or columns in you dataset
-2.  Coordinate system
-3.  Aesthetic attributes of ggplot to display the visual property of your graph. For example the position, shape, or color elements on the graph
-4.  Set of geoms, the visual representation of data points.
+`ggplot(data = DATA, mapping = aes(AESTHETIC MAPPINGS)) + geom_function()`
 
 ## ggplot
 
 We start by defining the dataset we'll use, lay out the axes, and choose a geom. To build a ggplot, we will use the following basic template that can be used for different types of plots:
 
-`ggplot(data = , mapping = aes()) + geom_xx()`
-
-You begin every plot by telling the `ggplot()` function what your data is. We are going to import data on New York City restaurant inspection [data](https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j). This dataset is huge, so I have filtered by: Year \[2022\] and Burrough \[Manhattan\]
+You begin every plot by telling the `ggplot()` function what your data is. We will be implementing this using pipes.
 
 ```{r}
-nyc_rest_inspection_manhattan <- read_csv("../raw-data/nyc-rest-inspection-manhattan.csv", col_types = cols(ZIPCODE = col_character(), PHONE = col_character(), `INSPECTION_DATE` = col_date(format = "%D"), 
-`RECORD_DATE` = col_date(format = "%D")))
+gapminder %>% 
+  ggplot()
 ```
-
-`ggplot(data = nyc_rest_inspection_manhattan)`
 
 ### Notes About the ggplot() Function
 
@@ -176,59 +174,45 @@ nyc_rest_inspection_manhattan <- read_csv("../raw-data/nyc-rest-inspection-manha
 -   You can also specify mappings for a given geom independently of the mappings defined globally in the `ggplot()` function.
 -   The + sign used to add new layers **must be placed at the end of the line containing the previous layer.** If, instead, the + sign is added at the beginning of the line containing the new layer, ggplot2 will not add the new layer and will return an error message.
 
+At this point ggplot knows our data but not the mapping. That is, we need to tell it which variables in the data should be represented by which visual elements in the plot. It also doesn't know what sort of plot we want.
+
 ## Defining Plot Aesthetics
 
-Each geom function in ggplot2 takes a mapping argument, **mapping =**.
+Each geom function in ggplot2 takes a mapping argument, `mapping =`.
 
-This defines how variables in your dataset are mapped to visual properties. The mapping argument is always paired with aes():
+This defines how variables in your dataset are mapped to visual properties. The mapping argument is always paired with `aes()`:
 
-**mapping = aes()**
+`mapping = aes()`
 
-aes() allows us to select the variables to be plotted and specify how to present them in the graph, e.g. as x/y positions or characteristics such as size, shape, or color.
+`aes()` allows us to select the variables to be plotted and specify how to present them in the graph, e.g. as x/y positions or characteristics such as size, shape, or color.
 
-Let us add aes() to our plot. Before we do this, let us take a peek at the data.
+Let us add `aes()` to our plot. Before we do this, let us take a peek at the data.
 
 ```{r}
 #| output: false
-glimpse(nyc_rest_inspection_manhattan)
+glimpse(gapminder)
 ```
 
-We are going to plot the following variables from the nyc data, which we will place inside the mapping function. Let us plot `grade` against `score`.
+We are going to plot the following variables from the nyc data, which we will place inside the mapping function. Let us plot `lifeExp` against `gdpPercap`.
 
-Let us add aes() to our plot. We are going to plot the following variables, which we will place inside the (x = gdpPercap, y = lifeExp), and save this to the p object.
+Let us add `aes()` to our plot. We are going to plot the following variables, which we will place inside the (x = gdpPercap, y = lifeExp), and save this to the p object.
 
 ```{r}
-nyc_rest_inspection_manhattan %>% 
-  ggplot(mapping = aes(x = GRADE, y = SCORE))
+gapminder %>% 
+  ggplot(mapping = aes(x = gdpPercap, y = lifeExp))
 ```
 
-As we can see in the output above, `aes()` allows us to select the variables to be plotted and specify how to present them in the graph. 
+As we can see in the output above, `aes()` allows us to select the variables to be plotted and specify how to present them in the graph. As we can see from the output, the `ggplot()` function and already has information in it about the mappings we want, together with a lot of other information added by default [@RN1461].
 
-STOPPED, PICK UP AFTER LUNCH
+So what have we done so far?
 
-The code that we would give R to make this happen, might look something like this:
+-   We have provided the `ggplot()` function two arguments: data and mapping. The data argument tells ggplot where to find the variables it is about to use. This saves us from having to tediously dig out the name of each variable in full.
 
-![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image003.png) Figure 6.23: ggplot template for mapping troop data to ggplot aesthetics. Image [*source*](https://datavizs21.classes.andrewheiss.com/slides/03-slides.html#16).
+-   Next, we supplied the `mapping` function. So, `mapping = aes(x = gdpPercap, y = lifeExp)` says that the variable on the x-axis is going to be `gdpPercap`, and the variable on the y-axis is going to be `lifeExp`. The `aes() function` does not say where variables with those names are to be found. That's because ggplot() assumes that this comes from object given to the data argument [@RN1461].
 
-So what have we done so far? We have provided the ggplot() function two arguments: dataand mapping. The dataargument tells ggplotwhere to find the variables it is about to use. This saves us from having to tediously dig out the name of each variable in full.
+The `mapping=aes()` argument links variables to things you will see on the plot [@RN1461]. The x and y values are the most obvious ones. However, other aesthetic mappings can include, color, shape, size, and line type (whether a line is solid, dashed) [@RN1461].
 
-Next, the mapping. The mapping argument is a function (Healy, 2018). The arguments we give to the aesfunction are a sequence of definitions that ggplot will use later \[Healy (2018).
-
-For the code that we wrote above this portion mapping = aes(x = gdpPercap, y = lifeExp) says that the variable on the x-axis is going to be gdpPercap, and the variable on the y-axis is going to be lifeExp. The aes() function does not say where variables with those names are to be found. That's because ggplot() assumes that this comes from object given to the data argument (Healy, 2018).
-
-The mapping=aes() argument links variables to things you will see on the plot (Healy, 2018). The x and y values are the most obvious ones. However, other aesthetic mappings can include, color, shape, size, and line type ( whether a line is solid, dashed) (Healy, 2018).
-
-A mapping does not say what particular colors or shapes will be on the plot. Rather it says which variables in the data will be represented by visual elements like a color, a shape, or a point on the plot area (Healy, 2018).
-
-What happens if we just type p at the console at this point and hit return? The result is shown in Figure 6.24:
-
-![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image004.png)
-
-Figure 6.24: Loading ggplot and adding data and mapping the aesthetics.
-
-As we can see from Figure 6.24, the p object has been created by the ggplot() function and already has information in it about the mappings we want, together with a lot of other information added by default (Healy, 2018).
-
-If you want to see just how much information is in the p object already, str(p).
+A mapping does not say what particular colors or shapes will be on the plot. Rather it says which variables in the data will be represented by visual elements like a color, a shape, or a point on the plot area [@RN1461].
 
 # Geoms in ggplot
 
@@ -240,13 +224,13 @@ The plus symbol + must be added to each new layer that you add to plot syntax. T
 
 ### Correct syntax for adding layers
 
-ggplot(data = gapminder)
+`ggplot(data = gapminder)`
 
 ### Incorrect Method for Adding a Layer
 
 This will not add the new layer and will return an error message
 
-surveys_plot + geom_point()
+`surveys_plot + geom_point()`
 
 ## Individual geoms
 
@@ -266,6 +250,31 @@ Each of these geoms is two dimensional and requires both `x` and `y` aesthetics.
 
 -   [`geom_rect()`](https://ggplot2.tidyverse.org/reference/geom_tile.html), [`geom_tile()`](https://ggplot2.tidyverse.org/reference/geom_tile.html) and [`geom_raster()`](https://ggplot2.tidyverse.org/reference/geom_tile.html) draw rectangles. [`geom_rect()`](https://ggplot2.tidyverse.org/reference/geom_tile.html) is parameterised by the four corners of the rectangle, `xmin`, `ymin`, `xmax` and `ymax`. [`geom_tile()`](https://ggplot2.tidyverse.org/reference/geom_tile.html) is exactly the same, but parameterised by the center of the rect and its size, `x`, `y`, `width` and `height`. [`geom_raster()`](https://ggplot2.tidyverse.org/reference/geom_tile.html) is a fast special case of [`geom_tile()`](https://ggplot2.tidyverse.org/reference/geom_tile.html) used when all the tiles are the same size.
 
+So, a basic plot might looks something like this
+
+```{r}
+gapminder %>% 
+  ggplot(mapping = aes(x = gdpPercap, y = lifeExp)) +
+  geom_point()
+```
+
+So, if we want to think about the mapping of the data to the different aesthetics, it might look like this.
+
+| **Data**                 | **Variable** | **aes** | **geom**   |
+|--------------------------|--------------|---------|------------|
+| Weatlh (GGP/capita)      | gdpPercap    | x       | geom_point |
+| Health (Life Expectancy) | lifeExp      | y       | geom_point |
+| Continent                | country      | Color   | geom_point |
+| Population               | pop          | Size    | geom_point |
+
+```{r}
+gapminder %>% 
+  ggplot(mapping = aes(x = gdpPercap, y = lifeExp, color = continent, size = pop)) +
+  geom_point() +
+  scale_x_log10() # changes x-axis to be on the log scale, because of
+# gaps in countries
+```
+
 ## Collective Geoms in ggplot
 
 An **individual** `geom` draws a distinct graphical object for each observation (row). For example, the point geom draws one point per row. A **collective** `geom` displays multiple observations with one geometric object. This may be a result of a statistical summary, like a boxplot, or may be fundamental to the display of the geom, like a polygon. How do we control the assignment of observations to graphical elements? This is the job of the `group` aesthetic.
@@ -273,6 +282,12 @@ An **individual** `geom` draws a distinct graphical object for each observation 
 By default, the `group` aesthetic is mapped to the interaction of all discrete variables in the plot. This often partitions the data correctly. However, when the mapping is not automatic, or when no discrete variable is used in a plot, you'll need to explicitly define the grouping structure to a variable that has a different value for each group.
 
 In the following examples, we will use a simple longitudinal dataset, [Oxboys](https://rdrr.io/cran/nlme/man/Oxboys.html) which is included in the `nlme`package. It looks at the height of a selection of boys from Oxford, England versus a standardized age. It records the heights (`height`) and centered ages (`age`) of 26 boys (`Subject`), measured on nine occasions (`Occasion`). `Subject` and `Occassion` are stored as ordered factors.
+
+| Default | Left | Right |     |
+|---------|:-----|------:|:---:|
+| 12      | 12   |    12 | 12  |
+| 123     | 123  |   123 | 123 |
+| 1       | 1    |       |     |
 
 ```{r}
 data(Oxboys, package = "nlme")
