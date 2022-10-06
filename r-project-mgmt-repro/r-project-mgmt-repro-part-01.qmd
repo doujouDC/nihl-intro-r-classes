@@ -112,7 +112,9 @@ Why should I learn R when Pivot Tables do the same thing? Pivot Tables are great
 
 Figure 4: Pivot Table in Excel.
 
-The only thing you can really do with a Pivot Table is get averages, maximum and minimum values. With R you can also group the data by and run one regression model that would go over all 145 countries. You can also display statistics like the coefficients or the r2 value, with 2 lines of code. I agree with Chemistry Cat, Excel is so basic.
+The only thing you can really do with a Pivot Table is get averages, maximum and minimum values. With R you can also group the data by country and run one regression model that would go over all 145 countries. You can also display statistics like the coefficients or the r2 value, with 2 lines of code. I agree with Chemistry Cat, Excel is so basic.
+
+![](images/chemistry-cat-plain-basic.png){width="3.39in"}
 
 Figure 5: Chemistry cat thinks Excel is basic.
 
@@ -133,7 +135,9 @@ Figure 6 is displaying a complicated worksheet formula. The only way this would 
 
 Have you ever seen an Excel spreadsheet with an accompanying set of instructions?
 
-![](images/advanced-excel-01.jpeg){width="6.5in"} Figure 6: Complicated excel formula.
+![](images/excel-formula-complex.png){width="6.5in"}
+
+Figure 6: Complicated excel formula.
 
 Figure 7 is displaying a common Excel formatting error that occurs when you are working with biological data.
 
@@ -159,7 +163,7 @@ More about this in the second part of this class. However, consider writing your
 
 Use open formats as much as possible. That means sharing your data in csv or tab-delimited format.
 
-A lot of large companies and government organisations use markdown for their publishing and research.
+A lot of large companies and government organizations use markdown for their publishing and research.
 
 # Using Version Control
 
