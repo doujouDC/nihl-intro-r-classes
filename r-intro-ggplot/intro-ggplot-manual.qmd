@@ -114,15 +114,12 @@ Install the gapminder package with:
 
     install.packages("gapminder")
 
-The **nlme: Nonlinear Mixed-Effects Models** package fits a nonlinear mixed-effects model in the formulation described in Lindstrom and Bates (1990) but allowing for nested random effects. The within-group errors are allowed to be correlated and/or have unequal variances. We are simply using it for the [oxboys](https://rdrr.io/cran/mlmRev/man/Oxboys.html) dataset.
-
 Now, we can load the packages
 
 ```{r}
 #| output: false
 library(tidyverse)
 library(gapminder)
-library(nlme)
 ```
 
 # How ggplot Works
@@ -261,7 +258,7 @@ gapminder %>%
   geom_point()
 ```
 
-If we want to map the data to the different aesthetics, it might look like this.
+So, if we want to think about the mapping of the data to the different aesthetics, it might look like this.
 
 | **Data**                 | **Variable** | **aes** | **geom**   |
 |--------------------------|--------------|---------|------------|
@@ -286,9 +283,15 @@ By default, the `group` aesthetic is mapped to the interaction of all discrete v
 
 In the following examples, we will use a simple longitudinal dataset, [Oxboys](https://rdrr.io/cran/nlme/man/Oxboys.html) which is included in the `nlme`package. It looks at the height of a selection of boys from Oxford, England versus a standardized age. It records the heights (`height`) and centered ages (`age`) of 26 boys (`Subject`), measured on nine occasions (`Occasion`). `Subject` and `Occassion` are stored as ordered factors.
 
+| Default | Left | Right |     |
+|---------|:-----|------:|:---:|
+| 12      | 12   |    12 | 12  |
+| 123     | 123  |   123 | 123 |
+| 1       | 1    |       |     |
+
 ```{r}
-#| output: false
-glimpse(Oxboys)
+data(Oxboys, package = "nlme")
+head(Oxboys)
 ```
 
 ### Multiple groups, one aesthetic
@@ -311,7 +314,7 @@ ggplot(mapping = aes(x = age, y = height, group = Subject)) +
 
 ## Different groups on different layers
 
-Sometimes we want to plot summaries that use different levels of aggregation: one layer might display individuals, while another displays an overall summary. Building on the previous example, suppose we want to add a single smooth line, showing the overall trend for all boys. If we use the same grouping in both layers, we get one smooth line per boy:
+Sometimes we want to plot summaries that use different levels of aggregation: one layer might display individuals, while another displays an overall summary. Building on the previous example, suppose we want to add a single smooth line, showing the overall trend for *all* boys. If we use the same grouping in both layers, we get one smooth line per boy:
 
 ```{r}
 Oxboys %>% 
@@ -330,7 +333,7 @@ ggplot(Oxboys, aes(age, height)) +
   geom_smooth(method = "lm", size = 2, se = FALSE)
 ```
 
-# NEW CONTENT FROM BONUS LECTURE Geoms in ggplot
+# Geoms in ggplot
 
 Next, we need to add a layer to the plot. This means picking a geom\_ function. We will use geom_point().
 
@@ -346,10 +349,10 @@ Figure 6.25: Plot with the geom added.
 
 The general structure of the code that is used to plot figures is as follows:
 
-    ggplot(...)+ # Initialization
-    geom_function(...)+ # Main plot(s)
-    facet_function(...)+ # Facets (optional)
-    labs(...)+ #  Legend (optional)
+    ggplot(...)+ #Initialization
+    geom_function(...)+ #Main plot(s)
+    facet_function(...)+ #Facets (optional)
+    labs(...)+ #Legend (optional)
     scale_function(...) + # Scales (optional)
     theme_function(...) # Theme (optional)
 
@@ -371,7 +374,7 @@ We will start with a table of data that has been tidied, and then we will do the
 
 3.  Tell ggplot *how* we want to see the relationships in our data by defining the xand yaxes.
 
-4.  Using + layer on geoms as needed, by adding them to the pobject one at a time.
+4.  Using + layer on geomsas needed, by adding them to the pobject one at a time.
 
 5.  Use some additional functions to adjust the scales, labels, tick marks, and titles.
 
