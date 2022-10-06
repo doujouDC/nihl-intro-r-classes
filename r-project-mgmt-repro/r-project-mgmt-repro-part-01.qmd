@@ -56,11 +56,11 @@ Reproducibility refers to the ability of a researcher to duplicate the results o
 
 A 2016 survey in Nature revealed that not being able to reproduce experiments is a problem across all domains of science \[Figure 1\]:
 
-![](images/nature-field-reason.png)
+![](images/nature-field-reason.png){width="6.5in"}
 
 Figure 1: Reproducibility by discipline and problem identified [@RN1683].
 
-![](images/nature-attempt-reason.png)
+![](images/nature-attempt-reason.png){width="6.5in"}
 
 Figure 2: Attempts to publish reproducible research [@RN1683].
 
@@ -70,7 +70,7 @@ If contributing to science and other researchers seems not to be compelling enou
 
 ### Helps to avoid data loss and disaster
 
-![](images/ny-times-duke.png)
+![](images/ny-times-duke.png){width="6.5in"}
 
 Figure 3: Two statisticians from MD Anderson found with research from Duke University.
 
@@ -108,11 +108,15 @@ For several papers, we have made our data, code, and analyses available as an Ex
 
 Why should I learn R when Pivot Tables do the same thing? Pivot Tables are great for summarizing the data. For example, Figure 4 is showing a Pivot Table for [gapminder](https://www.gapminder.org/data/) data.
 
-![](images/why-r-excel-pivot.png){width="6.5 in"}
+![](images/why-r-excel-pivot.png){width="6.5in"}
 
 Figure 4: Pivot Table in Excel.
 
+The only thing you can really do with a Pivot Table is get averages, maximum and minimum values. With R you can also group the data by and run one regression model that would go over all 145 countries. You can also display statistics like the coefficients or the r2 value, with 2 lines of code.
+
 ## Free and Open Source
+
+This gets at a more philosophical reason for using R, not everyone has access to or can afford Office 365 [@].
 
 # Using Version Control
 
