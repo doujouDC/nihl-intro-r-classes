@@ -112,11 +112,54 @@ Why should I learn R when Pivot Tables do the same thing? Pivot Tables are great
 
 Figure 4: Pivot Table in Excel.
 
-The only thing you can really do with a Pivot Table is get averages, maximum and minimum values. With R you can also group the data by and run one regression model that would go over all 145 countries. You can also display statistics like the coefficients or the r2 value, with 2 lines of code.
+The only thing you can really do with a Pivot Table is get averages, maximum and minimum values. With R you can also group the data by and run one regression model that would go over all 145 countries. You can also display statistics like the coefficients or the r2 value, with 2 lines of code. I agree with Chemistry Cat, Excel is so basic.
+
+Figure 5: Chemistry cat thinks Excel is basic.
 
 ## Free and Open Source
 
-This gets at a more philosophical reason for using R, not everyone has access to or can afford Office 365 [@].
+This gets at a more philosophical reason for using R. Although the use of Excel is pretty pervasive, not everyone has access to or can afford Office 365 [@RN1498].
+
+Learning how to perform advanced analytics in Tableau or Stata is a great skillset. However, these products are very expensive.
+
+Also, if you are sharing the results of your analysis in Excel (don't do that), not everyone will be able to open that file.
+
+## Reproducibility
+
+Figure 6 is displaying a complicated worksheet formula. The only way this would be reproducible is if you write down all of the steps for:
+
+-   Every menu you clicked
+-   Every cell you clicked on to add a formula or changed the formatting
+
+Have you ever seen an Excel spreadsheet with an accompanying set of instructions?
+
+![](images/advanced-excel-01.jpeg){width="6.5in"} Figure 6: Complicated excel formula.
+
+Figure 7 is displaying a common Excel formatting error that occurs when you are working with biological data.
+
+![](images/excel-gene-error.png){width="6.5in"} Figure 7: Excel conversion error [@RN1498].
+
+A 2016 study by Ziemann, Eren, and EL-Osta found gene name errors in 20% of the papers that they reviewed [@RN1499]. A quick search in Web of Science using the terms "Reproducible statistical analyses" OR "Reproducibility" resulted in over 7,000 published papers, in the last 10 years..
+
+It is a great practice to not open any data files in Excel to prevent accidental conversion errors.
+
+## General Recommendations
+
+From: [@RN1498]
+
+### Don't Touch the Raw Data
+
+Don't ever do analysis on the original data, or, if you do, then explain what you did to the data.
+
+### Self-documenting and Reproducible Code
+
+More about this in the second part of this class. However, consider writing your reports or papers in markdown. Markdown combines text with code.
+
+## Use Open Formats
+
+Use open formats as much as possible. That means sharing your data in csv or tab-delimited format.
+
+A lot of large companies and government organisations use markdown for their publishing and research.
 
 # Using Version Control
 
