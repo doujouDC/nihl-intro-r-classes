@@ -102,6 +102,18 @@ Can you think of any examples where "not" employing this principle can lead to p
 
 For several papers, we have made our data, code, and analyses available as an Experiment Package on Bioconductor. When I came up for tenure, I cited all these packages as research output of my lab. Generally, making your analyses available in this way will help you to build a reputation for being an honest and careful researcher.
 
+# Why Should I learn R
+
+## More Powerful
+
+Why should I learn R when Pivot Tables do the same thing? Pivot Tables are great for summarizing the data. For example, Figure 4 is showing a Pivot Table for [gapminder](https://www.gapminder.org/data/) data.
+
+![](images/why-r-excel-pivot.png){width="6.5 in"}
+
+Figure 4: Pivot Table in Excel.
+
+## Free and Open Source
+
 # Using Version Control
 
 Using version control has the power to revolutionize how you work in R. Being able to have a record of all the changes you've ever made to your code both locally and on a remote website is powerful. But getting everything set up can be a challenge. in this section I will walk through everything you need to do to use Git and GitHub alongside RStudio.
