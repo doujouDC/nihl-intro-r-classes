@@ -390,8 +390,8 @@ When using math as Block Elements, math use `$$` delimiters. The delimiters may 
 A larger equation:
 
 $$ 
-f(x)={\sqrt{\frac{\tau}{2\pi}}}
-      e^{-\tau (x-\mu )^{2}/2}
+f(x)={sqrt{frac{tau}{2pi}}}
+      e^{-tau (x-mu )^{2}/2}
 $$
 
 ## Math: (Inline)
@@ -402,7 +402,7 @@ Figure 15 is displaying the markdown that generates the math displayed below.
 
 Figure 15: Inline element: math markdown.
 
-The area of a circle is $A = pi r^2$, where $r$ is the radius and $pi$ is the constant $3.141592\ldots$.
+The area of a circle is $A = pi*r^2$, where $r$ is the radius and $pi$ is the constant $3.141592$.
 
 TeX math occurs between two `$`. Opening `$` must have a non-space character immediately to its right, while the closing `$` must have a non-space character immediately to its left, and must not be followed immediately by a digit.
 
@@ -414,7 +414,7 @@ You can also used direct links <https://quarto.org/docs/reference/formats/html.h
 
 ## Images
 
-Linking to images is very similar, except that you start with a bang `!` This is an example of and inline link to an image of an Elephant ![This is a white elephant](images/elephant.png)
+Linking to images is very similar, except that you start with a bang `!` This is an example of and inline link to an image of an Elephant ![This is a white elephant](images/elephant.png){width="6.5in"}
 
 Images on their own line become a block:
 
@@ -486,8 +486,8 @@ Code blocks that use braces around the language name (e.g. `{r}`) are executable
 #| label: fig-airquality 01
 #| fig-cap: Temperature and ozone level.
 
-library(ggplot2)
-ggplot(airquality, aes(Temp, Ozone)) + 
+library(tidyverse)
+ggplot(data = airquality, aes(x = Temp, y =Ozone)) + 
   geom_point() + 
   geom_smooth(method = "loess"
 )
@@ -732,25 +732,23 @@ Figure 25: Rendering Quarto documents in RStudio.
 
 Because Quarto is also a command line interface (CLI), you can also render via the terminal. The table below provides some common commands.
 
-+------------------------------------+-------------------------------------------------------+
-| **Command**                        | **Action**                                            |
-+:===================================+:======================================================+
-| `pwd`                              | Print name of current working directory               |
-+------------------------------------+-------------------------------------------------------+
-| `cd`                               | Change current working directory                      |
-+------------------------------------+-------------------------------------------------------+
-| `ls`                               | List directory contents                               |
-+------------------------------------+-------------------------------------------------------+
-| `quarto --help`                    | Return `quarto` help docs                             |
-+------------------------------------+-------------------------------------------------------+
-| `mkdir howdy`                      | Make a new folder/directory called "howdy"            |
-+------------------------------------+-------------------------------------------------------+
-| `rm howdy/some-file.qmd` \| Remove | a file called `some-file.qmd` from the "howdy" folder |
-+------------------------------------+-------------------------------------------------------+
++---------------------------------------+-------------------------------------------------------+
+| **Command**                           | **Action**                                            |
++:======================================+:======================================================+
+| `pwd`                                 | Print name of current working directory               |
++---------------------------------------+-------------------------------------------------------+
+| `cd`                                  | Change current working directory                      |
++---------------------------------------+-------------------------------------------------------+
+| `ls`                                  | List directory contents                               |
++---------------------------------------+-------------------------------------------------------+
+| `quarto --help`                       | Return `quarto` help docs                             |
++---------------------------------------+-------------------------------------------------------+
+| `mkdir howdy`                         | Make a new folder/directory called "howdy"            |
++---------------------------------------+-------------------------------------------------------+
+| `rm howdy/some-file.qmd` \| Remove \| | a file called `some-file.qmd` from the "howdy" folder |
++---------------------------------------+-------------------------------------------------------+
 
 A great overview of using the command line and navigating files/directories is available via the [Data Carpentries](https://datacarpentry.org/shell-genomics/02-the-filesystem/index.html) or a great interactive tool for understanding commands: [https://tldr.ostera.io](https://tldr.ostera.io/).
-
-![](images/baker-01.png)
 
 ## R console via `quarto` R package
 
