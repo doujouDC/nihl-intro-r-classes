@@ -251,7 +251,12 @@ Each of these geoms is two dimensional and requires both `x` and `y` aesthetics.
 
 -   [`geom_polygon()`](https://ggplot2.tidyverse.org/reference/geom_polygon.html) draws polygons, which are filled paths. Each vertex of the polygon requires a separate row in the data. It is often useful to merge a data frame of polygon coordinates with the data just prior to plotting. Section [6](https://ggplot2-book.org/maps.html#maps) illustrates this concept in more detail for map data.
 
--   [`geom_rect()`](https://ggplot2.tidyverse.org/reference/geom_tile.html), [`geom_tile()`](https://ggplot2.tidyverse.org/reference/geom_tile.html) and [`geom_raster()`](https://ggplot2.tidyverse.org/reference/geom_tile.html) draw rectangles. [`geom_rect()`](https://ggplot2.tidyverse.org/reference/geom_tile.html) is parameterised by the four corners of the rectangle, `xmin`, `ymin`, `xmax` and `ymax`. [`geom_tile()`](https://ggplot2.tidyverse.org/reference/geom_tile.html) is exactly the same, but parameterised by the center of the rect and its size, `x`, `y`, `width` and `height`. [`geom_raster()`](https://ggplot2.tidyverse.org/reference/geom_tile.html) is a fast special case of [`geom_tile()`](https://ggplot2.tidyverse.org/reference/geom_tile.html) used when all the tiles are the same size.
+-   [`geom_rect()`](https://ggplot2.tidyverse.org/reference/geom_tile.html)
+-   [`geom_tile()`](https://ggplot2.tidyverse.org/reference/geom_tile.html)
+- [`geom_raster()`](https://ggplot2.tidyverse.org/reference/geom_tile.html) draw rectangles
+- [`geom_rect()`](https://ggplot2.tidyverse.org/reference/geom_tile.html) is parameterised by the four corners of the rectangle, `xmin`, `ymin`, `xmax` and `ymax`
+-  [`geom_tile()`](https://ggplot2.tidyverse.org/reference/geom_tile.html) is exactly the same, but parameterised by the center of the rect and its size, `x`, `y`, `width` and `height`
+-   [`geom_raster()`](https://ggplot2.tidyverse.org/reference/geom_tile.html) is a special case of [`geom_tile()`](https://ggplot2.tidyverse.org/reference/geom_tile.html) used when all the tiles are the same size.
 
 So, a basic plot might looks something like this
 
@@ -309,6 +314,71 @@ ggplot(mapping = aes(x = age, y = height, group = Subject)) +
   geom_line()
 ```
 
+# Build Your Plots Layer by Layer
+
+As previously noted, the general structure of the code that is used to plot figures is as follows:
+
+    ggplot(...)+ # Initialization
+    geom_function(...)+ # Main plot(s)
+    facet_function(...)+ # Facets (optional)
+    labs(...)+ #  Legend (optional)
+    scale_function(...) + # Scales (optional)
+    theme_function(...) # Theme (optional)
+
+What to consider, when working with these layers:
+
+-   The `ggplot()` layer is mandatory.
+
+-   When the `data` argument is specified inside the `ggplot()` function, it is used as default in the following layers that compose the plot command, unless otherwise specified.
+
+-   In order for features of a data frame to be used in a plot, they need to be specified inside the `aes()` function.
+
+We just went through the basics of building up plots, layer by layer. We began with creating a mapping between a variable and an aesthetic element. The good news is that, from now on, not much will change conceptually about what we are doing (Healy, 2018).
+
+We will start with a table of data that has been tidied, and then we will do the following:
+
+1.  Using data = (), tell the ggplot() function define our dataset.
+
+2.  Using mapping = aes(), tell ggplot() *what* relationships we want to see on the plot. For convenience we will put the results of the first two steps in an object called p.
+
+3.  Tell ggplot *how* we want to see the relationships in our data by defining the xand yaxes.
+
+4.  Using + layer on geoms as needed, by adding them to the object one at a time.
+
+5.  Use some additional functions to adjust the scales, labels, tick marks, and titles.
+
+STOPPED ON OCT 9
+
+Let us start by returning to the gapminder data, and saving our ggplot statement to an object named p1
+
+```{r}
+
+ggplot(mapping = aes(x = gdpPercap, y = lifeExp)) 
+```
+
+
+p +
+
+geom_smooth()
+
+![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image006.png)
+
+Figure 6.26: Life expectancy vs GDP, using a smoother.
+
+As we can see, some geoms do a lot more than simply put points on a grid. Here the geom_smooth() has calculated a smoothed line for us and shaded in a ribbon showing the standard error for the line (Healy, 2018). If we want to see the data points and the line together, we simply add the geom_point() back in Figure 6.27:
+
+p +
+
+geom_point() +
+
+geom_smooth()
+
+![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image007.png)
+
+Figure Figure 6.28: Life expectancy vs GDP, showing both points and a GAM smoother.
+
+For figures L4.27 and L4.28 we did not have to tell geom_point() or geom_smooth()where their data was coming from, or what mappings they should use. They inherit this information from the original p object (Healy, 2018). As we'll see later, it's possible to give geoms separate instructions that they will follow. However, in the absence of any other information, the geoms will look for the instructions they need in the ggplot() function, or the object created by it (Healy, 2018).
+
 ## Different groups on different layers
 
 Sometimes we want to plot summaries that use different levels of aggregation: one layer might display individuals, while another displays an overall summary. Building on the previous example, suppose we want to add a single smooth line, showing the overall trend for all boys. If we use the same grouping in both layers, we get one smooth line per boy:
@@ -336,7 +406,7 @@ Next, we need to add a layer to the plot. This means picking a geom\_ function. 
 
 p +
 
-  geom_point()
+geom_point()
 
 ![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image005.png)
 
@@ -344,60 +414,7 @@ Figure 6.25: Plot with the geom added.
 
 # Build Your Plots Layer by Layer
 
-The general structure of the code that is used to plot figures is as follows:
 
-    ggplot(...)+ # Initialization
-    geom_function(...)+ # Main plot(s)
-    facet_function(...)+ # Facets (optional)
-    labs(...)+ #  Legend (optional)
-    scale_function(...) + # Scales (optional)
-    theme_function(...) # Theme (optional)
-
-What to consider, when working with these layers:
-
--   The `ggplot()` layer is mandatory.
-
--   When the `data` argument is specified inside the `ggplot()` function, it is used as default in the following layers that compose the plot command, unless otherwise specified.
-
--   In order for features of a data frame to be used in a plot, they need to be specified inside the `aes()` function.
-
-We just went through the basics of building up plots, layer by layer. We began with creating a mapping between a variable and an aesthetic element. The good news is that, from now on, not much will change conceptually about what we are doing (Healy, 2018).
-
-We will start with a table of data that has been tidied, and then we will do the following:
-
-1.  Using data = (), tell the ggplot() function define our dataset.
-
-2.  Using mapping = aes(), tell ggplot() *what* relationships we want to see on the plot. For convenience we will put the results of the first two steps in an object called p.
-
-3.  Tell ggplot *how* we want to see the relationships in our data by defining the xand yaxes.
-
-4.  Using + layer on geoms as needed, by adding them to the pobject one at a time.
-
-5.  Use some additional functions to adjust the scales, labels, tick marks, and titles.
-
-It is important to note that you usually cannot add functions to objects, in R (Healy, 2018). Outside of ggplot, functions take objects as inputs and produce objects as outputs (Healy, 2018). This functionality of ggplot() makes it easier to assemble plots one piece at a time, and to inspect how they look at every step (Healy, 2018). For example, let's try a different geom\_ function with our plot \[Figure 6.26\].
-
-p +
-
-geom_smooth()
-
-![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image006.png)
-
-Figure 6.26: Life expectancy vs GDP, using a smoother.
-
-As we can see, some geoms do a lot more than simply put points on a grid. Here the geom_smooth() has calculated a smoothed line for us and shaded in a ribbon showing the standard error for the line (Healy, 2018). If we want to see the data points and the line together, we simply add the geom_point() back in Figure 6.27:
-
-p +
-
-  geom_point() +
-
-  geom_smooth()
-
-![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image007.png)
-
-Figure Figure 6.28: Life expectancy vs GDP, showing both points and a GAM smoother.
-
-For figures L4.27 and L4.28 we did not have to tell geom_point() or geom_smooth()where their data was coming from, or what mappings they should use. They inherit this information from the original p object (Healy, 2018). As we'll see later, it's possible to give geoms separate instructions that they will follow. However, in the absence of any other information, the geoms will look for the instructions they need in the ggplot() function, or the object created by it (Healy, 2018).
 
 # Mapping Aesthetics vs Setting Them
 
