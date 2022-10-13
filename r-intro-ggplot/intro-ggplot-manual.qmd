@@ -127,30 +127,18 @@ library(nlme)
 
 # How ggplot Works
 
-ggplot is built on the grammar of graphics, the idea that any plot can be expressed from the same set of components:
+ggplot is built on the grammar of graphics, the idea that any plot can be expressed from the same set of components [@RN1510]. ggplot2 is designed to work iteratively. You start with a layer that shows the raw data. Then you add layers of annotations and statistical summaries [@RN1510].
 
-1.  Data set, which is simply a column or columns in you dataset
-2.  Coordinate system
-3.  Aesthetic attributes of ggplot to display the visual property of your graph. For example the position, shape, or color elements on the graph
-4.  Set of geoms, the visual representation of data points.
+All plots are composed of the **data**, the information you want to visualize, and a **mapping**. The mapping is the description of how the data's variables are mapped to aesthetic attributes. There are five mapping components [@RN1510]:
 
-Figure 6 is displaying the first and second elements of ggplot's grammar of graphics. We will go through these steps in detail.
-
-![](images/healy-ggplot-vertical-flow-01.png){width="3.55in"}
-
-Figure 6: Schematic of how ggplot works: Data to mapping.
-
-Figure 7 is displaying the third and fourth elements of ggplot's grammar of graphics
-
-![](images/healy-ggplot-vertical-flow-02.png){width="3.52in"}
-
-Figure 7: Schematic of how ggplot works: geom to scales.
-
-And last, Figure 8 is displaying the final set elements of ggplot's grammar of graphics.
-
-![](images/healy-ggplot-vertical-flow-03.png){width="3.95in"}
-
-Figure 8: Schematic of how ggplot works: adding labels and guides.
+1.  **Layer** is a collection of geometric elements and statistical transformations. Geometric elements, **geom**s for short, represent what you actually see in the plot Statistical transformations, **stat**s for short, summarise the data.
+2.  **Scale**s map values in the data space to values in the aesthetic space. This includes the use of colour, shape or size. Scales also draw the legend and axes, which make it possible to read the original data values from the plot.
+3.  **Coord**, or coordinate system, describes how data coordinates are mapped to the plane of the graphic. It also provides axes and gridlines to help read the graph. We normally use the Cartesian coordinate system, but a number of others are available, including polar coordinates and map projections.
+4.  **Facet** specifies how to break up and display subsets of data as small multiples
+5.  Coordinate system
+6.  Aesthetic attributes of ggplot to display the visual property of your graph. For example the position, shape, or color elements on the graph
+7.  Set of geoms, the visual representation of data points.
+8.  **Theme** controls the finer points of display, like the font size and background colour.
 
 The most important thing to get used is mapping out the logical structure of your plot [@RN1461]. The code you write specifies the connections between the variables in your data, and the colors, points, and shapes you see on the screen [@RN1461].
 
@@ -160,26 +148,38 @@ To build a ggplot, we will use a basic template that can be used for different t
 
 `ggplot(data = DATA, mapping = aes(AESTHETIC MAPPINGS)) + geom_function()`
 
-## ggplot
+# Key Components
 
-We start by defining the dataset we'll use, lay out the axes, and choose a geom. To build a ggplot, we will use the following basic template that can be used for different types of plots:
+Every ggplot2 plot has three key components:
 
-You begin every plot by telling the `ggplot()` function what your data is. We will be implementing this using pipes.
+1.  **Data**
+
+2.  **Aesthetic mappings** between variables in the data and visual properties.
+
+3.  At least one layer which describes how to render each observation. Layers are usually created with a **geom** function.
+
+## Data
+
+Every layer must have some data associated with it, and that data must be in a tidy data frame. Tidy data frames are described in more detail in [R for Data Science](https://r4ds.had.co.nz/), but for now, all you need to know is that a tidy data frame has variables in the columns and observations in the rows [@RN1511].
+
+You begin every plot by telling the `ggplot()` function what your data is. We will be implementing this using pipes. Let us add the first component (data) using data that is part of the gapminder package:
 
 ```{r}
 gapminder %>% 
   ggplot()
 ```
 
-### Notes About the ggplot() Function
+Nothing is really displaying. However, the gapminder variables are all available for plotting.
 
--   Anything you put in the `ggplot()` function can be seen by any geom layers that you add (i.e., these are universal plot settings). This includes the x-axis and y-axis mapping you set up in `aes()`.
--   You can also specify mappings for a given geom independently of the mappings defined globally in the `ggplot()` function.
--   The + sign used to add new layers **must be placed at the end of the line containing the previous layer.** If, instead, the + sign is added at the beginning of the line containing the new layer, ggplot2 will not add the new layer and will return an error message.
+| **country** | **continent** | **year** | **lifeExp** | **pop**  | **gdpPercap** |
+|:------------|:--------------|:---------|:------------|:---------|:--------------|
+| Afghanistan | Asia          | 1952     | 28.801      | 8425333  | 779.4453      |
+| Afghanistan | Asia          | 1957     | 30.332      | 9240934  | 820.8530      |
+| Afghanistan | Asia          | 1962     | 31.997      | 10267083 | 853.1007      |
+| Afghanistan | Asia          | 1967     | 34.020      | 11537966 | 836.1971      |
+| Afghanistan | Asia          | 1972     | 36.088      | 13079460 | 739.9811      |
 
-At this point ggplot knows our data but not the mapping. That is, we need to tell it which variables in the data should be represented by which visual elements in the plot. It also doesn't know what sort of plot we want.
-
-## Defining Plot Aesthetics
+## Aesthetics Mapping
 
 Each geom function in ggplot2 takes a mapping argument, `mapping =`.
 
@@ -217,23 +217,49 @@ The `mapping=aes()` argument links variables to things you will see on the plot 
 
 A mapping does not say what particular colors or shapes will be on the plot. Rather it says which variables in the data will be represented by visual elements like a color, a shape, or a point on the plot area [@RN1461].
 
+### Mapping Aesthetics vs Setting Them
+
+As we just learned, an *aesthetic mapping* specifies that a variable will be expressed by one of the available visual elements, such as size, or color, or shape. For example:
+
+```{r}
+map1 <- gapminder %>% 
+  ggplot(mapping = aes(x=gdpPercap, y = lifeExp, color = continent))
+```
+
+What happens when we graph this?
+
+```{r}
+map1 + geom_point()
+```
+
+As you can see in the output, individual data points have been colored by continent, and a legend with a key to the colors has automatically been added to the plot. There is one for each unique value of the continent variable.
+
+How do you think this code will be interpreted, when graphed?
+
+```{r}
+map2 <- gapminder %>% 
+  ggplot(mapping = aes(x = gdpPercap, y = lifeExp, color = "purple"))
+```
+
+```{r}
+map2 + geom_point()
+```
+
+What has gone wrong here?
+
+Why is there a legend saying "purple," and why have the points all turned pinkish-red instead of purple (Healy, 2018)? The aes () function is where that mapping is specified, and the function is trying to do its job (Healy, 2018). It wants to map a variable to the color aesthetic, so it assumes you are giving it a variable (Healy, 2018). aes() will do its best to treat "purple" as though it were a variable (Healy, 2018).
+
+If we want to set a property, like color, we do it in the geom\_ we are using, and outside the mapping =aes (...) step. For example:
+
+```{r}
+map2 + geom_point(color = "purple")
+```
+
+As you can see from the output, setting the color attribute of the points directly, means that the "color" portion needs to go in the `geom`.
+
 # Geoms in ggplot
 
-ADD SOME INTRO INFORMATION ABOUT STARTING TO ADD LAYERS ETC
-
-## Correct Method for Adding a Layer
-
-The plus symbol + must be added to each new layer that you add to plot syntax. The plus sign + must be placed at the end of each line of code.
-
-### Correct syntax for adding layers
-
-`ggplot(data = gapminder)`
-
-### Incorrect Method for Adding a Layer
-
-This will not add the new layer and will return an error message
-
-`surveys_plot + geom_point()`
+Geometric objects, or **geoms** for short, perform the actual rendering of the layer, controlling the type of plot that you create [@RN1511]. For example, using a point geom will create a scatterplot, while using a line geom will create a line plot.
 
 ## Individual geoms
 
@@ -250,13 +276,6 @@ Each of these geoms is two dimensional and requires both `x` and `y` aesthetics.
 -   [`geom_point()`](https://ggplot2.tidyverse.org/reference/geom_point.html) produces a **scatterplot**. [`geom_point()`](https://ggplot2.tidyverse.org/reference/geom_point.html) also understands the `shape` aesthetic.
 
 -   [`geom_polygon()`](https://ggplot2.tidyverse.org/reference/geom_polygon.html) draws polygons, which are filled paths. Each vertex of the polygon requires a separate row in the data. It is often useful to merge a data frame of polygon coordinates with the data just prior to plotting. Section [6](https://ggplot2-book.org/maps.html#maps) illustrates this concept in more detail for map data.
-
--   [`geom_rect()`](https://ggplot2.tidyverse.org/reference/geom_tile.html)
--   [`geom_tile()`](https://ggplot2.tidyverse.org/reference/geom_tile.html)
-- [`geom_raster()`](https://ggplot2.tidyverse.org/reference/geom_tile.html) draw rectangles
-- [`geom_rect()`](https://ggplot2.tidyverse.org/reference/geom_tile.html) is parameterised by the four corners of the rectangle, `xmin`, `ymin`, `xmax` and `ymax`
--  [`geom_tile()`](https://ggplot2.tidyverse.org/reference/geom_tile.html) is exactly the same, but parameterised by the center of the rect and its size, `x`, `y`, `width` and `height`
--   [`geom_raster()`](https://ggplot2.tidyverse.org/reference/geom_tile.html) is a special case of [`geom_tile()`](https://ggplot2.tidyverse.org/reference/geom_tile.html) used when all the tiles are the same size.
 
 So, a basic plot might looks something like this
 
@@ -314,9 +333,120 @@ ggplot(mapping = aes(x = age, y = height, group = Subject)) +
   geom_line()
 ```
 
+## Aesthetics Can Be Mapped per Geom
+
+By default, `geoms` inherit their mappings from the `ggplot()` function. We can change this by specifying different aesthetics for each geom. To do this, we use the same `mapping = aes(…)` expression. However, this time we use it in the `geom_ functions`.
+
+```{r}
+plot3 <- gapminder %>% 
+  ggplot(mapping = aes(x = gdpPercap, y = lifeExp))
+```
+
+Mappings specified in the initial `ggplot( )` function (x and y) will carry through to all subsequent `geoms`. The code block below is illustrating how to map aesthetics on a per geom basis.
+
+```{r}
+plot3 +
+  geom_point(aes(color = continent)) +
+  geom_smooth(method = "loess") +
+  scale_x_log10()
+```
+
+As you can see in the output, color is mapped to the continent variable for the points but not the smoother.
+
+Finally, it is worth paying a little more attention to the way that ggplot draws its scales (Healy, 2018). Because every mapped variable has a scale, we can learn a lot about how a plot has been constructed, by seeing what the legends look like (Healy, 2018). For example:
+
+```{r}
+plot4 <- gapminder %>% 
+  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, fill = continent))
+```
+
+Now, we add our geom:
+
+```{r}
+plot4 +
+  geom_point() +
+  geom_smooth(method = "loess") + scale_x_log10()
+```
+
+In this example, we mapped the continent variable to both color and fill. We then drew the figure with `geom_point()` and fitted a line for each continent with `geom_smooth()`.
+
+Points have color but the smoother understands both color (for the line itself) and fill (for the shaded standard error ribbon) [@RN1358]. Each of these elements is represented in the legend: the point color, the line color, and the ribbon fill.
+
+In the legend for this figure we see several visual elements. The key for each continent shows a dot, a line, and a filled background for the error bars.
+
+Let us try this with another graph.
+
+```{r}
+plot5 <- gapminder %>% 
+  ggplot(aes(x = gdpPercap, y = lifeExp))
+```
+
+Now, let us add our `geoms`
+
+```{r}
+plot5 +
+  geom_point(aes(color = continent)) +
+  geom_smooth(method = "loess") +
+  scale_x_log10()
+```
+
+This figure is different because we are mapping teh aesthetics on a per-geom basis. Here color is mapped to continent for the points but not the smoother.
+
+The legend for this figure has a dot for each continent, with no shaded background or line.
+
+## Geoms for One variable
+
+### Discrete
+
+-   [`geom_bar()`](https://ggplot2.tidyverse.org/reference/geom_bar.html): display distribution of discrete variable.
+
+### Continuous
+
+-   [`geom_histogram()`](https://ggplot2.tidyverse.org/reference/geom_histogram.html): bin and count continuous variable, display with bars.
+
+-   [`geom_density()`](https://ggplot2.tidyverse.org/reference/geom_density.html): smoothed density estimate.
+
+-   [`geom_dotplot()`](https://ggplot2.tidyverse.org/reference/geom_dotplot.html): stack individual points into a dot plot.
+
+-   [`geom_freqpoly()`](https://ggplot2.tidyverse.org/reference/geom_histogram.html): bin and count continuous variable, display with lines.
+
+## Geoms for Two variables
+
+### Two Continuous Variables
+
+-   [`geom_point()`](https://ggplot2.tidyverse.org/reference/geom_point.html): scatterplot.
+
+-   [`geom_quantile()`](https://ggplot2.tidyverse.org/reference/geom_quantile.html): smoothed quantile regression.
+
+-   [`geom_smooth()`](https://ggplot2.tidyverse.org/reference/geom_smooth.html): smoothed line of best fit.
+
+-   [`geom_text()`](https://ggplot2.tidyverse.org/reference/geom_text.html): text labels.
+
+### Showing Distributions with Two Variables
+
+-   [`geom_bin2d()`](https://ggplot2.tidyverse.org/reference/geom_bin_2d.html): bin into rectangles and count.
+
+-   [`geom_density2d()`](https://ggplot2.tidyverse.org/reference/geom_density_2d.html): smoothed 2d density estimate.
+
+-   [`geom_hex()`](https://ggplot2.tidyverse.org/reference/geom_hex.html): bin into hexagons and count.
+
+### At Least One Discrete Variable
+
+-   [`geom_count()`](https://ggplot2.tidyverse.org/reference/geom_count.html): count number of point at distinct locations
+
+-   [`geom_jitter()`](https://ggplot2.tidyverse.org/reference/geom_jitter.html): randomly jitter overlapping points.
+
+### One continuous Variable and One Discrete Variable
+
+-   `geom_bar(stat = "identity")`: a bar chart of precomputed summaries.
+
+-   [`geom_boxplot()`](https://ggplot2.tidyverse.org/reference/geom_boxplot.html): boxplots.
+
+-   [`geom_violin()`](https://ggplot2.tidyverse.org/reference/geom_violin.html): show density of values in each group.
+
 # Build Your Plots Layer by Layer
 
-As previously noted, the general structure of the code that is used to plot figures is as follows:
+As previously noted, the general structure of layers used to plot figures is as follows:
 
     ggplot(...)+ # Initialization
     geom_function(...)+ # Main plot(s)
@@ -333,216 +463,6 @@ What to consider, when working with these layers:
 
 -   In order for features of a data frame to be used in a plot, they need to be specified inside the `aes()` function.
 
-We just went through the basics of building up plots, layer by layer. We began with creating a mapping between a variable and an aesthetic element. The good news is that, from now on, not much will change conceptually about what we are doing (Healy, 2018).
-
-We will start with a table of data that has been tidied, and then we will do the following:
-
-1.  Using data = (), tell the ggplot() function define our dataset.
-
-2.  Using mapping = aes(), tell ggplot() *what* relationships we want to see on the plot. For convenience we will put the results of the first two steps in an object called p.
-
-3.  Tell ggplot *how* we want to see the relationships in our data by defining the xand yaxes.
-
-4.  Using + layer on geoms as needed, by adding them to the object one at a time.
-
-5.  Use some additional functions to adjust the scales, labels, tick marks, and titles.
-
-STOPPED ON OCT 9
-
-Let us start by returning to the gapminder data, and saving our ggplot statement to an object named p1
-
-```{r}
-
-ggplot(mapping = aes(x = gdpPercap, y = lifeExp)) 
-```
-
-
-p +
-
-geom_smooth()
-
-![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image006.png)
-
-Figure 6.26: Life expectancy vs GDP, using a smoother.
-
-As we can see, some geoms do a lot more than simply put points on a grid. Here the geom_smooth() has calculated a smoothed line for us and shaded in a ribbon showing the standard error for the line (Healy, 2018). If we want to see the data points and the line together, we simply add the geom_point() back in Figure 6.27:
-
-p +
-
-geom_point() +
-
-geom_smooth()
-
-![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image007.png)
-
-Figure Figure 6.28: Life expectancy vs GDP, showing both points and a GAM smoother.
-
-For figures L4.27 and L4.28 we did not have to tell geom_point() or geom_smooth()where their data was coming from, or what mappings they should use. They inherit this information from the original p object (Healy, 2018). As we'll see later, it's possible to give geoms separate instructions that they will follow. However, in the absence of any other information, the geoms will look for the instructions they need in the ggplot() function, or the object created by it (Healy, 2018).
-
-## Different groups on different layers
-
-Sometimes we want to plot summaries that use different levels of aggregation: one layer might display individuals, while another displays an overall summary. Building on the previous example, suppose we want to add a single smooth line, showing the overall trend for all boys. If we use the same grouping in both layers, we get one smooth line per boy:
-
-```{r}
-Oxboys %>% 
-ggplot(mapping = aes(x = age, y = height, group = Subject)) + 
-  geom_line() + 
-  geom_smooth(method = "lm", se = FALSE)
-```
-
-This is not what we wanted; we have added a smoothed line for each boy. Grouping controls both the display of the geoms, and the operation of the stats: one statistical transformation is run for each group.
-
-Instead of setting the grouping aesthetic in [`ggplot()`](https://ggplot2.tidyverse.org/reference/ggplot.html), where it will apply to all layers, we set it in [`geom_line()`](https://ggplot2.tidyverse.org/reference/geom_path.html) so it applies only to the lines. There are no discrete variables in the plot so the default grouping variable will be a constant and we get one smooth.
-
-```{r}
-ggplot(Oxboys, aes(age, height)) + 
-  geom_line(aes(group = Subject)) + 
-  geom_smooth(method = "lm", size = 2, se = FALSE)
-```
-
-# NEW CONTENT FROM BONUS LECTURE Geoms in ggplot
-
-Next, we need to add a layer to the plot. This means picking a geom\_ function. We will use geom_point().
-
-p +
-
-geom_point()
-
-![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image005.png)
-
-Figure 6.25: Plot with the geom added.
-
-# Build Your Plots Layer by Layer
-
-
-
-# Mapping Aesthetics vs Setting Them
-
-An *aesthetic mapping* specifies that a variable will be expressed by one of the available visual elements, such as size, or color, or shape. For example:
-
-p \<- ggplot(data = gapminder , mapping = aes(x = gdpPercap, y = lifeExp, color = continent))
-
-What happens when we graph this?
-
-p + geom_point()
-
-![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image008.png)
-
-Figure 6.29: Mapping the continent variable to the color aesthetic.
-
-In Figure 6.29, the individual data points have been colored by continent, and a legend with a key to the colors has automatically been added to the plot. There is one for each unique value of the continent variable.
-
-How do you think this code will be interpreted, when graphed?
-
-p \<- ggplot(data = gapminder , mapping = aes(x = gdpPercap, y = lifeExp, color = "purple"))
-
-p + geom_point()
-
-![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image009.png)
-
-Figure 6.30: What has gone wrong here?
-
-Why is there a legend saying "purple," and why have the points all turned pinkish-red instead of purple (Healy, 2018)? The aes () function is where that mapping is specified, and the function is trying to do its job (Healy, 2018). It wants to map a variable to the color aesthetic, so it assumes you are giving it a variable (Healy, 2018). aes() will do its best to treat "purple" as though it were a variable (Healy, 2018).
-
-If we want to set a property, like color, we do it in the geom\_ we are using, and outside the mapping =aes (...) step. For example:
-
-p \<- ggplot(data = gapminder , mapping = aes(x = gdpPercap, y = lifeExp)) p + geom_point(color = "purple")
-
-![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image010.png)
-
-Figure 6.31: Setting the color attribute of the points directly.
-
-# Aesthetics Can Be Mapped per Geom
-
-By default, geoms inherit their mappings from the ggplot() function. We can change this by specifying different aesthetics for each geom. To do this, we use the same mapping = aes(...) expression. However, this time we use it in the geom\_ functions.
-
-p \<- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp))
-
-Mappings specified in the initial ggplot( ) function (x and y) will carry through to all subsequent geoms.
-
-p + geom_point(mapping = aes(color = continent)) + geom_smooth(method = "loess") + scale_x\_log10()
-
-![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image011.png)
-
-Figure 6.32: Mapping aesthetics on a per geom basis.
-
-As you can see in Figure 6.32, color is mapped to the continent variable for the points but not the smoother.
-
-Finally, it is worth paying a little more attention to the way that ggplot draws its scales (Healy, 2018). Because every mapped variable has a scale, we can learn a lot about how a plot has been constructed, by seeing what the legends look like (Healy, 2018). For example:
-
-p \<- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp, color = continent, fill = continent))
-
-p + geom_point() +
-
-geom_smooth(method = "loess") + scale_x\_log10()
-
-![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image012.png)
-
-Figure 6.33: Mapping the continent variable to the color aesthetic, and correcting the error bars using the fill aesthetic.
-
-In Figure 6.33, we mapped the continent variable to both color and fill. We then drew the figure with geom_point()and fitted a line for each continent with geom_smooth (). Points have color but the smoother understands both color (for the line itself) and fill (for the shaded standard error ribbon) (Healy, 2018). Each of these elements is representedi n the legend: the point color, the line color, and the ribbon fill \[Figure 6.34\].
-
-![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image013.png)
-
-Figure 6.34: Legend that faithfully reflects the mappings for the chart: color, dots, lines, and fill.
-
-In the legend for Figure 6.34, we see several visual elements. The key for each continent shows a dot, a line, and a filled background for the eror bars.
-
-Let us try this with another graph.
-
-p \<- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) p + geom_point(mapping = aes(color = continent)) + geom_smooth(method = "loess") + scale_x\_log10()
-
-![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image011.png)
-
-Figure 6.35: Mapping aesthetics on a per-geom basis. Here color is mapped to continent for the points but not the smoother
-
-![](file:////Users/douglasjoubert/Library/Group%2520Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image014.png)
-
-Figure 6.36: Legend that faithfully reflects the mappings for the chart: dots, lines, and color.
-
-The key for Figure 6.36, has only a dot for each continent, with no shaded background or line.
-
-If you look again at the code for Figures L4.35 and L4.36, you will see that in the L4.35 we mapped the continent variable to both color and fill. We then drew the graph with geom_point() and fitted a line for each continent with geom_smooth(). In L4.35 points have color but the smoother understands both color (for the line itself) and fill (for the shaded standard error ribbon).
-
-In contrast, in L4.35 we decided to simplify things by having only the points be colored by continent. Then we drew just a single smoother for the whole graph. Thus, in the legend for that figure, the colored line and the shaded box are both absent. We only see a legend for the mapping of color to continent in geom_point().
-
 # Additional Resources
 
-Many of these concepts are from a book by Leland Wilkinson, which have been summarized in a book by Hadley Wickham Figure 6.22. The [*book*](https://ebookcentral.proquest.com/lib/cua/detail.action?docID=4546676) is available from the CUA library, and it is also available [*online*](https://ggplot2-book.org/).
-
-# Examples from Class
-
-### Example 1: col = respondent_wall_type in ggplot statement (Doug Version)
-
-```{r Example 1}
-interviews_plotting %>% 
-  ggplot(mapping = aes(x = village, y = rooms)) +
-  geom_jitter(mapping = aes(col = respondent_wall_type))
-```
-
-### Example 1: Implications when you add another layer (Doug version)
-
-```{r Example 1: Modifications}
-interviews_plotting %>% 
-  ggplot(mapping = aes(x = village, y = rooms)) +
-  geom_jitter(mapping = aes(col = respondent_wall_type)) +
-  geom_violin(alpha = 0.5)
-  
-```
-
-## Example 2: col = respondent_wall_type in ggplot statement (Other Version)
-
-```{r Example 2}
-interviews_plotting %>% 
-  ggplot(mapping = aes(x = village, y = rooms, col = respondent_wall_type)) +
-  geom_jitter()
-```
-
-### Example 2: Implications when you add another layer (Other Version)
-
-```{r Example 2: Modifications}
-interviews_plotting %>% 
-  ggplot(mapping = aes(x = village, y = rooms, col = respondent_wall_type)) +
-  geom_jitter() +
-  geom_violin(alpha = 0.5)
-```
+Many of these concepts are from a book by Leland Wilkinson, which have been summarized in a book by Hadley Wickham. The [book](https://ebookcentral.proquest.com/lib/cua/detail.action?docID=4546676) is available from the CUA library, and it is also available [online](https://ggplot2-book.org/).
