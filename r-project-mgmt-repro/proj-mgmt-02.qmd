@@ -1,8 +1,0 @@
----
-title: "Proj-Mgmt-02"
-author: "Doug Joubert"
-format: html
-editor: visual
-# bibliography: 
-# csl: 
----
