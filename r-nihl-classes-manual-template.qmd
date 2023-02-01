@@ -1,0 +1,52 @@
+---
+title: ""
+author: "Doug Joubert"
+date: "`r Sys.Date()`"
+editor: visual
+format: docx
+toc: true
+toc-location: body
+toc-title: Table of Contents
+fig-width: 6
+fig-height: 4
+bibliography: references.bib
+csl: apa.csl
+---
+
+# Introduction
+
+## Description
+
+## Learning Objectives
+
+Upon completion of this class students should be able to:
+
+## Assumptions for This Class
+
+# Configuration
+
+|                                                 |                                                                 |
+|-------------------------------------------------|:----------------------------------------------------------------|
+| ![](images/Rlogo.png){width="25" height="20"}   | You know R                                                      |
+| ![](images/rmarkdown-icon.png){width="25"}      | You know a little bit of markdown                               |
+| ![](images/quarto-icon-smaller.png){width="25"} | You want to learn about Quarto, the next-generation of markdown |
+
+## Installing Software and Packages
+
+### Software
+
+### Packages
+
+## Loading Our Packages
+
+```{r echo=FALSE}
+
+```
+
+# Resources
+
+# Licenses
+
+Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) Add any licensing information or sources used in the creation of this class.
+
+# References
