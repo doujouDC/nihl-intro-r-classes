@@ -1,4 +1,4 @@
-# nihl-intro-r-series
+# nihl-intro-r-classes
 
 # This repo supports classes developed as part of the NIH Library Research
 # Analytics Team. Data and code are adapted from lessons developed by
