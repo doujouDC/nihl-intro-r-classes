@@ -26,7 +26,7 @@ Upon completion of this class students should be able to:
 # Configuration
 
 |                                                 |                                                                 |
-|-------------------------------------------------|:----------------------------------------------------------------|
+|-------------------------------|:----------------------------------------|
 | ![](images/Rlogo.png){width="25" height="20"}   | You know R                                                      |
 | ![](images/rmarkdown-icon.png){width="25"}      | You know a little bit of markdown                               |
 | ![](images/quarto-icon-smaller.png){width="25"} | You want to learn about Quarto, the next-generation of markdown |
