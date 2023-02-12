@@ -7,3 +7,4 @@
 # Other license and attribution information is contained in each individual
 # lesson. Anyone downloading and adapting this content needs to follow
 # license information of each individual contributor.
+# https://github.com/carpentries/ for lesson archive
