@@ -2,26 +2,40 @@
 title: "Introduction to Markdown: Sample Document"
 date: "`r Sys.Date()`"
 author: "Doug Joubert"
-format: docx
+format: html
 fig-width: 6
 fig-height: 4
+toc: true
+bibliography: references.bib
+csl: nature.csl
 ---
+
+# Turn on Our Packages
+
+```{r}
+library(tidyverse)
+library(knitr)
+library(quarto)
+library(rmarkdown)
+```
 
 # Scientific Reproducibility
 
-According to the U.S. National Science Foundation (NSF) subcommittee on reproducibility in science \[\@\]:
+According to the [U.S. National Science Foundation (NSF)](https://www.nsf.gov/sbe/AC_Materials/SBE_Robust_and_Reliable_Research_Report.pdf) subcommittee on reproducibility in science [@bollenSocialBehavioralEconomic2015]:
 
-Science should routinely evaluate the reproducibility of findings that enjoy a prominent role in the published literature. To make reproduction possible, efficient, and informative, researchers should sufficiently document the details of the procedures used to collect data, to convert observations into analyzable data, and to perform data analysis.
+Science should routinely evaluate the reproducibility of findings that enjoy a prominent role in the published literature. To make reproduction possible, efficient, and informative, researchers should sufficiently document the details of the procedures used to collect data, to convert observations into analyzable data, and to perform data analysis [@wilson2016].
 
 Reproducibility refers to the ability of a researcher to duplicate the results of a prior study using the same materials as were used by the original investigator. Reproducibility is a minimum necessary condition for a finding to be considered rigorous, believable, and informative.
 
 ## General Recommendations
 
-Adapted from: \[\@\]
+See if you can find a Wilson article in the bib from 2017
+
+Adapted from [@wilsonSoftwareCarpentryLessons2014; @millsArchivingPrimaryData2015; @tealDataCarpentryWorkshops2015; @wickhamWelcomeTidyverse2019]:
 
 ### Don't Touch the Raw Data
 
-Don't ever do analysis on the original data, or, if you do, then explain what you did to the data.
+Don't ever do analysis on the original data, or, if you do, then explain what you did to the data [@federerDataLiteracyTraining2016].
 
 ### Self-documenting and Reproducible Code
 
@@ -41,16 +55,16 @@ We often have stress points in our research that may become breaking points, esp
 
 ### File/folder disorganization
 
-You cannot find your files on your computer (or your cloud storage)
-Multiple versions of files with names such as "finaldraft_4.txt"
-Path issues when trying to run code
-Reviewers or colleagues cannot re-run your code/analyses
+You cannot find your files on your computer (or your cloud storage) Multiple versions of files with names such as "finaldraft_4.txt" Path issues when trying to run code Reviewers or colleagues cannot re-run your code/analyses
 
 ### Storage and sharing issues
 
 -   Files are only saved to your computer and are vulnerable (or have already succumbed to computer/hard drive failure
+
 -   When working with collaborators, they (or you) don't share the files needed
+
 -   Files are shared via email attachments
+
 -   Difficult to know if you have the latest version of documents
 
 ### Losing track of project status
@@ -69,15 +83,19 @@ Are there additional issues that you've encountered that slow down or derail you
 
 Although there is no "best" way to lay out a project, there are some general principles to adhere to that will make project management easier.
 
-Good Enough Practices for Scientific Computing]() gives the following recommendations for project organization:
+Good Enough Practices for Scientific Computing\]() gives the following recommendations for project organization:
 
-Each project in its own directory, which is named after the project
-Text documents associated with the project in the doc directory
-Raw data and metadata in the data directory (raw-data)
-Files generated during cleanup and analysis in a results directory
-Project's scripts and programs in the src directory
-Programs brought in from elsewhere or compiled locally in the bin directory
-Name all files to reflect their content or function
+1.  Each project in its own directory, which is named after the project
+
+2.  Text documents associated with the project in the doc directory
+
+3.  Raw data and metadata in the data directory (raw-data)
+
+4.  Files generated during cleanup and analysis in a results directory
+
+5.  Project's scripts and programs in the src directory
+
+6.  Programs brought in from elsewhere or compiled locally in the bin directory Name all files to reflect their content or function
 
 Additional files to include:
 
@@ -102,7 +120,7 @@ Three principles for file names 1. Machine readable 2. Human readable 3. Plays w
 
 -   Deliberate use of delimiters (i.e. for splitting file names)
 
--   Consistently use the same delimiters: data-analyses-fig1.R as an example
+-   Consistently use the same delimiters: `data-analyses-fig1.R` as an example
 
 ### Human-readable
 
