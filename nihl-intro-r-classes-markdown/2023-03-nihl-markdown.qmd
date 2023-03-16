@@ -1,0 +1,58 @@
+---
+title: "NIH Library Markdown: March 2023"
+format: docx
+editor: visual
+# jupyter: python3
+---
+
+# Turning on Our Packages
+
+```{r}
+library(tidyverse)
+library(quarto)
+library(rmarkdown)
+```
+
+# Save Our Plot Object
+
+```{r}
+air_quality_plot <- airquality %>% 
+  ggplot(mapping = aes(x = Temp, y = Ozone)) +
+  geom_point()
+```
+
+# Create Our Plot
+
+```{r}
+air_quality_plot +
+  geom_smooth(method = "lm")
+```
+
+# Insert Code Chunks in a Couple of Languages
+
+## R
+
+```{r}
+library(gapminder)
+summary(gapminder$lifeExp)
+```
+
+## Python
+
+```{python}
+# #| label: fig-polar
+# #| fig-cap: "A line plot on a polar axis"
+# 
+# import numpy as np
+# import matplotlib.pyplot as plt
+# 
+# r = np.arange(0, 2, 0.01)
+# theta = 2 * np.pi * r
+# fig, ax = plt.subplots(
+#   subplot_kw = {'projection': 'polar'} 
+# )
+# ax.plot(theta, r)
+# ax.set_rticks([0.5, 1, 1.5, 2])
+# ax.grid(True)
+# plt.show()
+```
