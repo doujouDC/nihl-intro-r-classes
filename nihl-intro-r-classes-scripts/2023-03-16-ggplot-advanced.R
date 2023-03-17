@@ -1,75 +1,39 @@
-# Basic Math Example
-
-doug_example <- 8+8
+# Introduction to ggplot (advanced)
 
 # Load our Packages
 library(tidyverse)
 library(ggplot2)
 library(ggrepel)
 library(gapminder)
+install.packages("tidyverse")
 
-# Explore our Data
-
-names(gapminder)
-glimpse(gapminder)
-str(gapminder)
-
-# Build the first plot layer using pipes
-
-gapminder %>% 
-  ggplot(mapping = aes(x = gdpPercap, y = lifeExp))
-
-# Build the first plot layer using base-R
-
-ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp))
+rna_fc <- read_csv("nihl-intro-r-classes-data-raw/rna-fc-short.csv")
+glimpse(rna_fc)
 
 
-# Saving our base plot to an object
-map1 <- gapminder %>% 
-  ggplot(mapping = aes(x = gdpPercap, y = lifeExp))
-
-# Using our Plot Object to create our First Plot
-
-map1 +
-  geom_point()
-
-# Playing around with fill and color in R
-  
-map2 <- gapminder %>% 
-  ggplot(mapping = aes(x = gdpPercap, 
-                       y = lifeExp, fill = continent))
+rna_fc %>% 
+  ggplot(mapping = aes(chromosome_name)) +
+  geom_bar()
 
 
-# Playing around with fill and color in R + adding a plot
-map2 +
-  geom_point()
+boxoffice_data <- read_csv("nihl-intro-r-classes-data-raw/domestic-boxoffice-weekend-2022-10-25.csv")
+
+boxoffice_data %>% 
+  filter(Rank <= 5) %>% 
+  ggplot(mapping = aes(x = Release, y = Gross)) +
+  geom_col(fill = "#20558A", width = 0.6) +
+  # scale_x_discrete(guide = guide_axis(angle = 90))
+  coord_flip()
+
+rna_fc$expression_log <- as.numeric(rna_fc$expression_log)
+
+str(rna_fc$expression_log)
+
+mean_exp_over_time <- rna_fc %>% 
+  group_by(gene, time) %>% 
+  summarize(mean_exp = mean(expression_log))
+
+mean_exp_over_time %>%
+  ggplot(mapp)
 
 
-# Saving Our First Plot to an object to prepare for save
-doug_plot <- map1 +
-  geom_point()  
-
-
-# Making Sure that Our Saved Plot Works
-  doug_plot
-  
-
-# Doug saving the file to his project directory in the "nihl-intro-r-classes-fig-output"
-  # folder
-  
-  ggsave("nihl-intro-r-classes-fig-output/doug-plot-01.svg", 
-         plot = doug_plot, width = 11, height = 8.5,
-         dpi = 300)
-  
-# Someone asked about adding multiple plots to the same basic recipe, this is one example
-
-gapminder %>% 
-  ggplot(mapping = aes(x = gdpPercap, y = lifeExp)) +
-  geom_hex(size = 1)
-
-# Someone asked about adding multiple plots to the same basic recipe, this is another example
-
-gapminder %>% 
-  ggplot(mapping = aes(x = gdpPercap, y = lifeExp)) +
-  geom_point(size = 3, shape = 18, color = "#20558A",) +
-  geom_smooth(method = "lm", se = TRUE, na.rm = TRUE)
