@@ -1,0 +1,63 @@
+---
+title: "NIH Library Classes: Packages"
+format: docx
+editor: visual
+---
+
+## Tidyverse Package
+
+The tidyverse is a collection of R [packages](https://www.tidyverse.org/packages) designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Most importantly, the tidyverse collection of packages contains [ggplot](https://ggplot2.tidyverse.org/).
+
+## cowplot Package
+
+The [cowplot](https://wilkelab.org/cowplot/) package is a simple add-on to ggplot. It provides various features that help with creating publication-quality figures, such as a set of themes, functions to align plots and arrange them into complex compound figures, and functions that make it easy to annotate plots and or mix plots with images.
+
+## forcats Package
+
+The goal of the [forcats](https://forcats.tidyverse.org/) package is to provide a suite of tools that solve common problems with factors, including changing the order of levels or the values. Some examples include:
+
+-   [fct_reorder()](https://forcats.tidyverse.org/reference/fct_reorder.html): Reordering a factor by another variable.
+
+-   [fct_infreq()](https://forcats.tidyverse.org/reference/fct_inorder.html): Reordering a factor by the frequency of values.
+
+-   [fct_relevel()](https://forcats.tidyverse.org/reference/fct_relevel.html): Changing the order of a factor by hand.
+
+-   [fct_lump()](https://forcats.tidyverse.org/reference/fct_lump.html): Collapsing the least/most frequent values of a factor into "other."
+
+You can learn more about each of these in [vignette("forcats")](https://forcats.tidyverse.org/articles/forcats.html). If you're new to factors, the best place to start is the [chapter on factors](https://r4ds.had.co.nz/factors.html) in R for Data Science.
+
+## gapminder Package
+
+Excerpt from the [Gapminder](http://www.gapminder.org/data/) data. The main object in this package is the gapminder data frame or "tibble". There are other goodies, such as the data in tab delimited form, a larger unfiltered dataset, premade color schemes for the countries and continents, and ISO 3166-1 country codes. The gapminder data frame include six variables, ([Gapminder.org documentation page](http://www.gapminder.org/data/documentation/)).
+
+## ggrepel Package
+
+[ggrepel](https://ggrepel.slowkow.com/index.html) provides geoms for [ggplot2](https://ggplot2.tidyverse.org/) to repel overlapping text labels:
+
+-   [geom_text_repel()](https://ggrepel.slowkow.com/reference/geom_text_repel.html): draws a rectangle underneath the text, making it easier to read. The text labels repel away from each other and away from the data points.
+
+-   [geom_label_repel()](https://ggrepel.slowkow.com/reference/geom_text_repel.html): text labels repel away from each other, away from data points, and away from edges of the plotting area
+
+## GGally
+
+[GGally](https://ggobi.github.io/ggally) extends ggplot2 by adding several functions to reduce the complexity of combining geoms with transformed data. Some of these functions include a pairwise plot matrix, a scatterplot plot matrix, a parallel coordinates plot, a survival plot, and several functions to plot networks.
+
+## lwgeom Package
+
+R bindings to the [liblwgeom](https://github.com/postgis/postgis/tree/master/liblwgeom) library.
+
+## MASS Package
+
+[Package](https://rdocumentation.org/packages/MASS/versions/7.3-58.1) that includes functions and datasets to support Venables and Ripley, "Modern Applied Statistics with S" (4th edition, 2002).
+
+## nlme Package
+
+The [nlme: Nonlinear Mixed-Effects Models](https://www.rdocumentation.org/packages/nlme/versions/3.1-159/topics/nlme) package fits a nonlinear mixed-effects model in the formulation described in Lindstrom and Bates (1990) but allowing for nested random effects. The within-group errors are allowed to be correlated and/or have unequal variances. We are simply using it for the [oxboys](https://rdrr.io/cran/mlmRev/man/Oxboys.html) dataset.
+
+## OpenIntro Package
+
+The [OpenIntro](http://openintrostat.github.io/openintro/) package includes supplemental functions and data for OpenIntro resources, which includes open-source textbooks and resources for introductory statistics at [openintro.org](https://www.openintro.org/). The package contains data sets used in our open-source textbooks along with custom plotting functions for reproducing book figures.
+
+## RColorBrewer
+
+[Cynthia Brewer](https://en.wikipedia.org/wiki/Cynthia_Brewer), a geographer and color specialist, created sets of colors for print and the web and they are available in the add-on package [RColorBrewer](https://cran.r-project.org/package=RColorBrewer). You will need to install and load this package to use.
