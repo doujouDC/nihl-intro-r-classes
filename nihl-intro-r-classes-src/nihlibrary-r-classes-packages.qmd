@@ -4,10 +4,6 @@ format: docx
 editor: visual
 ---
 
-## Tidyverse Package
-
-The tidyverse is a collection of R [packages](https://www.tidyverse.org/packages) designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Most importantly, the tidyverse collection of packages contains [ggplot](https://ggplot2.tidyverse.org/).
-
 ## cowplot Package
 
 The [cowplot](https://wilkelab.org/cowplot/) package is a simple add-on to ggplot. It provides various features that help with creating publication-quality figures, such as a set of themes, functions to align plots and arrange them into complex compound figures, and functions that make it easy to annotate plots and or mix plots with images.
@@ -38,7 +34,14 @@ Excerpt from the [Gapminder](http://www.gapminder.org/data/) data. The main obje
 
 -   [geom_label_repel()](https://ggrepel.slowkow.com/reference/geom_text_repel.html): text labels repel away from each other, away from data points, and away from edges of the plotting area
 
-## GGally
+## **ggridges Package**
+
+Supports the creation of ridgeline plots in ggplot2. Ridgeline plots are partially overlapping line plots that create the impression of a mountain range. They can be quite useful for visualizing changes in distributions over time or space. The `ggridges` package provides two main geoms:
+
+1.  `geom_ridgeline: Takes the`height values directly to draw ridgelines
+2.  `geom_density_ridges`: first estimates data densities and then draws those using ridgelines
+
+## GGally Package
 
 [GGally](https://ggobi.github.io/ggally) extends ggplot2 by adding several functions to reduce the complexity of combining geoms with transformed data. Some of these functions include a pairwise plot matrix, a scatterplot plot matrix, a parallel coordinates plot, a survival plot, and several functions to plot networks.
 
@@ -73,3 +76,7 @@ Primary goal of [report](https://easystats.github.io/report/) is to bridge the g
 The `report` package works in a two step fashion. First, you create a `report` object with the [`report()`](https://easystats.github.io/report/reference/report.html) function. Then, this report object can be displayed either textually (the default output) or as a table, using [`as.data.frame()`](https://rdrr.io/r/base/as.data.frame.html). Moreover, you can also access a more digest and compact version of the report using [`summary()`](https://rdrr.io/r/base/summary.html) on the report object (Figure 1).
 
 ![](../../lsc-563-joubert/instruction-images/report-package-workflow.png) Figure 1: Report package workflow.
+
+## Tidyverse Package
+
+The tidyverse is a collection of R [packages](https://www.tidyverse.org/packages) designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Most importantly, the tidyverse collection of packages contains [ggplot](https://ggplot2.tidyverse.org/).
