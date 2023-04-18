@@ -7,10 +7,6 @@ format: docx
 toc: true
 toc-location: body
 toc-title: Table of Contents
-fig-width: 6
-fig-height: 4
-bibliography: references.bib
-csl: apa.csl
 ---
 
 # Introduction
