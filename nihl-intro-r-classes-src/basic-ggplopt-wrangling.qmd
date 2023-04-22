@@ -1,3 +1,10 @@
+Turn on the Tidyverse
+
+```{r}
+library(tidyverse)
+```
+
+
 Download the data from Figshare
 
 ```{r}
@@ -36,6 +43,16 @@ To make sure that everyone has the same data set, check that `surveys_complete` 
 
 Now that our data set is ready, we can save it as a CSV file in our `data` folder.
 
-``` {r}        
-write_csv(surveys_complete, file = "../nihl-intro-r-classes-data-raw/surveys_complete.csv")
+```{r}
+write_csv(surveys_complete, file = "../nihl-intro-r-classes-data-raw/surveys-complete.csv")
+```
+
+
+
+# Read in Full Portal Rodent Data
+
+```{r}
+portal_rodent <- read_csv("https://raw.githubusercontent.com/weecology/PortalData/main/Rodents/Portal_rodent.csv")
+
+write_csv(portal_rodent, file = "../data-raw/portal-rodent.csv")
 ```
