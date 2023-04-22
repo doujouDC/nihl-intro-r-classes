@@ -1,0 +1,41 @@
+Download the data from Figshare
+
+```{r}
+# download.file(url = "https://ndownloader.figshare.com/files/2292169", destfile = "data-raw/portal_data_joined.csv")
+```
+
+Read in the data to a new object
+
+```{r}
+surveys <- read_csv("data-raw/portal_data_joined.csv")
+```
+
+Wrangle the data
+
+```{r}
+surveys_complete <- surveys %>%
+  filter(!is.na(weight), # remove missing weight
+        !is.na(hindfoot_length), # remove missing hindfoot_length
+        !is.na(sex)) # remove missing sex
+```
+
+Because we are interested in plotting how species abundances have changed through time, we are also going to remove observations for rare species (i.e., that have been observed less than 50 times). We will do this in two steps: first we are going to create a data set that counts how often each species has been observed, and filter out the rare species; then, we will extract only the observations for these more common species:
+
+```{r}
+## Extract the most common species_id
+species_counts <- surveys_complete %>%
+    count(species_id) %>%
+    filter(n >= 50)
+
+## Only keep the most common species
+surveys_complete <- surveys_complete %>%
+  filter(species_id %in% species_counts$species_id)
+```
+
+To make sure that everyone has the same data set, check that `surveys_complete` has 30463 rows and 13 columns by typing `dim(surveys_complete)`.
+
+Now that our data set is ready, we can save it as a CSV file in our `data` folder.
+
+``` {r}        
+write_csv(surveys_complete, file = "../nihl-intro-r-classes-data-raw/surveys_complete.csv")
+```

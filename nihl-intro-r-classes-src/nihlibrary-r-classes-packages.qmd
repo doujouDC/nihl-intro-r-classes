@@ -34,7 +34,7 @@ Excerpt from the [Gapminder](http://www.gapminder.org/data/) data. The main obje
 
 -   [geom_label_repel()](https://ggrepel.slowkow.com/reference/geom_text_repel.html): text labels repel away from each other, away from data points, and away from edges of the plotting area
 
-## **ggridges Package**
+## ggridges Package
 
 Supports the creation of ridgeline plots in ggplot2. Ridgeline plots are partially overlapping line plots that create the impression of a mountain range. They can be quite useful for visualizing changes in distributions over time or space. The `ggridges` package provides two main geoms:
 
