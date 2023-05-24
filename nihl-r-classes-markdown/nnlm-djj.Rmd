@@ -1,0 +1,59 @@
+---
+title: "Leah Script"
+output: html_document
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Turn on our Packages
+
+Note, if you turn on `tidyverse` package there is no need to load dplyr, ggplot, or stringer ect. I also change the packages that I used based on the following [tutorial](https://quantdev.ssri.psu.edu/sites/qdev/files/GCM_Chp3_Tutorial_2.html) and [here](https://ourcodingclub.github.io/tutorials/mixed-models/#what).
+
+```{r}
+library(reshape)
+library(tidyverse)
+library(kableExtra)
+library(matrixStats)
+library(lme4)
+library(nlme)
+library(broom.mixed)
+library(purrr)
+```
+
+# Read in Our Data
+
+Note: I prefer working with data in open format, so I convereted to csv format
+
+```{r}
+comb2 <- read_csv("nihl-r-classes-data-raw/comb2_sub.csv")
+```
+
+## Convert variables to factors
+
+```{r}
+comb2$race.4level <- as.factor(comb2$race.4level)
+comb2$sex_at_birth <- as.factor(comb2$sex_at_birth)
+
+class(comb2$race.4level)
+class(comb2$sex_at_birth)
+```
+
+# Explore the Data
+
+I am not a stats person, but I am assuming that your data meets the following requirements which are required for this method (from the tutorials):
+
+1.  That you have a linear model
+2.  Expected value of the residuals is equal to zero (expected value given x is equal to zero)
+3.  You have constant variance (variance of the residuals given the predictors is the same regardless of what the predictors are
+4.  Covariance is equal to zero
+
+## Look at Distribution of Variables of Interest
+
+```{r}
+comb2 %>% 
+  ggplot(mapping = aes(tfmri_sst_all_beh_correct.stop_rate)) +
+  geom_histogram()
+```
