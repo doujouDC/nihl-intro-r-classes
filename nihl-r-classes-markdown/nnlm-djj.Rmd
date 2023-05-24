@@ -4,13 +4,9 @@ output: html_document
 date: "`r Sys.Date()`"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 ## Turn on our Packages
 
-Note, if you turn on `tidyverse` package there is no need to load dplyr, ggplot, or stringer ect. I also change the packages that I used based on the following [tutorial](https://quantdev.ssri.psu.edu/sites/qdev/files/GCM_Chp3_Tutorial_2.html) and [here](https://ourcodingclub.github.io/tutorials/mixed-models/#what).
+Note, if you turn on `tidyverse` package there is no need to load dplyr, ggplot, or stringer etc. I also change the packages that I used based on the following [tutorial](https://quantdev.ssri.psu.edu/sites/qdev/files/GCM_Chp3_Tutorial_2.html) and [here](https://ourcodingclub.github.io/tutorials/mixed-models/#what).
 
 ```{r}
 library(reshape)
@@ -25,10 +21,10 @@ library(purrr)
 
 # Read in Our Data
 
-Note: I prefer working with data in open format, so I convereted to csv format
+Note: I prefer working with data in open format, so I converted to csv format
 
 ```{r}
-comb2 <- read_csv("nihl-r-classes-data-raw/comb2_sub.csv")
+comb2 <- read_csv("../nihl-r-classes-data-raw/comb2_sub.csv")
 ```
 
 ## Convert variables to factors
@@ -57,3 +53,138 @@ comb2 %>%
   ggplot(mapping = aes(tfmri_sst_all_beh_correct.stop_rate)) +
   geom_histogram()
 ```
+
+# Coercied the variables as numbers
+
+```{r}
+comb2_sub <- read_csv("../nihl-r-classes-data-raw/comb2_sub.csv", 
+    col_types = cols(X.x = col_number(), 
+        tfmri_sst_all_beh_correct.stop_numtrials = col_number(), 
+        tfmri_sst_all_beh_correct.stop_rate = col_number(), 
+        discrimination_matrix_q5 = col_number(), 
+        discrimination_matrix_q6 = col_number(), 
+        discrimination_matrix_q7 = col_number(),  
+tfmri_nback_all_emotion.vs.neutface_beta_cort.destrieux_g.temporal.middle.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_cort.destrieux_g.temporal.middle.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.destrieux_g.front.inf.opercular.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.destrieux_g.front.inf.orbital.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.destrieux_g.front.inf.triangul.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.destrieux_g.front.sup.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.destrieux_g.Pre.SMA.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.destrieux_g.front.inf.opercular.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.destrieux_g.front.inf.orbital.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.destrieux_g.front.inf.triangul.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.destrieux_g.front.sup.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.destrieux_g.Pre.SMA.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_cort.destrieux_g.front.inf.opercular.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_cort.destrieux_g.front.inf.orbital.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_cort.destrieux_g.front.inf.triangul.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_cort.destrieux_g.front.sup.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_cort.destrieux_g.pariet.inf.supramar.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_cort.destrieux_g.front.inf.opercular.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_cort.destrieux_g.front.inf.orbital.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_cort.destrieux_g.front.inf.triangul.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_cort.destrieux_g.front.sup.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_cort.destrieux_g.pariet.inf.supramar.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_sem_cort.destrieux_g.temporal.middle.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_sem_cort.destrieux_g.temporal.middle.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_subcort.aseg_caudate.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_subcort.aseg_putamen.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_subcort.aseg_caudate.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_subcort.aseg_putamen.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.desikan_caudalanteriorcingulate.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.desikan_inferiorparietal.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.desikan_lateraloccipital.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.desikan_parsopercularis.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.desikan_parsorbitalis.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.desikan_parstriangularis.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.desikan_caudalanteriorcingulate.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.desikan_inferiorparietal.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.desikan_lateraloccipital.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.desikan_parsopercularis.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.desikan_parsorbitalis.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.desikan_parstriangularis.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_subcort.aseg_caudate.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_subcort.aseg_putamen.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_subcort.aseg_caudate.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_subcort.aseg_putamen.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_cort.desikan_caudalanteriorcingulate.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_cort.desikan_inferiorparietal.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_cort.desikan_lateraloccipital.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_cort.desikan_parsopercularis.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_cort.desikan_parsorbitalis.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_cort.desikan_parstriangularis.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_cort.desikan_caudalanteriorcingulate.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_cort.desikan_inferiorparietal.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_cort.desikan_lateraloccipital.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_cort.desikan_parsopercularis.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_cort.desikan_parsorbitalis.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_sem_cort.desikan_parstriangularis.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_subcort.aseg_putamen.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_subcort.aseg_amygdala.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_subcort.aseg_accumbens.area.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_subcort.aseg_putamen.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_subcort.aseg_amygdala.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_subcort.aseg_accumbens.area.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_cort.desikan_caudalmiddlefrontal.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_cort.desikan_lateralorbitofrontal.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_cort.desikan_medialorbitofrontal.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_cort.desikan_parsopercularis.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_cort.desikan_parstriangularis.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_cort.desikan_rostralanteriorcingulate.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_cort.desikan_rostralmiddlefrontal.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_cort.desikan_caudalmiddlefrontal.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_cort.desikan_lateralorbitofrontal.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_cort.desikan_medialorbitofrontal.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_cort.desikan_parsopercularis.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_cort.desikan_parstriangularis.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_cort.desikan_rostralanteriorcingulate.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_cort.desikan_rostralmiddlefrontal.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_sem_subcort.aseg_putamen.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_sem_subcort.aseg_amygdala.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_sem_subcort.aseg_accumbens.area.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_sem_subcort.aseg_putamen.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_sem_subcort.aseg_amygdala.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_sem_subcort.aseg_accumbens.area.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_sem_cort.desikan_caudalmiddlefrontal.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_sem_cort.desikan_lateralorbitofrontal.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_sem_cort.desikan_medialorbitofrontal.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_sem_cort.desikan_parsopercularis.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_sem_cort.desikan_parstriangularis.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_sem_cort.desikan_rostralanteriorcingulate.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_sem_cort.desikan_rostralmiddlefrontal.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_sem_cort.desikan_caudalmiddlefrontal.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_sem_cort.desikan_lateralorbitofrontal.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_sem_cort.desikan_medialorbitofrontal.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_sem_cort.desikan_parsopercularis.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_sem_cort.desikan_parstriangularis.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_sem_cort.desikan_rostralanteriorcingulate.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_sem_cort.desikan_rostralmiddlefrontal.rh= col_number(),
+age= col_number(),
+reshist_state_racism_factor.y= col_number(),
+Mean_Discrimination= col_number(),
+SD_Discrimination= col_number(),
+Z_Score= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_cort.desikan_vlPFC.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_cort.desikan_vlPFC.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_cort.desikan_vmPFC.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_cort.desikan_vmPFC.lh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_cort.desikan_dlPFC.rh= col_number(),
+tfmri_nback_all_emotion.vs.neutface_beta_cort.desikan_dlPFC.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.desikan_vlPFC.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.desikan_vlPFC.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.destrieux_g.front.inf.front.gyrus.rh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.destrieux_g.front.inf.front.gyrus.lh= col_number(),
+X.y= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.destrieux_g.pariet.inf.supramar.lh= col_number(),
+tfmri_sst_all_correct.stop.vs.correct.go_beta_cort.destrieux_g.pariet.inf.supramar.rh= col_number(),
+X= col_number(),
+tfmri_sst_all_beh_total_mssrt= col_number(),
+mri_info_device.serial.number= col_number(),
+        tfmri_sst_all_beh_total_mssrt = col_number()))
+```
+
+```{r}
+comb2_sub_list <- as.list.data.frame(comb2_sub)
+```
+

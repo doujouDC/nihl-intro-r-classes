@@ -25,7 +25,7 @@ SST_Disc_RESULTS<-matrix(nrow=20,ncol=4,NA)
 row.names(SST_Disc_RESULTS)<-ROI_SST
 for (p in 1:length(ROI_SST)){
   pp=ROI_SST[p]
-  SST_DISC_MODEL<-lme(scale(comb2[[pp]])~scale(Z_Score)+as.factor(race.4level)+scale(age)+as.factor(sex_at_birth),random=~1|abcd_site/rel_family_id,data=comb2)
+  SST_DISC_MODEL<-lme(scale(comb2_sub[[pp]])~scale(Z_Score)+as.factor(race.4level)+scale(age)+as.factor(sex_at_birth),random=~1|abcd_site/rel_family_id,data=comb2_sub)
   SST_DISC_SUM<-summary(SST_DISC_MODEL)
   SST_Disc_RESULTS[p,]<-SST_DISC_SUM$coefficients[2,]
   
