@@ -123,9 +123,17 @@ Maintained by [Mickaël Canouil](https://github.com/mcanouil), a curated [list](
 
 # Reproducibility
 
--   [Introduction to Reproducible Publications with RStudio](https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/)
--   [R for Reproducible Scientific Analysis](https://swcarpentry.github.io/r-novice-gapminder/)
--   [Reproducible Research Data and Project Management in R](https://annakrystalli.me/rrresearchACCE20/)
+## Introduction to Reproducible Publications with RStudio
+
+Lesson from the Carpentries, where participants will build on their research and analytical skills with R Studio by learning how to create [reproducible documents](https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/) that combine code, analysis and narrative.
+
+## R for Reproducible Scientific Analysis: Producing Reports With knitr
+
+Learn how to recognise and compile the basic components of an [R Markdown](https://swcarpentry.github.io/r-novice-gapminder/15-knitr-markdown.html) file. Also, become familiar with R code chunks, and understand their purpose, structure and options
+
+## Reproducible Research Data and Project Management in R
+
+Course from Dr. Anna Krystalli that focuses on data and [project management through R](https://annakrystalli.me/rrresearchACCE20/) and Rstudio, will introduce students to best practice and equip them with modern tools and techniques for managing data and computational workflows to their full potential.
 
 # R and RStudio
 
