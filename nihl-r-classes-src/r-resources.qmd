@@ -25,21 +25,21 @@ toc-title: Table of Contents
 
 # Markdown
 
-## A Brief History of R Markdown
-
-2021 [presentation](https://slides.yihui.org/2021-Brazilian-R-Day.html) by Yihui Xie
-
-## R4DS Communicating with R Markdown (Quarto)
-
-R4DS has a set of 3 chapter on Quarto, which are part of the updated [Communication section](https://r4ds.hadley.nz/communicate.html). The chapters focus on Quarto, other publishing frameworks, and an introduction to the "lab notebook" framework. Given that this content is part of the work-in-progress second edition of R for Data Science, you might want to consult the complete [first edition](https://r4ds.had.co.nz)
-
 ## Academic Writing Using Markdown
 
 A short guide to using markdown in [academic writing](https://bcrf.biochem.wisc.edu/2021/06/10/do-yourself-a-favor-learn-markdown-episode-3/).
 
+## Brief History of R Markdown
+
+2021 [presentation](https://slides.yihui.org/2021-Brazilian-R-Day.html) by Yihui Xie
+
 ## Polishing Documents
 
 Presentation by Andrew Bray from his [RMD to Quarto workshop](https://rstudio-conf-2022.github.io/rmd-to-quarto/materials/2-polishing-documents/) section of the has some great information.
+
+## R4DS Communicating with R Markdown (Quarto)
+
+R4DS has a set of 3 chapter on Quarto, which are part of the updated [Communication section](https://r4ds.hadley.nz/communicate.html). The chapters focus on Quarto, other publishing frameworks, and an introduction to the "lab notebook" framework. Given that this content is part of the work-in-progress second edition of R for Data Science, you might want to consult the complete [first edition](https://r4ds.had.co.nz)
 
 ## R Markdown: The Definitive Guide
 
@@ -63,13 +63,13 @@ Great guide (with videos) on getting started with [markdown](https://jaantolland
 
 # Project Management
 
-## Using RStudio Projects
-
-[Using RStudio Projects](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects)
-
 ## Managing Open and Reproducible Computational Projects
 
 The [Managing Open and Reproducible Computational Projects](https://carpentries-incubator.github.io/managing-computational-projects/index.html) training material covers best practices for managing computational projects using data science methods. These lessons will help you design projects that are reproducible, transparent, and support collaboration. This training material is developed under the **Data Science for Biomedical Scientists** project. It massively reuses [The Turing Way](https://the-turing-way.netlify.app/) chapters and builds on [The Carpentries](https://carpentries.org/) and [Open Life Science](https://openlifesci.org/) practices.
+
+## Using RStudio Projects
+
+[Using RStudio Projects](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects)
 
 # Publishing
 
@@ -137,10 +137,6 @@ Course from Dr. Anna Krystalli that focuses on data and [project management thro
 
 # R and RStudio
 
-## R for Data Science (2e)
-
-I used the website version (because it is free). This book will teach you how to do data science with R: You'll learn how to get your data into R, get it into the most useful structure, transform it and visualize it. In particular, I used the workflows [chapter](https://r4ds.hadley.nz/workflow-scripts.html).
-
 ## Using the RStudio Terminal in the RStudio IDE
 
 The RStudio [terminal](https://support.posit.co/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE) provides access to the system shell from within the RStudio IDE. It supports full-screen terminal applications such as vim, Emacs, and tmux as, well as regular command-line operations with line-editing and shell history
@@ -152,6 +148,10 @@ A short primer on how to navigate through a file structure at the [command line]
 ## Introduction to Data Analysis with R and Bioconductor: **R and RStudio**
 
 Part of a larger (alpha stage) Carpentries workshop focused on data analysis with R and Bioconductor. This particular lesson describe the purpose of the RStudio Script, Console, Environment, and Plots panes. It also provides recommendations for organizing files and directories for a set of analyses as an R project, and understand the purpose of the working directory.
+
+## R for Data Science (2e)
+
+I used the website version (because it is free). This book will teach you how to do data science with R: You'll learn how to get your data into R, get it into the most useful structure, transform it and visualize it. In particular, the workflows [chapter](https://r4ds.hadley.nz/workflow-scripts.html) is really useful.
 
 # Licenses
 
