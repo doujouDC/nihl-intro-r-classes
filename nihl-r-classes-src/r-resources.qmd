@@ -125,7 +125,7 @@ Maintained by [Mickaël Canouil](https://github.com/mcanouil), a curated [list](
 
 ## Introduction to Reproducible Publications with RStudio
 
-Lesson from the Carpentries, where participants will build on their research and analytical skills with R Studio by learning how to create [reproducible documents](https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/) that combine code, analysis and narrative.
+Lesson from the Carpentries (in alpha mode), where participants will build on their research and analytical skills with R Studio by learning how to create [reproducible documents](https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/) that combine code, analysis and narrative.
 
 ## R for Reproducible Scientific Analysis: Producing Reports With knitr
 
