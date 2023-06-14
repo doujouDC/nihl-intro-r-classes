@@ -117,6 +117,10 @@ Tutorial that will help you create a [website](https://openscapes.github.io/quar
 
 A [workshop](https://rstudio-conf-2022.github.io/rmd-to-quarto/) designed for those who want to take their R Markdown skills and expertise and apply them in Quarto, the next generation of R Markdown.
 
+### Quarto for Scientists
+
+This is a [book](https://qmd4sci.njtierney.com/) on rmarkdown, aimed for scientists, from Nicholas Tierney. It was initially developed as a 3 hour workshop, but is now developed into a resource that will grow and change over time.
+
 ### List of Quarto Workshops and Resources
 
 Maintained by [Mickaël Canouil](https://github.com/mcanouil), a curated [list](https://github.com/mcanouil/awesome-quarto#official-documentation--quickstarts) of [Quarto®](https://quarto.org/) docs, talks, tools, examples & articles the internet has to offer.
