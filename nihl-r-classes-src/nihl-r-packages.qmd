@@ -1,0 +1,106 @@
+---
+title: "NIH Library Classes: Packages"
+format: docx
+editor: visual
+---
+
+## cowplot Package
+
+The [cowplot](https://wilkelab.org/cowplot/) package is a simple add-on to ggplot. It provides various features that help with creating publication-quality figures, such as a set of themes, functions to align plots and arrange them into complex compound figures, and functions that make it easy to annotate plots and or mix plots with images.
+
+## forcats Package
+
+The goal of the [forcats](https://forcats.tidyverse.org/) package is to provide a suite of tools that solve common problems with factors, including changing the order of levels or the values. Some examples include:
+
+-   [fct_reorder()](https://forcats.tidyverse.org/reference/fct_reorder.html): Reordering a factor by another variable.
+
+-   [fct_infreq()](https://forcats.tidyverse.org/reference/fct_inorder.html): Reordering a factor by the frequency of values.
+
+-   [fct_relevel()](https://forcats.tidyverse.org/reference/fct_relevel.html): Changing the order of a factor by hand.
+
+-   [fct_lump()](https://forcats.tidyverse.org/reference/fct_lump.html): Collapsing the least/most frequent values of a factor into "other."
+
+You can learn more about each of these in [vignette("forcats")](https://forcats.tidyverse.org/articles/forcats.html). If you're new to factors, the best place to start is the [chapter on factors](https://r4ds.had.co.nz/factors.html) in R for Data Science.
+
+## gapminder Package
+
+Excerpt of the [Gapminder](http://www.gapminder.org/data/) data. The main object in this package is the gapminder data frame or "tibble". There are other goodies, such as the data in tab delimited form, a larger unfiltered dataset, premade color schemes for the countries and continents, and ISO 3166-1 country codes. The gapminder data frame include six variables, ([Gapminder.org documentation page](http://www.gapminder.org/data/documentation/)).
+
+## **gitcreds Package**
+
+[gitcreds](https://gitcreds.r-lib.org/) allows users to query git credentials from R, that allows you to use the same credentials in command line git, R and the RStudio IDE., etc. Users can set their GitHub token once and use it everywhere.
+
+## ggrepel Package
+
+[ggrepel](https://ggrepel.slowkow.com/index.html) provides geoms for [ggplot2](https://ggplot2.tidyverse.org/) to repel overlapping text labels:
+
+-   [geom_text_repel()](https://ggrepel.slowkow.com/reference/geom_text_repel.html): draws a rectangle underneath the text, making it easier to read. The text labels repel away from each other and away from the data points.
+
+-   [geom_label_repel()](https://ggrepel.slowkow.com/reference/geom_text_repel.html): text labels repel away from each other, away from data points, and away from edges of the plotting area
+
+## ggridges Package
+
+Supports the creation of ridgeline plots in ggplot2. Ridgeline plots are partially overlapping line plots that create the impression of a mountain range. They can be quite useful for visualizing changes in distributions over time or space. The `ggridges` package provides two main geoms:
+
+1.  `geom_ridgeline: Takes the`height values directly to draw ridgelines
+2.  `geom_density_ridges`: first estimates data densities and then draws those using ridgelines
+
+## GGally Package
+
+[GGally](https://ggobi.github.io/ggally) extends ggplot2 by adding several functions to reduce the complexity of combining geoms with transformed data. Some of these functions include a pairwise plot matrix, a scatterplot plot matrix, a parallel coordinates plot, a survival plot, and several functions to plot networks.
+
+## **hms Package**
+
+The [hms](https://hms.tidyverse.org/) package provides a simple class for storing durations or time-of-day values and displaying them in the hh:mm:ss format. This class is intended to simplify data exchange with databases, spreadsheets, and other data sources. Attributes of the hms package include:
+
+-   Stores values as a numeric vector that contains the number of seconds since midnight
+
+-   Supports construction from explicit hour, minute, or second values
+
+-   Supports coercion to and from various data types, including `POSIXt`
+
+-   Can be used as column in a data frame
+
+-   Based on the `difftime` class
+
+-   Values can exceed the 24-hour boundary or be negative
+
+## lwgeom Package
+
+R bindings to the [liblwgeom](https://github.com/postgis/postgis/tree/master/liblwgeom) library.
+
+## MASS Package
+
+[Package](https://rdocumentation.org/packages/MASS/versions/7.3-58.1) that includes functions and datasets to support Venables and Ripley, "Modern Applied Statistics with S" (4th edition, 2002).
+
+## nlme Package
+
+The [nlme: Nonlinear Mixed-Effects Models](https://www.rdocumentation.org/packages/nlme/versions/3.1-159/topics/nlme) package fits a nonlinear mixed-effects model in the formulation described in Lindstrom and Bates (1990) but allowing for nested random effects. The within-group errors are allowed to be correlated and/or have unequal variances. We are simply using it for the [oxboys](https://rdrr.io/cran/mlmRev/man/Oxboys.html) dataset.
+
+## OpenIntro Package
+
+The [OpenIntro](http://openintrostat.github.io/openintro/) package includes supplemental functions and data for OpenIntro resources, which includes open-source textbooks and resources for introductory statistics at [openintro.org](https://www.openintro.org/). The package contains data sets used in our open-source textbooks along with custom plotting functions for reproducing book figures.
+
+## Palmer Penguins
+
+The goal of [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/) is to provide a great dataset for data exploration & visualization, as an alternative to the `iris` dataset.
+
+## RColorBrewer
+
+[Cynthia Brewer](https://en.wikipedia.org/wiki/Cynthia_Brewer), a geographer and color specialist, created sets of colors for print and the web and they are available in the add-on package [RColorBrewer](https://cran.r-project.org/package=RColorBrewer). You will need to install and load this package to use.
+
+## Report
+
+Primary goal of [report](https://easystats.github.io/report/) is to bridge the gap between R's output and the formatted results contained in your manuscript. It automatically produces reports of models and data frames according to **best practices** guidelines (e.g., [APA](https://apastyle.apa.org/)'s style), ensuring **standardization** and **quality** in results reporting.
+
+The `report` package works in a two step fashion. First, you create a `report` object with the [`report()`](https://easystats.github.io/report/reference/report.html) function. Then, this report object can be displayed either textually (the default output) or as a table, using [`as.data.frame()`](https://rdrr.io/r/base/as.data.frame.html). Moreover, you can also access a more digest and compact version of the report using [`summary()`](https://rdrr.io/r/base/summary.html) on the report object (Figure 1).
+
+![](../../lsc-563-joubert/instruction-images/report-package-workflow.png) Figure 1: Report package workflow.
+
+## Tidyverse Package
+
+The tidyverse is a collection of R [packages](https://www.tidyverse.org/packages) designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Most importantly, the tidyverse collection of packages contains [ggplot](https://ggplot2.tidyverse.org/).
+
+## **usethis Package**
+
+usethis is a [workflow package](https://usethis.r-lib.org/) that automates repetitive tasks that arise during project setup and development, both for R packages and non-package projects.
