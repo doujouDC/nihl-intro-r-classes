@@ -1,41 +1,23 @@
 ---
-title: "Introduction to Markdown: Sample Document"
+title: "Introduction to Project Management in RStudio: Sample Document"
 date: "`r Sys.Date()`"
-author: "Doug Joubert"
-format: html
-fig-width: 6
-fig-height: 4
-toc: true
-bibliography: references.bib
-csl: nature.csl
 ---
 
-# Turn on Our Packages
+Scientific Reproducibility
 
-```{r}
-library(tidyverse)
-library(knitr)
-library(quarto)
-library(rmarkdown)
-```
+According to the U.S. National Science Foundation (NSF) subcommittee on reproducibility in science \[\@\]:
 
-# Scientific Reproducibility
-
-According to the [U.S. National Science Foundation (NSF)](https://www.nsf.gov/sbe/AC_Materials/SBE_Robust_and_Reliable_Research_Report.pdf) subcommittee on reproducibility in science [@bollenSocialBehavioralEconomic2015]:
-
-Science should routinely evaluate the reproducibility of findings that enjoy a prominent role in the published literature. To make reproduction possible, efficient, and informative, researchers should sufficiently document the details of the procedures used to collect data, to convert observations into analyzable data, and to perform data analysis [@wilson2016].
+Science should routinely evaluate the reproducibility of findings that enjoy a prominent role in the published literature. To make reproduction possible, efficient, and informative, researchers should sufficiently document the details of the procedures used to collect data, to convert observations into analyzable data, and to perform data analysis.
 
 Reproducibility refers to the ability of a researcher to duplicate the results of a prior study using the same materials as were used by the original investigator. Reproducibility is a minimum necessary condition for a finding to be considered rigorous, believable, and informative.
 
 ## General Recommendations
 
-See if you can find a Wilson article in the bib from 2017
-
-Adapted from [@wilsonSoftwareCarpentryLessons2014; @millsArchivingPrimaryData2015; @tealDataCarpentryWorkshops2015; @wickhamWelcomeTidyverse2019]:
+Adapted from: \[\@\]
 
 ### Don't Touch the Raw Data
 
-Don't ever do analysis on the original data, or, if you do, then explain what you did to the data [@federerDataLiteracyTraining2016].
+Don't ever do analysis on the original data, or, if you do, then explain what you did to the data.
 
 ### Self-documenting and Reproducible Code
 
@@ -47,55 +29,61 @@ Use open formats as much as possible. That means sharing your data in csv or tab
 
 A lot of large companies and government organizations use markdown for their publishing and research.
 
-# Good Practices for Managing Projects in RStudio
+# Code Execution Options
 
-## Project Organization Issues
+There are a wide variety of options available for customizing output from [executed code](https://quarto.org/docs/computations/execution-options.html). All of these options can be specified globally. We have already seen an example of this in the YAML header:
 
-We often have stress points in our research that may become breaking points, especially when it comes to working with collaborators, returning to a project after a hiatus, or dealing with data and scripts. Let's discuss three of those common stress points:
+---
+title: "Project Management and Reproducibility in RStudio: Part 2"
+author: "Doug Joubert"
+date: "`r Sys.Date()`"
+format: docx
+toc: true
+toc-location: body
+fig-width: 6
+fig-height: 4
+execute:
+  echo: false
+---
 
-### File/folder disorganization
+Options can also be specified in specific code-blocks.
 
-You cannot find your files on your computer (or your cloud storage) Multiple versions of files with names such as "finaldraft_4.txt" Path issues when trying to run code Reviewers or colleagues cannot re-run your code/analyses
+```{r}
+library(tidyverse)
+ggplot(airquality, aes(Temp, Ozone)) + 
+        geom_point() + 
+        geom_smooth(method = "loess", se = FALSE)
+```
 
-### Storage and sharing issues
 
--   Files are only saved to your computer and are vulnerable (or have already succumbed to computer/hard drive failure
+## Code Chunk Options
 
--   When working with collaborators, they (or you) don't share the files needed
+There are over 50 different code chunk options. Wow, that is a lot. Obviously we will not go over all of them, but they fall into several larger categories including: code evaluation, text output, code style, cache options, plot output and animation.
 
--   Files are shared via email attachments
+You can find a complete list of code chunk options on Knitr developer, Yihui Xie's, [online guide to knitr](https://yihui.org/knitr/options/). Or, you can find a brief list of all options on the R Markdown Reference guide on page 3 accessible through the RStudio Interface by navigating to the main menu bar `Help > Cheat Sheets > R Markdown Reference Guide`.
 
--   Difficult to know if you have the latest version of documents
+The chunk name is the only value other than `r` in the code chunk options that doesn't require a tag (i.e. the "= VALUE" part of `option = VALUE`). So chunk options will always require a tag, and the syntax will be in the form:
 
-### Losing track of project status
+`{r chunk-label, option = VALUE}`
 
--   You cannot remember where you are in a project after being away for an extended period (or what you worked on the previous day...no judgement)
--   You aren't sure what you should be working on next
--   You have various to-do notes spread across your office or home (or never write them down in the first place)
+The option always follows the code chunk label (don't forget to add a `,` after the label either).
 
-## Discussion Points
+Good Practices for Managing Projects in RStudio
 
-To what extent do these stress points affect your research projects?
-
-Are there additional issues that you've encountered that slow down or derail your work due to issues with project management?
-
-# Practice Good File Organization
+Practice Good File Organization
 
 Although there is no "best" way to lay out a project, there are some general principles to adhere to that will make project management easier.
 
-Good Enough Practices for Scientific Computing\]() gives the following recommendations for project organization:
+[Good Enough Practices for Scientific Computing](http://swcarpentry.github.io/good-enough-practices-in-scientific-computing/) gives the following recommendations for project organization \[\@\]:
 
-1.  Each project in its own directory, which is named after the project
+Each project in its own directory, which is named after the project
+Text documents associated with the project in the doc directory
+Raw data and metadata in the data directory (raw-data)
+Files generated during cleanup and analysis in a results directory
+Project's scripts and programs in the src directory
+Programs brought in from elsewhere or compiled locally in the bin directory
 
-2.  Text documents associated with the project in the doc directory
-
-3.  Raw data and metadata in the data directory (raw-data)
-
-4.  Files generated during cleanup and analysis in a results directory
-
-5.  Project's scripts and programs in the src directory
-
-6.  Programs brought in from elsewhere or compiled locally in the bin directory Name all files to reflect their content or function
+Name all files to reflect their content or function
 
 Additional files to include:
 
@@ -106,80 +94,3 @@ Additional recommendations for projects and creating folders is covered in the I
 ## Practices for Naming Files
 
 Three principles for file names 1. Machine readable 2. Human readable 3. Plays well with default ordering
-
-### Why This is important
-
--   Globbing: using wildcard characters to request or evaluate sets of files with the same partial names or sets of character
--   Regular expression friendly
--   "Findability"
--   Global name changes
-
-### Machine-readable Files
-
--   No spaces, unsupported punctuation, accented characters, or case-sensitive file names
-
--   Deliberate use of delimiters (i.e. for splitting file names)
-
--   Consistently use the same delimiters: `data-analyses-fig1.R` as an example
-
-### Human-readable
-
--   Name contains brief description of content `anova-analyses-control.R` `marshall-data-raw-data` `marshall-data-filtered` `marshall-data-load-counts.r`
-
-## Ordering Files
-
-With chronological ordering, file name starts with date:
-
-2022-06-26-BRAFWTNEGASSAY-Plasmid-Cellline-100-MutantFraction_HO1.csv
-
-2022-06-26-BRAFWTNEGASSAY-Plasmid-Cellline-100-MutantFraction_HO2.csv
-
-2022-06-26-BRAFWTNEGASSAY-Plasmid-Cellline-100-MutantFraction_HO3.csv
-
-2022-06-26-BRAFWTNEGASSAY-Plasmid-CeIIIine-100-MutantFraction-platefile.csv
-
-2022-02-26-BRAFWTNEGASSAY-FFPEDNA-CRC-1-41_AO1.csv
-
-2022-02-26-BRAFWTNEGASSAY-FFPEDNA-CRC-1-41_AO2.csv
-
-2022-02-26-BRAFWTNEGASSAY-FFPEDNA-CRC-1-41_AO3.csv
-
-2022-02-26-BRAFWTNEGASSAY-FFPEDNA-CRC-1-41_AO4.csv
-
-Consider using [ISO 8601 date standard](https://en.wikipedia.org/wiki/ISO_8601)
-
-With **logical ordering**, the filename starts with a number or keyword/number combo.
-
-01-marshall-data.r *see code directory*
-
-02-pre-dea-filtering.r *see code directory*
-
-03-explore-dea-limma-voom.r
-
-04-explore-dea-results.r helper
-
-01-load-counts.rmd
-
-helper02-load-exp-des.r
-
-helper03-extract-and-tidy.r
-
-As illustrated above, left-pad your numbers to facilitate sorting. If you do not do this, your data sorts like this...which is really sad
-
-01-marshall-data.r *see code directory*
-
-04-explore-dea-results.r
-
-2-explore-dea-limma-voom.r
-
-3-helper-extract-and-tidy.r
-
-helper01-load-counts.rmd
-
-helper2-load-exp-des.r
-
-pre-dea-filtering-1.r *see code directory*
-
-Adapted from <https://datacarpentry.org/rr-organization1/01-file-naming/index.html>. For more tips on file naming, check: [The Dos and Dont's of File Naming](https://www.library.ucsb.edu/sites/default/files/dls-n01-2021-filenaming.pdf).
-
-# References
