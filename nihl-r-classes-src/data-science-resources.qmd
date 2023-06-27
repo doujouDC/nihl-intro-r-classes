@@ -10,6 +10,8 @@ toc-title: Table of Contents
 ---
 
 # Data Science
+-   [Coding and Comment Style Guide](https://mitcommlab.mit.edu/broad/commkit/coding-and-comment-style/): discusses how to use effective naming, structuring, context, and comments to communicate your logic in an easy-to-use code
+-   [Coding Mindset](https://mitcommlab.mit.edu/broad/commkit/coding-mindset/): tools from creating a coding mindset that complements technical expertise by helping to contextualize generic best practices to complex real-world problems
 
 # Git and GitHub
 
@@ -31,7 +33,15 @@ toc-title: Table of Contents
 
 # Project Management
 
--   [Using RStudio Projects](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects)
+-   [Data Management Best Practices](https://www.axiomdatascience.com/best-practices/DataManagementBestPractices.html): Axiom guide on best practices for managing scientific data
+
+-   [File Structure in projects](https://mitcommlab.mit.edu/broad/commkit/file-structure/#Contents): recommendations for successful file structure organization and management.
+
+-   [Good enough practices in scientific computing](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510): presents a set of good computing practices that every researcher can adopt, regardless of their current level of computational skill.
+
+-   [Quick Guide to Organizing Computational Biology Projects](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424): recommendations for organizing files and directories and documenting progress
+
+-   [Using RStudio Projects](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects): RStudio blog post on managing RStudio projects
 
 # Quarto
 
@@ -57,6 +67,7 @@ toc-title: Table of Contents
 -   [Introduction to Reproducible Publications with RStudio](https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/)
 -   [R for Reproducible Scientific Analysis](https://swcarpentry.github.io/r-novice-gapminder/)
 -   [Reproducible Research Data and Project Management in R](https://annakrystalli.me/rrresearchACCE20/)
+-   [Tao of open science for ecology](https://esajournals.onlinelibrary.wiley.com/doi/full/10.1890/ES14-00402.1): Presents an overview of tools and best practices that can enable these shifts in mindset at each stage of the research process, including tools to support data management planning and reproducible analyses, strategies for soliciting constructive feedback throughout the research process, and methods of broadening access to final research products.
 
 # R and RStudio
 
