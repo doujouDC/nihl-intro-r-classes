@@ -10,8 +10,11 @@ toc-title: Table of Contents
 ---
 
 # Data Science
+
 -   [Coding and Comment Style Guide](https://mitcommlab.mit.edu/broad/commkit/coding-and-comment-style/): discusses how to use effective naming, structuring, context, and comments to communicate your logic in an easy-to-use code
 -   [Coding Mindset](https://mitcommlab.mit.edu/broad/commkit/coding-mindset/): tools from creating a coding mindset that complements technical expertise by helping to contextualize generic best practices to complex real-world problems
+-   [Data Analysis for Life Sciences](https://leanpub.com/dataanalysisforthelifesciences): uses data and code to teach the necessary statistical concepts and programming skills to become a data analyst
+-   [R for Data Science (2e)](https://r4ds.hadley.nz/): Book teaches how to clean data, use the grammar of graphics, literate programming, and create reproducible research
 
 # Git and GitHub
 
@@ -34,13 +37,11 @@ toc-title: Table of Contents
 # Project Management
 
 -   [Data Management Best Practices](https://www.axiomdatascience.com/best-practices/DataManagementBestPractices.html): Axiom guide on best practices for managing scientific data
-
 -   [File Structure in projects](https://mitcommlab.mit.edu/broad/commkit/file-structure/#Contents): recommendations for successful file structure organization and management.
-
 -   [Good enough practices in scientific computing](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510): presents a set of good computing practices that every researcher can adopt, regardless of their current level of computational skill.
-
+-   [Managing Open and Reproducible Computational Projects
+](https://carpentries-incubator.github.io/managing-computational-projects/01-introduction.html): material covers best practices for managing and supervising computational projects in biology and related fields through data science methods, analysis, interpretation, and reporting processes.
 -   [Quick Guide to Organizing Computational Biology Projects](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424): recommendations for organizing files and directories and documenting progress
-
 -   [Using RStudio Projects](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects): RStudio blog post on managing RStudio projects
 
 # Quarto
@@ -64,6 +65,7 @@ toc-title: Table of Contents
 
 # Reproducibility
 
+-   [Guide for Reproducible Research](https://the-turing-way.netlify.app/reproducible-research/reproducible-research.html): Turning Guide to reproducible research.
 -   [Introduction to Reproducible Publications with RStudio](https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/)
 -   [R for Reproducible Scientific Analysis](https://swcarpentry.github.io/r-novice-gapminder/)
 -   [Reproducible Research Data and Project Management in R](https://annakrystalli.me/rrresearchACCE20/)
