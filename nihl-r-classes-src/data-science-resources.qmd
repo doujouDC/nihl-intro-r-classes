@@ -39,8 +39,7 @@ toc-title: Table of Contents
 -   [Data Management Best Practices](https://www.axiomdatascience.com/best-practices/DataManagementBestPractices.html): Axiom guide on best practices for managing scientific data
 -   [File Structure in projects](https://mitcommlab.mit.edu/broad/commkit/file-structure/#Contents): recommendations for successful file structure organization and management.
 -   [Good enough practices in scientific computing](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510): presents a set of good computing practices that every researcher can adopt, regardless of their current level of computational skill.
--   [Managing Open and Reproducible Computational Projects
-](https://carpentries-incubator.github.io/managing-computational-projects/01-introduction.html): material covers best practices for managing and supervising computational projects in biology and related fields through data science methods, analysis, interpretation, and reporting processes.
+-   [Managing Open and Reproducible Computational Projects](https://carpentries-incubator.github.io/managing-computational-projects/01-introduction.html): material covers best practices for managing and supervising computational projects in biology and related fields through data science methods, analysis, interpretation, and reporting processes.
 -   [Quick Guide to Organizing Computational Biology Projects](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424): recommendations for organizing files and directories and documenting progress
 -   [Using RStudio Projects](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects): RStudio blog post on managing RStudio projects
 
