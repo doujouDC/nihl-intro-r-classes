@@ -29,7 +29,7 @@ Upon completion of this class students should be able to:
 
 ```
 
-## Downloading Data
+## Download the Data Files
 
 ```{r}
 
