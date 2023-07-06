@@ -23,11 +23,15 @@ Upon completion of this class students should be able to:
 
 ## Installing Software
 
-## Installing Packages
-
-## Loading Packages
+## Installing and Loading Packages
 
 ```{r echo=FALSE}
+
+```
+
+## Downloading Data
+
+```{r}
 
 ```
 
