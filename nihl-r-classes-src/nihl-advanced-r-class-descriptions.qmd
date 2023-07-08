@@ -1,0 +1,174 @@
+---
+title: "R Class Descriptions (Advanced) with Learning Objectives"
+format: html
+editor: visual
+---
+
+# Introduction to Version Control and GitHub (New)
+
+## Description
+
+This class provides an introduction to version control and using [GitHub](https://github.com/) for project versioning. Students will have a better understanding of version control and its advantages for collaboration and version control.
+
+## Learning Objectives
+
+Upon completion of this class students should be able to:
+
+-   Recognize why version control is useful
+-   Discuss the difference between Git and GitHub
+-   List the options for authenticating to GitHub
+-   Create a personal access token (PAT)
+
+## Assumptions for This Class
+
+This class makes a few assumptions about your understanding of R and RStudio:
+
+1.  You have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop).
+2.  You have experience with R. If not, here are some resources for getting started:
+
+-   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9) class
+-   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+-   [Quick-R](http://www.statmethods.net/)
+-   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+
+3.  You have already created a GitHub account
+
+# Introduction to Git in RStudio (Modified)
+
+# Data Visualization in ggplot: Visualizing Relationships and Linear Regression
+
+## Description
+
+This class provides a basic overview of the methods used to visualize the association among two or more quantitative variables. This class will focus on scatterplots, scatterplot matrix, and visualizing paired data. Participants are expected to have taken the [Introduction to Data Visualization in R: ggplot](https://www.nihlibrary.nih.gov/training/introduction-data-visualization-r-ggplot-8) class. Participants must also install [R](https://mirrors.nics.utk.edu/cran/), [RStudio](https://www.rstudio.com/products/rstudio/download/), and the [tidyverse](https://www.tidyverse.org/) package, before the class so that they can follow along with the instructor.
+
+## Learning Objectives
+
+Upon completion of this class, students should be able to:
+
+-   
+
+-   Define bivariate data
+
+-   
+
+-   Define scatterplot
+
+-   
+
+-   Create a scatterplot using ggplot
+
+-   
+
+-   Define linear regression
+
+-   
+
+-   Demonstrate how to perform a simple linear regression in R
+
+-   
+
+## Assumptions for This Class
+
+This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
+
+-   
+
+-   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9) class
+
+-   
+
+-   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+
+-   
+
+-   [Quick-R](http://www.statmethods.net/)
+
+-   
+
+-   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+
+-   
+
+# Introduction to Bioconductor
+
+## Description
+
+This class will provide an overview of Bioconductor. We will learn how to identify Bioconductor packages that are appropriate for our project, explore package documentation, and demonstrate how to download and install R packages from Bioconductor.
+
+## Learning Objectives
+
+Upon completion of this class participants should be able to:
+
+-   
+
+-   Describe what the Bioconductor project comprises
+
+-   
+
+-   Navigate the Bioconductor website to find packages for a particular task
+
+-   
+
+-   Install and update Bioconductor package
+
+-   
+
+-   Open a package vignette and practice running through the examples that they contain
+
+-   
+
+-   Ensure that they are using the correct version of R to reproduce exactly the contents of this lesson
+
+-   
+
+-   Describe how to join and communicate with the Bioconductor community
+
+-   
+
+## Assumptions for This Class
+
+This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
+
+·       NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9) class
+
+·       [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+
+·       [Quick-R](http://www.statmethods.net/)
+
+·       [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+
+Third, is experience working in RStudio and creating scripts and/or markdown files.
+
+# Working with Data in Bioconductor
+
+## Description
+
+This class will provide an overview of common Bioconductor datatypes and explore options for working with biological sequence data.  Specifically, this class will focus on the object types for storing and manipulating genomic features and sequences.
+
+## Learning Objectives
+
+Upon completion of this class participants should be able to:
+
+•         Locate resources on S4Vector classes
+
+•         Review standard R datatypes
+
+•         List the 6 basic Bioconductor classes
+
+•         Discuss methods for working with biological sequences
+
+•         Locate information on Bioconductor, Bioconductor packages, and Bioconductor Courses
+
+## Assumptions for This Class
+
+This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
+
+·       NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9) class
+
+·       [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+
+·       [Quick-R](http://www.statmethods.net/)
+
+·       [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+
+Third, is experience working in RStudio and creating scripts and/or markdown files.
