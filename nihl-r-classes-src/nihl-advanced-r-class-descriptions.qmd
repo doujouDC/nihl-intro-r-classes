@@ -1,7 +1,12 @@
 ---
 title: "R Class Descriptions (Advanced) with Learning Objectives"
+author: "Doug Joubert"
+date: "`r Sys.Date()`"
 format: html
 editor: visual
+echo: fenced
+toc: true
+toc-location: right
 ---
 
 # Data Visualization in R: Customization in ggplot
