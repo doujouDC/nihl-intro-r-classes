@@ -194,49 +194,13 @@ This class makes a few assumptions about your understanding of R and RStudio. Fi
 
 -   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
 
-# Introduction to Bioconductor
-
-## Description
-
-This class will provide an overview of Bioconductor. We will learn how to identify Bioconductor packages that are appropriate for our project, explore package documentation, and demonstrate how to download and install R packages from Bioconductor.
-
-## Learning Objectives
-
-Upon completion of this class participants should be able to:
-
--   Describe what the Bioconductor project comprises
-
--   Navigate the Bioconductor website to find packages for a particular task
-
--   Install and update Bioconductor package
-
--   Open a package vignette and practice running through the examples that they contain
-
--   Ensure that they are using the correct version of R to reproduce exactly the contents of this lesson
-
--   Describe how to join and communicate with the Bioconductor community
-
-## Assumptions for This Class
-
-This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
-
--   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9) class
-
--   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
-
--   [Quick-R](http://www.statmethods.net/)
-
--   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
-
-Third, is experience working in RStudio and creating scripts and/or markdown files.
-
-# Reproducibility in RStudio: Basic Markdown Manual
+# Introduction to Quarto for Scholarly Publishing (Revised)
 
 ## Description
 
 This class is designed for those who want to extend the basics of R Markdown and apply those skills in [Quarto](https://quarto.org/). Quarto is an open-source scientific and technical publishing system that offers multilingual programming language support to create dynamic and static documents, books, presentations, blogs, and other online resources.
 
-In this intermediate-level class you will learn about the similarities and differences between R-markdown and Quarto. You will also learn how to use Quarto to render documents in multiple formats, with a focus on scholarly publishing. Some familiarity or experience in R and RStudio is recommended but not required. Students are encouraged to install the most current versions of [R](https://mirrors.nics.utk.edu/cran/) and [RStudio](https://www.rstudio.com/products/rstudio/download/#download) before the class so that they can follow along with the instructor.
+In this class you will learn about the similarities and differences between R-markdown and Quarto. You will also learn how to use Quarto to render documents in multiple formats, with a focus on scholarly publishing. Some familiarity or experience in R and RStudio is required.
 
 ## Learning Objectives
 
@@ -247,7 +211,6 @@ Upon completion of this class students should be able to:
 -   Demonstrated the difference between the visual and source editors
 -   Create basic markdown elements
 -   Learn how to create and run code-blocks
--   Insert images into a markdown document and modify attributes
 -   Render a markdown document
 
 ## Assumptions for This Class
@@ -264,7 +227,65 @@ This class makes a few assumptions about your understanding of R and RStudio. Fi
 
 Third, is experience working in RStudio and creating scripts and/or markdown files.
 
-# Project Management in RStudio Manual
+# Quarto for Scholarly Publishing: Advanced Formatting (Revised)
+
+## Description
+
+This class is designed for those who want to extend the basics covered in the Introduction to Quarto for Scholarly Publishing class. In this class you will learn how to format tables, customize code blocks, and work with images. You must have taken Introduction to Quarto for Scholarly Publishing to be successful in this class.
+
+## Learning Objectives
+
+Upon completion of this class students should be able to:
+
+-   Create tables
+-   Customize code-blocks
+-   Insert images into a markdown document and modify attributes
+-   Create document templates
+-   Render a markdown document in multiple formats
+
+## Assumptions for This Class
+
+This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
+
+-   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9)
+
+-   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+
+-   [Quick-R](http://www.statmethods.net/)
+
+-   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+
+Third, you have taken the Introduction to Quarto for Scholarly Publishing class.
+
+# Quarto for Scholarly Publishing: Working with Citations (Revised)
+
+## Description
+
+This class is designed for those who want to extend the basics covered in the [Reproducibility in RStudio: Basic Markdown](https://www.nihlibrary.nih.gov/training/reproducibility-rstudio-basic-markdown) class. This class uses [Quarto](https://quarto.org/) to render format citations and bibliographies using [Zotero](https://www.zotero.org/). [Zotero](https://www.zotero.org/) is a free, easy-to-use tool to help you collect, organize, annotate, cite, and share research. You must have taken Introduction to Quarto for Scholarly Publishing to be successful in this class.
+
+## Learning Objectives
+
+Upon completion of this class students should be able to:
+
+-   Download and install Zotero
+-   Link RStudio to Zotero
+-   Create a bibliography and link it to a markdown document
+-   Insert citations using RStudio Visual Interface, and via the command line
+-   Download and link a `CSL` file which specifies the formatting to use when generating the citations and bibliography
+
+## Assumptions for This Class
+
+This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
+
+-   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9)
+
+-   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+
+-   [Quick-R](http://www.statmethods.net/)
+
+-   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+
+Third, you have taken the Introduction to Quarto for Scholarly Publishing class.
 
 ## Description
 
@@ -301,6 +322,42 @@ Upon completion of this class students should be able to:
 This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
 
 -   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9)
+
+-   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+
+-   [Quick-R](http://www.statmethods.net/)
+
+-   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+
+Third, is experience working in RStudio and creating scripts and/or markdown files.
+
+# Introduction to Bioconductor
+
+## Description
+
+This class will provide an overview of Bioconductor. We will learn how to identify Bioconductor packages that are appropriate for our project, explore package documentation, and demonstrate how to download and install R packages from Bioconductor.
+
+## Learning Objectives
+
+Upon completion of this class participants should be able to:
+
+-   Describe what the Bioconductor project comprises
+
+-   Navigate the Bioconductor website to find packages for a particular task
+
+-   Install and update Bioconductor package
+
+-   Open a package vignette and practice running through the examples that they contain
+
+-   Ensure that they are using the correct version of R to reproduce exactly the contents of this lesson
+
+-   Describe how to join and communicate with the Bioconductor community
+
+## Assumptions for This Class
+
+This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
+
+-   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9) class
 
 -   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
 
