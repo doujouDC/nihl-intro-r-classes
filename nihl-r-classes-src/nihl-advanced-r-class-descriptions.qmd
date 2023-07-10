@@ -2,7 +2,7 @@
 title: "R Class Descriptions (Advanced) with Learning Objectives"
 author: "Doug Joubert"
 date: "`r Sys.Date()`"
-format: html
+format: docx
 editor: visual
 echo: fenced
 toc: true
