@@ -1,0 +1,323 @@
+---
+title: "Associations Code Presentation"
+format: revealjs
+editor: visual
+incremental: true
+scrollable: true
+execute:
+  echo: true
+code-fold: true
+code-summary: "Show the code"
+code-overflow: wrap
+---
+
+# Installing and Loading Packages
+
+## GGally
+
+[GGally](https://ggobi.github.io/ggally) extends ggplot2 by adding several functions to reduce the complexity of combining geoms with transformed data. Some of these functions include a pairwise plot matrix, a scatterplot plot matrix, a parallel coordinates plot, a survival plot, and several functions to plot networks.
+
+```{r}
+# install.packages("GGally")
+library(GGally)
+```
+
+## OpenIntro Package
+
+The [OpenIntro](http://openintrostat.github.io/openintro/) package includes the data and functions for the [OpenIntro Statistics](https://www.openintro.org/book/os/) textbook. The package also contains custom plotting functions for reproducing book figures, and the datasets used in [OpenIntro labs](openintro.info/stat/labs.php?stat_lab_software=R).
+
+```{r}
+# install.packages("openintro")
+library(openintro)
+```
+
+## Report
+
+Primary goal of [report](https://easystats.github.io/report/) is to bridge the gap between R's output and the formatted results contained in your manuscript. It automatically produces reports of models and data frames according to **best practices** guidelines (e.g., [APA](https://apastyle.apa.org/)'s style), ensuring **standardization** and **quality** in results reporting.
+
+##
+
+The `report` package works in a two step fashion. First, you create a `report` object with the [`report()`](https://easystats.github.io/report/reference/report.html) function. Then, this report object can be displayed either textually (the default output) or as a table, using [`as.data.frame()`](https://rdrr.io/r/base/as.data.frame.html). Moreover, you can also access a more digest and compact version of the report using [`summary()`](https://rdrr.io/r/base/summary.html) on the report object.
+
+```{r}
+# install.packages("report")
+library(report)
+```
+
+## Tidyverse Package
+
+The tidyverse is a collection of R [packages](https://www.tidyverse.org/packages) designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Most importantly, the tidyverse collection of packages contains [ggplot](https://ggplot2.tidyverse.org/).
+
+```{r}
+# install.packages("tidyverse")
+library(tidyverse)
+```
+
+# Scatterplots
+
+We can then import the data into a new object called blue_jays
+
+```{r}
+blue_jays <- read_csv("../lsc563-joubert/data-raw/blue-jays.csv")
+```
+
+##
+Let us use the head() function to view the first 5 rows of the dataframe.
+
+```{r}
+head(blue_jays, 5)
+```
+
+##
+Let us explore the blue jay data uses histograms. Let us first look at the body mass variables. This [*page*](https://homepage.divms.uiowa.edu/~luke/classes/STAT4580/histdens.html) has more information about using density functions in geom_histogram.
+
+```{r}
+bj_body_mass_hist <- blue_jays %>% 
+  ggplot(mapping = aes(x = body_mass_g)) +
+  geom_histogram(color = "black", fill = "white") +
+  geom_vline(mapping = aes(xintercept = mean(body_mass_g, na.rm = TRUE)), color = "red", linetype = "dashed", linewidth = 1)
+bj_body_mass_hist
+
+```
+
+Figure 1: Histogram of the body mass variable.
+
+##
+Now, let us look at a histogram of the head length variable (Figure 2).
+
+```{r}
+bj_head_length_hist <- blue_jays %>% 
+  ggplot(mapping = aes(x = head_length_mm)) +
+  geom_histogram(color = "black", fill = "white") +
+  geom_vline(mapping = aes(xintercept = mean(head_length_mm, na.rm = TRUE)), color = "red", linetype = "dashed", linewidth = 1)
+bj_head_length_hist
+
+```
+
+Figure 2: Histogram of the head length variable.
+
+##
+Although examing the shape of each distribution is useful, we can learn much more by displaying the bivariate data in a graphical form that maintains the pairing [@laneDescribingBivariateData2007]. This graph types is called a scatterplot.
+
+### Creating Scatterplots
+
+Creating scatterplots is simple and they are very useful when you want to reveal the nature of the relationship between two variables. Now, let us look at the blue jay data as a scatterplot. Figure 4 is a plot of head length against body mass. In this plot, head length is shown along the y-axis and body mass along the x axis, and each bird is represented by one dot (Figure 4).
+
+Note the terminology: we say that we plot the variable shown along the y-axis against the variable shown along the x-axis.
+
+##
+
+```{r}
+blue_jays %>%
+  ggplot(mapping = aes(x = body_mass_g, y = head_length_mm)) +
+  geom_point(size = 1.5) +
+  labs(y = "Head length in millimeters", 
+       x = "Body mass in grams")
+```
+
+Figure 4: Head length (measured from the tip of the bill to the back of the head, in mm) versus body mass (in grams),for 123 blue jays. Each dot corresponds to one bird. Data source: Keith Tarvin, Oberlin College.
+
+From Figure 4, we can see there is a moderate tendency for heavier birds to have longer heads.
+
+##
+
+```{r}
+blue_jays %>% 
+ggplot(aes(x = body_mass_g, y = head_length_mm)) + 
+  geom_point(size = 1.5) +
+  scale_x_continuous(name = "body mass (g)") +
+  scale_y_continuous(name = "head length (mm)")
+```
+
+The blue jay dataset contains both male and female birds, so we may want to look at the relationship between head length and body mass, by sex.
+
+To address this question, we can color the points in the scatterplot by the sex of the bird. I did not like the default colors that R provided so I used Set1 from the color brewer package (Figure 5).
+
+##
+
+```{r}
+blue_jays %>%
+  ggplot(mapping = aes(x = body_mass_g, y = head_length_mm, color = sex)) +
+  geom_point(size = 1.5) +
+  scale_color_brewer(palette="Set1") +
+  labs(y = "Head length in millimeters", 
+       x = "Body mass in grams")
+```
+
+Figure 5: Head length versus body mass for 123 blue jays. The birds' sex is indicated by color.
+
+##
+
+Figure 5 reveals that the overall trend in head length and body mass is at least in part driven by the sex of the birds. Meaning that at the same body mass, male birds tend to have longer heads than female birds.
+
+### Transformations
+
+The relationship between two variables may not be linear. In these cases we can sometimes see strange and even inscrutable patterns in a scatterplot of the data. Sometimes there really is no meaningful relationship between the two variables. Other times, a careful transformation of one or both of the variables can reveal a clear relationship.
+
+##
+
+In Figure 7, we will use the [`coord_trans()`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.6/topics/coord_trans) function, is different to scale transformations in that it occurs after statistical transformation and will affect the visual appearance of geoms - there is no guarantee that straight lines will continue to be straight.
+
+```{r}
+mammals %>% 
+ggplot(mapping = aes(x = body_wt, y = brain_wt)) +
+  geom_point() + 
+  coord_trans(x = "log10", y = "log10")
+```
+
+Figure 7: Scatterplot between the age of smoker and how much they smoke on weekdays, log transformation.
+
+##
+
+In Figure 8, we will use the [`scale_x_log10()`](https://ggplot2-book.org/scale-position.html?q=scale_x_log10()#numeric-position-scales) and [`scale_y_log10()`](https://ggplot2-book.org/scale-position.html?q=scale_x_log10()#numeric-position-scales) functions perform a base-10 log transformation of each axis.
+
+```{r}
+mammals %>%
+ggplot(mapping = aes(x = body_wt, y = brain_wt)) +
+  geom_point() +
+  scale_x_log10() +
+  scale_y_log10()
+```
+
+Figure 8: Scatterplot between the age of smoker and how much they smoke on weekdays, log transformation.
+
+# Correlation
+
+Andrew Heiss has a nice guide, that I find useful [@heissRelationships2021]:
+
+| **r**      | **Rough meaning** |
+|------------|-------------------|
+| ± 0.1--0.3 | Modest            |
+| ± 0.3--0.5 | Moderate          |
+| ± 0.5--0.8 | Strong            |
+| ± 0.8--0.9 | Very strong       |
+
+## Correlation in R
+
+The `cor(x, y)` function will compute the Pearson correlation between variables, `x` and `y`. Since this quantity is symmetric with respect to `x` and `y`, it doesn't matter in which order you put the variables.
+
+At the same time, the `cor()` function is very conservative when it encounters missing data (e.g. NAs). The `use` argument allows you to override the default behavior of returning NA whenever any of the values encountered is NA. Setting the `use` argument to `pairwise.complete.obs` allows `cor()` to compute the correlation coefficient for those observations where the values of x and y are both not missing.
+
+##
+
+Let us try this with the blue jay data. We will find the correlation between our two variables, body mass and head length:
+
+```{r}
+cor(x = blue_jays$body_mass_g, y = blue_jays$head_length_mm, use ="pairwise.complete.obs", method = "pearson")
+```
+
+##
+
+`cor.test()` provides access to the [values](https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/cor.test) returned by the correlation. The function `cor.test()` returns a list containing the following components:
+
+-   p.value: the p-value of the test
+
+-   estimate: the correlation coefficient
+
+```{r}
+cor.test(blue_jays$body_mass_g, blue_jays$head_length_mm)
+```
+
+##
+
+As you can see from the output, that the correlation is: 0.6294447. Using the guide from Heiss, this is a strong positive correlation.
+
+A critical property of Pearson's r is that it is unaffected by linear transformations. This means that multiplying a variable by a constant and/or adding a constant does not change the correlation of that variable with other variables. For instance, the correlation of Weight and Height does not depend on whether Height is measured in inches, feet, or even miles.
+
+# Simple Linear Regression
+
+As we just learned, scatterplots are the most common and effective tools for visualizing the relationship between two numeric variables. We also learned that in a linear regression model, a regression coefficient tells us the average change in the response variable associated with a one unit increase in the explanatory (predictor) variable.
+
+##
+In a simple linear regression, we predict values on one variable from the values on a second variable [@laneRegression2007]:
+
+-   Variable we are predicting is referred to as Y
+
+-   Variable we are basing our predictions on is referred to as X
+
+-   When there is only one predictor variable, the prediction method is called simple regression
+
+-   Simple linear regression, the predictions of Y when plotted as a function of X form a straight line
+
+##
+
+## Smoothing
+
+Statisticians have developed numerous approaches to smoothing. These approaches are much more complex and computationally costly, but they are readily available in modern statistical computing environments.
+
+The `geom_smooth()` function allows you to draw such models over a scatterplot of the data itself. This technique is known as visualizing the model in the data space. An important argument to [geom_smooth()](https://ggplot2.tidyverse.org/reference/geom_smooth.html) is the `method`, which allows you to choose which type of model is used to fit the smooth curve.
+
+##
+Let us try this out with the blue jay data, focusing on body mass and head length (Figure 13).
+
+```{r}
+blue_jays %>% 
+  ggplot(mapping = aes(x = body_mass_g, y = head_length_mm)) +
+  geom_point(size = 1.5) +
+  geom_smooth(method = "lm") +
+  labs(y = "Head length in millimeters",
+       x = "Body mass in grams")
+
+```
+
+Figure 13: Head length versus body mass (in grams), for 123 blue jays. Each dot corresponds to one bird. I have added a smoothed line to the graph.
+
+##
+
+As we can see in Figure 13, this overlays the scatterplot with a smooth curve, including an assessment of uncertainty in the form of point-wise confidence intervals shown in grey [@wickhamToolbox2016]. If you're not interested in the confidence interval, turn it off with `geom_smooth(se = FALSE)`.
+
+## Fitting Simple Linear Models
+
+While the `geom_smooth(method = “lm”)` function is useful for drawing linear models on a scatterplot, it doesn't actually return the characteristics of the model. As suggested by that syntax, however, the function that creates linear models is `lm()`. This function generally takes two arguments:
+
+-   A formula that specifies the model
+
+-   A data argument for the data frame that contains the data you want to use to fit the model
+
+##
+
+The `lm()` function return a model object having class "lm". This object contains lots of information about your regression model, including the data used to fit the model, the specification of the model, the fitted values and residuals, etc.
+
+Suppose we'd like to fit a simple linear regression model using body mass in grams as a predictor variable and head length as a response variable for blue jay data. We can use the `lm()` function to fit this simple linear regression model in R. StatQuest has a great [overview](https://youtu.be/u1cc1r_Y7M0) of performing this in R.
+
+```{r}
+fit_blue_jays <- lm(data = blue_jays, head_length_mm ~ body_mass_g)
+# Saves the output from the lm() function
+```
+
+##
+
+The way that I have specified the formula means that `body_mass_g` is considered to be the x-value and `head_length_mm` is considered to be the y-value. The linear module function then calculates the least square estimates for the y-intercept and the slope.
+
+An "lm" object contains a host of information about the regression model that you fit. There are various ways of extracting different pieces of information.
+
+##
+
+The `coef()` function displays only the values of the coefficients.
+
+```{r}
+coef(fit_blue_jays)
+```
+
+##
+
+Conversely, the summary() function displays not only that information, but a bunch of other information, including the associated standard error and p-value for each coefficient, the R^2^, adjusted R^2^, and the residual standard error. The summary of an "lm" object in R is very similar to the output you would see in other statistical computing environments (e.g. Stata, SPSS, etc.)
+
+```{r}
+summary(fit_blue_jays)
+```
+
+# Data Reporting with Report Package
+
+The [`report`](https://easystats.github.io/report/index.html) package works in a two step fashion. First, you create a `report` object with the [`report()`](https://easystats.github.io/report/reference/report.html) function. Then, this report object can be displayed either textually (the default output) or as a table, using [`as.data.frame()`](https://rdrr.io/r/base/as.data.frame.html). Moreover, you can also access a more digest and compact version of the report using [`summary()`](https://rdrr.io/r/base/summary.html) on the report object (Figure 14).
+
+![](../lsc563-joubert/instruction-images/report-package-workflow.png)
+
+##
+
+A nice and easy way to report results of an regression analysis in R is with the `report()` function:
+
+```{r}
+library(report)
+report(fit_blue_jays)
+```
