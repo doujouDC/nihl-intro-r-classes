@@ -227,7 +227,7 @@ const Plugin = () => {
 							section.outerHTML = '<section data-state="alert">' +
 								'ERROR: The attempt to fetch ' + url + ' failed with HTTP status ' + xhr.status + '.' +
 								'Check your browser\'s JavaScript console for more details.' +
-								'<p>Remember that you need to serve the presentation HTML from a HTTP server.</p>' +
+								'Remember that you need to serve the presentation HTML from a HTTP server.</p>' +
 								'</section>';
 						}
 
