@@ -106,7 +106,7 @@ Third, is experience working in RStudio and creating scripts and/or markdown fil
 
 ## Description
 
-This class provides an introduction to version control and using [GitHub](https://github.com/) for project versioning. Students will have a better understanding of version control and its advantages for collaboration and version control.
+This class introduces version control and using [GitHub](https://github.com/) for project versioning. Students will have a better understanding of version control and its advantages for collaboration and version control.
 
 ## Learning Objectives
 
@@ -161,38 +161,6 @@ This class makes a few assumptions about your understanding of R and RStudio:
 
 3.  You have already created a GitHub account
 4.  You have downloaded, installed, and verified Git on your computer
-
-# Data Visualization in ggplot: Visualizing Relationships and Linear Regression
-
-## Description
-
-This class provides a basic overview of the methods used to visualize the association among two or more quantitative variables. This class will focus on scatterplots, scatterplot matrix, and visualizing paired data. Participants are expected to have taken the [Introduction to Data Visualization in R: ggplot](https://www.nihlibrary.nih.gov/training/introduction-data-visualization-r-ggplot-8) class. Participants must also install [R](https://mirrors.nics.utk.edu/cran/), [RStudio](https://www.rstudio.com/products/rstudio/download/), and the [tidyverse](https://www.tidyverse.org/) package, before the class so that they can follow along with the instructor.
-
-## Learning Objectives
-
-Upon completion of this class, students should be able to:
-
--   Define bivariate data
-
--   Define scatterplot
-
--   Create a scatterplot using ggplot
-
--   Define linear regression
-
--   Demonstrate how to perform a simple linear regression in R
-
-## Assumptions for This Class
-
-This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
-
--   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9) class
-
--   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
-
--   [Quick-R](http://www.statmethods.net/)
-
--   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
 
 # Introduction to Quarto for Scholarly Publishing (Revised)
 
@@ -287,9 +255,11 @@ This class makes a few assumptions about your understanding of R and RStudio. Fi
 
 Third, you have taken the Introduction to Quarto for Scholarly Publishing class.
 
+# Project Management in RStudio
+
 ## Description
 
-This class focuses on data and project management using R and RStudio. RStudio makes it possible to work on a complete research project in a more efficient, integrated, and organized manner. This intermediate-level course is designed to be relevant to students from different disciplines.
+This class focuses on data and project management using R and RStudio. RStudio makes it possible to work on a complete research project in a more efficient, integrated, and organized manner. This course is designed to be relevant to students from different disciplines.
 
 ## Learning Objectives
 
@@ -300,22 +270,6 @@ Upon completion of this class students should be able to:
 -   Apply best practices for setting up RStudio for projects
 -   Create a new RStudio Project
 -   Discuss best practices for organizing data in an RStudio project
-
-# Reproducibility in RStudio: Advanced Markdown
-
-## Description
-
-This class is designed for those who want to extend the basics covered in the [Reproducibility in RStudio: Basic Markdown](https://www.nihlibrary.nih.gov/training/reproducibility-rstudio-basic-markdown) class. This class uses [Quarto](https://quarto.org/) to render format citations and bibliographies using [Zotero](https://www.zotero.org/). [Zotero](https://www.zotero.org/) is a free, easy-to-use tool to help you collect, organize, annotate, cite, and share research. Some familiarity or experience in R and RStudio is recommended but not required. Students are encouraged to install [R](https://mirrors.nics.utk.edu/cran/) and [RStudio](https://www.rstudio.com/products/rstudio/download/#download) before the class so that they can follow along with the instructor.
-
-## Learning Objectives
-
-Upon completion of this class students should be able to:
-
--   Download and install Zotero
--   Link RStudio to Zotero
--   Create a bibliography and link it to a markdown document
--   Insert citations using RStudio Visual Interface, and via the command line
--   Download and link a `CSL` file which specifies the formatting to use when generating the citations and bibliography
 
 ## Assumptions for This Class
 
@@ -328,8 +282,6 @@ This class makes a few assumptions about your understanding of R and RStudio. Fi
 -   [Quick-R](http://www.statmethods.net/)
 
 -   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
-
-Third, is experience working in RStudio and creating scripts and/or markdown files.
 
 # Introduction to Bioconductor
 
