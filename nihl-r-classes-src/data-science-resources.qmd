@@ -9,6 +9,8 @@ toc-location: body
 toc-title: Table of Contents
 ---
 
+# 
+
 # Data Science
 
 -   [Coding and Comment Style Guide](https://mitcommlab.mit.edu/broad/commkit/coding-and-comment-style/): discusses how to use effective naming, structuring, context, and comments to communicate your logic in an easy-to-use code
@@ -74,6 +76,8 @@ toc-title: Table of Contents
 
 -   [Using the RStudio Terminal in the RStudio IDE](https://support.posit.co/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE)
 -   [Command Line Essentials](https://datacarpentry.org/shell-genomics/02-the-filesystem/index.html): a short primer on how to navigate through a file structure at the command line, from the [Introduction to the Command Line for Genomics Workshop](https://datacarpentry.org/shell-genomics/)
+
+# Other Resources
 
 # Licenses
 
