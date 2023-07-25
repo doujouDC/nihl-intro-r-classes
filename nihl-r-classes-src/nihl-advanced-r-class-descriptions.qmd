@@ -9,22 +9,21 @@ toc: true
 toc-location: right
 ---
 
-# Data Visualization in R: Customization in ggplot
+# Project Management in RStudio
 
 ## Description
 
-This class provides an overview of options for customizing a ggplot graph. This class will focus on methods for creating small multiples, options for customizing a graph, and how to apply ggplot themes. Students will need to install [R](https://mirrors.nics.utk.edu/cran/), [RStudio](https://www.rstudio.com/products/rstudio/download/), and the [tidyverse](https://www.tidyverse.org/) package, before the class so that they can follow along with the instructor.
+This class focuses on data and project management using R and RStudio. RStudio makes it possible to work on a complete research project in a more efficient, integrated, and organized manner. This course is designed to be relevant to students from different disciplines.
 
 ## Learning Objectives
 
-By the end of this class, students should be able to:
+Upon completion of this class students should be able to:
 
-1.  Describe options for time series data
-2.  Create a line plot in ggplot
-3.  Learn how to facet a plot
-4.  Demonstrate options for customizing the title and axis
-5.  Apply different ggplot themes
-6.  Arrange multiple plots (handout)
+-   Define project management from a data science perspective
+-   List the advantages of using RStudio projects
+-   Apply best practices for setting up RStudio for projects
+-   Create a new RStudio Project
+-   Discuss best practices for organizing data in an RStudio project
 
 ## Assumptions for This Class
 
@@ -37,70 +36,6 @@ This class makes a few assumptions about your understanding of R and RStudio. Fi
 -   [Quick-R](http://www.statmethods.net/)
 
 -   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
-
-Third, is experience working in RStudio and creating scripts and/or markdown files.
-
-# Data Visualization in R: ggplot
-
-## Description
-
-This class provides a basic overview of creating plots using ggplot. ggplot is a part of the Tidyverse, a [collection of R packages](https://www.tidyverse.org/packages) designed for data science. This class will focus on identifying the appropriate packages for plotting, defining plot aesthetics, and demonstrating how to add layers to ggplot graphs. Students are encouraged to install [R](https://mirrors.nics.utk.edu/cran/), [RStudio](https://www.rstudio.com/products/rstudio/download/), and the [tidyverse](https://www.tidyverse.org/) package, before the class so that they can follow along with the instructor.
-
-## Learning Objectives
-
-By the end of this class, students should be able to:
-
-1.  Discuss the connection between data, aesthetics, & the grammar of graphics
-2.  Describe how ggplot works
-3.  Define geoms and distinguish between individual geoms and collective geoms
-
-## Assumptions for This Class
-
-This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
-
--   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9)
-
--   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
-
--   [Quick-R](http://www.statmethods.net/)
-
--   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
-
-Third, is experience working in RStudio and creating scripts and/or markdown files.
-
-# Data Visualization in ggplot: Visualizing Relationships and Linear Regression
-
-## Description
-
-This class provides a basic overview of the methods used to visualize the association among two or more quantitative variables. This class will focus on scatterplots, scatterplot matrix, and visualizing paired data. Participants are expected to have taken the [Introduction to Data Visualization in R: ggplot](https://www.nihlibrary.nih.gov/training/introduction-data-visualization-r-ggplot-8) class. Participants must also install [R](https://mirrors.nics.utk.edu/cran/), [RStudio](https://www.rstudio.com/products/rstudio/download/), and the [tidyverse](https://www.tidyverse.org/) package, before the class so that they can follow along with the instructor.
-
-## Learning Objectives
-
-Upon completion of this class, students should be able to:
-
--   Define bivariate data
-
--   Define scatterplot
-
--   Create a scatterplot using ggplot
-
--   Define linear regression
-
--   Demonstrate how to perform a simple linear regression in R
-
-## Assumptions for This Class
-
-This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
-
--   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9) class
-
--   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
-
--   [Quick-R](http://www.statmethods.net/)
-
--   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
-
-Third, is experience working in RStudio and creating scripts and/or markdown files.
 
 # Version Control and GitHub (New)
 
@@ -161,6 +96,102 @@ This class makes a few assumptions about your understanding of R and RStudio:
 
 3.  You have already created a GitHub account
 4.  You have downloaded, installed, and verified Git on your computer
+
+# Data Visualization in R: ggplot
+
+## Description
+
+This class provides a basic overview of creating plots using ggplot. ggplot is a part of the Tidyverse, a [collection of R packages](https://www.tidyverse.org/packages) designed for data science. This class will focus on identifying the appropriate packages for plotting, defining plot aesthetics, and demonstrating how to add layers to ggplot graphs. Students are encouraged to install [R](https://mirrors.nics.utk.edu/cran/), [RStudio](https://www.rstudio.com/products/rstudio/download/), and the [tidyverse](https://www.tidyverse.org/) package, before the class so that they can follow along with the instructor.
+
+## Learning Objectives
+
+By the end of this class, students should be able to:
+
+1.  Discuss the connection between data, aesthetics, & the grammar of graphics
+2.  Describe how ggplot works
+3.  Define geoms and distinguish between individual geoms and collective geoms
+
+## Assumptions for This Class
+
+This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
+
+-   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9)
+
+-   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+
+-   [Quick-R](http://www.statmethods.net/)
+
+-   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+
+Third, is experience working in RStudio and creating scripts and/or markdown files.
+
+
+# Data Visualization in R: Customization in ggplot
+
+## Description
+
+This class provides an overview of options for customizing a ggplot graph. This class will focus on methods for creating small multiples, options for customizing a graph, and how to apply ggplot themes. Students will need to install [R](https://mirrors.nics.utk.edu/cran/), [RStudio](https://www.rstudio.com/products/rstudio/download/), and the [tidyverse](https://www.tidyverse.org/) package, before the class so that they can follow along with the instructor.
+
+## Learning Objectives
+
+By the end of this class, students should be able to:
+
+1.  Describe options for time series data
+2.  Create a line plot in ggplot
+3.  Learn how to facet a plot
+4.  Demonstrate options for customizing the title and axis
+5.  Apply different ggplot themes
+6.  Arrange multiple plots (handout)
+
+## Assumptions for This Class
+
+This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
+
+-   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9)
+
+-   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+
+-   [Quick-R](http://www.statmethods.net/)
+
+-   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+
+Third, is experience working in RStudio and creating scripts and/or markdown files.
+
+
+# Data Visualization in ggplot: Visualizing Relationships and Linear Regression
+
+## Description
+
+This class provides a basic overview of the methods used to visualize the association among two or more quantitative variables. This class will focus on scatterplots, scatterplot matrix, and visualizing paired data. Participants are expected to have taken the [Introduction to Data Visualization in R: ggplot](https://www.nihlibrary.nih.gov/training/introduction-data-visualization-r-ggplot-8) class. Participants must also install [R](https://mirrors.nics.utk.edu/cran/), [RStudio](https://www.rstudio.com/products/rstudio/download/), and the [tidyverse](https://www.tidyverse.org/) package, before the class so that they can follow along with the instructor.
+
+## Learning Objectives
+
+Upon completion of this class, students should be able to:
+
+-   Define bivariate data
+
+-   Define scatterplot
+
+-   Create a scatterplot using ggplot
+
+-   Define linear regression
+
+-   Demonstrate how to perform a simple linear regression in R
+
+## Assumptions for This Class
+
+This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
+
+-   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9) class
+
+-   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+
+-   [Quick-R](http://www.statmethods.net/)
+
+-   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+
+Third, is experience working in RStudio and creating scripts and/or markdown files.
+
 
 # Introduction to Quarto for Scholarly Publishing (Revised)
 
@@ -255,33 +286,6 @@ This class makes a few assumptions about your understanding of R and RStudio. Fi
 
 Third, you have taken the Introduction to Quarto for Scholarly Publishing class.
 
-# Project Management in RStudio
-
-## Description
-
-This class focuses on data and project management using R and RStudio. RStudio makes it possible to work on a complete research project in a more efficient, integrated, and organized manner. This course is designed to be relevant to students from different disciplines.
-
-## Learning Objectives
-
-Upon completion of this class students should be able to:
-
--   Define project management from a data science perspective
--   List the advantages of using RStudio projects
--   Apply best practices for setting up RStudio for projects
--   Create a new RStudio Project
--   Discuss best practices for organizing data in an RStudio project
-
-## Assumptions for This Class
-
-This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
-
--   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9)
-
--   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
-
--   [Quick-R](http://www.statmethods.net/)
-
--   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
 
 # Introduction to Bioconductor
 
