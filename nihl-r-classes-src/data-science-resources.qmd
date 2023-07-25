@@ -9,13 +9,11 @@ toc-location: body
 toc-title: Table of Contents
 ---
 
-# 
-
 # Data Science
 
 -   [Coding and Comment Style Guide](https://mitcommlab.mit.edu/broad/commkit/coding-and-comment-style/): discusses how to use effective naming, structuring, context, and comments to communicate your logic in an easy-to-use code
 -   [Coding Mindset](https://mitcommlab.mit.edu/broad/commkit/coding-mindset/): tools from creating a coding mindset that complements technical expertise by helping to contextualize generic best practices to complex real-world problems
--   [Data Analysis for Life Sciences](https://leanpub.com/dataanalysisforthelifesciences): uses data and code to teach the necessary statistical concepts and programming skills to become a data analyst
+-   [Data Analysis for Life Sciences](https://leanpub.com/dataanalysisforthelifesciences): uses data and code to teach the necessary statistical concepts and programming skills to become a data analyst. I have saved a PDF version of the [LeanPub book](https://leanpub.com/dataanalysisforthelifesciences) in the no-sync folder and also save in Bioinformatics folder in Dropbox.
 -   [R for Data Science (2e)](https://r4ds.hadley.nz/): Book teaches how to clean data, use the grammar of graphics, literate programming, and create reproducible research
 
 # Git and GitHub
@@ -78,6 +76,14 @@ toc-title: Table of Contents
 -   [Command Line Essentials](https://datacarpentry.org/shell-genomics/02-the-filesystem/index.html): a short primer on how to navigate through a file structure at the command line, from the [Introduction to the Command Line for Genomics Workshop](https://datacarpentry.org/shell-genomics/)
 
 # Other Resources
+
+-   Introduction to Bioconductor: This is a course that is offered through [Harvard EdX](https://learning.edx.org/course/course-v1:HarvardX+PH525.5x+2T2022/home).
+
+-   Introduction to Bioconductor and Standard Classes: Charlotte Soneson provides a nice overview of datatypes in R and compares these [datatypes](https://ivanek.github.io/analysisOfGenomicsDataWithR/02_IntroToBioc_html.html#standard-bioconductor-data-structures) in Bioconductor.
+
+-   PH525x Series: Biomedical Data Science: [Chapter 11 - Introduction to Bioconductor](http://genomicsclass.github.io/book/)
+
+    S4 classes in Bioconductor: the [intro section](https://carpentries-incubator.github.io/bioc-project/05-s4.html) as an introduction to the Bioconductor data models
 
 # Licenses
 
