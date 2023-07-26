@@ -17,63 +17,62 @@ This class focuses on data and project management using R and RStudio. RStudio m
 
 Upon completion of this class students should be able to define project management from a data science perspective, list the advantages of using RStudio projects, apply best practices for setting up RStudio for projects, create a new RStudio Project, and discuss best practices for organizing data in an RStudio project
 
-## Assumptions for This Class
+## Assumptions for This Class (send out to registrants via email)
 
-This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
+This class makes a few assumptions about your understanding of R and RStudio:
 
--   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9)
-
--   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
-
--   [Quick-R](http://www.statmethods.net/)
-
--   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+1.  You have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+2.  You have experience with R and RStudio. If not, here are some resources for getting started:
+    a.  NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9)
+    b.  [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+    c.  [Quick-R](http://www.statmethods.net/)
+    d.  [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
 
 # Version Control and GitHub (New)
 
 ## Description
 
-This class introduces version control and using [GitHub](https://github.com/) for project versioning. Students will have a better understanding of version control and its advantages for collaboration and version control.
+This class introduces version control and how to use [GitHub](https://github.com/) for project versioning. Students will have a better understanding of version control, GitHub, and their advantages for managing projects.
 
-Upon completion of this class students should be able to, recognize why version control is useful, discuss the difference between Git and GitHub, list the options for authenticating to GitHub, and create a personal access token (PAT)
+Upon completion of this class students should be able to, recognize why version control is useful, discuss the difference between Git and GitHub, list the options for authenticating to GitHub, and list the options for creating a personal access token (PAT).
 
-## Assumptions for This Class
+## Assumptions for This Class (send out to registrants via email)
 
 This class makes a few assumptions about your understanding of R and RStudio:
 
-1.  You have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop).
-2.  You have experience with R. If not, here are some resources for getting started:
+1.  You have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+2.  You have experience with R and RStudio. If not, here are some resources for getting started:
+    a.  NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9)
+    b.  [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+    c.  [Quick-R](http://www.statmethods.net/)
+    d.  [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
 
--   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9) class
--   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
--   [Quick-R](http://www.statmethods.net/)
--   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
-
+```{=html}
+<!-- -->
+```
 3.  You have already created a GitHub account
 
 # Git in RStudio (Modified)
 
 ## Description
 
-This class focuses on using Git and [GitHub](https://github.com/), with RStudio. Using integrated RStudio tools learners will have a chance to experiment with this integration and understand its advantages for collaboration and version control. Students need to install [R](https://mirrors.nics.utk.edu/cran/) and the current version of [RStudio](https://www.rstudio.com/products/rstudio/download/#download) before the class so that they can follow along with the instructor.
+This class focuses on using Git and [GitHub](https://github.com/), with RStudio. Using integrated RStudio tools learners will have a chance to experiment with this integration and understand its advantages for collaboration managing projects.
 
-Upon completion of this class students should be able to discuss the difference between Git and GitHub, list the options for authenticating to GitHub, create a new R project using a GitHub repository, and distinguish between pulling and pushing data from a repository
+Upon completion of this class students should be able to discuss the difference between Git and GitHub, list the options for authenticating to GitHub, create a new R project using a GitHub repository, and distinguish between pulling and pushing data from a repository.
 
-## Assumptions for This Class
+## Assumptions for This Class (send out to registrants via email)
 
 This class makes a few assumptions about your understanding of R and RStudio:
 
-1.  You have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop).
-2.  You have experience with R. If not, here are some resources for getting started:
-
--   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9) class
--   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
--   [Quick-R](http://www.statmethods.net/)
--   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
-
-3.  You have already created a GitHub account
-4.  You have downloaded, installed, and verified Git on your computer
-5.  You have taken the Version Control and GitHub class
+1.  You have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+2.  You have experience with R and RStudio. If not, here are some resources for getting started:
+    a.  NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9)
+    b.  [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+    c.  [Quick-R](http://www.statmethods.net/)
+    d.  [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+3.  You have taken the Version Control and GitHub class
+4.  You have already created a GitHub account
+5.  You have downloaded, installed, and verified Git on your computer
 
 # Introduction to Quarto for Scholarly Publishing (Revised)
 
@@ -81,21 +80,18 @@ This class makes a few assumptions about your understanding of R and RStudio:
 
 This class is designed for those who want to extend the basics of R Markdown and apply those skills in [Quarto](https://quarto.org/). Quarto is an open-source scientific and technical publishing system that offers multilingual programming language support to create dynamic and static documents, books, presentations, blogs, and other online resources.
 
-In this class you will learn about the similarities and differences between R-markdown and Quarto. You will also learn how to use Quarto to render documents in multiple formats, with a focus on scholarly publishing. Some familiarity or experience in R and RStudio is required. Upon completion of this class students should be able to distinguish between R-markdown and Quarto, identify publishing workflows using markdown, demonstrated the difference between the visual and source editors, create basic markdown elements, learn how to create and run code-blocks, and render a markdown document
+In this class you will learn about the similarities and differences between R-markdown and Quarto. You will also learn how to use Quarto to render documents in multiple formats, with a focus on scholarly publishing. Upon completion of this class students will be able to distinguish between R-markdown and Quarto, identify publishing workflows using markdown, demonstrated the differences between the visual and source editors, create basic markdown elements, learn how to create and run code-blocks, and render a markdown document.
 
-## Assumptions for This Class
+## Assumptions for This Class (send out to registrants via email)
 
-This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
+This class makes a few assumptions about your understanding of R and RStudio:
 
--   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9)
-
--   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
-
--   [Quick-R](http://www.statmethods.net/)
-
--   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
-
-Third, is experience working in RStudio and creating scripts and/or markdown files.
+1.  You have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+2.  You have experience with R and RStudio. If not, here are some resources for getting started:
+    a.  NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9)
+    b.  [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+    c.  [Quick-R](http://www.statmethods.net/)
+    d.  [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
 
 # Quarto for Scholarly Publishing: Advanced Formatting (Revised)
 
@@ -105,19 +101,17 @@ This class is designed for those who want to extend the basics covered in the In
 
 Upon completion of this class students should be able to create tables, customize code-blocks, insert images into a markdown document and modify attributes, create document templates, and render a markdown document in multiple formats
 
-## Assumptions for This Class
+## Assumptions for This Class (send out to registrants via email)
 
-This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
+This class makes a few assumptions about your understanding of R and RStudio:
 
--   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9)
-
--   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
-
--   [Quick-R](http://www.statmethods.net/)
-
--   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
-
-Third, you have taken the Introduction to Quarto for Scholarly Publishing class.
+1.  You have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+2.  You have experience with R and RStudio. If not, here are some resources for getting started:
+    a.  NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9)
+    b.  [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+    c.  [Quick-R](http://www.statmethods.net/)
+    d.  [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+3.  You have taken the Introduction to Quarto for Scholarly Publishing class.
 
 # Quarto for Scholarly Publishing: Working with Citations (Revised)
 
@@ -127,16 +121,14 @@ This class is designed for those who want to extend the basics covered in the [R
 
 Upon completion of this class students should be able to download and install Zotero, link RStudio to Zotero, create a bibliography and link it to a markdown document, insert citations using RStudio Visual Interface, and via the command line, and download and link a `CSL` file which specifies the formatting to use when generating the citations and bibliography
 
-## Assumptions for This Class
+## Assumptions for This Class (send out to registrants via email)
 
-This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
+This class makes a few assumptions about your understanding of R and RStudio:
 
--   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9)
-
--   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
-
--   [Quick-R](http://www.statmethods.net/)
-
--   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
-
-Third, you have taken the Introduction to Quarto for Scholarly Publishing class.
+1.  You have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+2.  You have experience with R and RStudio. If not, here are some resources for getting started:
+    a.  NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9)
+    b.  [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+    c.  [Quick-R](http://www.statmethods.net/)
+    d.  [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+3.  You have taken the Introduction to Quarto for Scholarly Publishing class.
