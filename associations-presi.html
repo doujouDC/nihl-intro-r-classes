@@ -5,9 +5,10 @@
 <script src="associations-presi_files/libs/quarto-html/popper.min.js"></script>
 <script src="associations-presi_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="associations-presi_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="associations-presi_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="associations-presi_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="associations-presi_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.2.247">
+  <meta name="generator" content="quarto-1.3.353">
 
   <title>Associations Code Presentation</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -24,9 +25,10 @@
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
       width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -92,7 +94,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="associations-presi_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link rel="stylesheet" href="associations-presi_files/libs/revealjs/dist/theme/quarto.css">
   <link href="associations-presi_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="associations-presi_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="associations-presi_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -135,44 +137,44 @@
     font-weight: 400;
   }
 
-  .callout.callout-captioned.callout-style-simple .callout-body {
+  .callout.callout-titled.callout-style-simple .callout-body {
     margin-top: 0.2em;
   }
 
-  .callout:not(.callout-captioned) .callout-body {
+  .callout:not(.callout-titled) .callout-body {
       display: flex;
   }
 
-  .callout:not(.no-icon).callout-captioned.callout-style-simple .callout-content {
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
     padding-left: 1.6em;
   }
 
-  .callout.callout-captioned .callout-header {
+  .callout.callout-titled .callout-header {
     padding-top: 0.2em;
     margin-bottom: -0.2em;
   }
 
-  .callout.callout-captioned .callout-caption  p {
+  .callout.callout-titled .callout-title  p {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
   }
     
-  .callout.callout-captioned.callout-style-simple .callout-content  p {
+  .callout.callout-titled.callout-style-simple .callout-content  p {
     margin-top: 0;
   }
 
-  .callout.callout-captioned.callout-style-default .callout-content  p {
+  .callout.callout-titled.callout-style-default .callout-content  p {
     margin-top: 0.7em;
   }
 
-  .callout.callout-style-simple div.callout-caption {
+  .callout.callout-style-simple div.callout-title {
     border-bottom: none;
     font-size: .9rem;
     font-weight: 600;
     opacity: 75%;
   }
 
-  .callout.callout-style-default  div.callout-caption {
+  .callout.callout-style-default  div.callout-title {
     border-bottom: none;
     font-weight: 600;
     opacity: 85%;
@@ -204,7 +206,7 @@
     background-size: 0.9rem 0.9rem;
   }
 
-  .callout-caption {
+  .callout-title {
     display: flex
   }
     
@@ -217,16 +219,16 @@
     display: none !important;
   }
 
-  .callout.callout-captioned .callout-body > .callout-content > :last-child {
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
     margin-bottom: 0.5rem;
   }
 
-  .callout.callout-captioned .callout-icon::before {
+  .callout.callout-titled .callout-icon::before {
     margin-top: .5rem;
     padding-right: .5rem;
   }
 
-  .callout:not(.callout-captioned) .callout-icon::before {
+  .callout:not(.callout-titled) .callout-icon::before {
     margin-top: 1rem;
     padding-right: .5rem;
   }
@@ -241,7 +243,7 @@
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
   }
 
-  div.callout-note.callout-style-default .callout-caption {
+  div.callout-note.callout-style-default .callout-title {
     background-color: #dae6fb
   }
 
@@ -253,7 +255,7 @@
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
   }
 
-  div.callout-important.callout-style-default .callout-caption {
+  div.callout-important.callout-style-default .callout-title {
     background-color: #f7dddc
   }
 
@@ -265,7 +267,7 @@
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
   }
 
-  div.callout-warning.callout-style-default .callout-caption {
+  div.callout-warning.callout-style-default .callout-title {
     background-color: #fcefdc
   }
 
@@ -277,7 +279,7 @@
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
   }
 
-  div.callout-tip.callout-style-default .callout-caption {
+  div.callout-tip.callout-style-default .callout-title {
     background-color: #ccf1e3
   }
 
@@ -289,7 +291,7 @@
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
   }
 
-  div.callout-caution.callout-style-default .callout-caption {
+  div.callout-caution.callout-style-default .callout-title {
     background-color: #ffe5d0
   }
 
@@ -401,7 +403,7 @@
 </section>
 <section id="ggally" class="slide level2">
 <h2>GGally</h2>
-<a href="https://ggobi.github.io/ggally">GGally</a> extends ggplot2 by adding several functions to reduce the complexity of combining geoms with transformed data. Some of these functions include a pairwise plot matrix, a scatterplot plot matrix, a parallel coordinates plot, a survival plot, and several functions to plot networks.</p>
+<p><a href="https://ggobi.github.io/ggally">GGally</a> extends ggplot2 by adding several functions to reduce the complexity of combining geoms with transformed data. Some of these functions include a pairwise plot matrix, a scatterplot plot matrix, a parallel coordinates plot, a survival plot, and several functions to plot networks.</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -412,7 +414,7 @@
 </section>
 <section id="openintro-package" class="slide level2">
 <h2>OpenIntro Package</h2>
-The <a href="http://openintrostat.github.io/openintro/">OpenIntro</a> package includes the data and functions for the <a href="https://www.openintro.org/book/os/">OpenIntro Statistics</a> textbook. The package also contains custom plotting functions for reproducing book figures, and the datasets used in <a href="openintro.info/stat/labs.php?stat_lab_software=R">OpenIntro labs</a>.</p>
+<p>The <a href="http://openintrostat.github.io/openintro/">OpenIntro</a> package includes the data and functions for the <a href="https://www.openintro.org/book/os/">OpenIntro Statistics</a> textbook. The package also contains custom plotting functions for reproducing book figures, and the datasets used in <a href="openintro.info/stat/labs.php?stat_lab_software=R">OpenIntro labs</a>.</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -423,11 +425,11 @@ The <a href="http://openintrostat.github.io/openintro/">OpenIntro</a> package in
 </section>
 <section id="report" class="slide level2">
 <h2>Report</h2>
-Primary goal of <a href="https://easystats.github.io/report/">report</a> is to bridge the gap between R’s output and the formatted results contained in your manuscript. It automatically produces reports of models and data frames according to <strong>best practices</strong> guidelines (e.g., <a href="https://apastyle.apa.org/">APA</a>’s style), ensuring <strong>standardization</strong> and <strong>quality</strong> in results reporting.</p>
+<p>Primary goal of <a href="https://easystats.github.io/report/">report</a> is to bridge the gap between R’s output and the formatted results contained in your manuscript. It automatically produces reports of models and data frames according to <strong>best practices</strong> guidelines (e.g., <a href="https://apastyle.apa.org/">APA</a>’s style), ensuring <strong>standardization</strong> and <strong>quality</strong> in results reporting.</p>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
-The <code>report</code> package works in a two step fashion. First, you create a <code>report</code> object with the <a href="https://easystats.github.io/report/reference/report.html"><code>report()</code></a> function. Then, this report object can be displayed either textually (the default output) or as a table, using <a href="https://rdrr.io/r/base/as.data.frame.html"><code>as.data.frame()</code></a>. Moreover, you can also access a more digest and compact version of the report using <a href="https://rdrr.io/r/base/summary.html"><code>summary()</code></a> on the report object.</p>
+<p>The <code>report</code> package works in a two step fashion. First, you create a <code>report</code> object with the <a href="https://easystats.github.io/report/reference/report.html"><code>report()</code></a> function. Then, this report object can be displayed either textually (the default output) or as a table, using <a href="https://rdrr.io/r/base/as.data.frame.html"><code>as.data.frame()</code></a>. Moreover, you can also access a more digest and compact version of the report using <a href="https://rdrr.io/r/base/summary.html"><code>summary()</code></a> on the report object.</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -438,7 +440,7 @@ The <code>report</code> package works in a two step fashion. First, you create a
 </section>
 <section id="tidyverse-package" class="slide level2">
 <h2>Tidyverse Package</h2>
-The tidyverse is a collection of R <a href="https://www.tidyverse.org/packages">packages</a> designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Most importantly, the tidyverse collection of packages contains <a href="https://ggplot2.tidyverse.org/">ggplot</a>.</p>
+<p>The tidyverse is a collection of R <a href="https://www.tidyverse.org/packages">packages</a> designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Most importantly, the tidyverse collection of packages contains <a href="https://ggplot2.tidyverse.org/">ggplot</a>.</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -450,7 +452,7 @@ The tidyverse is a collection of R <a href="https://www.tidyverse.org/packages">
 <section>
 <section id="scatterplots" class="title-slide slide level1 center">
 <h1>Scatterplots</h1>
-We can then import the data into a new object called blue_jays</p>
+<p>We can then import the data into a new object called blue_jays</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -460,7 +462,7 @@ We can then import the data into a new object called blue_jays</p>
 </section>
 <section id="section-1" class="slide level2">
 <h2></h2>
-Let us use the head() function to view the first 5 rows of the dataframe.</p>
+<p>Let us use the head() function to view the first 5 rows of the dataframe.</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -481,7 +483,7 @@ Let us use the head() function to view the first 5 rows of the dataframe.</p>
 </section>
 <section id="section-2" class="slide level2">
 <h2></h2>
-Let us explore the blue jay data uses histograms. Let us first look at the body mass variables. This <a href="https://homepage.divms.uiowa.edu/~luke/classes/STAT4580/histdens.html"><em>page</em></a> has more information about using density functions in geom_histogram.</p>
+<p>Let us explore the blue jay data uses histograms. Let us first look at the body mass variables. This <a href="https://homepage.divms.uiowa.edu/~luke/classes/STAT4580/histdens.html"><em>page</em></a> has more information about using density functions in geom_histogram.</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -493,11 +495,11 @@ Let us explore the blue jay data uses histograms. Let us first look at the body 
 </details>
 
 </div>
-<img data-src="associations-presi_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch">Figure 1: Histogram of the body mass variable.</p>
+<img data-src="associations-presi_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"><p>Figure 1: Histogram of the body mass variable.</p>
 </section>
 <section id="section-3" class="slide level2">
 <h2></h2>
-Now, let us look at a histogram of the head length variable (Figure 2).</p>
+<p>Now, let us look at a histogram of the head length variable (Figure 2).</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -509,14 +511,14 @@ Now, let us look at a histogram of the head length variable (Figure 2).</p>
 </details>
 
 </div>
-<img data-src="associations-presi_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch">Figure 2: Histogram of the head length variable.</p>
+<img data-src="associations-presi_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"><p>Figure 2: Histogram of the head length variable.</p>
 </section>
 <section id="section-4" class="slide level2">
 <h2></h2>
-Although examing the shape of each distribution is useful, we can learn much more by displaying the bivariate data in a graphical form that maintains the pairing <span class="citation" data-cites="laneDescribingBivariateData2007">[@laneDescribingBivariateData2007]</span>. This graph types is called a scatterplot.</p>
+<p>Although examing the shape of each distribution is useful, we can learn much more by displaying the bivariate data in a graphical form that maintains the pairing <span class="citation" data-cites="laneDescribingBivariateData2007">[@laneDescribingBivariateData2007]</span>. This graph types is called a scatterplot.</p>
 <h3 id="creating-scatterplots">Creating Scatterplots</h3>
-Creating scatterplots is simple and they are very useful when you want to reveal the nature of the relationship between two variables. Now, let us look at the blue jay data as a scatterplot. Figure 4 is a plot of head length against body mass. In this plot, head length is shown along the y-axis and body mass along the x axis, and each bird is represented by one dot (Figure 4).</p>
-Note the terminology: we say that we plot the variable shown along the y-axis against the variable shown along the x-axis.</p>
+<p>Creating scatterplots is simple and they are very useful when you want to reveal the nature of the relationship between two variables. Now, let us look at the blue jay data as a scatterplot. Figure 4 is a plot of head length against body mass. In this plot, head length is shown along the y-axis and body mass along the x axis, and each bird is represented by one dot (Figure 4).</p>
+<p>Note the terminology: we say that we plot the variable shown along the y-axis against the variable shown along the x-axis.</p>
 </section>
 <section id="section-5" class="slide level2">
 <h2></h2>
@@ -531,8 +533,8 @@ Note the terminology: we say that we plot the variable shown along the y-axis ag
 </details>
 
 </div>
-<img data-src="associations-presi_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch">Figure 4: Head length (measured from the tip of the bill to the back of the head, in mm) versus body mass (in grams),for 123 blue jays. Each dot corresponds to one bird. Data source: Keith Tarvin, Oberlin College.</p>
-From Figure 4, we can see there is a moderate tendency for heavier birds to have longer heads.</p>
+<img data-src="associations-presi_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"><p>Figure 4: Head length (measured from the tip of the bill to the back of the head, in mm) versus body mass (in grams),for 123 blue jays. Each dot corresponds to one bird. Data source: Keith Tarvin, Oberlin College.</p>
+<p>From Figure 4, we can see there is a moderate tendency for heavier birds to have longer heads.</p>
 </section>
 <section id="section-6" class="slide level2">
 <h2></h2>
@@ -547,8 +549,8 @@ From Figure 4, we can see there is a moderate tendency for heavier birds to have
 </details>
 
 </div>
-<img data-src="associations-presi_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch">The blue jay dataset contains both male and female birds, so we may want to look at the relationship between head length and body mass, by sex.</p>
-To address this question, we can color the points in the scatterplot by the sex of the bird. I did not like the default colors that R provided so I used Set1 from the color brewer package (Figure 5).</p>
+<img data-src="associations-presi_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"><p>The blue jay dataset contains both male and female birds, so we may want to look at the relationship between head length and body mass, by sex.</p>
+<p>To address this question, we can color the points in the scatterplot by the sex of the bird. I did not like the default colors that R provided so I used Set1 from the color brewer package (Figure 5).</p>
 </section>
 <section id="section-7" class="slide level2">
 <h2></h2>
@@ -564,17 +566,17 @@ To address this question, we can color the points in the scatterplot by the sex 
 </details>
 
 </div>
-<img data-src="associations-presi_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch">Figure 5: Head length versus body mass for 123 blue jays. The birds’ sex is indicated by color.</p>
+<img data-src="associations-presi_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"><p>Figure 5: Head length versus body mass for 123 blue jays. The birds’ sex is indicated by color.</p>
 </section>
 <section id="section-8" class="slide level2">
 <h2></h2>
-Figure 5 reveals that the overall trend in head length and body mass is at least in part driven by the sex of the birds. Meaning that at the same body mass, male birds tend to have longer heads than female birds.</p>
+<p>Figure 5 reveals that the overall trend in head length and body mass is at least in part driven by the sex of the birds. Meaning that at the same body mass, male birds tend to have longer heads than female birds.</p>
 <h3 id="transformations">Transformations</h3>
-The relationship between two variables may not be linear. In these cases we can sometimes see strange and even inscrutable patterns in a scatterplot of the data. Sometimes there really is no meaningful relationship between the two variables. Other times, a careful transformation of one or both of the variables can reveal a clear relationship.</p>
+<p>The relationship between two variables may not be linear. In these cases we can sometimes see strange and even inscrutable patterns in a scatterplot of the data. Sometimes there really is no meaningful relationship between the two variables. Other times, a careful transformation of one or both of the variables can reveal a clear relationship.</p>
 </section>
 <section id="section-9" class="slide level2">
 <h2></h2>
-In Figure 7, we will use the <a href="https://www.rdocumentation.org/packages/ggplot2/versions/3.3.6/topics/coord_trans"><code>coord_trans()</code></a> function, is different to scale transformations in that it occurs after statistical transformation and will affect the visual appearance of geoms - there is no guarantee that straight lines will continue to be straight.</p>
+<p>In Figure 7, we will use the <a href="https://www.rdocumentation.org/packages/ggplot2/versions/3.3.6/topics/coord_trans"><code>coord_trans()</code></a> function, is different to scale transformations in that it occurs after statistical transformation and will affect the visual appearance of geoms - there is no guarantee that straight lines will continue to be straight.</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -585,11 +587,11 @@ In Figure 7, we will use the <a href="https://www.rdocumentation.org/packages/gg
 </details>
 
 </div>
-<img data-src="associations-presi_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch">Figure 7: Scatterplot between the age of smoker and how much they smoke on weekdays, log transformation.</p>
+<img data-src="associations-presi_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"><p>Figure 7: Scatterplot between the age of smoker and how much they smoke on weekdays, log transformation.</p>
 </section>
 <section id="section-10" class="slide level2">
 <h2></h2>
-In Figure 8, we will use the <a href="https://ggplot2-book.org/scale-position.html?q=scale_x_log10()#numeric-position-scales"><code>scale_x_log10()</code></a> and <a href="https://ggplot2-book.org/scale-position.html?q=scale_x_log10()#numeric-position-scales"><code>scale_y_log10()</code></a> functions perform a base-10 log transformation of each axis.</p>
+<p>In Figure 8, we will use the <a href="https://ggplot2-book.org/scale-position.html?q=scale_x_log10()#numeric-position-scales"><code>scale_x_log10()</code></a> and <a href="https://ggplot2-book.org/scale-position.html?q=scale_x_log10()#numeric-position-scales"><code>scale_y_log10()</code></a> functions perform a base-10 log transformation of each axis.</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -601,12 +603,12 @@ In Figure 8, we will use the <a href="https://ggplot2-book.org/scale-position.ht
 </details>
 
 </div>
-<img data-src="associations-presi_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch">Figure 8: Scatterplot between the age of smoker and how much they smoke on weekdays, log transformation.</p>
+<img data-src="associations-presi_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"><p>Figure 8: Scatterplot between the age of smoker and how much they smoke on weekdays, log transformation.</p>
 </section></section>
 <section>
 <section id="correlation" class="title-slide slide level1 center">
 <h1>Correlation</h1>
-Andrew Heiss has a nice guide, that I find useful <span class="citation" data-cites="heissRelationships2021">[@heissRelationships2021]</span>:</p>
+<p>Andrew Heiss has a nice guide, that I find useful <span class="citation" data-cites="heissRelationships2021">[@heissRelationships2021]</span>:</p>
 <table>
 <thead>
 <tr class="header">
@@ -636,12 +638,12 @@ Andrew Heiss has a nice guide, that I find useful <span class="citation" data-ci
 </section>
 <section id="correlation-in-r" class="slide level2">
 <h2>Correlation in R</h2>
-The <code>cor(x, y)</code> function will compute the Pearson correlation between variables, <code>x</code> and <code>y</code>. Since this quantity is symmetric with respect to <code>x</code> and <code>y</code>, it doesn’t matter in which order you put the variables.</p>
-At the same time, the <code>cor()</code> function is very conservative when it encounters missing data (e.g.&nbsp;NAs). The <code>use</code> argument allows you to override the default behavior of returning NA whenever any of the values encountered is NA. Setting the <code>use</code> argument to <code>pairwise.complete.obs</code> allows <code>cor()</code> to compute the correlation coefficient for those observations where the values of x and y are both not missing.</p>
+<p>The <code>cor(x, y)</code> function will compute the Pearson correlation between variables, <code>x</code> and <code>y</code>. Since this quantity is symmetric with respect to <code>x</code> and <code>y</code>, it doesn’t matter in which order you put the variables.</p>
+<p>At the same time, the <code>cor()</code> function is very conservative when it encounters missing data (e.g.&nbsp;NAs). The <code>use</code> argument allows you to override the default behavior of returning NA whenever any of the values encountered is NA. Setting the <code>use</code> argument to <code>pairwise.complete.obs</code> allows <code>cor()</code> to compute the correlation coefficient for those observations where the values of x and y are both not missing.</p>
 </section>
 <section id="section-11" class="slide level2">
 <h2></h2>
-Let us try this with the blue jay data. We will find the correlation between our two variables, body mass and head length:</p>
+<p>Let us try this with the blue jay data. We will find the correlation between our two variables, body mass and head length:</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -654,10 +656,10 @@ Let us try this with the blue jay data. We will find the correlation between our
 </section>
 <section id="section-12" class="slide level2">
 <h2></h2>
-<code>cor.test()</code> provides access to the <a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/cor.test">values</a> returned by the correlation. The function <code>cor.test()</code> returns a list containing the following components:</p>
+<p><code>cor.test()</code> provides access to the <a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/cor.test">values</a> returned by the correlation. The function <code>cor.test()</code> returns a list containing the following components:</p>
 <ul>
-<li class="fragment">p.value: the p-value of the test</p></li>
-<li class="fragment">estimate: the correlation coefficient</p></li>
+<li class="fragment"><p>p.value: the p-value of the test</p></li>
+<li class="fragment"><p>estimate: the correlation coefficient</p></li>
 </ul>
 <div class="cell">
 <details>
@@ -681,22 +683,22 @@ sample estimates:
 </section>
 <section id="section-13" class="slide level2">
 <h2></h2>
-As you can see from the output, that the correlation is: 0.6294447. Using the guide from Heiss, this is a strong positive correlation.</p>
-A critical property of Pearson’s r is that it is unaffected by linear transformations. This means that multiplying a variable by a constant and/or adding a constant does not change the correlation of that variable with other variables. For instance, the correlation of Weight and Height does not depend on whether Height is measured in inches, feet, or even miles.</p>
+<p>As you can see from the output, that the correlation is: 0.6294447. Using the guide from Heiss, this is a strong positive correlation.</p>
+<p>A critical property of Pearson’s r is that it is unaffected by linear transformations. This means that multiplying a variable by a constant and/or adding a constant does not change the correlation of that variable with other variables. For instance, the correlation of Weight and Height does not depend on whether Height is measured in inches, feet, or even miles.</p>
 </section></section>
 <section>
 <section id="simple-linear-regression" class="title-slide slide level1 center">
 <h1>Simple Linear Regression</h1>
-As we just learned, scatterplots are the most common and effective tools for visualizing the relationship between two numeric variables. We also learned that in a linear regression model, a regression coefficient tells us the average change in the response variable associated with a one unit increase in the explanatory (predictor) variable.</p>
+<p>As we just learned, scatterplots are the most common and effective tools for visualizing the relationship between two numeric variables. We also learned that in a linear regression model, a regression coefficient tells us the average change in the response variable associated with a one unit increase in the explanatory (predictor) variable.</p>
 </section>
 <section id="section-14" class="slide level2">
 <h2></h2>
-In a simple linear regression, we predict values on one variable from the values on a second variable <span class="citation" data-cites="laneRegression2007">[@laneRegression2007]</span>:</p>
+<p>In a simple linear regression, we predict values on one variable from the values on a second variable <span class="citation" data-cites="laneRegression2007">[@laneRegression2007]</span>:</p>
 <ul>
-<li class="fragment">Variable we are predicting is referred to as Y</p></li>
-<li class="fragment">Variable we are basing our predictions on is referred to as X</p></li>
-<li class="fragment">When there is only one predictor variable, the prediction method is called simple regression</p></li>
-<li class="fragment">Simple linear regression, the predictions of Y when plotted as a function of X form a straight line</p></li>
+<li class="fragment"><p>Variable we are predicting is referred to as Y</p></li>
+<li class="fragment"><p>Variable we are basing our predictions on is referred to as X</p></li>
+<li class="fragment"><p>When there is only one predictor variable, the prediction method is called simple regression</p></li>
+<li class="fragment"><p>Simple linear regression, the predictions of Y when plotted as a function of X form a straight line</p></li>
 </ul>
 </section>
 <section id="section-15" class="slide level2">
@@ -704,12 +706,12 @@ In a simple linear regression, we predict values on one variable from the values
 </section>
 <section id="smoothing" class="slide level2">
 <h2>Smoothing</h2>
-Statisticians have developed numerous approaches to smoothing. These approaches are much more complex and computationally costly, but they are readily available in modern statistical computing environments.</p>
-The <code>geom_smooth()</code> function allows you to draw such models over a scatterplot of the data itself. This technique is known as visualizing the model in the data space. An important argument to <a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a> is the <code>method</code>, which allows you to choose which type of model is used to fit the smooth curve.</p>
+<p>Statisticians have developed numerous approaches to smoothing. These approaches are much more complex and computationally costly, but they are readily available in modern statistical computing environments.</p>
+<p>The <code>geom_smooth()</code> function allows you to draw such models over a scatterplot of the data itself. This technique is known as visualizing the model in the data space. An important argument to <a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a> is the <code>method</code>, which allows you to choose which type of model is used to fit the smooth curve.</p>
 </section>
 <section id="section-16" class="slide level2">
 <h2></h2>
-Let us try this out with the blue jay data, focusing on body mass and head length (Figure 13).</p>
+<p>Let us try this out with the blue jay data, focusing on body mass and head length (Figure 13).</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -722,24 +724,24 @@ Let us try this out with the blue jay data, focusing on body mass and head lengt
 </details>
 
 </div>
-<img data-src="associations-presi_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch">Figure 13: Head length versus body mass (in grams), for 123 blue jays. Each dot corresponds to one bird. I have added a smoothed line to the graph.</p>
+<img data-src="associations-presi_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"><p>Figure 13: Head length versus body mass (in grams), for 123 blue jays. Each dot corresponds to one bird. I have added a smoothed line to the graph.</p>
 </section>
 <section id="section-17" class="slide level2">
 <h2></h2>
-As we can see in Figure 13, this overlays the scatterplot with a smooth curve, including an assessment of uncertainty in the form of point-wise confidence intervals shown in grey <span class="citation" data-cites="wickhamToolbox2016">[@wickhamToolbox2016]</span>. If you’re not interested in the confidence interval, turn it off with <code>geom_smooth(se = FALSE)</code>.</p>
+<p>As we can see in Figure 13, this overlays the scatterplot with a smooth curve, including an assessment of uncertainty in the form of point-wise confidence intervals shown in grey <span class="citation" data-cites="wickhamToolbox2016">[@wickhamToolbox2016]</span>. If you’re not interested in the confidence interval, turn it off with <code>geom_smooth(se = FALSE)</code>.</p>
 </section>
 <section id="fitting-simple-linear-models" class="slide level2">
 <h2>Fitting Simple Linear Models</h2>
-While the <code>geom_smooth(method = “lm”)</code> function is useful for drawing linear models on a scatterplot, it doesn’t actually return the characteristics of the model. As suggested by that syntax, however, the function that creates linear models is <code>lm()</code>. This function generally takes two arguments:</p>
+<p>While the <code>geom_smooth(method = “lm”)</code> function is useful for drawing linear models on a scatterplot, it doesn’t actually return the characteristics of the model. As suggested by that syntax, however, the function that creates linear models is <code>lm()</code>. This function generally takes two arguments:</p>
 <ul>
-<li class="fragment">A formula that specifies the model</p></li>
-<li class="fragment">A data argument for the data frame that contains the data you want to use to fit the model</p></li>
+<li class="fragment"><p>A formula that specifies the model</p></li>
+<li class="fragment"><p>A data argument for the data frame that contains the data you want to use to fit the model</p></li>
 </ul>
 </section>
 <section id="section-18" class="slide level2">
 <h2></h2>
-The <code>lm()</code> function return a model object having class “lm”. This object contains lots of information about your regression model, including the data used to fit the model, the specification of the model, the fitted values and residuals, etc.</p>
-Suppose we’d like to fit a simple linear regression model using body mass in grams as a predictor variable and head length as a response variable for blue jay data. We can use the <code>lm()</code> function to fit this simple linear regression model in R. StatQuest has a great <a href="https://youtu.be/u1cc1r_Y7M0">overview</a> of performing this in R.</p>
+<p>The <code>lm()</code> function return a model object having class “lm”. This object contains lots of information about your regression model, including the data used to fit the model, the specification of the model, the fitted values and residuals, etc.</p>
+<p>Suppose we’d like to fit a simple linear regression model using body mass in grams as a predictor variable and head length as a response variable for blue jay data. We can use the <code>lm()</code> function to fit this simple linear regression model in R. StatQuest has a great <a href="https://youtu.be/u1cc1r_Y7M0">overview</a> of performing this in R.</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -750,12 +752,12 @@ Suppose we’d like to fit a simple linear regression model using body mass in g
 </section>
 <section id="section-19" class="slide level2">
 <h2></h2>
-The way that I have specified the formula means that <code>body_mass_g</code> is considered to be the x-value and <code>head_length_mm</code> is considered to be the y-value. The linear module function then calculates the least square estimates for the y-intercept and the slope.</p>
-An “lm” object contains a host of information about the regression model that you fit. There are various ways of extracting different pieces of information.</p>
+<p>The way that I have specified the formula means that <code>body_mass_g</code> is considered to be the x-value and <code>head_length_mm</code> is considered to be the y-value. The linear module function then calculates the least square estimates for the y-intercept and the slope.</p>
+<p>An “lm” object contains a host of information about the regression model that you fit. There are various ways of extracting different pieces of information.</p>
 </section>
 <section id="section-20" class="slide level2">
 <h2></h2>
-The <code>coef()</code> function displays only the values of the coefficients.</p>
+<p>The <code>coef()</code> function displays only the values of the coefficients.</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -769,7 +771,7 @@ The <code>coef()</code> function displays only the values of the coefficients.</
 </section>
 <section id="section-21" class="slide level2">
 <h2></h2>
-Conversely, the summary() function displays not only that information, but a bunch of other information, including the associated standard error and p-value for each coefficient, the R<sup>2</sup>, adjusted R<sup>2</sup>, and the residual standard error. The summary of an “lm” object in R is very similar to the output you would see in other statistical computing environments (e.g.&nbsp;Stata, SPSS, etc.)</p>
+<p>Conversely, the summary() function displays not only that information, but a bunch of other information, including the associated standard error and p-value for each coefficient, the R<sup>2</sup>, adjusted R<sup>2</sup>, and the residual standard error. The summary of an “lm” object in R is very similar to the output you would see in other statistical computing environments (e.g.&nbsp;Stata, SPSS, etc.)</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -800,12 +802,12 @@ F-statistic:  79.4 on 1 and 121 DF,  p-value: 6.302e-15</code></pre>
 <section>
 <section id="data-reporting-with-report-package" class="title-slide slide level1 center">
 <h1>Data Reporting with Report Package</h1>
-The <a href="https://easystats.github.io/report/index.html"><code>report</code></a> package works in a two step fashion. First, you create a <code>report</code> object with the <a href="https://easystats.github.io/report/reference/report.html"><code>report()</code></a> function. Then, this report object can be displayed either textually (the default output) or as a table, using <a href="https://rdrr.io/r/base/as.data.frame.html"><code>as.data.frame()</code></a>. Moreover, you can also access a more digest and compact version of the report using <a href="https://rdrr.io/r/base/summary.html"><code>summary()</code></a> on the report object (Figure 14).</p>
+<p>The <a href="https://easystats.github.io/report/index.html"><code>report</code></a> package works in a two step fashion. First, you create a <code>report</code> object with the <a href="https://easystats.github.io/report/reference/report.html"><code>report()</code></a> function. Then, this report object can be displayed either textually (the default output) or as a table, using <a href="https://rdrr.io/r/base/as.data.frame.html"><code>as.data.frame()</code></a>. Moreover, you can also access a more digest and compact version of the report using <a href="https://rdrr.io/r/base/summary.html"><code>summary()</code></a> on the report object (Figure 14).</p>
 
 <img data-src="../lsc563-joubert/instruction-images/report-package-workflow.png" class="r-stretch"></section>
 <section id="section-22" class="slide level2">
 <h2></h2>
-A nice and easy way to report results of an regression analysis in R is with the <code>report()</code> function:</p>
+<p>A nice and easy way to report results of an regression analysis in R is with the <code>report()</code> function:</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -864,7 +866,7 @@ computed using a Wald t-distribution approximation.</code></pre>
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -1106,9 +1108,23 @@ computed using a Wald t-distribution approximation.</code></pre>
       tabsets.forEach(function(tabset) {
         const tabby = new Tabby('#' + tabset.id);
       });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
       const clipboard = new window.ClipboardJS('.code-copy-button', {
-        target: function(trigger) {
-          return trigger.previousElementSibling;
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
         }
       });
       clipboard.on('success', function(e) {
@@ -1156,7 +1172,7 @@ computed using a Wald t-distribution approximation.</code></pre>
           },
           interactive: true,
           interactiveBorder: 10,
-          theme: 'quarto-reveal',
+          theme: 'light-border',
           placement: 'bottom-start'
         };
           config['offset'] = [0,0];
