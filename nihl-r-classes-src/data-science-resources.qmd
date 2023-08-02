@@ -15,13 +15,13 @@ toc-title: Table of Contents
 
 Resource: https://arcus.github.io/education_modules/educators
 
-Educational materials created on this site. You can tailor which modules you give to you learners based on their needs, or adapt them to fit your purposes. Please read the section [Remixing Our Materials](https://arcus.github.io/education_modules/educators#remixing-our-materials) to learn about our Creative Commons Attribution-ShareAlike license and suggestions of ways to use this curriculum. I have included some specific lessons.
+Educational materials created on this site. You can tailor which modules you give to you learners based on their needs, or adapt them to fit your purposes. Please read the section [Remixing Our Materials](https://arcus.github.io/education_modules/educators#remixing-our-materials) to learn about our Creative Commons Attribution-ShareAlike license and suggestions of ways to use this curriculum. I have included some specific lessons.
 
 ## Data analysis for the life sciences with r
 
 Irizarry R. A. & Love M. I. (2017). *Data analysis for the life sciences with r*. CRC Press Taylor & Francis Group.
 
-This title covers several of the statistical concepts and data analytic skills needed to succeed in data-driven life science research. The authors proceed from relatively basic concepts related to computed p-values to advanced topics related to analysing highthroughput data. They include the R code that performs this analysis and connect the lines of code to the statistical and mathematical concepts explained.
+This title covers several of the statistical concepts and data analytic skills needed to succeed in data-driven life science research. The authors proceed from relatively basic concepts related to computed p-values to advanced topics related to analyzing high-throughput data. They include the R code that performs this analysis and connect the lines of code to the statistical and mathematical concepts explained.
 
 ## Elements of Data Analytics Style
 
@@ -67,7 +67,7 @@ R is the most powerful tool you can use for statistical analysis. This definitiv
 
 Kuhn M. & Silge J. (2022).*Tidy modeling with r : a framework for modeling in the tidyverse*. O'Reilly Media.
 
-Get going with tidymodels, a collection of R packges for modeling and machine learning. Whether you're just starting out or have years of experience with modeling, this practical introduction shows data analysts, business analysts, and data scientists how the tidymodels framework offers a consistent, flexible approach for your work. RStudio engineers Max Kuhn and Julia Silge demonstrate ways to create models by focusing on an R dialect called the tidyverse. Software that adops tidyverse principles shares both a high-level design philosophy and low-level grammar and data structures, so learning one piece of the ecosystem makes it easier to learn the next. You'll understand why the tidymodels framework has been built to be used by a broad range of people.
+Get going with tidymodels, a collection of R packages for modeling and machine learning. Whether you're just starting out or have years of experience with modeling, this practical introduction shows data analysts, business analysts, and data scientists how the tidymodels framework offers a consistent, flexible approach for your work. RStudio engineers Max Kuhn and Julia Silge demonstrate ways to create models by focusing on an R dialect called the tidyverse. Software that adopts tidyverse principles shares both a high-level design philosophy and low-level grammar and data structures, so learning one piece of the ecosystem makes it easier to learn the next. You'll understand why the tidymodels framework has been built to be used by a broad range of people.
 
 ## Tidyverse Skills for Data Science
 
@@ -257,11 +257,21 @@ Resource [URL](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal
 
 The purpose of this article is to describe one good strategy for carrying out computational experiments. Author focuses on issues such as organizing files and directories and documenting progress. These are simply the principles and practices that I have developed over 12 years of bioinformatics research, augmented with various suggestions from other researchers with whom I have discussed these issues.
 
-[Using RStudio Projects](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects): RStudio blog post on managing RStudio projects
+## Reproducible Research Data and Project Management in R
+
+Author: Dr Anna Krystalli
+
+Resource [URL](https://annakrystalli.me/rrresearchACCE20/)
+
+This course focuses on **data and project management through R and Rstudio**, will introduce students to best practice and equip them with modern tools and techniques for managing data and computational workflows to their full potential. The course is designed to be relevant to students with a wide range of backgrounds, working with anything from relatively small sets of data collected from field or experimental observations, to those taking a more computational approach and bigger datasets.
+
+## Using RStudio Projects
+
+RStudio blog post on managing RStudio projects.
 
 Author:
 
-Resource URL
+Resource [URL](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects)
 
 # Quarto
 
@@ -318,39 +328,79 @@ This module provides learners with an approachable introduction to the concepts 
 
 This material will help you understand much of the current literature and debate around how research should be conducted, and will provide you with a starting point for understanding why some practices (like writing code, even for researchers who have never programmed a computer) are gaining traction in the research field.
 
-## 
+## Turning Guide for Reproducible Research
 
--   [Guide for Reproducible Research](https://the-turing-way.netlify.app/reproducible-research/reproducible-research.html): Turning Guide to reproducible research.
--   [Introduction to Reproducible Publications with RStudio](https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/)
--   [R for Reproducible Scientific Analysis](https://swcarpentry.github.io/r-novice-gapminder/)
--   [Reproducible Research Data and Project Management in R](https://annakrystalli.me/rrresearchACCE20/)
--   [Tao of open science for ecology](https://esajournals.onlinelibrary.wiley.com/doi/full/10.1890/ES14-00402.1): Presents an overview of tools and best practices that can enable these shifts in mindset at each stage of the research process, including tools to support data management planning and reproducible analyses, strategies for soliciting constructive feedback throughout the research process, and methods of broadening access to final research products.
+Author: Becky Arnold, Louise Bowler, Sarah Gibson et.
+
+Resources [URL](https://the-turing-way.netlify.app/reproducible-research/reproducible-research.html)
+
+Zenodo [URL](http://doi.org/10.5281/zenodo.3233986)
+
+The Turing Way handbook provides an overview to reproducible, ethical and collaborative data science. The Turing Way project is open source, open collaboration, and community-driven. We involve and support a diverse community of contributors to make data science accessible, comprehensible and effective for everyone.
+
+The book started in January 2019 as a guide for reproducibility, covering [Version Control](https://the-turing-way.netlify.app/reproducible-research/vcs.html#rr-vcs), [Code Testing](https://the-turing-way.netlify.app/reproducible-research/testing.html#rr-testing), and [Continuous integration](https://the-turing-way.netlify.app/reproducible-research/ci.html#rr-ci). However, technical skills are just one aspect of making data science research "open for all" and so in February 2020, *The Turing Way* expanded into a series of guides: [Guide for Reproducible Research](https://the-turing-way.netlify.app/reproducible-research/reproducible-research.html#rr), [Guide for Project Design](https://the-turing-way.netlify.app/project-design/project-design.html#pd), [Guide for Communication](https://the-turing-way.netlify.app/communication/communication.html#cm), [Guide for Collaboration](https://the-turing-way.netlify.app/collaboration/collaboration.html#cl), and [Guide for Ethical Research](https://the-turing-way.netlify.app/ethical-research/ethical-research.html#er). [The Turing Way December Latest](https://github.com/alan-turing-institute/the-turing-way/releases/latest) release is available via GitHub.
+
+## Introduction to Reproducible Publications with RStudio (Alpha)
+
+Author
+
+Resource [URL](https://carpentries-incubator.github.io/Reproducible-Publications-with-RStudio/)
+
+Participants will build on their research and analytically skills with R Studio by learning how to create reproducible documents that combine code, analysis and narrative. RStudio makes it possible to work on a complete research project in a more efficient, integrated and organized manner: from data upload, cleaning, and analysis, to writing and styling a manuscript in R Markdown. It allows users to add code, figures, citations, and bibliography, as well as to generate outputs in various formats (e.g., html, pdf, doc). Rstudio also connects with Git and Github and learners will have a chance to experiment with this integration and understand its advantages for collaboration and version control. This workshop will involve lectures and demos alternating with hands-on exercises and challenges, so by the end of the workshop, learners will have \"authored\" a reproducible paper of your own with the data and narrative we provide.
+
+## R for Reproducible Scientific Analysis
+
+Author:
+
+Resource [URL](https://swcarpentry.github.io/r-novice-gapminder/)
+
+The goal of this lesson is to teach novice programmers to write modular code and best practices for using R for data analysis. The emphasis of these materials is to give attendees a strong foundation in the fundamentals of R, and to teach best practices for scientific computing: breaking down analyses into modular units, task automation, and encapsulation.
+
+## Tao of open science for ecology (Resource)
+
+Hampton, S. E., S. S. Anderson, S. C. Bagby, C. Gries, X. Han, E. M. Hart, M. B. Jones, W. C. Lenhardt, A. MacDonald, W. K. Michener, J. Mudge, A. Pourmokhtarian, M. P. Schildhauer, K. H. Woo, and N. Zimmerman. 2015. The Tao of open science for ecology. Ecosphere 6(7):120.
+
+Resource [URL](https://doi.org/10.1890/ES14-00402.1)
+
+Presents an overview of tools and best practices that can enable these shifts in mindset at each stage of the research process, including tools to support data management planning and reproducible analyses, strategies for soliciting constructive feedback throughout the research process, and methods of broadening access to final research products.
 
 # R and RStudio
 
-[Using the RStudio Terminal in the RStudio IDE](https://support.posit.co/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE)
+## Command Line Essentials
 
-[Command Line Essentials](https://datacarpentry.org/shell-genomics/02-the-filesystem/index.html): a short primer on how to navigate through a file structure at the command line, from the [Introduction to the Command Line for Genomics Workshop](https://datacarpentry.org/shell-genomics/)
+Resource [URL](https://datacarpentry.org/shell-genomics/02-the-filesystem/index.htm)
+
+A short primer on how to navigate through a file structure at the command line, from the [Introduction to the Command Line for Genomics Workshop](https://datacarpentry.org/shell-genomics/)
 
 ## Data Analysis and Visualization in R for Ecologists (Beta Alternative)
 
 Author:
 
-Resource: https://carpentries-incubator.github.io/R-ecology-lesson-alternative/
+Resource [URL](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/)
 
-GitHub URL https://github.com/carpentries-incubator/R-ecology-lesson-alternative.git
+GitHub [URL](https://github.com/carpentries-incubator/R-ecology-lesson-alternative.git)
+
+Designed for participants with no programming experience. It starts with information about the R programming language and the RStudio interface. It then moves to loading in data and exploring how to visualize it with ggplot2. The next episode takes learners through an exploration of data frames and some common data cleaning operations, before discussing vectors and factors. The final episode introduces the flow of data in R, and how to combine operations to select, filter, and mutate a data frame.
 
 ## R for Social Scientists
 
 Author: Carpentries
 
-Resource: https://datacarpentry.org/r-socialsci/
+Resource [URL](https://datacarpentry.org/r-socialsci/)
 
-GitHub URL https://github.com/datacarpentry/r-socialsci.git (I have forked)
+GitHub [URL](https://github.com/datacarpentry/r-socialsci.git) (I have forked)
 
 Data Carpentry's aim is to teach researchers basic concepts, skills, and tools for working with data so that they can get more done in less time, and with less pain. The lessons below were designed for those interested in working with social sciences data in R.
 
 This is an introduction to R designed for participants with no programming experience. These lessons can be taught in a day (\~ 6 hours). They start with some basic information about R syntax, the RStudio interface, and move through how to import CSV files, the structure of data frames, how to deal with factors, how to add/remove rows and columns, how to calculate summary statistics from a data frame, and a brief introduction to plotting.
+
+## Using the RStudio Terminal in the RStudio IDE
+
+Resource [URL](https://support.posit.co/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE)
+
+The RStudio terminal provides access to the system shell from within the RStudio IDE. It supports full-screen terminal applications such as vim, Emacs, and tmux as, well as regular command-line operations with line-editing and shell history.
+
+Potential uses of the shell including advanced source control operations, execution of long-running jobs, remote logins, system administration of RStudio Workbench or RStudio Server, and the aforementioned full-screen terminal programs.
 
 # Statistics
 
@@ -364,7 +414,7 @@ OpenIntro Statistics covers a First course in statistics, providing a rigorous i
 
 Bruce P. Bruce A. Gedeck P. & Safari an O'Reilly Media Company. (2020). Practical statistics for data scientists 2nd edition (2nd ed.). O'Reilly Media.
 
-GitHub URL: https://github.com/gedeck/practical-statistics-for-data-scientists.git
+GitHub [URL](https://github.com/gedeck/practical-statistics-for-data-scientists.git)
 
 The second edition of this popular guide adds comprehensive examples in Python, provides practical guidance on applying statistical methods to data science, tells you how to avoid their misuse, and gives you advice on what's important and what's not.
 
@@ -406,9 +456,9 @@ Introduction to Bioconductor and Standard Classes: Charlotte Soneson provides a 
 
 Author:
 
-Resource: https://carpentries-incubator.github.io/r-ml-tabular-data/
+Resource [URL](https://carpentries-incubator.github.io/r-ml-tabular-data/)
 
-GitHub URL https://github.com/carpentries-incubator/r-ml-tabular-data.git
+GitHub [URL](https://github.com/carpentries-incubator/r-ml-tabular-data.git)
 
 Lesson introduces a selection of machine learning techniques for analyzing tabular data, including random forests and gradient boosted trees. No experience in machine learning is necessary, but learners should be familiar with data analysis and visualization in R.
 
@@ -418,9 +468,9 @@ This lesson assumes some familiarity with R, including `dplyr`and `ggplot`. Lear
 
 Author:
 
-Resource: https://carpentries-incubator.github.io/good-enough-practices/
+Resource [URL](https://carpentries-incubator.github.io/good-enough-practices/)
 
-GitHub URL https://github.com/carpentries-incubator/good-enough-practices.git
+GitHub [URL](https://github.com/carpentries-incubator/good-enough-practices.git)
 
 This lesson is targeted at a broad audience of researchers who want to learn how to be more efficient and effective in their data analysis and computing, whatever their career stage. Examples of our target audience are found in [learner profiles](https://carpentries-incubator.github.io/good-enough-practices/learner-profiles/index.html).
 
@@ -432,19 +482,19 @@ These practices, which encompass data management, programming, collaborating wit
 
 Author: Laurent Gatto
 
-Resource: https://uclouvain-cbio.github.io/WSBIM1207/
+Resource [URL](https://uclouvain-cbio.github.io/WSBIM1207/)
 
-GitHub URL https://github.com/UCLouvain-CBIO/WSBIM1207.git (I have forked)
+GitHub [URL](https://github.com/UCLouvain-CBIO/WSBIM1207.git) (I have forked)
 
 This is an English language adaptation of [WSBIM1207](#0), an introduction to bioinformatics (and data science) for biology and biomedical students. It introduces bioinformatics methodology and technologies without relying on any prerequisites. The aim of this course is for students to be in a position to understand important notions of bioinformatics and tackle simple bioinformatics-related problems in R, in particular to develop simple R analysis scripts and reproducible analysis reports to interrogate, visualize and understand data in a tidy tabular format.
 
-## Introduction to data analysis with R and Bioconductor
+## Introduction to Data Analysis with R and Bioconductor
 
 Author:
 
-Resource: https://carpentries-incubator.github.io/bioc-intro/
+Resource [URL](https://carpentries-incubator.github.io/bioc-intro/)
 
-GitHub URL https://github.com/carpentries-incubator/bioc-intro (I have forked)
+GitHub [URL](https://github.com/carpentries-incubator/bioc-intro) (I have forked)
 
 This is a beta incubator lesson. It appears to be modeled after the ecology or the R for Reproducible Scientific Analysis workshop. Lessons are pretty similar in scope until you get the the [Starting With Data](https://carpentries-incubator.github.io/bioc-intro/25-starting-with-data.html), which uses genomic data.
 
@@ -466,9 +516,11 @@ After completion of this module, learners will be able to:
 
 -   recognize how to understand when to ask for help
 
-PH525x Series: Biomedical Data Science: [Chapter 11 - Introduction to Bioconductor](http://genomicsclass.github.io/book/)
+## **Biomedical Data Science**
 
-S4 classes in Bioconductor: the [intro section](https://carpentries-incubator.github.io/bioc-project/05-s4.html) as an introduction to the Bioconductor data models
+Authors: Rafael Irizarry and Michael Love, [MIT License](https://github.com/genomicsclass/labs/blob/master/LICENSE)
+
+Resource [URL](#0){style="font-size: 13pt;"}
 
 # Licenses
 
