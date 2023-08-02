@@ -41,7 +41,7 @@ Author: Contributors listed on GitHub
 
 Resource:
 
-GitHub URL https://github.com/dssg/hitchhikers-guide.git
+GitHub [URL](https://github.com/dssg/hitchhikers-guide.git)
 
 The primary audience for this guide is the set of fellows coming to DSSG but we want everything we create to be open and accessible to larger world. We hope this is useful to people beyond the summer fellows coming to DSSG.
 
@@ -79,9 +79,9 @@ This book sets out to introduce the conceptual framework behind tidy data and in
 
 Author: Julia Silge and David Robinson
 
-Resource: https://www.tidytextmining.com/index.html
+Resource [URL](https://www.tidytextmining.com/index.html)
 
-GitHub URL https://github.com/dgrtwo/tidy-text-mining.git
+GitHub [URL](https://github.com/dgrtwo/tidy-text-mining.git)
 
 This book serves as an introduction of text mining using the tidytext package and other tidy tools in R. The functions provided by the tidytext package are relatively simple; what is important are the possible applications. Thus, this book provides compelling examples of real text mining problems.
 
@@ -93,7 +93,7 @@ Author:
 
 Resource [URL](https://carpentries-incubator.github.io/git-novice-branch-pr/)
 
-GitHub URL [URL](https://github.com/carpentries-incubator/git-novice-branch-pr.git)
+GitHub [URL](https://github.com/carpentries-incubator/git-novice-branch-pr.git)
 
 Version control is the lab notebook of the digital world: it's what professionals use to keep track of what they've done and to collaborate with other people. Every large software development project relies on it, and most programmers use it for their small jobs as well. And it isn't just for software: books, papers, small data sets, and anything that changes over time or needs to be shared can and should be stored in a version control system.
 
@@ -133,7 +133,7 @@ Author: Wilke
 
 Resource [URL](https://clauswilke.com/dataviz/)
 
-GitHub URL [URL](https://github.com/clauswilke/dataviz.git)
+GitHub [URL](https://github.com/clauswilke/dataviz.git)
 
 This is the website for the book "Fundamentals of Data Visualization," published by O'Reilly Media, Inc. The website contains the complete author manuscript before final copy-editing and other quality controls.
 
@@ -239,19 +239,23 @@ Resource [URL](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal
 
 ## Managing Open and Reproducible Computational Projects (Beta)
 
-Material covers best practices for managing and supervising computational projects in biology and related fields through data science methods, analysis, interpretation, and reporting processes.
-
 Author: Carpentries
 
 Resource [URL](https://carpentries-incubator.github.io/managing-computational-projects/01-introduction.html)
 
 GitHub [URL](https://github.com/carpentries-incubator/managing-computational-projects)
 
-[Quick Guide to Organizing Computational Biology Projects](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424): recommendations for organizing files and directories and documenting progress
+Material covers best practices for managing and supervising computational projects in biology and related fields through data science methods, analysis, interpretation, and reporting processes.
 
-Author:
+## Quick Guide to Organizing Computational Biology Projects
 
-Resource URL
+Noble WS (2009) A Quick Guide to Organizing Computational Biology Projects. PLOS Computational Biology 5(7): e1000424. <https://doi.org/10.1371/journal.pcbi.1000424>
+
+Author: Noble
+
+Resource [URL](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424)
+
+The purpose of this article is to describe one good strategy for carrying out computational experiments. Author focuses on issues such as organizing files and directories and documenting progress. These are simply the principles and practices that I have developed over 12 years of bioinformatics research, augmented with various suggestions from other researchers with whom I have discussed these issues.
 
 [Using RStudio Projects](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects): RStudio blog post on managing RStudio projects
 
