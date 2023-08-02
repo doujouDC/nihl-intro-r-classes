@@ -41,7 +41,7 @@ Author: Contributors listed on GitHub
 
 Resource:
 
-Git: https://github.com/dssg/hitchhikers-guide.git
+GitHub URL https://github.com/dssg/hitchhikers-guide.git
 
 The primary audience for this guide is the set of fellows coming to DSSG but we want everything we create to be open and accessible to larger world. We hope this is useful to people beyond the summer fellows coming to DSSG.
 
@@ -81,19 +81,19 @@ Author: Julia Silge and David Robinson
 
 Resource: https://www.tidytextmining.com/index.html
 
-Git: https://github.com/dgrtwo/tidy-text-mining.git
+GitHub URL https://github.com/dgrtwo/tidy-text-mining.git
 
 This book serves as an introduction of text mining using the tidytext package and other tidy tools in R. The functions provided by the tidytext package are relatively simple; what is important are the possible applications. Thus, this book provides compelling examples of real text mining problems.
 
 # Git and GitHub
 
-## Version Control with Git
+## Version Control with GitHub
 
 Author:
 
 Resource [URL](https://carpentries-incubator.github.io/git-novice-branch-pr/)
 
-Git [URL](https://github.com/carpentries-incubator/git-novice-branch-pr.git)
+GitHub URL [URL](https://github.com/carpentries-incubator/git-novice-branch-pr.git)
 
 Version control is the lab notebook of the digital world: it's what professionals use to keep track of what they've done and to collaborate with other people. Every large software development project relies on it, and most programmers use it for their small jobs as well. And it isn't just for software: books, papers, small data sets, and anything that changes over time or needs to be shared can and should be stored in a version control system.
 
@@ -129,9 +129,11 @@ The first two parts, [Installation](https://happygitwithr.com/install-intro.html
 
 Wilke C. (2019). *Fundamentals of data visualization : a primer on making informative and compelling figures* (First). O'Reilly Media.
 
-Resource: https://clauswilke.com/dataviz/
+Author: Wilke
 
-Git: https://github.com/clauswilke/dataviz.git
+Resource [URL](https://clauswilke.com/dataviz/)
+
+GitHub URL [URL](https://github.com/clauswilke/dataviz.git)
 
 This is the website for the book "Fundamentals of Data Visualization," published by O'Reilly Media, Inc. The website contains the complete author manuscript before final copy-editing and other quality controls.
 
@@ -189,7 +191,7 @@ Author: Yihui Xie, Christophe Dervieux, Emily Riedere
 
 Resource [URL](https://bookdown.org/yihui/rmarkdown-cookbook/)
 
-Online version of the printed book, broken down into small \"recipes\" that aim to demonstrate a single concept at a time. 
+Online version of the printed book, broken down into small "recipes" that aim to demonstrate a single concept at a time. 
 
 ## RMarkdown for Scientists
 
@@ -201,39 +203,49 @@ Book on rmarkdown, aimed for scientists. It was initially developed as a 3 hour 
 
 ## Scientific Writing with Markdown
 
-Author: [**Jaan Tollander de Balsch**](https://jaantollander.com/)
+Author: [Jaan Tollander de Balsch](https://jaantollander.com/)
 
-Resource: [URL](https://jaantollander.com/post/scientific-writing-with-markdown/)
+Resource [URL](https://jaantollander.com/post/scientific-writing-with-markdown/)
 
 Great guide (with videos) on getting started with markdown.
 
 # Project Management
 
-[Data Management Best Practices](https://www.axiomdatascience.com/best-practices/DataManagementBestPractices.html)
+## Data Management Best Practices
 
-Author:
+Author: Axiom Data Science
 
-Resource URL
+Resource [URL](https://www.axiomdatascience.com/best-practices/DataManagementBestPractices.html)
 
-Axiom guide on best practices for managing scientific data
+Axiom guide on best practices for managing scientific data.
 
-[File Structure in projects](https://mitcommlab.mit.edu/broad/commkit/file-structure/#Contents): recommendations for successful file structure organization and management.
+## File Structure in Projects
 
-Author:
+recommendations for successful file structure organization and management.
 
-Resource URL
+Author: Broad Research Communication Lab, [brcl\@broadinstitute.org](mailto:brcl@broadinstitute.org)
 
-[Good enough practices in scientific computing](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510): presents a set of good computing practices that every researcher can adopt, regardless of their current level of computational skill.
+Resource [URL](https://mitcommlab.mit.edu/broad/commkit/file-structure/#Contents)
 
-Author:
+## Good enough practices in scientific computing
 
-Resource URL
+Wilson G, Bryan J, Cranston K, Kitzes J, Nederbragt L, et al. (2017) Good enough practices in scientific computing. PLOS Computational Biology 13(6): e1005510. <https://doi.org/10.1371/journal.pcbi.1005510>
 
-[Managing Open and Reproducible Computational Projects](https://carpentries-incubator.github.io/managing-computational-projects/01-introduction.html): material covers best practices for managing and supervising computational projects in biology and related fields through data science methods, analysis, interpretation, and reporting processes.
+Article that presents a set of good computing practices that every researcher can adopt, regardless of their current level of computational skill.
 
-Author:
+Author: Wilson
 
-Resource URL
+Resource [URL](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510)
+
+## Managing Open and Reproducible Computational Projects (Beta)
+
+Material covers best practices for managing and supervising computational projects in biology and related fields through data science methods, analysis, interpretation, and reporting processes.
+
+Author: Carpentries
+
+Resource [URL](https://carpentries-incubator.github.io/managing-computational-projects/01-introduction.html)
+
+GitHub [URL](https://github.com/carpentries-incubator/managing-computational-projects)
 
 [Quick Guide to Organizing Computational Biology Projects](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424): recommendations for organizing files and directories and documenting progress
 
@@ -296,7 +308,7 @@ Author:
 
 Resource [URL](https://liascript.github.io/course/?https://raw.githubusercontent.com/arcus/education_modules/main/reproducibility/reproducibility.md#1)
 
-Git [URL](https://github.com/carpentries-incubator/git-novice-branch-pr.git)
+GitHub [URL](https://github.com/carpentries-incubator/git-novice-branch-pr.git)
 
 This module provides learners with an approachable introduction to the concepts and impact of **research reproducibility**, **generalizability**, and **data reuse**, and how technical approaches can help make these goals more attainable.
 
@@ -322,7 +334,7 @@ Author:
 
 Resource: https://carpentries-incubator.github.io/R-ecology-lesson-alternative/
 
-Git: https://github.com/carpentries-incubator/R-ecology-lesson-alternative.git
+GitHub URL https://github.com/carpentries-incubator/R-ecology-lesson-alternative.git
 
 ## R for Social Scientists
 
@@ -330,7 +342,7 @@ Author: Carpentries
 
 Resource: https://datacarpentry.org/r-socialsci/
 
-Git: https://github.com/datacarpentry/r-socialsci.git (I have forked)
+GitHub URL https://github.com/datacarpentry/r-socialsci.git (I have forked)
 
 Data Carpentry's aim is to teach researchers basic concepts, skills, and tools for working with data so that they can get more done in less time, and with less pain. The lessons below were designed for those interested in working with social sciences data in R.
 
@@ -348,7 +360,7 @@ OpenIntro Statistics covers a First course in statistics, providing a rigorous i
 
 Bruce P. Bruce A. Gedeck P. & Safari an O'Reilly Media Company. (2020). Practical statistics for data scientists 2nd edition (2nd ed.). O'Reilly Media.
 
-Git: https://github.com/gedeck/practical-statistics-for-data-scientists.git
+GitHub URL: https://github.com/gedeck/practical-statistics-for-data-scientists.git
 
 The second edition of this popular guide adds comprehensive examples in Python, provides practical guidance on applying statistical methods to data science, tells you how to avoid their misuse, and gives you advice on what's important and what's not.
 
@@ -392,7 +404,7 @@ Author:
 
 Resource: https://carpentries-incubator.github.io/r-ml-tabular-data/
 
-Git: https://github.com/carpentries-incubator/r-ml-tabular-data.git
+GitHub URL https://github.com/carpentries-incubator/r-ml-tabular-data.git
 
 Lesson introduces a selection of machine learning techniques for analyzing tabular data, including random forests and gradient boosted trees. No experience in machine learning is necessary, but learners should be familiar with data analysis and visualization in R.
 
@@ -404,7 +416,7 @@ Author:
 
 Resource: https://carpentries-incubator.github.io/good-enough-practices/
 
-Git: https://github.com/carpentries-incubator/good-enough-practices.git
+GitHub URL https://github.com/carpentries-incubator/good-enough-practices.git
 
 This lesson is targeted at a broad audience of researchers who want to learn how to be more efficient and effective in their data analysis and computing, whatever their career stage. Examples of our target audience are found in [learner profiles](https://carpentries-incubator.github.io/good-enough-practices/learner-profiles/index.html).
 
@@ -418,7 +430,7 @@ Author: Laurent Gatto
 
 Resource: https://uclouvain-cbio.github.io/WSBIM1207/
 
-Git: https://github.com/UCLouvain-CBIO/WSBIM1207.git (I have forked)
+GitHub URL https://github.com/UCLouvain-CBIO/WSBIM1207.git (I have forked)
 
 This is an English language adaptation of [WSBIM1207](#0), an introduction to bioinformatics (and data science) for biology and biomedical students. It introduces bioinformatics methodology and technologies without relying on any prerequisites. The aim of this course is for students to be in a position to understand important notions of bioinformatics and tackle simple bioinformatics-related problems in R, in particular to develop simple R analysis scripts and reproducible analysis reports to interrogate, visualize and understand data in a tidy tabular format.
 
@@ -428,7 +440,7 @@ Author:
 
 Resource: https://carpentries-incubator.github.io/bioc-intro/
 
-Git: https://github.com/carpentries-incubator/bioc-intro (I have forked)
+GitHub URL https://github.com/carpentries-incubator/bioc-intro (I have forked)
 
 This is a beta incubator lesson. It appears to be modeled after the ecology or the R for Reproducible Scientific Analysis workshop. Lessons are pretty similar in scope until you get the the [Starting With Data](https://carpentries-incubator.github.io/bioc-intro/25-starting-with-data.html), which uses genomic data.
 
