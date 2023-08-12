@@ -85,6 +85,15 @@ The [OpenIntro](http://openintrostat.github.io/openintro/) package includes the 
 
 The goal of [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/) is to provide a great dataset for data exploration & visualization, as an alternative to the `iris` dataset.
 
+### portalr Package
+
+The [portalr](https://weecology.github.io/portalr/) package provides collection of basic functions to summarize the Portal project data on rodents, plants, ants, and weather at our long-term field site in the Chihuahuan Desert. The data begin in 1977 and are continuously updated today. There are functions to summarize rodent abundance, biomass, or energy and by site, plot, or treatment type. There are functions to summarize the weather data collected from our automated weather stations and plant data that is collected each summer and fall. You need to set default data folder using:
+
+```{r}
+# install.packages("portalr")
+library(portalr, use_default_data_path('../lsc527-data-raw/'))
+```
+
 ## RColorBrewer
 
 [Cynthia Brewer](https://en.wikipedia.org/wiki/Cynthia_Brewer), a geographer and color specialist, created sets of colors for print and the web and they are available in the add-on package [RColorBrewer](https://cran.r-project.org/package=RColorBrewer). You will need to install and load this package to use.
