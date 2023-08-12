@@ -95,7 +95,18 @@ Primary goal of [report](https://easystats.github.io/report/) is to bridge the g
 
 The `report` package works in a two step fashion. First, you create a `report` object with the [`report()`](https://easystats.github.io/report/reference/report.html) function. Then, this report object can be displayed either textually (the default output) or as a table, using [`as.data.frame()`](https://rdrr.io/r/base/as.data.frame.html). Moreover, you can also access a more digest and compact version of the report using [`summary()`](https://rdrr.io/r/base/summary.html) on the report object (Figure 1).
 
-![](../../lsc-563-joubert/instruction-images/report-package-workflow.png) Figure 1: Report package workflow.
+![](../../instruction-images/report-package-workflow.png) Figure 1: Report package workflow.
+
+### svglite
+
+[`svglite`](https://svglite.r-lib.org/) is a graphic device that is capable of creating SVG files from R graphics. SVG is a vector graphic format which means that it encodes the instructions for recreating a graphic in a scale-independent way. This is in contrast with raster graphics, such as PNG (as can be produced with the graphic devices in [ragg](https://ragg.r-lib.org/)), which encode actual pixel values and will get pixelated as you zoom in
+
+```{r}
+# install.packages("svglite")
+library(svglite)
+```
+
+## Dow
 
 ## Tidyverse Package
 
