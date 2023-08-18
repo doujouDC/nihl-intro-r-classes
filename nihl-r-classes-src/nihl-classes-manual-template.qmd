@@ -2,13 +2,13 @@
 title: ""
 author: "Doug Joubert"
 date: "`r Sys.Date()`"
-format: html
+format: docx
 editor: visual
 echo: fenced
 toc: true
 toc-location: right
-csl: ../lsc563-joubert/apa.csl
-bibliography: ../lsc563-joubert/references.bib
+csl: ../../lsc563-joubert/apa.csl
+bibliography: ../../lsc563-joubert/references.bib
 ---
 
 # Introduction
@@ -23,34 +23,32 @@ Upon completion of this class, students should be able to:
 
 ## Assumptions for This Class
 
-This class makes a few assumptions about your understanding of R and RStudio.
+This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
--   
+1.  Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
 
--   
+2.  Experience with R and RStudio. If not, here are some resources for getting started:
+
+    a.  [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
+
+    b.  [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
+
+    c.  [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
+
+3.  Experience creating scripts and/or markdown files
 
 ## Supplemental information contained in handout
 
 -   
 
-# Configuration
+# Installing and Loading Packages
 
-## Installing and Loading Packages
+## PackageName
 
-### PackageName
+### Package Description (From Packages QMD)
 
 ```{r}
 # install.packages("")
-library()
-```
-
-### Tidyverse Package
-
-The tidyverse is a collection of R [packages](https://www.tidyverse.org/packages) designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Most importantly, the tidyverse collection of packages contains [ggplot](https://ggplot2.tidyverse.org/).
-
-```{r}
-# install.packages("tidyverse")
-library(tidyverse)
 ```
 
 # Data Files
@@ -62,10 +60,13 @@ library(tidyverse)
 The first this we need to do is download the data into our data-raw folder:
 
 ```{r}
-# download.file(url = "https://raw.githubusercontent.com/doujouDC/nihl-intro-r-classes/main/nihl-intro-r-classes-data-raw/blue_jays.csv",
-#               destfile = "../lsc-563-joubert/data-raw/blue_jay.csv")
+# Download the data
 ```
 
 ## Load the Data
+
+```{r}
+# Use the tidyverse to read in the data
+```
 
 # References
