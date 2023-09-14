@@ -8,6 +8,11 @@ editor: visual
 
 The [cowplot](https://wilkelab.org/cowplot/) package is a simple add-on to ggplot. It provides various features that help with creating publication-quality figures, such as a set of themes, functions to align plots and arrange them into complex compound figures, and functions that make it easy to annotate plots and or mix plots with images.
 
+```{r}
+# install.packages("cowplot")
+library(cowplot)
+```
+
 ## forcats Package
 
 The goal of the [forcats](https://forcats.tidyverse.org/) package is to provide a suite of tools that solve common problems with factors, including changing the order of levels or the values. Some examples include:
@@ -20,7 +25,12 @@ The goal of the [forcats](https://forcats.tidyverse.org/) package is to provide 
 
 -   [fct_lump()](https://forcats.tidyverse.org/reference/fct_lump.html): Collapsing the least/most frequent values of a factor into "other."
 
-You can learn more about each of these in [vignette("forcats")](https://forcats.tidyverse.org/articles/forcats.html). If you're new to factors, the best place to start is the [chapter on factors](https://r4ds.had.co.nz/factors.html) in R for Data Science.
+You can learn more about each of these in [vignette("forcats")](https://forcats.tidyverse.org/articles/forcats.html). If you're new to factors, the best place to start is the chapter on [factors](https://r4ds.hadley.nz/factors) in R for Data Science.
+
+```{r}
+# install.packages("forcats")
+library(forcats)
+```
 
 ## gapminder Package
 
@@ -65,13 +75,14 @@ The [hms](https://hms.tidyverse.org/) package provides a simple class for storin
 
 -   Values can exceed the 24-hour boundary or be negative
 
-## lwgeom Package
+## Knitr
 
-R bindings to the [liblwgeom](https://github.com/postgis/postgis/tree/master/liblwgeom) library.
+[knitr](http://yihui.name/knitr/) is a general-purpose tool for dynamic report generation in R using Literate Programming techniques. Inspired by [Sweave](https://en.wikipedia.org/wiki/Sweave), the **knitr** package was designed to be a transparent engine for dynamic report generation with R, and combine features in other add-on packages into one package.
 
-## MASS Package
-
-[Package](https://rdocumentation.org/packages/MASS/versions/7.3-58.1) that includes functions and datasets to support Venables and Ripley, "Modern Applied Statistics with S" (4th edition, 2002).
+```{r}
+# install.packages("knitr")
+library(knitr)
+```
 
 ## nlme Package
 
@@ -106,6 +117,15 @@ The `report` package works in a two step fashion. First, you create a `report` o
 
 ![](../../instruction-images/report-package-workflow.png) Figure 1: Report package workflow.
 
+## R Markdown
+
+R Markdown documents are fully reproducible. Use a productive [notebook interface](https://bookdown.org/yihui/rmarkdown/notebook.html) to weave together narrative text and code to produce elegantly formatted output.
+
+```{r}
+# install.packages("rmarkdown")
+library(rmarkdown)
+```
+
 ### svglite
 
 [`svglite`](https://svglite.r-lib.org/) is a graphic device that is capable of creating SVG files from R graphics. SVG is a vector graphic format which means that it encodes the instructions for recreating a graphic in a scale-independent way. This is in contrast with raster graphics, such as PNG (as can be produced with the graphic devices in [ragg](https://ragg.r-lib.org/)), which encode actual pixel values and will get pixelated as you zoom in
@@ -120,6 +140,11 @@ library(svglite)
 ## Tidyverse Package
 
 The tidyverse is a collection of R [packages](https://www.tidyverse.org/packages) designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Most importantly, the tidyverse collection of packages contains [ggplot](https://ggplot2.tidyverse.org/).
+
+```{r}
+# install.packages("tidyverse")
+library(tidyverse)
+```
 
 ## **usethis Package**
 

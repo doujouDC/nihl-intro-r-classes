@@ -13,7 +13,7 @@ toc-title: Table of Contents
 
 ## Data and Analytics for Research Training Program
 
-Resource: https://arcus.github.io/education_modules/educators
+Resource [URL](https://arcus.github.io/education_modules/educators)
 
 Educational materials created on this site. You can tailor which modules you give to you learners based on their needs, or adapt them to fit your purposes. Please read the section [Remixing Our Materials](https://arcus.github.io/education_modules/educators#remixing-our-materials) to learn about our Creative Commons Attribution-ShareAlike license and suggestions of ways to use this curriculum. I have included some specific lessons.
 
@@ -293,6 +293,34 @@ Resource [URL](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudi
 -   [Workshop: Getting started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/) - "Get started with Quarto" workshop materials for rstudio::conf(2022). Note: [Mickaël Canouil](https://github.com/mcanouil) maintains a [page](https://github.com/mcanouil/awesome-quarto#official-documentation--quickstarts) of Quarto resources
 
 # Reproducibility
+
+## Data Set References
+
+Author: APA Style
+
+Resource [URL](https://apastyle.apa.org/style-grammar-guidelines/references/examples/data-set-references)
+
+Provides an example citation using APA format. Data set references are covered in Section 10.9 of the [APA Publication Manual, Seventh Edition](https://apastyle.apa.org/products/publication-manual-7th-edition).
+
+## Citing Research Objects
+
+Author: Turing Way Community
+
+Resource [URL](https://the-turing-way.netlify.app/communication/citable/citable-cite.html)
+
+Recommendations for citing "research objects" directly in the paper in places where it is relevant. This is a commonly practised way of citing publications and is valid for citing other research components like data and software. A citation includes the following information:
+
+-   Author
+
+-   Title
+
+-   Year of publication
+
+-   Publisher (for data, this is often the data repository where it is housed)
+
+-   Version (if indicated)
+
+-   Access information (a URL or DOI)
 
 ## Coding Mindset
 
