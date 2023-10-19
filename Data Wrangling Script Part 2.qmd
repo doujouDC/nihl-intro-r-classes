@@ -1,0 +1,42 @@
+---
+title: "Candace Class Follow-up"
+format: html
+editor: visual
+---
+
+Load tidyverse
+
+```{r}
+library(tidyverse)
+```
+
+Read in Our Data
+
+```{r}
+surveys <- read_csv("data-raw/surveys.csv")
+```
+
+# Follow Up Question
+
+## Psych Package
+
+```{r}
+# install.packages("psych")
+library("psych")
+describe(surveys)
+```
+
+## Summary Tools Package
+```{r}
+# install.packages("summarytools")
+library(summarytools)
+dfSummary(surveys, style = "multiline", plain.ascii = FALSE)
+```
+## Hmisc Package
+```{r}
+# install.packages("Hmisc")
+library(Hmisc)
+describe(surveys)
+```
+
+
