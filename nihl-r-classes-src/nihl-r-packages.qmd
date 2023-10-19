@@ -126,9 +126,9 @@ R Markdown documents are fully reproducible. Use a productive [notebook interfac
 library(rmarkdown)
 ```
 
-### svglite
+## svglite
 
-[`svglite`](https://svglite.r-lib.org/) is a graphic device that is capable of creating SVG files from R graphics. SVG is a vector graphic format which means that it encodes the instructions for recreating a graphic in a scale-independent way. This is in contrast with raster graphics, such as PNG (as can be produced with the graphic devices in [ragg](https://ragg.r-lib.org/)), which encode actual pixel values and will get pixelated as you zoom in
+[`svglite`](https://svglite.r-lib.org/) is a graphic device that is capable of creating SVG files from R graphics. SVG is a vector graphic format which means that it encodes the instructions for recreating a graphic in a scale-independent way. This is in contrast with raster graphics, such as PNG (as can be produced with the graphic devices in [ragg](https://ragg.r-lib.org/)), which encode actual pixel values and will get pixelated as you zoom in.
 
 ```{r}
 # install.packages("svglite")
