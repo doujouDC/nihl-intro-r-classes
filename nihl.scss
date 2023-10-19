@@ -1,0 +1,26 @@
+/*-- scss:defaults --*/
+
+// fonts
+$font-family-sans-serif: "Calibri", "Cambria";
+$presentation-font-size-root: 30px !default;
+$presentation-font-smaller: 0.75 !default;
+$presentation-line-height: 1.5 !default;
+
+// colors
+$body-bg: #EBF5F5 !default;
+$body-color: #616265 !default;
+$link-color: #5F9BAF !default;
+$selection-bg: #616265;
+
+// headings
+$font-family-sans-serif: "Calibri", "Cambria";
+$presentation-heading-color: #20558A !default;
+$presentation-font-size-root: 30px !default;;
+$presentation-h1-font-size: 2.5em !default;;
+$presentation-h2-font-size: 2.0em !default;;
+
+/*-- scss:rules --*/
+
+.reveal a {
+  line-height: 1.3em;
+}
