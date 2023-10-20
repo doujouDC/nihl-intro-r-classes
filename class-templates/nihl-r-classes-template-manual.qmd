@@ -1,0 +1,46 @@
+---
+title: "Add Title"
+author: "Add Name"
+date: today
+editor: visual
+format:
+  html:
+    toc: tru
+    theme: [default, ../lsc563-joubert/nihl.scss]
+    slide-number: true
+    code-fold: true
+    code-copy: true
+    code-line-numbers: true
+execute:
+  echo: true
+  warning: false
+csl: ../lsc563-joubert/apa.csl
+bibliography: ../lsc563-joubert/references.bib
+# https://quarto.org/docs/presentations/revealjs/
+---
+
+# Introduction
+
+## Description
+
+## Learning Objectives
+
+## Assumptions for This Class
+
+## Supplemental Information in Handouts
+
+# Installing and Loading Packages
+
+## Package Name
+
+## Package Description
+
+## Data Files
+
+## About the Data
+
+## Download the Data
+
+## Load the Data
+
+# References
