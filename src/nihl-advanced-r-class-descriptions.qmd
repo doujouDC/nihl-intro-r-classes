@@ -2,11 +2,10 @@
 title: "R Class Descriptions (Advanced) with Learning Objectives"
 author: "Doug Joubert"
 date: today
-editor: visual
 format:
-  html:
+  docx:
     toc: true
-    theme: [default, ../lsc563-joubert/nihl.scss]
+    theme: [default, ../../lsc563-joubert/nihl.scss]
     slide-number: true
     code-fold: true
     code-copy: true
@@ -14,8 +13,8 @@ format:
 execute:
   echo: true
   warning: false
-csl: ../lsc563-joubert/apa.csl
-bibliography: ../lsc563-joubert/references.bib
+csl: ../../lsc563-joubert/apa.csl
+bibliography: ../../lsc563-joubert/references.bib
 ---
 
 # Project Management in RStudio
@@ -26,21 +25,16 @@ This class focuses on data and project management using R and RStudio. RStudio m
 
 Upon completion of this class participants should be able to define project management from a data science perspective, list the advantages of using RStudio projects, apply best practices for setting up RStudio for projects, create a new RStudio Project, and discuss best practices for organizing data in an RStudio project.
 
-## Assumptions for This Class (send out to registrants via email)            
+## Assumptions for This Class (send out to registrants via email)           
 
 This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
-1.     Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
-
-2.     Experience with R and RStudio. If not, here are some resources for getting started:
-
-a.     [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
-
-b.     [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
-
-c.     [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
-
-3.     Experience creating scripts and/or markdown files.
+1.  Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+2.  Experience with R and RStudio. If not, here are some resources for getting started:
+    1.  [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
+    2.  [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
+    3.  [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
+3.  Experience creating scripts and/or markdown files.
 
 # Version Control and GitHub
 
@@ -54,19 +48,13 @@ Upon completion of this class participants should be able to recognize why versi
 
 This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
-1.     Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
-
-2.     Experience with R and RStudio. If not, here are some resources for getting started:
-
-a.     [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
-
-b.     [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
-
-c.     [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
-
-3.     Experience creating scripts and/or markdown files
-
-4.     You have already created a GitHub account
+1.  Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+2.  Experience with R and RStudio. If not, here are some resources for getting started:
+    1.  [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
+    2.  [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
+    3.  [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
+3.  Experience creating scripts and/or markdown files
+4.  You have already created a GitHub account
 
 # Git in RStudio
 
@@ -80,21 +68,14 @@ Upon completion of this class participants should be able to discuss the differe
 
 This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
-1.        Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
-
-2.        Experience with R and RStudio. If not, here are some resources for getting started:
-
-a.        [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
-
-b.        [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
-
-c.        [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
-
-3.        Taken the Version Control and GitHub class
-
-4.        Created a GitHub account
-
-5.        Downloaded, installed, and verified Git on your computer
+1.  Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+2.  Experience with R and RStudio. If not, here are some resources for getting started:
+    1.  [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
+    2.  [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
+    3.  [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
+3.  Taken the Version Control and GitHub class
+4.  Created a GitHub account
+5.  Downloaded, installed, and verified Git on your computer
 
 # Data Visualization in ggplot
 
@@ -108,19 +89,13 @@ By the end of this class, participants should be able to discuss the connection 
 
 This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
-1.     Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
-
-2.     Experience with R and RStudio. If not, here are some resources for getting started:
-
-a.     [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
-
-b.     [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
-
-c.     [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
-
-3.     Experience creating scripts and/or markdown files.
-
-4.     Taken Introduction to R and RStudio class to be successful in this class
+1.  installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+2.  Experience with R and RStudio. If not, here are some resources for getting started:
+    1.  [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
+    2.  [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
+    3.  [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
+3.  Experience creating scripts and/or markdown files.
+4.  Taken Introduction to R and RStudio class to be successful in this class
 
 # Data Visualization in ggplot: Customization
 
@@ -134,21 +109,13 @@ By the end of this class, participants should be able to describe options for ti
 
 This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
-1.     Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
-
-2.     Experience with R and RStudio. If not, here are some resources for getting started:
-
-a.     [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
-
-b.     [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
-
-c.     [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
-
-3.     Experience creating scripts and/or markdown files.
-
-4.     Taken Data Visualization in R: ggplot class to be successful in this class
-
-Advanced Classes
+1.  Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+2.  Experience with R and RStudio. If not, here are some resources for getting started:
+    1.  [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
+    2.  [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
+    3.  [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
+3.  Experience creating scripts and/or markdown files.
+4.  Taken Data Visualization in R: ggplot class to be successful in this class
 
 # Introduction to Quarto for Scholarly Publishing
 
@@ -162,17 +129,12 @@ Upon completion of this class participants will be able to distinguish between R
 
 This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
-1.     Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
-
-2.     Experience with R and RStudio. If not, here are some resources for getting started:
-
-a.     [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
-
-b.     [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
-
-c.     [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
-
-3.     Experience creating scripts and/or markdown files.
+1.  Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+2.  Experience with R and RStudio. If not, here are some resources for getting started:
+    1.  [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
+    2.  [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
+    3.  [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
+3.  Experience creating scripts and/or markdown files.
 
 # Quarto for Scholarly Publishing: Advanced Formatting
 
@@ -184,17 +146,12 @@ This class is designed for those who want to extend the basics covered in the In
 
 This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
-1.     Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
-
-2.     Experience with R and RStudio. If not, here are some resources for getting started:
-
-a.     [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
-
-b.     [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
-
-c.     [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
-
-3.     Taken the Introduction to Quarto for Scholarly Publishing class
+1.  Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+2.  Experience with R and RStudio. If not, here are some resources for getting started:
+    1.  [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
+    2.  [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
+    3.  [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
+3.  Taken the Introduction to Quarto for Scholarly Publishing class
 
 # Quarto for Scholarly Publishing: Working with Citations
 
@@ -208,17 +165,12 @@ Upon completion of this class participants should be able to link RStudio to Zot
 
 This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
-1.     Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
-
-2.     Experience with R and RStudio. If not, here are some resources for getting started:
-
-a.     [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
-
-b.     [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
-
-c.     [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
-
-3.     Taken the Introduction to Quarto for Scholarly Publishing class
+1.  Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+2.  Experience with R and RStudio. If not, here are some resources for getting started:
+    1.  [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
+    2.  [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
+    3.  [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
+3.  Taken the Introduction to Quarto for Scholarly Publishing class
 
 # Data Visualization in ggplot: Visualizing Relationships and Linear Regression
 
@@ -230,19 +182,13 @@ This class provides an overview of the methods used to visualize the association
 
 This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
-1.     Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
-
-2.     Experience with R and RStudio. If not, here are some resources for getting started:
-
-a.     [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
-
-b.     [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
-
-c.     [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
-
-3.     Experience creating scripts and/or markdown files
-
-4.     Taken the Visualization in R: ggplot class
+1.  Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+2.  Experience with R and RStudio. If not, here are some resources for getting started:
+    1.  [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
+    2.  [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
+    3.  [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
+3.  Experience creating scripts and/or markdown files
+4.  Taken the Visualization in R: ggplot class
 
 # Introduction to Bioconductor
 
@@ -256,17 +202,12 @@ Upon completion of this class participants should be able to describe what the B
 
 This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
-1.     Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
-
-2.     Experience with R and RStudio. If not, here are some resources for getting started:
-
-a.     [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
-
-b.     [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
-
-c.     [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
-
-3.     Experience creating scripts and/or markdown files.
+1.  Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+2.  Experience with R and RStudio. If not, here are some resources for getting started:
+    1.  [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
+    2.  [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
+    3.  [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
+3.  Experience creating scripts and/or markdown files.
 
 # Working with Data in Bioconductor
 
@@ -280,14 +221,9 @@ Upon completion of this class participants should be able to locate resources on
 
 This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
-1.     Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
-
-2.     Experience with R and RStudio. If not, here are some resources for getting started:
-
-a.     [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
-
-b.     [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
-
-c.     [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
-
-3.     Experience creating scripts and/or markdown files.
+1.  Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+2.  Experience with R and RStudio. If not, here are some resources for getting started:
+    1.  [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
+    2.  [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
+    3.  [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
+3.  Experience creating scripts and/or markdown files.
