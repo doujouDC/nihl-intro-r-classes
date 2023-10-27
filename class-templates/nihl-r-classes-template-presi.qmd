@@ -43,4 +43,6 @@ bibliography: ../lsc563-joubert/references.bib
 
 ## Load the Data
 
+# License Information
+
 # References
