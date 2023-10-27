@@ -2,13 +2,14 @@
 title: "Add Title"
 author: "Add Name"
 date: today
-editor: visual
 format:
   revealjs:
     theme: [default, ../lsc563-joubert/nihl.scss]
+    width: 1200
+    margin: 0.05
     slide-number: true
-    code-fold: true
     code-copy: true
+    code-fold: true
     code-line-numbers: true
 execute:
   echo: true
