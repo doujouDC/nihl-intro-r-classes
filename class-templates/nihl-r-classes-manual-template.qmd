@@ -2,17 +2,15 @@
 title: "Add Title"
 author: "Add Name"
 date: today
-editor: visual
 format:
   html:
     toc: true
     theme: [default, ../lsc563-joubert/nihl.scss]
     slide-number: true
-    code-fold: true
     code-copy: true
     code-line-numbers: true
 execute:
-  echo: true
+  echo: fenced
   warning: false
 csl: ../lsc563-joubert/apa.csl
 bibliography: ../lsc563-joubert/references.bib
