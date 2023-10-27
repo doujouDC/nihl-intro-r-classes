@@ -1,327 +1,272 @@
 ---
 title: "R Class Descriptions (Advanced) with Learning Objectives"
 author: "Doug Joubert"
-date: "`r Sys.Date()`"
-format: docx
+date: today
 editor: visual
-echo: fenced
-toc: true
-toc-location: right
+format:
+  html:
+    toc: true
+    theme: [default, ../lsc563-joubert/nihl.scss]
+    slide-number: true
+    code-fold: true
+    code-copy: true
+    code-line-numbers: true
+execute:
+  echo: true
+  warning: false
+csl: ../lsc563-joubert/apa.csl
+bibliography: ../lsc563-joubert/references.bib
 ---
 
 # Project Management in RStudio
 
 ## Description
 
-This class focuses on data and project management using R and RStudio. RStudio makes it possible to work on a complete research project in a more efficient, integrated, and organized manner. This course is designed to be relevant to students from different disciplines.
+This class focuses on data and project management using R and RStudio. RStudio makes it possible to work on a complete research project in a more efficient, integrated, and organized manner. This course is designed to be relevant to participants from different disciplines.
 
-## Learning Objectives
+Upon completion of this class participants should be able to define project management from a data science perspective, list the advantages of using RStudio projects, apply best practices for setting up RStudio for projects, create a new RStudio Project, and discuss best practices for organizing data in an RStudio project.
 
-Upon completion of this class students should be able to:
+## Assumptions for This Class (send out to registrants via email)            
 
--   Define project management from a data science perspective
--   List the advantages of using RStudio projects
--   Apply best practices for setting up RStudio for projects
--   Create a new RStudio Project
--   Discuss best practices for organizing data in an RStudio project
+This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
-## Assumptions for This Class
+1.     Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
 
-This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
+2.     Experience with R and RStudio. If not, here are some resources for getting started:
 
--   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9)
+a.     [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
 
--   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+b.     [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
 
--   [Quick-R](http://www.statmethods.net/)
+c.     [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
 
--   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+3.     Experience creating scripts and/or markdown files.
 
-# Version Control and GitHub (New)
+# Version Control and GitHub
 
 ## Description
 
-This class introduces version control and using [GitHub](https://github.com/) for project versioning. Students will have a better understanding of version control and its advantages for collaboration and version control.
+This class introduces version control and how to use [GitHub](https://github.com/) for project versioning. Participants will have a better understanding of version control, GitHub, and their advantages for managing projects.
 
-## Learning Objectives
+Upon completion of this class participants should be able to recognize why version control is useful, discuss the difference between Git and GitHub, list the options for authenticating to GitHub, and list the options for creating a personal access token (PAT).
 
-Upon completion of this class students should be able to:
+## Assumptions for This Class (send out to registrants via email)
 
--   Recognize why version control is useful
--   Discuss the difference between Git and GitHub
--   List the options for authenticating to GitHub
--   Create a personal access token (PAT)
+This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
-## Assumptions for This Class
+1.     Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
 
-This class makes a few assumptions about your understanding of R and RStudio:
+2.     Experience with R and RStudio. If not, here are some resources for getting started:
 
-1.  You have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop).
-2.  You have experience with R. If not, here are some resources for getting started:
+a.     [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
 
--   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9) class
--   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
--   [Quick-R](http://www.statmethods.net/)
--   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+b.     [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
 
-3.  You have already created a GitHub account
+c.     [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
 
-# Git in RStudio (Modified)
+3.     Experience creating scripts and/or markdown files
+
+4.     You have already created a GitHub account
+
+# Git in RStudio
 
 ## Description
 
-This class focuses on using Git and [GitHub](https://github.com/), with RStudio. Using integrated RStudio tools learners will have a chance to experiment with this integration and understand its advantages for collaboration and version control. Students need to install [R](https://mirrors.nics.utk.edu/cran/) and the current version of [RStudio](https://www.rstudio.com/products/rstudio/download/#download) before the class so that they can follow along with the instructor.
+This class focuses on using Git and [GitHub](https://github.com/), with RStudio. Using integrated RStudio tools, participants will have a chance to experiment with this integration and understand its advantages for collaboration and managing projects. You must have taken Version Control and GitHub class to be successful in this class.
 
-## Learning Objectives
+Upon completion of this class participants should be able to discuss the difference between Git and GitHub, list the options for authenticating to GitHub, create a new R project using a GitHub repository, and distinguish between pulling and pushing data from a repository.
 
-Upon completion of this class students should be able to:
+## Assumptions for This Class (send out to registrants via email)
 
--   Discuss the difference between Git and GitHub
--   List the options for authenticating to GitHub
--   Create a personal access token (PAT)
--   Create a new R project using a GitHub repository
--   Distinguish between pulling and pushing data from a repository
+This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
-## Assumptions for This Class
+1.        Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
 
-This class makes a few assumptions about your understanding of R and RStudio:
+2.        Experience with R and RStudio. If not, here are some resources for getting started:
 
-1.  You have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop).
-2.  You have experience with R. If not, here are some resources for getting started:
+a.        [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
 
--   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9) class
--   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
--   [Quick-R](http://www.statmethods.net/)
--   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+b.        [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
 
-3.  You have already created a GitHub account
-4.  You have downloaded, installed, and verified Git on your computer
+c.        [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
 
-# Data Visualization in R: ggplot
+3.        Taken the Version Control and GitHub class
+
+4.        Created a GitHub account
+
+5.        Downloaded, installed, and verified Git on your computer
+
+# Data Visualization in ggplot
 
 ## Description
 
-This class provides a basic overview of creating plots using ggplot. ggplot is a part of the Tidyverse, a [collection of R packages](https://www.tidyverse.org/packages) designed for data science. This class will focus on identifying the appropriate packages for plotting, defining plot aesthetics, and demonstrating how to add layers to ggplot graphs. Students are encouraged to install [R](https://mirrors.nics.utk.edu/cran/), [RStudio](https://www.rstudio.com/products/rstudio/download/), and the [tidyverse](https://www.tidyverse.org/) package, before the class so that they can follow along with the instructor.
+This class provides a basic overview of creating plots using ggplot. ggplot is a part of the Tidyverse, a [collection of R packages](https://www.tidyverse.org/packages) designed for data science. This class will focus on identifying the appropriate packages for plotting, defining plot aesthetics, and demonstrating how to add layers to ggplot graphs.  **You must have taken Introduction to R and RStudio class to be successful in this class**.
 
-## Learning Objectives
+By the end of this class, participants should be able to discuss the connection between data, aesthetics, & the grammar of graphics, describe how ggplot works, define geoms, and distinguish between individual geoms and collective geoms.
 
-By the end of this class, students should be able to:
+## Assumptions for This Class (send out to registrants via email)
 
-1.  Discuss the connection between data, aesthetics, & the grammar of graphics
-2.  Describe how ggplot works
-3.  Define geoms and distinguish between individual geoms and collective geoms
+This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
-## Assumptions for This Class
+1.     Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
 
-This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
+2.     Experience with R and RStudio. If not, here are some resources for getting started:
 
--   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9)
+a.     [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
 
--   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+b.     [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
 
--   [Quick-R](http://www.statmethods.net/)
+c.     [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
 
--   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+3.     Experience creating scripts and/or markdown files.
 
-Third, is experience working in RStudio and creating scripts and/or markdown files.
+4.     Taken Introduction to R and RStudio class to be successful in this class
 
-
-# Data Visualization in R: Customization in ggplot
+# Data Visualization in ggplot: Customization
 
 ## Description
 
-This class provides an overview of options for customizing a ggplot graph. This class will focus on methods for creating small multiples, options for customizing a graph, and how to apply ggplot themes. Students will need to install [R](https://mirrors.nics.utk.edu/cran/), [RStudio](https://www.rstudio.com/products/rstudio/download/), and the [tidyverse](https://www.tidyverse.org/) package, before the class so that they can follow along with the instructor.
+This class provides an overview of options for customizing a ggplot graph. This class will focus on methods for creating small multiples, options for customizing a graph, and how to apply ggplot themes. **You must have taken Data Visualization in R: ggplot class to be successful in this class**. 
 
-## Learning Objectives
-
-By the end of this class, students should be able to:
-
-1.  Describe options for time series data
-2.  Create a line plot in ggplot
-3.  Learn how to facet a plot
-4.  Demonstrate options for customizing the title and axis
-5.  Apply different ggplot themes
-6.  Arrange multiple plots (handout)
+By the end of this class, participants should be able to describe options for time series data, create a line plot in ggplot, learn how to facet a plot, demonstrate options for customizing the title and axis, and apply different ggplot themes.
 
 ## Assumptions for This Class
 
-This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
+This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
--   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9)
+1.     Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
 
--   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+2.     Experience with R and RStudio. If not, here are some resources for getting started:
 
--   [Quick-R](http://www.statmethods.net/)
+a.     [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
 
--   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+b.     [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
 
-Third, is experience working in RStudio and creating scripts and/or markdown files.
+c.     [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
 
+3.     Experience creating scripts and/or markdown files.
 
-# Data Visualization in ggplot: Visualizing Relationships and Linear Regression
+4.     Taken Data Visualization in R: ggplot class to be successful in this class
 
-## Description
+Advanced Classes
 
-This class provides a basic overview of the methods used to visualize the association among two or more quantitative variables. This class will focus on scatterplots, scatterplot matrix, and visualizing paired data. Participants are expected to have taken the [Introduction to Data Visualization in R: ggplot](https://www.nihlibrary.nih.gov/training/introduction-data-visualization-r-ggplot-8) class. Participants must also install [R](https://mirrors.nics.utk.edu/cran/), [RStudio](https://www.rstudio.com/products/rstudio/download/), and the [tidyverse](https://www.tidyverse.org/) package, before the class so that they can follow along with the instructor.
-
-## Learning Objectives
-
-Upon completion of this class, students should be able to:
-
--   Define bivariate data
-
--   Define scatterplot
-
--   Create a scatterplot using ggplot
-
--   Define linear regression
-
--   Demonstrate how to perform a simple linear regression in R
-
-## Assumptions for This Class
-
-This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
-
--   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9) class
-
--   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
-
--   [Quick-R](http://www.statmethods.net/)
-
--   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
-
-Third, is experience working in RStudio and creating scripts and/or markdown files.
-
-
-# Introduction to Quarto for Scholarly Publishing (Revised)
+# Introduction to Quarto for Scholarly Publishing
 
 ## Description
 
 This class is designed for those who want to extend the basics of R Markdown and apply those skills in [Quarto](https://quarto.org/). Quarto is an open-source scientific and technical publishing system that offers multilingual programming language support to create dynamic and static documents, books, presentations, blogs, and other online resources.
 
-In this class you will learn about the similarities and differences between R-markdown and Quarto. You will also learn how to use Quarto to render documents in multiple formats, with a focus on scholarly publishing. Some familiarity or experience in R and RStudio is required.
-
-## Learning Objectives
-
-Upon completion of this class students should be able to:
-
--   Distinguish between R-markdown and Quarto
--   Identify publishing workflows using markdown
--   Demonstrated the difference between the visual and source editors
--   Create basic markdown elements
--   Learn how to create and run code-blocks
--   Render a markdown document
+Upon completion of this class participants will be able to distinguish between R-markdown and Quarto, identify publishing workflows using markdown, demonstrate the differences between the visual and source editors, create basic markdown elements, learn how to create and run code-blocks, and render a markdown document in multiple formats.
 
 ## Assumptions for This Class
 
-This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
+This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
--   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9)
+1.     Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
 
--   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+2.     Experience with R and RStudio. If not, here are some resources for getting started:
 
--   [Quick-R](http://www.statmethods.net/)
+a.     [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
 
--   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+b.     [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
 
-Third, is experience working in RStudio and creating scripts and/or markdown files.
+c.     [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
 
-# Quarto for Scholarly Publishing: Advanced Formatting (Revised)
+3.     Experience creating scripts and/or markdown files.
+
+# Quarto for Scholarly Publishing: Advanced Formatting
 
 ## Description
 
-This class is designed for those who want to extend the basics covered in the Introduction to Quarto for Scholarly Publishing class. In this class you will learn how to format tables, customize code blocks, and work with images. You must have taken Introduction to Quarto for Scholarly Publishing to be successful in this class.
-
-## Learning Objectives
-
-Upon completion of this class students should be able to:
-
--   Create tables
--   Customize code-blocks
--   Insert images into a markdown document and modify attributes
--   Create document templates
--   Render a markdown document in multiple formats
+This class is designed for those who want to extend the basics covered in the Introduction to Quarto for Scholarly Publishing class. Upon completion of this class participants should be able to create tables, customize code-blocks, create LaTeX equations, and insert images into a markdown document. **You must have taken Introduction to Quarto for Scholarly Publishing to be successful in this class**.
 
 ## Assumptions for This Class
 
-This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
+This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
--   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9)
+1.     Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
 
--   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+2.     Experience with R and RStudio. If not, here are some resources for getting started:
 
--   [Quick-R](http://www.statmethods.net/)
+a.     [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
 
--   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+b.     [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
 
-Third, you have taken the Introduction to Quarto for Scholarly Publishing class.
+c.     [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
 
-# Quarto for Scholarly Publishing: Working with Citations (Revised)
+3.     Taken the Introduction to Quarto for Scholarly Publishing class
+
+# Quarto for Scholarly Publishing: Working with Citations
 
 ## Description
 
-This class is designed for those who want to extend the basics covered in the [Reproducibility in RStudio: Basic Markdown](https://www.nihlibrary.nih.gov/training/reproducibility-rstudio-basic-markdown) class. This class uses [Quarto](https://quarto.org/) to render format citations and bibliographies using [Zotero](https://www.zotero.org/). [Zotero](https://www.zotero.org/) is a free, easy-to-use tool to help you collect, organize, annotate, cite, and share research. You must have taken Introduction to Quarto for Scholarly Publishing to be successful in this class.
+This class is designed for those who want to extend the basics covered in the Introduction to Quarto for Scholarly Publishing to Formatting class. This class uses [Quarto](https://quarto.org/) to render formatted citations and bibliographies.  This class also discusses the Zotero API, which is supported in RStudio. [Zotero](https://www.zotero.org/) is a free, easy-to-use tool to help you collect, organize, annotate, cite, and share research. **You must have taken Introduction to Quarto for Scholarly Publishing to be successful in this class**.
 
-## Learning Objectives
+Upon completion of this class participants should be able to link RStudio to Zotero, create a bibliography and link it to a markdown document, insert citations using RStudio Visual Interface, and via the command line, and download and link a CSL file which specifies the formatting to use when generating the citations and bibliography.
 
-Upon completion of this class students should be able to:
+## Assumptions for This Class (send out to registrants via email)
 
--   Download and install Zotero
--   Link RStudio to Zotero
--   Create a bibliography and link it to a markdown document
--   Insert citations using RStudio Visual Interface, and via the command line
--   Download and link a `CSL` file which specifies the formatting to use when generating the citations and bibliography
+This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
+
+1.     Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+
+2.     Experience with R and RStudio. If not, here are some resources for getting started:
+
+a.     [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
+
+b.     [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
+
+c.     [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
+
+3.     Taken the Introduction to Quarto for Scholarly Publishing class
+
+# Data Visualization in ggplot: Visualizing Relationships and Linear Regression
+
+## Description
+
+This class provides an overview of the methods used to visualize the association among two or more quantitative variables. This class will focus on scatterplots, scatterplot matrix, and visualizing paired data. Upon completion of this class, participants should be able to define bivariate data, create a scatterplot using ggplot, define linear regression, and demonstrate how to perform a simple linear regression in R. **You must have taken Data Visualization in R: ggplot class to be successful in this class**.
 
 ## Assumptions for This Class
 
-This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
+This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
--   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9)
+1.     Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
 
--   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+2.     Experience with R and RStudio. If not, here are some resources for getting started:
 
--   [Quick-R](http://www.statmethods.net/)
+a.     [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
 
--   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+b.     [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
 
-Third, you have taken the Introduction to Quarto for Scholarly Publishing class.
+c.     [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
 
+3.     Experience creating scripts and/or markdown files
+
+4.     Taken the Visualization in R: ggplot class
 
 # Introduction to Bioconductor
 
 ## Description
 
-This class will provide an overview of Bioconductor. We will learn how to identify Bioconductor packages that are appropriate for our project, explore package documentation, and demonstrate how to download and install R packages from Bioconductor.
+This class will provide an overview of Bioconductor. We will learn how to identify Bioconductor packages that are appropriate for a project, explore package documentation, and demonstrate how to download and install R packages from Bioconductor.
 
-## Learning Objectives
-
-Upon completion of this class participants should be able to:
-
--   Describe what the Bioconductor project comprises
-
--   Navigate the Bioconductor website to find packages for a particular task
-
--   Install and update Bioconductor package
-
--   Open a package vignette and practice running through the examples that they contain
-
--   Ensure that they are using the correct version of R to reproduce exactly the contents of this lesson
-
--   Describe how to join and communicate with the Bioconductor community
+Upon completion of this class participants should be able to describe what the Bioconductor project comprises, navigate the Bioconductor website to find packages for a particular task, install and update Bioconductor package, open a package vignette and practice running through the examples that they contain, and ensure that they are using the correct version of R to work with packages.
 
 ## Assumptions for This Class
 
-This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
+This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
--   NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9) class
+1.     Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
 
--   [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+2.     Experience with R and RStudio. If not, here are some resources for getting started:
 
--   [Quick-R](http://www.statmethods.net/)
+a.     [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
 
--   [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+b.     [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
 
-Third, is experience working in RStudio and creating scripts and/or markdown files.
+c.     [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
+
+3.     Experience creating scripts and/or markdown files.
 
 # Working with Data in Bioconductor
 
@@ -329,30 +274,20 @@ Third, is experience working in RStudio and creating scripts and/or markdown fil
 
 This class will provide an overview of common Bioconductor datatypes and explore options for working with biological sequence data.  Specifically, this class will focus on the object types for storing and manipulating genomic features and sequences.
 
-## Learning Objectives
-
-Upon completion of this class participants should be able to:
-
-•         Locate resources on S4Vector classes
-
-•         Review standard R datatypes
-
-•         List the 6 basic Bioconductor classes
-
-•         Discuss methods for working with biological sequences
-
-•         Locate information on Bioconductor, Bioconductor packages, and Bioconductor Courses
+Upon completion of this class participants should be able to locate resources on S4Vector classes, understand the standard R datatypes, list the 6 basic Bioconductor classes, and discuss methods for working with biological sequences.
 
 ## Assumptions for This Class
 
-This class makes a few assumptions about your understanding of R and RStudio. First, it assumed that you have already installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop). Second, is that you have experience with R. If not, here are some resources for getting started:
+This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
-·       NIH Library [Introduction to R and RStudio](https://www.nihlibrary.nih.gov/training/introduction-r-and-rstudio-9) class
+1.     Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
 
-·       [A (very) short introduction to R](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
+2.     Experience with R and RStudio. If not, here are some resources for getting started:
 
-·       [Quick-R](http://www.statmethods.net/)
+a.     [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
 
-·       [Getting up to speed with R](https://rkabacoff.github.io/datavis/Rintro.pdf)
+b.     [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
 
-Third, is experience working in RStudio and creating scripts and/or markdown files.
+c.     [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
+
+3.     Experience creating scripts and/or markdown files.
