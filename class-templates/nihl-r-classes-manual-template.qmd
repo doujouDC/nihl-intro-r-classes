@@ -6,7 +6,6 @@ format:
   html:
     toc: true
     theme: [default, ../lsc563-joubert/nihl.scss]
-    code-tools: true
     code-copy: true
     code-line-numbers: true
 execute:
