@@ -157,7 +157,9 @@ This class makes a few assumptions about your understanding of R and RStudio. Sp
 
 ## Description
 
-This class is designed for those who want to extend the basics covered in the Introduction to Quarto for Scholarly Publishing to Formatting class. This class uses [Quarto](https://quarto.org/) to render formatted citations and bibliographies.  This class also discusses the Zotero API, which is supported in RStudio. [Zotero](https://www.zotero.org/) is a free, easy-to-use tool to help you collect, organize, annotate, cite, and share research. **You must have taken Introduction to Quarto for Scholarly Publishing to be successful in this class**.
+This class is designed for those who want to extend the basics covered in the Introduction to Quarto for Scholarly Publishing to Formatting class. This class uses [Quarto](https://quarto.org/) to render formatted citations and bibliographies included in a journal article, report, or presentation.  This class also discusses the Zotero API, which is supported in RStudio. [Zotero](https://www.zotero.org/) is a free, easy-to-use tool to help you collect, organize, annotate, cite, and share research. This class also covers exporting citations from Endnote in a format supported by Quarto. EndNote is a software package which is designed to help you to organize citations and create a bibliography. The current version of EndNote [available from the NIH Library](http://www.nihlibrary.nih.gov/resources/subject-guides/endnote/endnote-download) is Endnote 21. 
+
+**You must have taken Introduction to Quarto for Scholarly Publishing to be successful in this class**.
 
 Upon completion of this class participants should be able to link RStudio to Zotero, create a bibliography and link it to a markdown document, insert citations using RStudio Visual Interface, and via the command line, and download and link a CSL file which specifies the formatting to use when generating the citations and bibliography.
 
