@@ -1,0 +1,76 @@
+---
+title: "Add Title"
+author: "Add Name"
+date: today
+format:
+  html:
+    toc: true
+    theme: [default, ../../../lsc563-joubert/nihl.scss]
+    code-copy: true
+    code-line-numbers: true
+execute:
+  echo: true
+  warning: false
+csl: ../../../lsc563-joubert/apa.csl
+bibliography: ../../../lsc563-joubert/references.bib
+# https://quarto.org/docs/presentations/revealjs/
+---
+
+# Introduction
+
+## Description
+
+## Learning Objectives
+
+Upon completion of this class, students should be able to:
+
+-   
+
+## Assumptions for This Class
+
+This class makes a few assumptions about your understanding of R and RStudio.
+
+-   
+
+-   
+
+## Supplemental information contained in handout
+
+-   
+
+# Configuration
+
+## Installing and Loading Packages
+
+### PackageName
+
+```{r}
+# install.packages("")
+library()
+```
+
+### Tidyverse Package
+
+The tidyverse is a collection of R [packages](https://www.tidyverse.org/packages) designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Most importantly, the tidyverse collection of packages contains [ggplot](https://ggplot2.tidyverse.org/).
+
+```{r}
+# install.packages("tidyverse")
+library(tidyverse)
+```
+
+# Data Files
+
+## About the Data
+
+## Download the Data
+
+The first this we need to do is download the data into our data-raw folder:
+
+```{r}
+# download.file(url = "https://raw.githubusercontent.com/doujouDC/nihl-intro-r-classes/main/nihl-intro-r-classes-data-raw/blue_jays.csv",
+#               destfile = "../lsc-563-joubert/data-raw/blue_jay.csv")
+```
+
+## Load the Data
+
+# References

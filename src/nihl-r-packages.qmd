@@ -135,8 +135,6 @@ library(rmarkdown)
 library(svglite)
 ```
 
-## Dow
-
 ## Tidyverse Package
 
 The tidyverse is a collection of R [packages](https://www.tidyverse.org/packages) designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Most importantly, the tidyverse collection of packages contains [ggplot](https://ggplot2.tidyverse.org/).
@@ -146,6 +144,20 @@ The tidyverse is a collection of R [packages](https://www.tidyverse.org/packages
 library(tidyverse)
 ```
 
-## **usethis Package**
+## usethis Package
 
 usethis is a [workflow package](https://usethis.r-lib.org/) that automates repetitive tasks that arise during project setup and development, both for R packages and non-package projects.
+
+```{r}
+# install.packages("usethis")
+library(usethis)
+```
+
+## viridis: Colorblind-Friendly Color Maps for R
+
+Color maps designed to improve graph readability for readers with common forms of color blindness and/or color vision deficiency. The color maps are also perceptually-uniform, both in regular form and also when converted to black-and-white for printing. This package also contains 'ggplot2' bindings for discrete and continuous color and fill scales. [Vignette](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html) has great examples.
+
+```{r}
+# install.packages("viridis")
+library(viridis)
+```

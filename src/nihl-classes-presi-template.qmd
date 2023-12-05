@@ -1,0 +1,48 @@
+---
+title: ""
+author: ""
+date: today
+format:
+  revealjs: 
+    theme: [default, ../../../lsc563-joubert/nihl.scss]
+    width: 1280
+    transition: fade
+slide-number: true
+code-copy: true
+code-fold: true
+code-line-numbers: true
+execute:
+  echo: true
+  warning: false
+csl: ../../../lsc563-joubert/apa.csl
+bibliography: ../../../lsc563-joubert/references.bib
+# https://quarto.org/docs/presentations/revealjs/
+---
+
+## Incremental Lists
+
+::: incremental
+-   Item 1
+-   Item 2
+:::
+
+## 60-40 Split Slides
+
+::: columns
+::: {.column width="40%"}
+contents...
+:::
+
+::: {.column width="60%"}
+contents...
+:::
+:::
+
+## Incremental Lists
+
+::: incremental
+-   Eat spaghetti
+-   Drink wine
+:::
+
+# References

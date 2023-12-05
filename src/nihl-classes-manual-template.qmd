@@ -1,14 +1,19 @@
 ---
-title: ""
-author: "Doug Joubert"
-date: "`r Sys.Date()`"
-format: docx
-editor: visual
-echo: fenced
-toc: true
-toc-location: right
-csl: ../../lsc563-joubert/apa.csl
-bibliography: ../../lsc563-joubert/references.bib
+title: "Add Title"
+author: "Add Name"
+date: today
+format:
+  html:
+    toc: true
+    theme: [default, ../lsc563-joubert/nihl.scss]
+    code-copy: true
+    code-line-numbers: true
+execute:
+  echo: true
+  warning: false
+csl: ../lsc563-joubert/apa.csl
+bibliography: ../lsc563-joubert/references.bib
+# https://quarto.org/docs/presentations/revealjs/
 ---
 
 # Introduction
