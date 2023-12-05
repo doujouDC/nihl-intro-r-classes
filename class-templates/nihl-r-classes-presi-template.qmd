@@ -20,6 +20,22 @@ bibliography: ../lsc563-joubert/references.bib
 
 # Introduction
 
+## Resources from the Class
+
+![](../instruction-images/instruction-images/zoom-rename-just-pic.png){fig-align="center" width="100%"}
+
+Please rename yourself in Zoom, so we can:
+
+::: incremental
+-   Send you the student version of the handout
+-   Add you to our list-serve
+:::
+
+## Training Survey
+
+![](../instruction-images/instruction-images/zoom-training-survey.png){fig-align="center"}
+
+
 ## Description
 
 ## Learning Objectives
@@ -41,6 +57,24 @@ bibliography: ../lsc563-joubert/references.bib
 ## Download the Data
 
 ## Load the Data
+
+# Live Portion (RStudio)
+
+## Outline for Demo
+
+::: columns
+::: {.column width="50%"}
+1.  
+2.  
+3.  
+4.  
+5.  
+:::
+
+::: {.column width="50%"}
+![](../instruction-images/instruction-images/noun-demo-1626811-20558A.png){fig-align="right" width="80%"}
+:::
+:::
 
 # License Information
 
