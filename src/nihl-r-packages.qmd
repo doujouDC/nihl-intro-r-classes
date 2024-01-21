@@ -1,79 +1,223 @@
 ---
 title: "NIH Library Classes: Packages"
-format: docx
-editor: visual
+author: "Doug Joubert"
+date: today
+format:
+  html:
+    toc: true
+    theme: [default, ../../lsc563-joubert/nihl.scss]
+    code-copy: true
+    code-line-numbers: true
+execute:
+  echo: fenced
+  warning: false
+csl: ../../lsc563-joubert/apa.csl
+bibliography: ../../lsc563-joubert/references.bib
+# https://quarto.org/docs/presentations/revealjs/
 ---
 
-## cowplot Package
+## broom
+
+The [broom](https://cran.r-project.org/web/packages/broom/vignettes/broom.html) package takes the messy output of built-in functions in R, such as `lm`, `nls`, or `t.test`, and turns them into tidy tibbles. This package provides three S3 methods that do three distinct kinds of tidying.
+
+
+```{r}
+# install.packages("broom")
+# library(broom)
+```
+
+## colorspace
+
+The [colorspace](https://cran.r-project.org/web/packages/colorspace/vignettes/colorspace.html) package provides a broad toolbox for selecting individual colors or color palettes, manipulating these colors, and employing them in various kinds of visualizations.
+
+```{r}
+# install.packages("colorspace")
+# library(colorspace)
+```
+
+## corrr
+
+[corrr](https://corrr.tidymodels.org/) is a package for exploring **corr**elations in **R**. It focuses on creating and working with **data frames** of correlations (instead of matrices) that can be easily explored via corrr functions or by leveraging tools like those in the [tidyverse](https://www.tidyverse.org/).
+
+```{r}
+# install.packages("corrr")
+# library(corrr)
+```
+
+## cowplot
 
 The [cowplot](https://wilkelab.org/cowplot/) package is a simple add-on to ggplot. It provides various features that help with creating publication-quality figures, such as a set of themes, functions to align plots and arrange them into complex compound figures, and functions that make it easy to annotate plots and or mix plots with images.
 
 ```{r}
 # install.packages("cowplot")
-library(cowplot)
+# library(cowplot)
 ```
 
-## forcats Package
+## distill
 
-The goal of the [forcats](https://forcats.tidyverse.org/) package is to provide a suite of tools that solve common problems with factors, including changing the order of levels or the values. Some examples include:
+[Distill](https://rstudio.github.io/distill/) for R Markdown is a web publishing format optimized for scientific and technical communication.
 
--   [fct_reorder()](https://forcats.tidyverse.org/reference/fct_reorder.html): Reordering a factor by another variable.
+```{r}
+# install.packages("distill")
+# library(distill)
+```
 
--   [fct_infreq()](https://forcats.tidyverse.org/reference/fct_inorder.html): Reordering a factor by the frequency of values.
+## forcats
 
--   [fct_relevel()](https://forcats.tidyverse.org/reference/fct_relevel.html): Changing the order of a factor by hand.
-
--   [fct_lump()](https://forcats.tidyverse.org/reference/fct_lump.html): Collapsing the least/most frequent values of a factor into "other."
-
-You can learn more about each of these in [vignette("forcats")](https://forcats.tidyverse.org/articles/forcats.html). If you're new to factors, the best place to start is the chapter on [factors](https://r4ds.hadley.nz/factors) in R for Data Science.
+The goal of the [forcats](https://forcats.tidyverse.org/) package is to provide a suite of tools that solve common problems with factors, including changing the order of levels or the values. 
 
 ```{r}
 # install.packages("forcats")
-library(forcats)
+# library(forcats)
 ```
 
-## gapminder Package
+## gapminder
 
 Excerpt of the [Gapminder](http://www.gapminder.org/data/) data. The main object in this package is the gapminder data frame or "tibble". There are other goodies, such as the data in tab delimited form, a larger unfiltered dataset, premade color schemes for the countries and continents, and ISO 3166-1 country codes. The gapminder data frame include six variables, ([Gapminder.org documentation page](http://www.gapminder.org/data/documentation/)).
 
-## **gitcreds Package**
+```{r}
+# install.packages("gapminder")
+# library(gapminder)
+```
 
-[gitcreds](https://gitcreds.r-lib.org/) allows users to query git credentials from R, that allows you to use the same credentials in command line git, R and the RStudio IDE., etc. Users can set their GitHub token once and use it everywhere.
+## geomtextpath
 
-## ggrepel Package
+[`geomtextpath`](https://allancameron.github.io/geomtextpath/) package in R is an extension of the [ggplot2](https://r-graph-gallery.com/ggplot2-package.html) package, designed to simplify the process of adding text in charts, especially when you need the text to follow a curved path.
 
-[ggrepel](https://ggrepel.slowkow.com/index.html) provides geoms for [ggplot2](https://ggplot2.tidyverse.org/) to repel overlapping text labels:
+Using geomtextpath, your text can follow any path, and will remain correctly spaced and angled, even if you change the size and aspect ratio of your plotting device. It does so without the need to redraw your plot each time, as shown in the [introduction](https://allancameron.github.io/geomtextpath/articles/geomtextpath.html) vignette.
 
--   [geom_text_repel()](https://ggrepel.slowkow.com/reference/geom_text_repel.html): draws a rectangle underneath the text, making it easier to read. The text labels repel away from each other and away from the data points.
+```{r}
+# install.packages("geomtextpath")
+# library(geomtextpath)
+```
 
--   [geom_label_repel()](https://ggrepel.slowkow.com/reference/geom_text_repel.html): text labels repel away from each other, away from data points, and away from edges of the plotting area
 
-## ggridges Package
-
-Supports the creation of ridgeline plots in ggplot2. Ridgeline plots are partially overlapping line plots that create the impression of a mountain range. They can be quite useful for visualizing changes in distributions over time or space. The `ggridges` package provides two main geoms:
-
-1.  `geom_ridgeline: Takes the`height values directly to draw ridgelines
-2.  `geom_density_ridges`: first estimates data densities and then draws those using ridgelines
-
-## GGally Package
+## GGally
 
 [GGally](https://ggobi.github.io/ggally) extends ggplot2 by adding several functions to reduce the complexity of combining geoms with transformed data. Some of these functions include a pairwise plot matrix, a scatterplot plot matrix, a parallel coordinates plot, a survival plot, and several functions to plot networks.
 
-## **hms Package**
+```{r}
+# install.packages("GGally")
+# library(GGally)
+```
 
-The [hms](https://hms.tidyverse.org/) package provides a simple class for storing durations or time-of-day values and displaying them in the hh:mm:ss format. This class is intended to simplify data exchange with databases, spreadsheets, and other data sources. Attributes of the hms package include:
+## ggdendro
 
--   Stores values as a numeric vector that contains the number of seconds since midnight
+The `ggdendro` [package](https://cran.r-project.org/web/packages/ggdendro/vignettes/ggdendro.html) makes it easy to extract dendrogram and tree diagrams into a list of data frames. You can then use this list to recreate these types of plots using the `ggplot2` package.
 
--   Supports construction from explicit hour, minute, or second values
+```{r}
+# install.packages("ggdendro")
+# library(ggdendro)
+```
 
--   Supports coercion to and from various data types, including `POSIXt`
+## ggdist
 
--   Can be used as column in a data frame
+[ggdist](https://mjskay.github.io/ggdist/) is an R package that provides a flexible set of `ggplot2` geoms and stats designed especially for visualizing distributions and uncertainty. It is designed for both frequentist and Bayesian uncertainty visualization.
 
--   Based on the `difftime` class
+```{r}
+# install.packages("ggdist")
+# library(ggdist)
+```
 
--   Values can exceed the 24-hour boundary or be negative
+
+## ggforce
+
+`ggforce` is a [package](https://ggforce.data-imaginist.com/) aimed at providing missing functionality to `ggplot2` through the extension system introduced with `ggplot2` v2.0.0. `ggforce` is mainly an attempt to address ggplot “shortcomings” (design choices might be a better description). The goal is to provide a repository of geoms, stats, etc. that are as well documented and implemented as the official ones found in `ggplot2`.
+
+```{r}
+# install.packages("ggforce")
+# library(ggforce)
+```
+
+## ggiraph
+
+The ggiraph [package](https://www.ardata.fr/ggiraph-book/) lets you create dynamic and interactive graphics:
+
+-   dynamic with animations and tooltips in HTML documents produced by Quarto or ‘R Markdown’,
+
+-   interactive in ‘shiny’ applications where events/interactions with ggiraph graphic are made available as reactive values.
+
+The package is also containing an R graphic device dedicated to SVG, it’s beeing used to produce ‘ggiraph’ graphics but can be used to produce standard SVG graphics.
+
+```{r}
+# install.packages("ggiraph")
+# library("ggiraph")
+```
+
+## ggrepel
+
+[ggrepel](https://ggrepel.slowkow.com/index.html) provides geoms for `ggplot2` to repel overlapping text and labels
+
+-   [geom_text_repel()](https://ggrepel.slowkow.com/reference/geom_text_repel.html): draws a rectangle underneath the text, making it easier to read. The text labels repel away from each other and away from the data points.
+-   [geom_label_repel()](https://ggrepel.slowkow.com/reference/geom_text_repel.html): text labels repel away from each other, away from data points, and away from edges of the plotting area
+
+```{r}
+# install.packages("ggrepel")
+# library(ggrepel)
+```
+
+## ggridges
+
+Ridgeline plots are partially overlapping line plots that create the impression of a mountain range. They can be quite useful for visualizing changes in distributions over time or space.
+
+```{r}
+# install.packages("ggridges")
+# library(ggridges)
+```
+
+## ggstatsplot
+
+The `ggstatsplot` package in R is an extension of the [ggplot2](https://r-graph-gallery.com/ggplot2-package.html) package, designed to facilitate the creation of visualizations accompanied by statistical details.
+
+```{r}
+# install.packages("ggstatsplot")
+# library(ggstatsplot)
+```
+
+## ggthemes
+
+[ggthemes](https://jrnold.github.io/ggthemes/) includes some extra geoms, scales, and themes for [ggplot](https://ggplot2.tidyverse.org/).
+
+```{r}
+# install.packages("ggthemes")
+# library(ggthemes)
+```
+
+## gitcreds
+
+[gitcreds](https://gitcreds.r-lib.org/) allows users to query git credentials from R, that allows you to use the same credentials in command line git, R and the RStudio IDE., etc. Users can set their GitHub token once and use it everywhere.
+
+```{r}
+# install.packages("gitcreds")
+# library(gitcreds)
+```
+
+## gtsummary
+
+The gtsummary package provides an elegant and flexible way to create publication-ready analytical and summary tables using the **R** programming language. The gtsummary package summarizes data sets, regression models, and more, using sensible defaults with highly customizable capabilities.
+
+```{r}
+# install.packages("gtsummary")
+# library(gtsummary)
+```
+
+## hms
+
+The [hms](https://hms.tidyverse.org/) package provides a simple class for storing durations or time-of-day values and displaying them in the hh:mm:ss format. This class is intended to simplify data exchange with databases, spreadsheets, and other data sources.
+
+```{r}
+# install.packages("hms")
+# library(hms)
+```
+
+## hrbrthemes
+
+The [`hrbrthemes`](https://r-graph-gallery.com/package/hrbrthemes.html) package in R serves as a valuable extension to the renowned [ggplot2](https://r-graph-gallery.com/ggplot2-package.html) package. Created by Bob Rudis, `hrbrthemes` offers a collection of **opinionated themes and typography settings** that aim to elevate the visual appeal of your ggplot2 plots. Whether you are a data scientist, a researcher, or anyone interested in data visualization, this package helps you create **publication-quality** plots with minimal effort.
+
+```{r}
+# install.packages("hrbrthemes")
+# library(hrbrthemes)
+```
 
 ## Knitr
 
@@ -81,83 +225,197 @@ The [hms](https://hms.tidyverse.org/) package provides a simple class for storin
 
 ```{r}
 # install.packages("knitr")
-library(knitr)
+# library(knitr)
 ```
 
-## nlme Package
+## learnr
 
-The [nlme: Nonlinear Mixed-Effects Models](https://www.rdocumentation.org/packages/nlme/versions/3.1-159/topics/nlme) package fits a nonlinear mixed-effects model in the formulation described in Lindstrom and Bates (1990) but allowing for nested random effects. The within-group errors are allowed to be correlated and/or have unequal variances. We are simply using it for the [oxboys](https://rdrr.io/cran/mlmRev/man/Oxboys.html) dataset.
+The `learnr` package makes it easy to turn any [R Markdown](https://rmarkdown.rstudio.com/) document into an interactive tutorial. Tutorials consist of content along with interactive components for checking and reinforcing understanding. There are lots of developed tutorials on using R, that I find helpful for new R users.
 
-## OpenIntro Package
+```{r}
+# install.packages("learnr")
+# library(learnr)
+```
 
-The [OpenIntro](http://openintrostat.github.io/openintro/) package includes the data and functions for the [OpenIntro Statistics](https://www.openintro.org/book/os/) textbook. The package also contains custom plotting functions for reproducing book figures, and the datasets used in [OpenIntro labs](openintro.info/stat/labs.php?stat_lab_software=R).
+## lubridate
 
-## Palmer Penguins
+The lubridate [package](https://lubridate.tidyverse.org/), makes it easier to work with dates and times in R. As of the latest tidyverse release, lubridate is part of core tidyverse.
+
+```{r}
+# install.packages("lubridate")
+# library(lubridate)
+```
+
+## magick
+
+The [magick](https://cran.r-project.org/package=magick) package provide a modern and simple toolkit for image processing in R. It wraps the [ImageMagick STL](https://www.imagemagick.org/Magick++/STL.html) which is the most comprehensive open-source image processing library available today.
+
+The ImageMagick library has an overwhelming amount of functionality. Magick exposes a decent subset of it, but it is impossible to document everything in detail. This [article](https://cran.r-project.org/web/packages/magick/vignettes/intro.html) introduces some basic concepts and examples to get started.
+
+```{r}
+# install.packages("magick")
+# library(magick)
+```
+
+## margins
+
+The `margins` and `prediction` packages are a combined effort to port the functionality of Stata’s (closed source) [`margins`](https://www.stata.com/help.cgi?margins) command to (open source) R. These tools provide ways of obtaining common quantities of interest from regression-type models.
+
+```{r}
+# install.packages("margins")
+# library("margins")
+```
+
+## nlme
+
+The [nlme: Nonlinear Mixed-Effects Models](https://www.rdocumentation.org/packages/nlme/versions/3.1-159/topics/nlme) package fits a nonlinear mixed-effects model in the formulation described in Lindstrom and Bates (1990) but allowing for nested random effects. The within-group errors are allowed to be correlated and/or have unequal variances. This package also contains the [oxboys](https://rdrr.io/cran/mlmRev/man/Oxboys.html) dataset
+
+```{r}
+# install.packages("nlme")
+# library(nlme)
+```
+
+## openIntro
+
+The [openIntro](http://openintrostat.github.io/openintro/) package includes the data and functions for the [OpenIntro Statistics](https://www.openintro.org/book/os/) textbook. The package also contains custom plotting functions for reproducing book figures, and the datasets used in [OpenIntro labs](openintro.info/stat/labs.php?stat_lab_software=R).
+
+```{r}
+# install.packages("openintro")
+# library(openintro)
+```
+
+## palmerpenguins
 
 The goal of [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/) is to provide a great dataset for data exploration & visualization, as an alternative to the `iris` dataset.
 
-### portalr Package
+```{r}
+# install.packages("palmerpenguins")
+# library(palmerpenguins)
+```
+
+## patchwork
+
+The goal of `patchwork` is to make it simple to combine separate ggplots into the same graphic. As such it tries to solve the same problem as [`gridExtra::grid.arrange()`](https://rdrr.io/pkg/gridExtra/man/arrangeGrob.html) and [`cowplot::plot_grid`](https://wilkelab.org/cowplot/articles/plot_grid.html) but using an API that incites exploration and iteration, and scales to arbitrarily complex layouts.
+
+```{r}
+# install.packages("patchwork")
+# library(patchwork)
+```
+
+## plotly
+
+Plotly's R [graphing library](https://plotly.com/r/) makes interactive, publication-quality graphs. Examples of how to make line plots, scatter plots, area charts, bar charts, error bars, box plots, histograms, heatmaps, subplots, multiple-axes, and 3D (WebGL based) charts are included in this [online book](https://plotly-r.com/).
+
+```{r}
+# install.packages("plotly")
+# library(plotly)
+```
+
+## portalr
 
 The [portalr](https://weecology.github.io/portalr/) package provides collection of basic functions to summarize the Portal project data on rodents, plants, ants, and weather at our long-term field site in the Chihuahuan Desert. The data begin in 1977 and are continuously updated today. There are functions to summarize rodent abundance, biomass, or energy and by site, plot, or treatment type. There are functions to summarize the weather data collected from our automated weather stations and plant data that is collected each summer and fall. You need to set default data folder using:
 
 ```{r}
 # install.packages("portalr")
-library(portalr, use_default_data_path('../lsc527-data-raw/'))
+# library(portalr, use_default_data_path(""))
+```
+
+## purrr
+
+[purrr](https://purrr.tidyverse.org/) enhances R’s functional programming (FP) toolkit by providing a complete and consistent set of tools for working with functions and vectors. If you’ve never heard of FP before, the best place to start is the family of [`map()`](https://purrr.tidyverse.org/reference/map.html) functions which allow you to replace many for loops with code that is both more succinct and easier to read. The best place to learn about the [`map()`](https://purrr.tidyverse.org/reference/map.html) functions is the [iteration chapter](https://r4ds.hadley.nz/datetimes.html) in R for data science.
+
+```{r}
+# install.packages("purrr")
+# library(purrr)
 ```
 
 ## RColorBrewer
 
-[Cynthia Brewer](https://en.wikipedia.org/wiki/Cynthia_Brewer), a geographer and color specialist, created sets of colors for print and the web and they are available in the add-on package [RColorBrewer](https://cran.r-project.org/package=RColorBrewer). You will need to install and load this package to use.
+[Cynthia Brewer](https://en.wikipedia.org/wiki/Cynthia_Brewer), a geographer and color specialist, created sets of colors for print and the web and they are available in the add-on package [RColorBrewer](https://cran.r-project.org/package=RColorBrewer). [efg’s R Notes](https://earlglynn.github.io/RNotes/package/RColorBrewer/index.html) on RColorBrewer has some great examples.
 
-## Report
+```{r}
+# install.packages("RColorBrewer")
+# library(RColorBrewer)
+```
+
+## report
 
 Primary goal of [report](https://easystats.github.io/report/) is to bridge the gap between R's output and the formatted results contained in your manuscript. It automatically produces reports of models and data frames according to **best practices** guidelines (e.g., [APA](https://apastyle.apa.org/)'s style), ensuring **standardization** and **quality** in results reporting.
 
-The `report` package works in a two step fashion. First, you create a `report` object with the [`report()`](https://easystats.github.io/report/reference/report.html) function. Then, this report object can be displayed either textually (the default output) or as a table, using [`as.data.frame()`](https://rdrr.io/r/base/as.data.frame.html). Moreover, you can also access a more digest and compact version of the report using [`summary()`](https://rdrr.io/r/base/summary.html) on the report object (Figure 1).
+```{r}
+# install.packages("report")
+# library(report)
+```
 
-![](../../instruction-images/report-package-workflow.png) Figure 1: Report package workflow.
 
-## R Markdown
+## rmarkdown
 
-R Markdown documents are fully reproducible. Use a productive [notebook interface](https://bookdown.org/yihui/rmarkdown/notebook.html) to weave together narrative text and code to produce elegantly formatted output.
+[rmarkdown](https://pkgs.rstudio.com/rmarkdown/) package helps you create dynamic analysis documents that combine code, rendered output (such as figures), and prose. You bring your data, code, and ideas, and R Markdown renders your content into a polished document.
 
 ```{r}
 # install.packages("rmarkdown")
-library(rmarkdown)
+# library(rmarkdown)
+```
+
+## sf
+
+[Simple Features for R](https://r-spatial.github.io/sf/) is a standardized way to encode spatial vector data. Binds to 'GDAL' for reading and writing data, to 'GEOS' for geometrical operations, and to 'PROJ' for projection conversions and datum transformations.
+
+```{r}
+# install.packages("sf")
+# library(sf)
 ```
 
 ## svglite
 
-[`svglite`](https://svglite.r-lib.org/) is a graphic device that is capable of creating SVG files from R graphics. SVG is a vector graphic format which means that it encodes the instructions for recreating a graphic in a scale-independent way. This is in contrast with raster graphics, such as PNG (as can be produced with the graphic devices in [ragg](https://ragg.r-lib.org/)), which encode actual pixel values and will get pixelated as you zoom in.
+[`svglite`](https://svglite.r-lib.org/) is a graphic device that is capable of creating SVG files from R graphics. SVG is a vector graphic format which means that it encodes the instructions for recreating a graphic in a scale-independent way.
 
 ```{r}
 # install.packages("svglite")
-library(svglite)
+# library(svglite)
 ```
 
-## Tidyverse Package
+## tidymodels
+
+[tidymodels](https://www.tidymodels.org/) is a “meta-package” for modeling and statistical analysis that shares the underlying design philosophy, grammar, and data structures of the [tidyverse](https://www.tidyverse.org/). It includes a core set of 13 packages that are loaded on startup. A list of all tidymodels functions across different CRAN packages can be found at <https://www.tidymodels.org/find/>.
+
+```{r}
+# install.packages("tidymodels")
+# library(tidymodels)
+```
+
+## tidyverse
 
 The tidyverse is a collection of R [packages](https://www.tidyverse.org/packages) designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Most importantly, the tidyverse collection of packages contains [ggplot](https://ggplot2.tidyverse.org/).
 
 ```{r}
 # install.packages("tidyverse")
-library(tidyverse)
+# library(tidyverse)
 ```
 
-## usethis Package
+## treemapify
+
+treemapify provides [ggplot2](https://ggplot2.tidyverse.org/) geoms for drawing [treemaps](https://en.wikipedia.org/wiki/Treemap).
+
+```{r}
+# install.packages("treemapify")
+# library("treemapify")
+```
+
+## usethis
 
 usethis is a [workflow package](https://usethis.r-lib.org/) that automates repetitive tasks that arise during project setup and development, both for R packages and non-package projects.
 
 ```{r}
 # install.packages("usethis")
-library(usethis)
+# library(usethis)
 ```
 
-## viridis: Colorblind-Friendly Color Maps for R
+## viridis
 
 Color maps designed to improve graph readability for readers with common forms of color blindness and/or color vision deficiency. The color maps are also perceptually-uniform, both in regular form and also when converted to black-and-white for printing. This package also contains 'ggplot2' bindings for discrete and continuous color and fill scales. [Vignette](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html) has great examples.
 
 ```{r}
 # install.packages("viridis")
-library(viridis)
+# library(viridis)
 ```
