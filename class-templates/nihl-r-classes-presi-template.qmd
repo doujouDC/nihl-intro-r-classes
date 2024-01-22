@@ -6,10 +6,12 @@ format:
   revealjs:
     theme: [default, ../lsc563-joubert/nihl.scss]
     width: 1200
-    slide-number: true
-    code-copy: true
-    code-fold: true
-    code-line-numbers: true
+    transition: fade
+    incremental: true
+slide-number: true
+code-copy: true
+code-fold: true
+code-line-numbers: true
 execute:
   echo: true
   warning: false
