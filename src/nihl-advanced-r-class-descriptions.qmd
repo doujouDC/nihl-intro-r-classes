@@ -25,16 +25,15 @@ This class focuses on data and project management using R and RStudio. RStudio m
 
 Upon completion of this class participants should be able to define project management from a data science perspective, list the advantages of using RStudio projects, apply best practices for setting up RStudio for projects, create a new RStudio Project, and discuss best practices for organizing data in an RStudio project.
 
-## Assumptions for This Class (send out to registrants via email)           
+## Assumptions for This Class (send out to registrants via email)
 
 This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
-1.  Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
-2.  Experience with R and RStudio. If not, here are some resources for getting started:
-    1.  [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
-    2.  [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
-    3.  [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
-3.  Experience creating scripts and/or markdown files.
+1.  installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+2.  Taken Introduction to R and RStudio class. If not, here are some resources for getting started:
+    1.  [Introduction to R](https://nih.zoomgov.com/rec/share/r1E6wxGA_GPH9KdeB795R2Ncs8hkjb4IOTBMyYiGPjBKLoytyfvCbEWQ0Lb-qgK1.iqwHLHBN-on9dt9F)
+    2.  [Introduction to RStudio](https://nih.zoomgov.com/rec/share/ddsz5KFYjmKuI11vo34gOHLCA8qm3wgivR8tc_n8VBvvjdXnvTENdiZmYIQ0nWHQ.pTeAHZ6ijKZ7xfVZ)
+    3.  [Introduction to Scripts in RStudio](https://nih.zoomgov.com/rec/share/v4HbQqX5OSbAQK3KU2Zk-TUN0Tkvd35QtlP4tLnD1X4DTkJo8PV9OmtjwpU3ABHl.7zPhhYRf9mLgfEF2)
 
 # Version Control and GitHub
 
@@ -81,41 +80,51 @@ This class makes a few assumptions about your understanding of R and RStudio. Sp
 
 ## Description
 
-This class provides a basic overview of creating plots using ggplot. ggplot is a part of the Tidyverse, a [collection of R packages](https://www.tidyverse.org/packages) designed for data science. This class will focus on identifying the appropriate packages for plotting, defining plot aesthetics, and demonstrating how to add layers to ggplot graphs.  **You must have taken Introduction to R and RStudio class to be successful in this class**.
+This class will explore the topics of perception and cognition, and how these apply to data visualization. There will also be a discussion on “pre-attentive” properties or visual properties that “pop-out.” These topics are important guides that inform what chart type is most appropriate to visualize your data. This class will also focus on identifying the appropriate packages for plotting, defining plot aesthetics, and demonstrating how to add layers to ggplot graphs. **You must have taken Introduction to R and RStudio class to be successful in this class.**
 
-By the end of this class, participants should be able to discuss the connection between data, aesthetics, & the grammar of graphics, describe how ggplot works, define geoms, and distinguish between individual geoms and collective geoms.
+By the end of this class, participants should be able to discuss the connection between data, aesthetics, & the grammar of graphics, describe how ggplot works, define geoms, distinguish between individual geoms and collective geoms, and create a basic plot in ggplot.
+
+## Learning Objectives
+
+By the end of this class, students should be able to:
+
+1.  Discuss the connection between data, aesthetics, & the grammar of graphics
+2.  Describe how ggplot works
+3.  Define geoms and distinguish between individual geoms and collective geoms
+4.  Create your first plot
+5.  Save a plot in high-resolution
 
 ## Assumptions for This Class (send out to registrants via email)
 
 This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
 1.  installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
-2.  Experience with R and RStudio. If not, here are some resources for getting started:
-    1.  [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
-    2.  [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
-    3.  [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
-3.  Experience creating scripts and/or markdown files.
-4.  Taken Introduction to R and RStudio class to be successful in this class
+2.  Taken Introduction to R and RStudio class. If not, here are some resources for getting started:
+    1.  [Introduction to R](https://nih.zoomgov.com/rec/share/r1E6wxGA_GPH9KdeB795R2Ncs8hkjb4IOTBMyYiGPjBKLoytyfvCbEWQ0Lb-qgK1.iqwHLHBN-on9dt9F)
+    2.  [Introduction to RStudio](https://nih.zoomgov.com/rec/share/ddsz5KFYjmKuI11vo34gOHLCA8qm3wgivR8tc_n8VBvvjdXnvTENdiZmYIQ0nWHQ.pTeAHZ6ijKZ7xfVZ)
+    3.  [Introduction to Scripts in RStudio](https://nih.zoomgov.com/rec/share/v4HbQqX5OSbAQK3KU2Zk-TUN0Tkvd35QtlP4tLnD1X4DTkJo8PV9OmtjwpU3ABHl.7zPhhYRf9mLgfEF2)
+    4.  [Creating Projects in RStudio](https://nih.zoomgov.com/rec/share/lwRt2qWoNHZ9xRJG69yzkQ__SVc1xrSinaaI8kvziYJCj4Qoo4WnSYgsJiNq_qkZ.AVt2Oot4V7eTbDcT)
 
 # Data Visualization in ggplot: Customization
 
 ## Description
 
-This class provides an overview of options for customizing a ggplot graph. This class will focus on methods for creating small multiples, options for customizing a graph, and how to apply ggplot themes. **You must have taken Data Visualization in R: ggplot class to be successful in this class**. 
+This class builds on the topics covered in the Data Visualization in ggplot class. It provides an overview of options for customizing a ggplot graph. This class will focus on methods for creating small multiples, options for customizing a graph, and how to apply ggplot themes. **You must have taken Data Visualization in R: ggplot class to be successful in this class**.
 
 By the end of this class, participants should be able to describe options for time series data, create a line plot in ggplot, learn how to facet a plot, demonstrate options for customizing the title and axis, and apply different ggplot themes.
 
 ## Assumptions for This Class
 
+## Assumptions for This Class (send out to registrants via email)
+
 This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
-1.  Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
-2.  Experience with R and RStudio. If not, here are some resources for getting started:
-    1.  [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
-    2.  [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
-    3.  [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
-3.  Experience creating scripts and/or markdown files.
-4.  Taken Data Visualization in R: ggplot class to be successful in this class
+1.  installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+2.  Taken Introduction to R and RStudio class. If not, here are some resources for getting started:
+    1.  [Introduction to R](https://nih.zoomgov.com/rec/share/r1E6wxGA_GPH9KdeB795R2Ncs8hkjb4IOTBMyYiGPjBKLoytyfvCbEWQ0Lb-qgK1.iqwHLHBN-on9dt9F)
+    2.  [Introduction to RStudio](https://nih.zoomgov.com/rec/share/ddsz5KFYjmKuI11vo34gOHLCA8qm3wgivR8tc_n8VBvvjdXnvTENdiZmYIQ0nWHQ.pTeAHZ6ijKZ7xfVZ)
+    3.  [Introduction to Scripts in RStudio](https://nih.zoomgov.com/rec/share/v4HbQqX5OSbAQK3KU2Zk-TUN0Tkvd35QtlP4tLnD1X4DTkJo8PV9OmtjwpU3ABHl.7zPhhYRf9mLgfEF2)
+    4.  [Creating Projects in RStudio](https://nih.zoomgov.com/rec/share/lwRt2qWoNHZ9xRJG69yzkQ__SVc1xrSinaaI8kvziYJCj4Qoo4WnSYgsJiNq_qkZ.AVt2Oot4V7eTbDcT)
 
 # Introduction to Quarto for Scholarly Publishing
 
