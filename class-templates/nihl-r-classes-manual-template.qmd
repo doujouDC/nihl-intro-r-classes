@@ -21,9 +21,34 @@ bibliography: ../lsc563-joubert/references.bib
 
 ## Learning Objectives
 
+By the end of this class, students should be able to:
+
 ## Assumptions for This Class
 
-## Supplemental Information in Handouts
+This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
+
+1.  Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+2.  Taken Introduction to R and RStudio class. If not, here are some resources for getting started:
+    1.  [Introduction to R](https://nih.zoomgov.com/rec/share/r1E6wxGA_GPH9KdeB795R2Ncs8hkjb4IOTBMyYiGPjBKLoytyfvCbEWQ0Lb-qgK1.iqwHLHBN-on9dt9F)
+    2.  [Introduction to RStudio](https://nih.zoomgov.com/rec/share/ddsz5KFYjmKuI11vo34gOHLCA8qm3wgivR8tc_n8VBvvjdXnvTENdiZmYIQ0nWHQ.pTeAHZ6ijKZ7xfVZ)
+    3.  [Introduction to Scripts in RStudio](https://nih.zoomgov.com/rec/share/v4HbQqX5OSbAQK3KU2Zk-TUN0Tkvd35QtlP4tLnD1X4DTkJo8PV9OmtjwpU3ABHl.7zPhhYRf9mLgfEF2)
+    4.  [Creating Projects in RStudio](https://nih.zoomgov.com/rec/share/lwRt2qWoNHZ9xRJG69yzkQ__SVc1xrSinaaI8kvziYJCj4Qoo4WnSYgsJiNq_qkZ.AVt2Oot4V7eTbDcT)
+
+## Class Resources
+
+![](../instruction-images/instruction-images/zoom-rename-just-pic.png){fig-align="center" width="100%"}
+
+## Training Survey
+
+
+![](../instruction-images/instruction-images/zoom-training-survey.png){fig-align="center"}
+
+
+# Live Portion (RStudio)
+
+## Outline for Demo
+
+1.  
 
 # Installing and Loading Packages
 
@@ -31,12 +56,19 @@ bibliography: ../lsc563-joubert/references.bib
 
 ## Package Description
 
+```{r}
+# install.packages("")
+# library()
+```
+
 ## Data Files
 
 ## About the Data
 
-## Download the Data
-
 ## Load the Data
+
+```{r}
+# object_name <- read_csv("")
+```
 
 # References

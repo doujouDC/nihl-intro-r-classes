@@ -22,13 +22,39 @@ bibliography: ../lsc563-joubert/references.bib
 
 # Introduction
 
-## Resources from the Class
+## Description
+
+
+
+## Learning Objectives
+
+By the end of this class, students should be able to:
+
+1.  Discuss the connection between data, aesthetics, & the grammar of graphics
+2.  Describe how ggplot works
+3.  Define geoms and distinguish between individual geoms and collective geoms
+4.  Create your first plot
+5.  Save a plot in high-resolution
+
+## Assumptions for This Class
+
+This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
+
+1.  Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+2.  Taken Introduction to R and RStudio class. If not, here are some resources for getting started:
+    1.  [Introduction to R](https://nih.zoomgov.com/rec/share/r1E6wxGA_GPH9KdeB795R2Ncs8hkjb4IOTBMyYiGPjBKLoytyfvCbEWQ0Lb-qgK1.iqwHLHBN-on9dt9F)
+    2.  [Introduction to RStudio](https://nih.zoomgov.com/rec/share/ddsz5KFYjmKuI11vo34gOHLCA8qm3wgivR8tc_n8VBvvjdXnvTENdiZmYIQ0nWHQ.pTeAHZ6ijKZ7xfVZ)
+    3.  [Introduction to Scripts in RStudio](https://nih.zoomgov.com/rec/share/v4HbQqX5OSbAQK3KU2Zk-TUN0Tkvd35QtlP4tLnD1X4DTkJo8PV9OmtjwpU3ABHl.7zPhhYRf9mLgfEF2)
+    4.  [Creating Projects in RStudio](https://nih.zoomgov.com/rec/share/lwRt2qWoNHZ9xRJG69yzkQ__SVc1xrSinaaI8kvziYJCj4Qoo4WnSYgsJiNq_qkZ.AVt2Oot4V7eTbDcT)
+
+
+## Class Resources
 
 ![](../instruction-images/instruction-images/zoom-rename-just-pic.png){fig-align="center" width="100%"}
 
 Please rename yourself in Zoom, so we can:
 
-::: incremental
+::: nonincremental
 -   Send you the student version of the handout
 -   Add you to our list-serve
 :::
@@ -37,29 +63,6 @@ Please rename yourself in Zoom, so we can:
 
 ![](../instruction-images/instruction-images/zoom-training-survey.png){fig-align="center"}
 
-
-## Description
-
-## Learning Objectives
-
-## Assumptions for This Class
-
-## Supplemental Information in Handouts
-
-# Installing and Loading Packages
-
-## Package Name
-
-## Package Description
-
-## Data Files
-
-## About the Data
-
-## Download the Data
-
-## Load the Data
-
 # Live Portion (RStudio)
 
 ## Outline for Demo
@@ -67,16 +70,44 @@ Please rename yourself in Zoom, so we can:
 ::: columns
 ::: {.column width="50%"}
 1.  
-2.  
-3.  
-4.  
-5.  
 :::
 
 ::: {.column width="50%"}
-![](../instruction-images/instruction-images/noun-demo-1626811-20558A.png){fig-align="right" width="80%"}
+![](../instruction-images/instruction-images/noun-demo-1626811-20558A.png){fig-align="center" width="75%"}
 :::
 :::
+
+# Installing and Loading Packages
+
+## Package Names
+
+::: columns
+::: {.column width="50%"}
+-   
+:::
+
+::: {.column width="50%"}
+```{r}
+# install.packages("")
+# library()
+```
+:::
+:::
+
+
+## Data Files
+
+## About the Data
+
+-   
+
+## Load the Data
+
+Next, we need to import the `data-file` data into a new object called `name of object`.
+
+```{r}
+# object_name <- read_csv("")
+```
 
 # License Information
 
