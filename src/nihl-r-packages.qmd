@@ -20,7 +20,6 @@ bibliography: ../../lsc563-joubert/references.bib
 
 The [broom](https://cran.r-project.org/web/packages/broom/vignettes/broom.html) package takes the messy output of built-in functions in R, such as `lm`, `nls`, or `t.test`, and turns them into tidy tibbles. This package provides three S3 methods that do three distinct kinds of tidying.
 
-
 ```{r}
 # install.packages("broom")
 # library(broom)
@@ -64,7 +63,7 @@ The [cowplot](https://wilkelab.org/cowplot/) package is a simple add-on to ggplo
 
 ## forcats
 
-The goal of the [forcats](https://forcats.tidyverse.org/) package is to provide a suite of tools that solve common problems with factors, including changing the order of levels or the values. 
+The goal of the [forcats](https://forcats.tidyverse.org/) package is to provide a suite of tools that solve common problems with factors, including changing the order of levels or the values.
 
 ```{r}
 # install.packages("forcats")
@@ -90,7 +89,6 @@ Using geomtextpath, your text can follow any path, and will remain correctly spa
 # install.packages("geomtextpath")
 # library(geomtextpath)
 ```
-
 
 ## GGally
 
@@ -118,7 +116,6 @@ The `ggdendro` [package](https://cran.r-project.org/web/packages/ggdendro/vignet
 # install.packages("ggdist")
 # library(ggdist)
 ```
-
 
 ## ggforce
 
@@ -331,7 +328,7 @@ The [portalr](https://weecology.github.io/portalr/) package provides collection 
 
 ## RColorBrewer
 
-[Cynthia Brewer](https://en.wikipedia.org/wiki/Cynthia_Brewer), a geographer and color specialist, created sets of colors for print and the web and they are available in the add-on package [RColorBrewer](https://cran.r-project.org/package=RColorBrewer). [efg’s R Notes](https://earlglynn.github.io/RNotes/package/RColorBrewer/index.html) on RColorBrewer has some great examples.
+[Cynthia Brewer](https://www.geog.psu.edu/directory/cynthia-brewer), a geographer and color specialist, created sets of colors for print and the web and they are available in the add-on package - [RColorBrewer](https://cran.r-project.org/package=RColorBrewer). [efg’s R Notes](https://earlglynn.github.io/RNotes/package/RColorBrewer/index.html) on RColorBrewer has some great examples.
 
 ```{r}
 # install.packages("RColorBrewer")
@@ -340,13 +337,13 @@ The [portalr](https://weecology.github.io/portalr/) package provides collection 
 
 ## report
 
-Primary goal of [report](https://easystats.github.io/report/) is to bridge the gap between R's output and the formatted results contained in your manuscript. It automatically produces reports of models and data frames according to **best practices** guidelines (e.g., [APA](https://apastyle.apa.org/)'s style), ensuring **standardization** and **quality** in results reporting.
+-   [report](https://easystats.github.io/report/) bridges the gap between R's output and the formatted results contained in your manuscript
+-   Automatically produces reports of models and data frames according to **best practices** guidelines (e.g., [APA](https://apastyle.apa.org/)'s style), ensuring **standardization** and **quality** in results reporting.
 
 ```{r}
 # install.packages("report")
 # library(report)
 ```
-
 
 ## rmarkdown
 
@@ -377,7 +374,9 @@ Primary goal of [report](https://easystats.github.io/report/) is to bridge the g
 
 ## tidymodels
 
-[tidymodels](https://www.tidymodels.org/) is a “meta-package” for modeling and statistical analysis that shares the underlying design philosophy, grammar, and data structures of the [tidyverse](https://www.tidyverse.org/). It includes a core set of 13 packages that are loaded on startup. A list of all tidymodels functions across different CRAN packages can be found at <https://www.tidymodels.org/find/>.
+-   [tidymodels](https://www.tidymodels.org/) is a “meta-package” for modeling and statistical analysis that shares the underlying design philosophy, grammar, and data structures of the [tidyverse](https://www.tidyverse.org/)
+-   Includes a core set of 13 packages that are loaded on startup
+-   [List](https://www.tidymodels.org/find/) of all tidymodels functions across different CRAN packages
 
 ```{r}
 # install.packages("tidymodels")
@@ -386,7 +385,7 @@ Primary goal of [report](https://easystats.github.io/report/) is to bridge the g
 
 ## tidyverse
 
-The tidyverse is a collection of R [packages](https://www.tidyverse.org/packages) designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Most importantly, the tidyverse collection of packages contains [ggplot](https://ggplot2.tidyverse.org/).
+The tidyverse is a collection of R [packages](https://www.tidyverse.org/packages) designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Most importantly, the tidyverse contains [ggplot](https://ggplot2.tidyverse.org/).
 
 ```{r}
 # install.packages("tidyverse")
