@@ -30,8 +30,6 @@ By the end of this class, students should be able to:
 
 1.  
 
-
-    
 ## Class Resources
 
 ::: columns
@@ -45,14 +43,25 @@ Please rename yourself in Zoom, so we can:
 :::
 
 ::: {.column width="50%"}
-![Renaming yourself in Zoom](../instruction-images/instruction-images/zoom-change-name.png){fig-align="center"}
+![Renaming yourself in Zoom](../../instruction-images/instruction-images/zoom-change-name.png){fig-align="center"}
 :::
 :::
 
+## Training survey
 
-## Training Survey
+::: columns
+::: {.column width="50%"}
+::: nonincremental
+-   Helps me become a better teacher
+-   Helps me identify training gaps
+-   Gives you an opportunity to suggest training
+:::
+:::
 
-![](../instruction-images/instruction-images/zoom-training-survey.png){fig-align="center"}
+::: {.column width="50%"}
+![](../../instruction-images/instruction-images/noun-survey-681666-20558A.png){fig-align="center" width="75%"}
+:::
+:::
 
 # Live Portion (RStudio)
 
@@ -84,7 +93,6 @@ Please rename yourself in Zoom, so we can:
 ```
 :::
 :::
-
 
 ## Data Files
 
