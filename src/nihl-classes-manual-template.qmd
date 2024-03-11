@@ -22,56 +22,83 @@ bibliography: ../lsc563-joubert/references.bib
 
 ## Learning Objectives
 
-Upon completion of this class, students should be able to:
+By the end of this class, students should be able to:
 
--   
+1.  
 
-## Assumptions for This Class
+## Assumptions for This Class (send out to registrants via email)
 
 This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
 
 1.  Installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+2.  Taken Introduction to R and RStudio class. If not, here are some resources for getting started:
+    1.  [Introduction to R](https://nih.zoomgov.com/rec/share/r1E6wxGA_GPH9KdeB795R2Ncs8hkjb4IOTBMyYiGPjBKLoytyfvCbEWQ0Lb-qgK1.iqwHLHBN-on9dt9F)
+    2.  [Introduction to RStudio](https://nih.zoomgov.com/rec/share/ddsz5KFYjmKuI11vo34gOHLCA8qm3wgivR8tc_n8VBvvjdXnvTENdiZmYIQ0nWHQ.pTeAHZ6ijKZ7xfVZ)
+    3.  [Introduction to Scripts in RStudio](https://nih.zoomgov.com/rec/share/v4HbQqX5OSbAQK3KU2Zk-TUN0Tkvd35QtlP4tLnD1X4DTkJo8PV9OmtjwpU3ABHl.7zPhhYRf9mLgfEF2)
 
-2.  Experience with R and RStudio. If not, here are some resources for getting started:
 
-    a.  [Introduction to R and RStudio](https://carpentries-incubator.github.io/R-ecology-lesson-alternative/introduction-r-rstudio.html)
+## Class Resources
 
-    b.  [A Few Notes to Get Started with R](https://rcompanion.org/rcompanion/a_06.html)
+::: columns
+::: {.column width="50%"}
+Please rename yourself in Zoom, so we can:
 
-    c.  [Getting started with R and RStudio](http://rafalab.dfci.harvard.edu/dsbook/getting-started.html)
+::: nonincremental
+-   Send you the student version of the handout
+-   Add you to our list-serve
+:::
+:::
 
-3.  Experience creating scripts and/or markdown files
+::: {.column width="50%"}
+![Renaming yourself in Zoom](../../instruction-images/instruction-images/zoom-change-name.png){fig-align="center"}
+:::
+:::
 
-## Supplemental information contained in handout
+## Training survey
 
--   
+::: columns
+::: {.column width="50%"}
+::: nonincremental
+-   Helps me become a better teacher
+-   Helps me identify training gaps
+-   Gives you an opportunity to suggest training
+:::
+:::
+
+::: {.column width="50%"}
+![](../../instruction-images/instruction-images/noun-survey-681666-20558A.png){fig-align="center" width="75%"}
+:::
+:::
+
+# Live Portion (RStudio)
+
+## Outline for Demo
+
+1.  
+
 
 # Installing and Loading Packages
 
-## PackageName
-
-### Package Description (From Packages QMD)
+## Package Names
 
 ```{r}
 # install.packages("")
+# library()
 ```
 
-# Data Files
+
+## Data Files
 
 ## About the Data
 
-## Download the Data
-
-The first this we need to do is download the data into our data-raw folder:
-
-```{r}
-# Download the data
-```
-
 ## Load the Data
 
+Next, we need to import the `data-file` data into a new object called `name of object`.
+
 ```{r}
-# Use the tidyverse to read in the data
+# object_name <- read_csv("")
 ```
+
+# License Information
 
 # References
