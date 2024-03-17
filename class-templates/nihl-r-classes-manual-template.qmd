@@ -36,13 +36,36 @@ This class makes a few assumptions about your understanding of R and RStudio. Sp
 
 ## Class Resources
 
-![](../instruction-images/instruction-images/zoom-rename-just-pic.png){fig-align="center" width="100%"}
+::: columns
+::: {.column width="50%"}
+Please rename yourself in Zoom, so we can:
 
-## Training Survey
+::: nonincremental
+-   Send you the student version of the handout
+-   Add you to our list-serve
+:::
+:::
 
+::: {.column width="50%"}
+![Renaming yourself in Zoom](../../instruction-images/instruction-images/zoom-change-name.png){fig-align="center"}
+:::
+:::
 
-![](../instruction-images/instruction-images/zoom-training-survey.png){fig-align="center"}
+## Training survey
 
+::: columns
+::: {.column width="50%"}
+::: nonincremental
+-   Helps me become a better teacher
+-   Helps me identify training gaps
+-   Gives you an opportunity to suggest training
+:::
+:::
+
+::: {.column width="50%"}
+![](../../instruction-images/instruction-images/noun-survey-681666-20558A.png){fig-align="center" width="75%"}
+:::
+:::
 
 # Live Portion (RStudio)
 
