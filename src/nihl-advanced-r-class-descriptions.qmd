@@ -126,6 +126,25 @@ This class makes a few assumptions about your understanding of R and RStudio. Sp
     3.  [Introduction to Scripts in RStudio](https://nih.zoomgov.com/rec/share/v4HbQqX5OSbAQK3KU2Zk-TUN0Tkvd35QtlP4tLnD1X4DTkJo8PV9OmtjwpU3ABHl.7zPhhYRf9mLgfEF2)
     4.  [Creating Projects in RStudio](https://nih.zoomgov.com/rec/share/lwRt2qWoNHZ9xRJG69yzkQ__SVc1xrSinaaI8kvziYJCj4Qoo4WnSYgsJiNq_qkZ.AVt2Oot4V7eTbDcT)
 
+
+# Data Visualization in ggplot: Visualizing Relationships and Linear Regression
+
+## Description
+
+This class provides an overview of the methods used to visualize the association among two or more quantitative variables. This class will provide an overview of the tidymodels framework, scatterplots, and other methods for visualizing paired data. Upon completion of this class, participants should be able to describe the methods for modeling data using a tidymodels framework, create a scatterplot using ggplot, define linear regression, and demonstrate how to perform a simple linear regression in R **You must have taken Data Visualization in R: ggplot class to be successful in this class**.
+
+## Assumptions for This Class
+
+This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
+
+1.  installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
+2.  Taken Introduction to R and RStudio class. If not, here are some resources for getting started:
+    1.  [Introduction to R](https://nih.zoomgov.com/rec/share/r1E6wxGA_GPH9KdeB795R2Ncs8hkjb4IOTBMyYiGPjBKLoytyfvCbEWQ0Lb-qgK1.iqwHLHBN-on9dt9F)
+    2.  [Introduction to RStudio](https://nih.zoomgov.com/rec/share/ddsz5KFYjmKuI11vo34gOHLCA8qm3wgivR8tc_n8VBvvjdXnvTENdiZmYIQ0nWHQ.pTeAHZ6ijKZ7xfVZ)
+    3.  [Introduction to Scripts in RStudio](https://nih.zoomgov.com/rec/share/v4HbQqX5OSbAQK3KU2Zk-TUN0Tkvd35QtlP4tLnD1X4DTkJo8PV9OmtjwpU3ABHl.7zPhhYRf9mLgfEF2)
+    4.  [Creating Projects in RStudio](https://nih.zoomgov.com/rec/share/lwRt2qWoNHZ9xRJG69yzkQ__SVc1xrSinaaI8kvziYJCj4Qoo4WnSYgsJiNq_qkZ.AVt2Oot4V7eTbDcT)
+3.  Taken the Visualization in R: ggplot class
+
 # Introduction to Quarto for Scholarly Publishing
 
 ## Description
@@ -184,24 +203,6 @@ This class makes a few assumptions about your understanding of R and RStudio. Sp
     3.  [Introduction to Scripts in RStudio](https://nih.zoomgov.com/rec/share/v4HbQqX5OSbAQK3KU2Zk-TUN0Tkvd35QtlP4tLnD1X4DTkJo8PV9OmtjwpU3ABHl.7zPhhYRf9mLgfEF2)
     4.  [Creating Projects in RStudio](https://nih.zoomgov.com/rec/share/lwRt2qWoNHZ9xRJG69yzkQ__SVc1xrSinaaI8kvziYJCj4Qoo4WnSYgsJiNq_qkZ.AVt2Oot4V7eTbDcT)
 3.  Taken the Introduction to Quarto for Scholarly Publishing class
-
-# Data Visualization in ggplot: Visualizing Relationships and Linear Regression
-
-## Description
-
-This class provides an overview of the methods used to visualize the association among two or more quantitative variables. This class will focus on scatterplots, scatterplot matrix, and visualizing paired data. Upon completion of this class, participants should be able to define bivariate data, create a scatterplot using ggplot, define linear regression, and demonstrate how to perform a simple linear regression in R. **You must have taken Data Visualization in R: ggplot class to be successful in this class**.
-
-## Assumptions for This Class
-
-This class makes a few assumptions about your understanding of R and RStudio. Specifically, you have:
-
-1.  installed [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/RStudio/#Desktop)
-2.  Taken Introduction to R and RStudio class. If not, here are some resources for getting started:
-    1.  [Introduction to R](https://nih.zoomgov.com/rec/share/r1E6wxGA_GPH9KdeB795R2Ncs8hkjb4IOTBMyYiGPjBKLoytyfvCbEWQ0Lb-qgK1.iqwHLHBN-on9dt9F)
-    2.  [Introduction to RStudio](https://nih.zoomgov.com/rec/share/ddsz5KFYjmKuI11vo34gOHLCA8qm3wgivR8tc_n8VBvvjdXnvTENdiZmYIQ0nWHQ.pTeAHZ6ijKZ7xfVZ)
-    3.  [Introduction to Scripts in RStudio](https://nih.zoomgov.com/rec/share/v4HbQqX5OSbAQK3KU2Zk-TUN0Tkvd35QtlP4tLnD1X4DTkJo8PV9OmtjwpU3ABHl.7zPhhYRf9mLgfEF2)
-    4.  [Creating Projects in RStudio](https://nih.zoomgov.com/rec/share/lwRt2qWoNHZ9xRJG69yzkQ__SVc1xrSinaaI8kvziYJCj4Qoo4WnSYgsJiNq_qkZ.AVt2Oot4V7eTbDcT)
-3.  Taken the Visualization in R: ggplot class
 
 # Introduction to Bioconductor
 
