@@ -67,6 +67,11 @@ Makes it easy to load or [install multiple packages in R](https://cran.r-project
 -   Having to call `library` once for each additional package that you wish to use
 -   Collaborators having to manually install packages that you’ve used that they don’t have
 
+```{r}
+# install.packages("easypackages")
+# library(easypackages)
+```
+
 ## forcats
 
 The goal of the [forcats](https://forcats.tidyverse.org/) package is to provide a suite of tools that solve common problems with factors, including changing the order of levels or the values.
