@@ -5,15 +5,14 @@ date: today
 format:
   html:
     toc: true
-    theme: [default, ../../lsc563-joubert/nihl.scss]
+    theme: [default, ../lsc563-joubert/nihl.scss]
     code-copy: true
     code-line-numbers: true
 execute:
   echo: fenced
   warning: false
-csl: ../../lsc563-joubert/apa.csl
-bibliography: ../../lsc563-joubert/references.bib
-# https://quarto.org/docs/presentations/revealjs/
+csl: ../lsc563-joubert/apa.csl
+bibliography: ../lsc563-joubert/references.bib
 ---
 
 ## broom
@@ -60,6 +59,13 @@ The [cowplot](https://wilkelab.org/cowplot/) package is a simple add-on to ggplo
 # install.packages("distill")
 # library(distill)
 ```
+
+## easypackages
+
+Makes it easy to load or [install multiple packages in R](https://cran.r-project.org/web/packages/easypackages/vignettes/easypackages-vignette.html). Basically, it aims to solve two small day-to-day problems faced by R users:
+
+-   Having to call `library` once for each additional package that you wish to use
+-   Collaborators having to manually install packages that you’ve used that they don’t have
 
 ## forcats
 
